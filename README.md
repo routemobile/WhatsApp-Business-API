@@ -1,1 +1,1 @@
-For medium and large businesses, the WhatsApp Business API powers your communication with customers all over the world, so you can connect with them on WhatsApp in a simple, secure, and reliable way. Connect us at product-desk@routemobile.com
+For medium and large businesses, the WhatsApp Business API powers your communication with customers all over the world, so you can connect with them on WhatsApp in a simple, secure, and reliable way. Connect with us at product-desk@routemobile.com and we will setup an account for you to use the APIs
