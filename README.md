@@ -59,7 +59,7 @@ Use Postman for API for import and run the collection
 
 ### License 
 
-Please refer to the Whatsap@routemobile.com
+Please refer to the Whatsapp@routemobile.com
 
 
 
