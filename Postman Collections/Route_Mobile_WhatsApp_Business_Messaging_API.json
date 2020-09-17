@@ -451,6 +451,38 @@
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "response": []
+        },
+        {
+          "name": "Session Image Copy",
+          "_postman_id": "89f21581-e572-4aa3-945a-25c361a611b3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"image\",\n        \"url\": \"{sample image url https://}\",\n        \"file\": \"{sample image .jpg file name}\",\n        \"caption\": \"{sample text}\"\n    }\n}",
+              "options": {
+                "raw": {}
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "response": []
         }
       ],
       "_postman_id": "86661245-e45b-4790-8486-5a47877e0399"
