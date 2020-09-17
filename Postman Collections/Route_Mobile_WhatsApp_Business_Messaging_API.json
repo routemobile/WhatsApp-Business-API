@@ -453,38 +453,6 @@
           "response": []
         },
         {
-          "name": "Session Location",
-          "_postman_id": "6e2cea72-aab7-47af-a6e1-9afc280394c0",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"location\",\n        \"longitude\": \"{example: 72.838249}\",\n        \"latitude\": \"{example: 18.991341}\",\n        \"name\": \"{location name}\",\n        \"address\": \"{location address}\"\n    }\n}",
-              "options": {
-                "raw": {}
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "response": []
-        },
-        {
           "name": "Session Video Copy",
           "_postman_id": "5fb1e43f-945f-4677-8111-88c16506a1ce",
           "protocolProfileBehavior": {
@@ -508,6 +476,38 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"video\",\n        \"url\": \"{sample video url https://}\",\n        \"file\": \"{sample video .mp4 file name}\",\n        \"caption\": \"{sample text}\"\n    }\n}",
+              "options": {
+                "raw": {}
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "response": []
+        },
+        {
+          "name": "Session Location",
+          "_postman_id": "6e2cea72-aab7-47af-a6e1-9afc280394c0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{token}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"location\",\n        \"longitude\": \"{example: 72.838249}\",\n        \"latitude\": \"{example: 18.991341}\",\n        \"name\": \"{location name}\",\n        \"address\": \"{location address}\"\n    }\n}",
               "options": {
                 "raw": {}
               }
