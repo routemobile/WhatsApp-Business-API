@@ -1,6 +1,7 @@
-### The WhatsApp Business Solution(WBS) empowers a way to connect your customers across the globe on WhatsApp platform in a simple, secure, and reliable manner.
-
-For API Token and registration please contact whatsapp@routemobile.com
+### Route Mobile's WhatsApp API enables developers to directly use our services for 1 and 2 way messaging between your brand and target audience. RML provides API and Dashboard to trigger messages. Brands can trigger messages to their end users programmatically by integrating our API. You can simply get started with your free trial by generating a token request
+*For API Token and registration please contact whatsapp@routemobile.com
+*To learn more about WBS, please [visit our page](https://routemobile.com/messaging/whatsapp-business-api/)
+*Check our [API documentation](https://wbs.rmlconnect.net/) page for more information
 
 ***
 
@@ -26,6 +27,16 @@ Use Postman for API for import and run the collection
 
 ***
 
+
+### How to use the API'S
+*The APIs are hosted on (https://wbs.rmlconnect.net/)
+*To get your API Token with free credits on the Sandbox and a customised plan as per your needs, please write to us at whatsapp@routemobile.com.
+*We can also help your brand get onboarded to whatsapp
+
+
+***
+
+
 ### API Type
 **Notification Messages**
 * Brand initiated messages
@@ -44,6 +55,10 @@ Use Postman for API for import and run the collection
 
 
 ### Commerical 
+
+* An initial account set-up fee
+
+
 **Notification Commercials**
 * Per message fee based on terminating number country code
 * The fee remains the same whether its text or rich media and applies to all Mobile Terminated messages (MT)
@@ -52,6 +67,22 @@ Use Postman for API for import and run the collection
 **Session Commercials**
 * Route Mobile charges a fixed fee for every User initiated (MO) and Brand Response (MT) in a Session
 * A session lasts for 24 hours from the most recent MO message
+
+
+**Hybrid Commercials**
+*Programmable bots-One time development and Monthly Recurring
+*Programmable Contact Centre - Setup and Monthly License per Agent
+
+
+**
+
+
+### FAQ
+Please [Refer Here] 
+
+
+
+**
 
 
 ***
