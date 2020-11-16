@@ -78,7 +78,7 @@ Use Postman for API for import and run the collection
 
 
 ### FAQ
-Please [Refer Here] 
+Please [Refer Here](https://github.com/routemobile/WhatsApp-Business-API/wiki/FAQ)
 
 
 
