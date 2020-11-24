@@ -31,7 +31,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"hsm\",\n        \"lang_code\": \"{code}\",\n        \"element_name\": \"{your template}\",\n        \"localizable_params\": [\n            {\n       \"default\": \"{variable1}\"\n     },\n      {\n       \"default\": \"{variable2}\"\n     }\n        ]\n    }\n}",
+              "raw": "{\n\t\"phone\": \"{mobile number}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t]\n\t}\n}",
               "options": {
                 "raw": {}
               }
