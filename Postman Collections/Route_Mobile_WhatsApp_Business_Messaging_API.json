@@ -293,34 +293,6 @@
           "response": []
         },
         {
-          "name": "Capability check Copy",
-          "_postman_id": "997be581-c79b-4a2a-acf8-1a12b4e2be9d",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"contacts\":[\"<NUM1>,\"<NUM2>\",...,\"NUM50\">]\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/contacts"
-          },
-          "response": []
-        },
-        {
           "name": "Session Text With Preview Url",
           "_postman_id": "e3310eec-a645-404f-b20b-957ffce2be3a",
           "protocolProfileBehavior": {
@@ -537,6 +509,34 @@
           }
         },
         "url": "https://apis.rmlconnect.net/auth/v1/login/"
+      },
+      "response": []
+    },
+    {
+      "name": "Capability check Copy",
+      "_postman_id": "997be581-c79b-4a2a-acf8-1a12b4e2be9d",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{token}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"contacts\":[\"<NUM1>,\"<NUM2>\",...,\"NUM50\">]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://apis.rmlconnect.net/wba/v1/contacts"
       },
       "response": []
     }
