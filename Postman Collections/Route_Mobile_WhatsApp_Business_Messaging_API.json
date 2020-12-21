@@ -539,34 +539,6 @@
         "url": "https://apis.rmlconnect.net/wba/v1/contacts"
       },
       "response": []
-    },
-    {
-      "name": "Capability check Copy",
-      "_postman_id": "5b9d1b21-fc20-42c1-b11a-17251f68a43e",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "{token}",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n    \"contacts\":[\"<NUM1>,\"<NUM2>\",...,\"NUM50\">]\r\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": "https://apis.rmlconnect.net/wba/v1/contacts"
-      },
-      "response": []
     }
   ]
 }
