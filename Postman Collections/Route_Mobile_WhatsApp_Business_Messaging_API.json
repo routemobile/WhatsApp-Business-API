@@ -41,7 +41,7 @@
           "response": []
         },
         {
-          "name": "Text HSM with Header",
+          "name": "Text with Text Header",
           "_postman_id": "d27bcba0-4653-40bb-b557-ba103a17bbe5",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
