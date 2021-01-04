@@ -9,7 +9,7 @@
       "name": "Template API",
       "item": [
         {
-          "name": "Text HSM",
+          "name": "Text",
           "_postman_id": "e492b7c4-0add-4cf0-877b-96c73df9e844",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
@@ -529,7 +529,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"contacts\":[\"<NUM1>,\"<NUM2>\",...,\"NUM50\">]\r\n}",
+          "raw": "{\r\n    \"contacts\":[\"<NUM1>\",\"<NUM2>\",...,\"NUM50\">]\r\n}",
           "options": {
             "raw": {
               "language": "json"
