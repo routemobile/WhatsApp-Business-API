@@ -205,7 +205,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"quick_reply\",\n        \"lang_code\": \"{code}\",\n        \"template_name\": \"{your template}\",\n        \"extra\": \"{your value}\",\n        \"header\": [\n            {\n                \"video\": {\n                    \"link\": \"{video URL https://}\"\n                }\n            }\n        ]\n    }\n}"
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"quick_reply\",\n        \"lang_code\": \"{code}\",\n        \"template_name\": \"{your template}\",\n        \"header\": [\n            {\n                \"video\": {\n                    \"link\": \"{video URL https://}\"\n                }\n            }\n        ]\n    }\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
