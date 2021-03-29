@@ -89,7 +89,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"media_template\",\n        \"lang_code\": \"{code}\",\n        \"template_name\": \"{your template}\",\n        \"extra\": \"{your value}\",\n        \"header\": [\n            {\n                \"image\": {\n                    \"link\": \"{sample image url https://}\"\n                }\n            }\n        ],\n        \"body\": [\n            {\n                \"text\": \"{variable}\"\n            }\n        ]\n    }\n}"
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"media_template\",\n        \"lang_code\": \"{code}\",\n        \"template_name\": \"{your template}\",\n        \"header\": [\n            {\n                \"image\": {\n                    \"link\": \"{sample image url https://}\"\n                }\n            }\n        ],\n        \"body\": [\n            {\n                \"text\": \"{variable}\"\n            }\n        ]\n    }\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
