@@ -262,7 +262,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{sample text}\"\n}"
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{sample text}\",\n    \"extra\": \"{your value}\"\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
