@@ -10,7 +10,7 @@
       "item": [
         {
           "name": "Text",
-          "_postman_id": "e492b7c4-0add-4cf0-877b-96c73df9e844",
+          "id": "e492b7c4-0add-4cf0-877b-96c73df9e844",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -31,10 +31,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"phone\": \"{mobile number}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t]\n\t}\n}",
-              "options": {
-                "raw": {}
-              }
+              "raw": "{\n\t\"phone\": \"{mobile number}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n        \"extra\": \"{your value}\",\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t]\n\t}\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
@@ -42,7 +39,7 @@
         },
         {
           "name": "Text with Text Header",
-          "_postman_id": "d27bcba0-4653-40bb-b557-ba103a17bbe5",
+          "id": "d27bcba0-4653-40bb-b557-ba103a17bbe5",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -63,10 +60,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"phone\": \"{mobile number}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"text\": \"{variable}\"\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t]\n\t}\n}",
-              "options": {
-                "raw": {}
-              }
+              "raw": "{\n\t\"phone\": \"{mobile number}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"text\": \"{variable}\"\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t]\n\t}\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
@@ -74,7 +68,7 @@
         },
         {
           "name": "Media Image",
-          "_postman_id": "593e2840-ede0-4a14-8162-27087de6b5e9",
+          "id": "593e2840-ede0-4a14-8162-27087de6b5e9",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -95,10 +89,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"media_template\",\n        \"lang_code\": \"{code}\",\n        \"template_name\": \"{your template}\",\n        \"header\": [\n            {\n                \"image\": {\n                    \"link\": \"{sample image url https://}\"\n                }\n            }\n        ],\n        \"body\": [\n            {\n                \"text\": \"{variable}\"\n            }\n        ]\n    }\n}",
-              "options": {
-                "raw": {}
-              }
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"media_template\",\n        \"lang_code\": \"{code}\",\n        \"template_name\": \"{your template}\",\n        \"header\": [\n            {\n                \"image\": {\n                    \"link\": \"{sample image url https://}\"\n                }\n            }\n        ],\n        \"body\": [\n            {\n                \"text\": \"{variable}\"\n            }\n        ]\n    }\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
@@ -106,7 +97,7 @@
         },
         {
           "name": "Media Document",
-          "_postman_id": "3362d052-16ae-45a8-af6e-c792e27a6cc9",
+          "id": "3362d052-16ae-45a8-af6e-c792e27a6cc9",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -127,10 +118,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"media_template\",\n        \"lang_code\": \"{code}\",\n        \"template_name\": \"{your template}\",\n        \"header\": [\n            {\n                \"document\": {\n                    \"link\": \"{sample pdf url https://}\"\n                }\n            }\n        ],\n        \"body\": [\n            {\n                \"text\": \"{variable}\"\n            }\n        ]\n    }\n}",
-              "options": {
-                "raw": {}
-              }
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"media_template\",\n        \"lang_code\": \"{code}\",\n        \"template_name\": \"{your template}\",\n        \"header\": [\n            {\n                \"document\": {\n                    \"link\": \"{sample pdf url https://}\"\n                }\n            }\n        ],\n        \"body\": [\n            {\n                \"text\": \"{variable}\"\n            }\n        ]\n    }\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
@@ -138,7 +126,7 @@
         },
         {
           "name": "Media Video",
-          "_postman_id": "730fe67a-116f-4fff-9c41-f17624f635b4",
+          "id": "730fe67a-116f-4fff-9c41-f17624f635b4",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -159,10 +147,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"media_template\",\n        \"lang_code\": \"{code}\",\n        \"template_name\": \"{your template}\",\n        \"header\": [\n            {\n                \"video\": {\n                    \"link\": \"{sample video mp4 url https://}\"\n                }\n            }\n        ],\n        \"body\": [\n            {\n                \"text\": \"{variable}\"\n            }\n        ]\n    }\n}",
-              "options": {
-                "raw": {}
-              }
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"media_template\",\n        \"lang_code\": \"{code}\",\n        \"template_name\": \"{your template}\",\n        \"header\": [\n            {\n                \"video\": {\n                    \"link\": \"{sample video mp4 url https://}\"\n                }\n            }\n        ],\n        \"body\": [\n            {\n                \"text\": \"{variable}\"\n            }\n        ]\n    }\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
@@ -170,7 +155,7 @@
         },
         {
           "name": "Call to Action",
-          "_postman_id": "53a67d7e-c356-425f-97ed-cbe8816cbef5",
+          "id": "53a67d7e-c356-425f-97ed-cbe8816cbef5",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -191,10 +176,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"call_to_action\",\n        \"lang_code\": \"{code}\",\n        \"template_name\": \"{your template}\",\n        \"header\": [\n            {\n                \"image\": {\n                    \"link\": \"{image URL with https://}\"\n                }\n            }\n        ],\n        \"button\": [\n        \t{\n        \t\t\"url\": \"{dynamic_url with https://}\"\n        \t}\n        ]\n    }\n}",
-              "options": {
-                "raw": {}
-              }
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"call_to_action\",\n        \"lang_code\": \"{code}\",\n        \"template_name\": \"{your template}\",\n        \"header\": [\n            {\n                \"image\": {\n                    \"link\": \"{image URL with https://}\"\n                }\n            }\n        ],\n        \"button\": [\n        \t{\n        \t\t\"url\": \"{dynamic_url with https://}\"\n        \t}\n        ]\n    }\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
@@ -202,7 +184,7 @@
         },
         {
           "name": "Quick Reply",
-          "_postman_id": "7db595b4-ddb6-442d-a96d-94a8156cacab",
+          "id": "7db595b4-ddb6-442d-a96d-94a8156cacab",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -223,17 +205,14 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"quick_reply\",\n        \"lang_code\": \"{code}\",\n        \"template_name\": \"{your template}\",\n        \"header\": [\n            {\n                \"video\": {\n                    \"link\": \"{video URL https://}\"\n                }\n            }\n        ]\n    }\n}",
-              "options": {
-                "raw": {}
-              }
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"quick_reply\",\n        \"lang_code\": \"{code}\",\n        \"template_name\": \"{your template}\",\n        \"header\": [\n            {\n                \"video\": {\n                    \"link\": \"{video URL https://}\"\n                }\n            }\n        ]\n    }\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "response": []
         }
       ],
-      "_postman_id": "8f0526fe-ea80-4a09-8090-872475139648",
+      "id": "8f0526fe-ea80-4a09-8090-872475139648",
       "event": [
         {
           "listen": "prerequest",
@@ -262,7 +241,7 @@
       "item": [
         {
           "name": "Session Text",
-          "_postman_id": "5c3a3976-384c-4fb3-a40f-cce70d16895f",
+          "id": "5c3a3976-384c-4fb3-a40f-cce70d16895f",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -283,10 +262,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{sample text}\"\n}",
-              "options": {
-                "raw": {}
-              }
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{sample text}\"\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
@@ -294,7 +270,7 @@
         },
         {
           "name": "Session Text With Preview Url",
-          "_postman_id": "e3310eec-a645-404f-b20b-957ffce2be3a",
+          "id": "e3310eec-a645-404f-b20b-957ffce2be3a",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -315,10 +291,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{text with valid url}\",\n    \"preview_url\": true\n}",
-              "options": {
-                "raw": {}
-              }
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{text with valid url}\",\n    \"preview_url\": true\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
@@ -326,7 +299,7 @@
         },
         {
           "name": "Session Document",
-          "_postman_id": "15ab5c02-1703-4eeb-988d-2c10b4f633d4",
+          "id": "15ab5c02-1703-4eeb-988d-2c10b4f633d4",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -347,10 +320,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"document\",\n        \"url\": \"{sample pdf url https://}\",\n        \"file\": \"{sample .pdf file name}\",\n        \"caption\": \"{sample text}\"\n    }\n}",
-              "options": {
-                "raw": {}
-              }
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"document\",\n        \"url\": \"{sample pdf url https://}\",\n        \"file\": \"{sample .pdf file name}\",\n        \"caption\": \"{sample text}\"\n    }\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
@@ -358,7 +328,7 @@
         },
         {
           "name": "Session Audio",
-          "_postman_id": "1ff14028-e713-41d2-8574-25451d18d744",
+          "id": "1ff14028-e713-41d2-8574-25451d18d744",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -379,10 +349,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"audio\",\n        \"url\": \"{sample .mp3 url https://}\",\n        \"file\": \"{sample audio.mp3 file name}\",\n        \"caption\": \"{sample text}\"\n    }\n}",
-              "options": {
-                "raw": {}
-              }
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"audio\",\n        \"url\": \"{sample .mp3 url https://}\",\n        \"file\": \"{sample audio.mp3 file name}\",\n        \"caption\": \"{sample text}\"\n    }\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
@@ -390,7 +357,7 @@
         },
         {
           "name": "Session Image",
-          "_postman_id": "137e3f81-e0eb-4dae-97d4-4ee1737bc9de",
+          "id": "137e3f81-e0eb-4dae-97d4-4ee1737bc9de",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -411,10 +378,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"image\",\n        \"url\": \"{sample image url https://}\",\n        \"file\": \"{sample image .jpg file name}\",\n        \"caption\": \"{sample text}\"\n    }\n}",
-              "options": {
-                "raw": {}
-              }
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"image\",\n        \"url\": \"{sample image url https://}\",\n        \"file\": \"{sample image .jpg file name}\",\n        \"caption\": \"{sample text}\"\n    }\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
@@ -422,7 +386,7 @@
         },
         {
           "name": "Session Video",
-          "_postman_id": "89f21581-e572-4aa3-945a-25c361a611b3",
+          "id": "89f21581-e572-4aa3-945a-25c361a611b3",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -443,10 +407,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"video\",\n        \"url\": \"{sample video url https://}\",\n        \"file\": \"{sample video .mp4 file name}\",\n        \"caption\": \"{sample text}\"\n    }\n}",
-              "options": {
-                "raw": {}
-              }
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"video\",\n        \"url\": \"{sample video url https://}\",\n        \"file\": \"{sample video .mp4 file name}\",\n        \"caption\": \"{sample text}\"\n    }\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
@@ -454,7 +415,7 @@
         },
         {
           "name": "Session Location",
-          "_postman_id": "6e2cea72-aab7-47af-a6e1-9afc280394c0",
+          "id": "6e2cea72-aab7-47af-a6e1-9afc280394c0",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -475,21 +436,18 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"location\",\n        \"longitude\": \"{example: 72.838249}\",\n        \"latitude\": \"{example: 18.991341}\",\n        \"name\": \"{location name}\",\n        \"address\": \"{location address}\"\n    }\n}",
-              "options": {
-                "raw": {}
-              }
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"location\",\n        \"longitude\": \"{example: 72.838249}\",\n        \"latitude\": \"{example: 18.991341}\",\n        \"name\": \"{location name}\",\n        \"address\": \"{location address}\"\n    }\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "response": []
         }
       ],
-      "_postman_id": "86661245-e45b-4790-8486-5a47877e0399"
+      "id": "86661245-e45b-4790-8486-5a47877e0399"
     },
     {
       "name": "Login",
-      "_postman_id": "662b1e61-ac43-4159-8b41-f0be0fb2f271",
+      "id": "662b1e61-ac43-4159-8b41-f0be0fb2f271",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -503,10 +461,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n  \"username\":\"{username}\",\r\n  \"password\":\"{password}\"\r\n}\r\n",
-          "options": {
-            "raw": {}
-          }
+          "raw": "{\r\n  \"username\":\"{username}\",\r\n  \"password\":\"{password}\"\r\n}\r\n"
         },
         "url": "https://apis.rmlconnect.net/auth/v1/login/"
       },
@@ -514,7 +469,7 @@
     },
     {
       "name": "Capability check",
-      "_postman_id": "997be581-c79b-4a2a-acf8-1a12b4e2be9d",
+      "id": "997be581-c79b-4a2a-acf8-1a12b4e2be9d",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
