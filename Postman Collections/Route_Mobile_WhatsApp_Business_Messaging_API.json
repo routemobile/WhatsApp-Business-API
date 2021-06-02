@@ -176,7 +176,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"call_to_action\",\n        \"lang_code\": \"{code}\",\n        \"extra\": \"{your value}\",\n        \"header\": [\n            {\n                \"image\": {\n                    \"link\": \"{image URL with https://}\"\n                }\n            }\n        ],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0\",\n                \"url\": \"{dynamic_url with https://}\"\n        \t}\n        ]\n    }\n}"
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"call_to_action\",\n        \"lang_code\": \"{code}\",\n        \"extra\": \"{your value}\",\n        \"header\": [\n            {\n                \"image\": {\n                    \"link\": \"{image URL with https://}\"\n                }\n            }\n        ],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url with https://}\"\n        \t}\n        ]\n    }\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
