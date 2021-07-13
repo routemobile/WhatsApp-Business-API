@@ -501,7 +501,7 @@
           "response": []
         },
         {
-          "name": "Session Quick Reply with Media Copy",
+          "name": "Session Quick Reply with Text",
           "id": "e01faf42-1897-4d90-a750-2007ff116ec4",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
