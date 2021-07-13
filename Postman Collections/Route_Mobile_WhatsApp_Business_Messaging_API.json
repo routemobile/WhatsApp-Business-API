@@ -472,6 +472,35 @@
           "response": []
         },
         {
+          "name": "Session Interactive List Copy",
+          "id": "79b613fc-1368-489a-abfe-ca9b18c30ae7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{phone number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"interactive_list\",\n        \"header\": {\n            \"text\": \"ABC Food Items\"\n        },\n        \"body\": \"Hello TAN. Please select from the list below\",\n        \"footer_text\": \"Menu\",\n        \"button_text\": \"Select\",\n        \"button\": [\n            {\n                \"section_title\": \"Chicken\",\n                \"row\": [\n                    {\n                        \"id\": \"1\",\n                        \"title\": \"Chicken Kadai\",\n                        \"description\": \"tasty gravy\"\n                    }\n                ]\n            },\n            {\n                \"section_title\": \"Fish\",\n                \"row\": [\n                    {\n                        \"id\": \"2\",\n                        \"title\": \"Fish Masala\",\n                        \"description\": \"yummy flavour\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "response": []
+        },
+        {
           "name": "Session Quick Reply with Media",
           "id": "2562156c-5c94-473d-b743-77f7e3da57d8",
           "protocolProfileBehavior": {
@@ -524,35 +553,6 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"interactive_reply\",\n        \"header\": {\n            \"text\": \"Super Selector Match\"\n        },\n        \"body\": \"HI TAN, please select an option below\",\n        \"footer_text\": \"c@2021\",\n        \"button\": [\n            {\n                \"id\": \"1\",\n                \"title\": \"Yes\"\n            },\n            {\n                \"id\": \"2\",\n                \"title\": \"No\"\n            },\n            {\n                \"id\": \"3\",\n                \"title\": \"Maybe\"\n            }\n        ]\n    }\n}"
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "response": []
-        },
-        {
-          "name": "Session Interactive List Copy",
-          "id": "79b613fc-1368-489a-abfe-ca9b18c30ae7",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "type": "text",
-                "value": "application/json"
-              },
-              {
-                "key": "Authorization",
-                "type": "text",
-                "value": "{token}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"phone\": \"{phone number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"interactive_list\",\n        \"header\": {\n            \"text\": \"ABC Food Items\"\n        },\n        \"body\": \"Hello TAN. Please select from the list below\",\n        \"footer_text\": \"Menu\",\n        \"button_text\": \"Select\",\n        \"button\": [\n            {\n                \"section_title\": \"Chicken\",\n                \"row\": [\n                    {\n                        \"id\": \"1\",\n                        \"title\": \"Chicken Kadai\",\n                        \"description\": \"tasty gravy\"\n                    }\n                ]\n            },\n            {\n                \"section_title\": \"Fish\",\n                \"row\": [\n                    {\n                        \"id\": \"2\",\n                        \"title\": \"Fish Masala\",\n                        \"description\": \"yummy flavour\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
