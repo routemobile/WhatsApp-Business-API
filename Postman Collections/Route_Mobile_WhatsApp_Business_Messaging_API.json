@@ -499,6 +499,35 @@
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "response": []
+        },
+        {
+          "name": "Session Quick Reply with Media Copy",
+          "id": "e01faf42-1897-4d90-a750-2007ff116ec4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"document\",\n        \"url\": \"{sample pdf url https://}\",\n        \"file\": \"{sample .pdf file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}"
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "response": []
         }
       ],
       "id": "86661245-e45b-4790-8486-5a47877e0399"
