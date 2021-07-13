@@ -546,7 +546,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"statuses\": [{\r\n            \"conversation\": {\r\n\"id\": \"c58c55a6cae6d1cb43d0c37ef4defdbb\"\r\n},\r\n\"id\": \"da8e0ce4-bfbc-11eb-bb44-0242ac120005\",\r\n\"pricing\": {\r\n\"billable\": False/True,\r\n\"pricing_model\": \"NBP/CBP\"\r\n},\r\n            \"recipient_id\": \"919941639697\",\r\n            \"status\": \"sent/delivered/read/failed along with failure reason\",\r\n            \"timestamp\": \"1579606105\",\r\n\t\"extra\": \"qwkfm9_606hbf105\"\r\n}]\r\n}",
+              "raw": "{\r\n    \"statuses\": [{\r\n            \"conversation\": {\r\n\"id\": \"c58c55a6cae6d1cb43d0c37ef4defdbb\"\r\n},\r\n\"id\": \"da8e0ce4-bfbc-11eb-bb44-0242ac120005\",\r\n\"pricing\": {\r\n\"billable\": False/True,\r\n\"pricing_model\": \"NBP/CBP\"\r\n},\r\n            \"recipient_id\": \"919941639697\",\r\n            \"status\": \"sent/delivered/read/failed along with failure reason\",\r\n            \"timestamp\": \"1579606105\",\r\n\t\"extra\": \"qwkfm9_606hbf105\"\r\n}],\r\n\"brand_msisd\": \"918291004959\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
