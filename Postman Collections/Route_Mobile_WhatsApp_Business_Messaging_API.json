@@ -327,35 +327,6 @@
           "response": []
         },
         {
-          "name": "Session Interactive List",
-          "id": "c35c7aab-70c3-44f7-8b63-8bd99e558b84",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "type": "text",
-                "value": "application/json"
-              },
-              {
-                "key": "Authorization",
-                "type": "text",
-                "value": "{token}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"document\",\n        \"url\": \"{sample pdf url https://}\",\n        \"file\": \"{sample .pdf file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}"
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "response": []
-        },
-        {
           "name": "Session Audio",
           "id": "1ff14028-e713-41d2-8574-25451d18d744",
           "protocolProfileBehavior": {
@@ -466,6 +437,35 @@
             "body": {
               "mode": "raw",
               "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"location\",\n        \"longitude\": \"{example: 72.838249}\",\n        \"latitude\": \"{example: 18.991341}\",\n        \"name\": \"{location name}\",\n        \"address\": \"{location address}\"\n    },\n    \"extra\": \"{your value}\"\n}"
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "response": []
+        },
+        {
+          "name": "Session Interactive List",
+          "id": "c35c7aab-70c3-44f7-8b63-8bd99e558b84",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"document\",\n        \"url\": \"{sample pdf url https://}\",\n        \"file\": \"{sample .pdf file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}"
             },
             "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
