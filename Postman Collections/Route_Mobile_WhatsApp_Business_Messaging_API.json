@@ -327,7 +327,7 @@
           "response": []
         },
         {
-          "name": "Session Document Copy",
+          "name": "Session Interactive List",
           "id": "c35c7aab-70c3-44f7-8b63-8bd99e558b84",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
