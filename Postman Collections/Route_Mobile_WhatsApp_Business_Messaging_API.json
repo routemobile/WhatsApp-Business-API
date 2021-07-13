@@ -472,7 +472,7 @@
           "response": []
         },
         {
-          "name": "Session Interactive List Copy",
+          "name": "Session Quick Reply with Media",
           "id": "2562156c-5c94-473d-b743-77f7e3da57d8",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
