@@ -237,101 +237,7 @@
       ]
     },
     {
-      "name": "Callback",
-      "item": [
-        {
-          "name": "Delivery report",
-          "id": "929f1b7a-6061-4f04-bb3b-b965cdedb451",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"statuses\": [{\r\n            \"conversation\": {\r\n\"id\": \"c58c55a6cae6d1cb43d0c37ef4defdbb\"\r\n},\r\n\"id\": \"da8e0ce4-bfbc-11eb-bb44-0242ac120005\",\r\n\"pricing\": {\r\n\"billable\": False/True,\r\n\"pricing_model\": \"NBP/CBP\"\r\n},\r\n            \"recipient_id\": \"919941639697\",\r\n            \"status\": \"sent/delivered/read/failed along with failure reason\",\r\n            \"timestamp\": \"1579606105\",\r\n\t\"extra\": \"qwkfm9_606hbf105\"\r\n}],\r\n\"brand_msisd\": \"918291004959\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "{client callback}"
-          },
-          "response": []
-        },
-        {
-          "name": "Incoming Text",
-          "id": "a95defe4-2940-4bbd-b58d-87d68f065ce1",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"contacts\": [ {\r\n    \"profile\": {\r\n        \"name\": \"Kerry Fisher\"\r\n   \t        },\r\n    \"wa_id\": \"919941639697\"\r\n        } ],\r\n    \"messages\":[{\r\n    \"from\": \"919941639697\",\r\n    \"id\": \"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\r\n    \"timestamp\": \"1518694235\",\r\n    \"text\": {\r\n    \"body\": \"Hello this is an answer\"\r\n    \t   \t\t},\r\n    \"type\": \"text\"\r\n    }]\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "{client callback}"
-          },
-          "response": []
-        },
-        {
-          "name": "Incoming Document",
-          "id": "fd626882-cd28-448a-96aa-3f0cff605737",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n\t\"apiKey\": \"IfgKh@jHkB5%232roUt20nhVgfb!ll*mv12lSt\",\r\n\t\"messages\":[{\r\n\"from\":\"919941639697\",\r\n\"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\r\n\"timestamp\":\"1522189546\",\r\n\"type\":\"document\",\r\n\"document\":{\r\n\"caption\":\"80skaraokesonglistartist\",\r\n\"file\":\"/usr/local/wamedia/shared/fc233119-733f-49c-bcbd-b2f68f798e33\",\r\n\"id\":\"fc233119-733f-49c-bcbd-b2f68f798e33\",\r\n\"mime_type\":\"application/pdf\",\r\n\"sha256\":\"3b11fa6ef2bde1dd14726e09d3eda220f6484f32d5d5caa4b8e\",\r\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&user_contact=917045273672\"\r\n}\r\n}]\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "{client callback}"
-          },
-          "response": []
-        },
-        {
-          "name": "Incoming Image",
-          "id": "5ad8d2bf-35c9-4446-bfaa-0dea78324e9c",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n\"apiKey\": \"IfgKh@jHkB5%232roUt20nhVgfb!ll*mv12lSt\",\r\n\t\"messages\":[{\r\n\"from\":\"919941639697\",\r\n\"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\r\n      \t\"image\":{\r\n\"file\":\"/usr/local/wamedia/shared/b1cf38-8734-4ad3-b4a1-ef0c10d0d683\",\r\n\"id\":\"b1c68f38-8734-4ad3-b4a1-ef0c10d683\",\r\n\"mime_type\":\"image/jpeg\",\r\n\"sha256\":\"29ed500fa64eb55fc19dc4124acb300e5dcca301ae99944db\",\r\n\"caption\": \"Check out my new phone!\",\r\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&user_contact=917045273672\"\r\n},\r\n\"timestamp\":\"1521497954\",\r\n\"type\":\"image\"\r\n}]\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "{client callback}"
-          },
-          "response": []
-        }
-      ],
-      "id": "58c9e0a9-ba07-4827-835f-b0f11c404299"
-    },
-    {
-      "name": "Session API Copy",
+      "name": "Session API",
       "item": [
         {
           "name": "Session Text",
@@ -627,7 +533,7 @@
       "id": "6387de25-14d9-48c0-9949-a7adebeb9bae"
     },
     {
-      "name": "Callback Copy",
+      "name": "Callback",
       "item": [
         {
           "name": "Delivery report",
