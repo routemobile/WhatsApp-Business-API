@@ -627,6 +627,302 @@
       "id": "58c9e0a9-ba07-4827-835f-b0f11c404299"
     },
     {
+      "name": "Session API Copy",
+      "item": [
+        {
+          "name": "Session Text",
+          "id": "c665c91d-0c01-41f4-b7c5-357a3c255a31",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{sample text}\"\n}"
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "response": []
+        },
+        {
+          "name": "Session Text With Preview Url",
+          "id": "5ed9af32-abc8-42c3-8175-dbd53394b646",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{text with valid url}\",\n    \"preview_url\": true\n}"
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "response": []
+        },
+        {
+          "name": "Session Document",
+          "id": "93490cb6-6995-4abe-ac5c-bcf0d4cf1d5c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"document\",\n        \"url\": \"{sample pdf url https://}\",\n        \"file\": \"{sample .pdf file name}\",\n        \"caption\": \"{sample text}\"\n    }\n}"
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "response": []
+        },
+        {
+          "name": "Session Audio",
+          "id": "a292d15a-f403-48ff-a3d7-030c35d0b20f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{token}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"audio\",\n        \"url\": \"{sample .mp3 url https://}\",\n        \"file\": \"{sample audio.mp3 file name}\",\n        \"caption\": \"{sample text}\"\n    }\n}"
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "response": []
+        },
+        {
+          "name": "Session Image",
+          "id": "d52b41cb-b6a0-4328-b72c-36de60602dbf",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"image\",\n        \"url\": \"{sample image url https://}\",\n        \"file\": \"{sample image .jpg file name}\",\n        \"caption\": \"{sample text}\"\n    }\n}"
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "response": []
+        },
+        {
+          "name": "Session Video",
+          "id": "0db97bac-6bf8-42bc-9800-d7f8f4eccf6b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"video\",\n        \"url\": \"{sample video url https://}\",\n        \"file\": \"{sample video .mp4 file name}\",\n        \"caption\": \"{sample text}\"\n    }\n}"
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "response": []
+        },
+        {
+          "name": "Session Interactive List",
+          "id": "a31b3e3e-114f-4306-b035-9e007538aef7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{phone number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"interactive_list\",\n        \"header\": {\n            \"text\": \"ABC Food Items\"\n        },\n        \"body\": \"Hello TAN. Please select from the list below\",\n        \"footer_text\": \"Menu\",\n        \"button_text\": \"Select\",\n        \"button\": [\n            {\n                \"section_title\": \"Chicken\",\n                \"row\": [\n                    {\n                        \"id\": \"1\",\n                        \"title\": \"Chicken Kadai\",\n                        \"description\": \"tasty gravy\"\n                    }\n                ]\n            },\n            {\n                \"section_title\": \"Fish\",\n                \"row\": [\n                    {\n                        \"id\": \"2\",\n                        \"title\": \"Fish Masala\",\n                        \"description\": \"yummy flavour\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "response": []
+        },
+        {
+          "name": "Session Quick Reply with Media",
+          "id": "af928367-bc53-43a4-99ed-ad49061085cc",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"interactive_reply\",\n        \"header\": {\n            \"type\": \"video\",\n            \"url\": \"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4\",\n            \"file\": \"pdf.pdf\",\n            \"caption\": \"This is a test video\"\n        },\n        \"body\": \"HI TAN, please select an option below\",\n        \"footer_text\": \"c@2021\",\n        \"button\": [\n            {\n                \"id\": \"1\",\n                \"title\": \"Yes\"\n            },\n            {\n                \"id\": \"2\",\n                \"title\": \"No\"\n            },\n            {\n                \"id\": \"3\",\n                \"title\": \"Maybe\"\n            }\n        ]\n    }\n}"
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "response": []
+        },
+        {
+          "name": "Session Quick Reply with Text",
+          "id": "384879fe-71fc-41ef-82d6-0e56386c3a39",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"interactive_reply\",\n        \"header\": {\n            \"text\": \"Super Selector Match\"\n        },\n        \"body\": \"HI TAN, please select an option below\",\n        \"footer_text\": \"c@2021\",\n        \"button\": [\n            {\n                \"id\": \"1\",\n                \"title\": \"Yes\"\n            },\n            {\n                \"id\": \"2\",\n                \"title\": \"No\"\n            },\n            {\n                \"id\": \"3\",\n                \"title\": \"Maybe\"\n            }\n        ]\n    }\n}"
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "response": []
+        },
+        {
+          "name": "Session Location",
+          "id": "d4def71b-9719-4eb0-a6d1-36a31a34cfcc",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{token}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"location\",\n        \"longitude\": \"{example: 72.838249}\",\n        \"latitude\": \"{example: 18.991341}\",\n        \"name\": \"{location name}\",\n        \"address\": \"{location address}\"\n    }\n}"
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "response": []
+        }
+      ],
+      "id": "6387de25-14d9-48c0-9949-a7adebeb9bae"
+    },
+    {
       "name": "Login",
       "id": "662b1e61-ac43-4159-8b41-f0be0fb2f271",
       "protocolProfileBehavior": {
