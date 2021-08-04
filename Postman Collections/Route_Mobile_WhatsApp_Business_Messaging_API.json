@@ -923,6 +923,232 @@
       "id": "6387de25-14d9-48c0-9949-a7adebeb9bae"
     },
     {
+      "name": "Callback Copy",
+      "item": [
+        {
+          "name": "Delivery report",
+          "id": "175cc03e-34a5-45c2-bfc9-b169b25bb20e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"statuses\": [{\r\n            \"conversation\": {\r\n\"id\": \"c58c55a6cae6d1cb43d0c37ef4defdbb\"\r\n},\r\n\"id\": \"da8e0ce4-bfbc-11eb-bb44-0242ac120005\",\r\n\"pricing\": {\r\n\"billable\": False/True,\r\n\"pricing_model\": \"NBP/CBP\"\r\n},\r\n            \"recipient_id\": \"919941639697\",\r\n            \"status\": \"sent/delivered/read/failed along with failure reason\",\r\n            \"timestamp\": \"1579606105\",\r\n\t\"extra\": \"qwkfm9_606hbf105\"\r\n}],\r\n\"brand_msisd\": \"918291004959\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "response": []
+        },
+        {
+          "name": "Incoming Text",
+          "id": "4339ecde-18fb-413e-9711-54b73a1571d3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"contacts\": [ {\r\n    \"profile\": {\r\n        \"name\": \"Kerry Fisher\"\r\n   \t        },\r\n    \"wa_id\": \"919941639697\"\r\n        } ],\r\n    \"messages\":[{\r\n    \"from\": \"919941639697\",\r\n    \"id\": \"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\r\n    \"timestamp\": \"1518694235\",\r\n    \"text\": {\r\n    \"body\": \"Hello this is an answer\"\r\n    \t   \t\t},\r\n    \"type\": \"text\"\r\n    }],\r\n\"brand_msisdn\": \"97144501601\",\r\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "response": []
+        },
+        {
+          "name": "Incoming Document",
+          "id": "369e6223-f9d0-43df-8176-3d1f5140cc36",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"messages\":[{\r\n\t        \"from\": \"919941639697\",\r\n\t        \"id\": \"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\r\n\t        \"timestamp\": \"1521827831\",\r\n\t        \"type\": \"voice\",\r\n\t        \"voice\": {\r\n            \"file\": \"/usr/local/wamedia/shared/463e/b7ec/ff4e4d9bb11cbd411b2\",\r\n\t            \t\"id\": \"463eb7ec-ff4e-4d9b-b110-1879cbd411b2\",   \t\t     \r\n\"mime_type\": \"audio/ogg; codecs=opus\",\r\n\t           \t\t \"sha256\": \"fa9e1807d936b7cebe63654ea3a7912923590521ef53b0710\",\r\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\r\n}\r\n\t  }],\r\n\"brand_msisdn\": \"97144501601\",\r\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "response": []
+        },
+        {
+          "name": "Incoming Audio",
+          "id": "474c50ac-1143-47ba-895a-c83146ab87f4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"messages\":[{\r\n\t        \"from\": \"919941639697\",\r\n\t        \"id\": \"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\r\n\t        \"timestamp\": \"1521827831\",\r\n\t        \"type\": \"voice\",\r\n\t        \"voice\": {\r\n            \"file\": \"/usr/local/wamedia/shared/463e/b7ec/ff4e4d9bb11cbd411b2\",\r\n\t            \t\"id\": \"463eb7ec-ff4e-4d9b-b110-1879cbd411b2\",   \t\t     \r\n\"mime_type\": \"audio/ogg; codecs=opus\",\r\n\t           \t\t \"sha256\": \"fa9e1807d936b7cebe63654ea3a7912923590521ef53b0710\",\r\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\r\n}\r\n\t  }],\r\n\"brand_msisdn\": \"97144501601\",\r\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "response": []
+        },
+        {
+          "name": "Incoming Video",
+          "id": "1c61bd53-1c96-4c88-aa30-101930363f94",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"messages\":[{\r\n\t        \"from\": \"919941639697\",\r\n\t        \"id\": \"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\r\n\t        \"timestamp\": \"1521827831\",\r\n\t        \"type\": \"voice\",\r\n\t        \"voice\": {\r\n            \"file\": \"/usr/local/wamedia/shared/463e/b7ec/ff4e4d9bb11cbd411b2\",\r\n\t            \t\"id\": \"463eb7ec-ff4e-4d9b-b110-1879cbd411b2\",   \t\t     \r\n\"mime_type\": \"audio/ogg; codecs=opus\",\r\n\t           \t\t \"sha256\": \"fa9e1807d936b7cebe63654ea3a7912923590521ef53b0710\",\r\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\r\n}\r\n\t  }],\r\n\"brand_msisdn\": \"97144501601\",\r\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "response": []
+        },
+        {
+          "name": "Incoming Image",
+          "id": "d60f863d-2bd3-4fd5-8039-911e70eb15a4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"messages\":[{\r\n\"from\":\"919941639697\",\r\n\"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\r\n\"image\":{\r\n\"file\":\"/usr/local/wamedia/shared/b1cf38-8734-4ad3-b4a1-ef0c10d0d683\",\r\n\"id\":\"b1c68f38-8734-4ad3-b4a1-ef0c10d683\",\r\n\"mime_type\":\"image/jpeg\",\r\n\"sha256\":\"29ed500fa64eb55fc19dc4124acb300e5dcca301ae99944db\",\r\n\"caption\": \"Check out my new phone!\",\r\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\r\n},\r\n\"timestamp\":\"1521497954\",\r\n\"type\":\"image\"\r\n}],\r\n\"brand_msisdn\": \"97144501601\",\r\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "response": []
+        },
+        {
+          "name": "Incoming Location",
+          "id": "5ff40f49-7cc2-4f18-836b-3c2fe318edab",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"contacts\": [ {\r\n\t\"profile\": {\r\n\"name\": \"Kerry Fisher\"\r\n},\r\n\t\"wa_id\": \"919941639697\"\r\n} ],\r\n\"messages\":[{\r\n\"from\":\"919941639697\",\r\n\"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\r\n\"location\":{\r\n\"address\":\"Main Street Beach, Santa Cruz, CA\",\r\n\"latitude\":38.9806263495,\r\n\"longitude\":-131.9428612257,\r\n\"name\":\"Main Street Beach\",\r\n\"url\":https://foursquare.com/v/4d7031d35b5df7744\r\n},\r\n\"timestamp\":\"1521497875\",\r\n\t\"type\":\"location\"\r\n}],\r\n\"brand_msisdn\": \"97144501601\",\r\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "response": []
+        },
+        {
+          "name": "Incoming List Message",
+          "id": "776c1381-b1ba-416e-a80a-c0c19e87002a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"messages\": [ {\r\n      \"context\": {\r\n        \"from\": \"sender_wa_id_of_context_message\",\r\n        \"group_id\": \"group_id_of_context_message\",\r\n        \"id\": \"message_id_of_context_message\",\r\n        \"mentions\": [ \"wa_id1\", \"wa_id2\" ]\r\n      },\r\n      \"from\": \"sender_wa_id\",\r\n      \"group_id\": \"group_id\",\r\n      \"id\": \"message_id\",\r\n      \"timestamp\": \"message_timestamp\",\r\n      \"type\": \"interactive\",\r\n      \"interactive\": {\r\n          \"type\": \"list_reply\",\r\n          \"list_reply\": {\r\n            \"title\": \"row-title-content-here\",\r\n            \"id\": \"unique-row-identifier-here\",\r\n            \"description\": \"row-description-content-here\"\r\n          }\r\n      },\r\n\"brand_msisdn\": \"97144501601\",\r\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "response": []
+        },
+        {
+          "name": "Incoming Template Reply Button",
+          "id": "fd72a9e2-0181-406c-8b11-399b1d827113",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"contacts\": [ {\r\n    \"profile\": {\r\n        \"name\": \"Kerry Fisher\"\r\n    },\r\n    \"wa_id\": \"16315551234\"\r\n  } ],\r\n   \"messages\":[{\r\n      \"context\":{\r\n         \"from\":\"16315558011\",\r\n         \"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\"\r\n         },\r\n      \"from\":\"16315551234\",\r\n      \"id\":\"gBGGFlA5FpafAgkOuJbRq54qwbM\",\r\n      \"text\":{\"body\":\"Yes, count me in!\"},\r\n      \"timestamp\":\"1521499915\",\r\n      \"type\":\"text\"\r\n  }],\r\n\"brand_msisdn\": \"97144501601\",\r\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "response": []
+        },
+        {
+          "name": "Incoming Session Reply Button",
+          "id": "fca78183-04f1-4314-b04a-71e5f1561a91",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"messages\": [ \r\n    {\r\n      \"context\": {\r\n        \"from\": \"sender_wa_id_of_context_message\",\r\n        \"group_id\": \"group_id_of_context_message\",\r\n        \"id\": \"message_id_of_context_message\",\r\n        \"mentions\": [ \"wa_id1\", \"wa_id2\" ]\r\n      },\r\n      \"from\": \"sender_wa_id\",\r\n      \"group_id\": \"group_id\",\r\n      \"id\": \"message_id\",\r\n      \"timestamp\": \"message_timestamp\",\r\n      \"type\": \"interactive\",\r\n      \"interactive\": {\r\n        \"type\": \"button_reply\",\r\n        \"button_reply\": {\r\n          \"id\": \"unique-button-identifier\",\r\n          \"title\": \"button-text\"\r\n        }\r\n      }\r\n    }\r\n  ],\r\n\"brand_msisdn\": \"97144501601\",\r\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "response": []
+        }
+      ],
+      "id": "41375305-fdac-4ff3-a732-fc93374517f2"
+    },
+    {
       "name": "Login",
       "id": "662b1e61-ac43-4159-8b41-f0be0fb2f271",
       "protocolProfileBehavior": {
