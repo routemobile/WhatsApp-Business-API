@@ -942,7 +942,7 @@
     },
     {
       "name": "Capability check",
-      "id": "a40045d2-1495-44f1-be0c-e81e55d9109e",
+      "id": "2da9680e-ade1-40f1-a269-80f21e06b99e",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -967,39 +967,7 @@
         "url": "https://apis.rmlconnect.net/wba/v1/contacts",
         "description": "Check WhatsApp enabled users via Capability check API.\n\n> *Note* :\n* Maximum 50 numbers are accepted in a request.\n* Do send messages to the end users post checking the capability to avoid account deactivation."
       },
-      "response": [
-        {
-          "id": "f5b88efa-19d2-4297-ab7e-e16b40ae8c69",
-          "name": "Capability check",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"contacts\":[\"+917045345285\",\"+256708730000\"]\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/contacts"
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"status\": \"success\",\r\n    \"result\": [\r\n        {\r\n            \"input\": \"+917045345285\",\r\n            \"status\": \"valid\"\r\n        },\r\n        {\r\n            \"input\": \"+256708730000\",\r\n            \"status\": \"invalid\"\r\n        }\r\n    ]\r\n}"
-        }
-      ]
+      "response": []
     }
   ]
 }
