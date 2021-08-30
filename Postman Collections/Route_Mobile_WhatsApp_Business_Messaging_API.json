@@ -6,28 +6,6 @@
   },
   "item": [
     {
-      "name": "Login",
-      "id": "662b1e61-ac43-4159-8b41-f0be0fb2f271",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"username\":\"{username}\",\r\n  \"password\":\"{password}\"\r\n}\r\n"
-        },
-        "url": "https://apis.rmlconnect.net/auth/v1/login/"
-      },
-      "response": []
-    },
-    {
       "name": "Template API",
       "id": "4999acfe-6fad-46ff-b1a2-0bb50857446d",
       "protocolProfileBehavior": {
@@ -905,6 +883,28 @@
           "body": null
         }
       ]
+    },
+    {
+      "name": "Login",
+      "id": "662b1e61-ac43-4159-8b41-f0be0fb2f271",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\":\"{username}\",\r\n  \"password\":\"{password}\"\r\n}\r\n"
+        },
+        "url": "https://apis.rmlconnect.net/auth/v1/login/"
+      },
+      "response": []
     },
     {
       "name": "Capability check",
