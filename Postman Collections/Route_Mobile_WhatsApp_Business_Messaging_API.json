@@ -930,7 +930,7 @@
             }
           }
         },
-        "url": "https://rapidapi.rmlconnect.net/wba/v1/contacts",
+        "url": "https://apis.rmlconnect.net/wba/v1/contacts",
         "description": "Check WhatsApp enabled users via Capability check API.\n\n> *Note* :\n* Maximum 50 numbers are accepted in a request.\n* Do send messages to the end users post checking the capability to avoid account deactivation."
       },
       "response": []
