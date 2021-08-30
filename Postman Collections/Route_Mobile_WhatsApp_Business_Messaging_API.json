@@ -28,7 +28,7 @@
       "response": []
     },
     {
-      "name": "Template API Copy",
+      "name": "Template API",
       "id": "4999acfe-6fad-46ff-b1a2-0bb50857446d",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
@@ -905,6 +905,35 @@
           "body": null
         }
       ]
+    },
+    {
+      "name": "Capability check Copy",
+      "id": "2da9680e-ade1-40f1-a269-80f21e06b99e",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{token}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"contacts\":[\"<NUM1>\",\"<NUM2>\",...,\"NUM50\">]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://rapidapi.rmlconnect.net/wba/v1/contacts",
+        "description": "Check WhatsApp enabled users via Capability check API.\n\n> *Note* :\n* Maximum 50 numbers are accepted in a request.\n* Do send messages to the end users post checking the capability to avoid account deactivation."
+      },
+      "response": []
     }
   ]
 }
