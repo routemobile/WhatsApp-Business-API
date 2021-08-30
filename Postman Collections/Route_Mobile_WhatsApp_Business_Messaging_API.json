@@ -907,7 +907,7 @@
       ]
     },
     {
-      "name": "Capability check Copy",
+      "name": "Capability check",
       "id": "2da9680e-ade1-40f1-a269-80f21e06b99e",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
