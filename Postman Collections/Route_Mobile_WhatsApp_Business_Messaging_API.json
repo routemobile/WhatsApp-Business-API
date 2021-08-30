@@ -244,7 +244,7 @@
       ]
     },
     {
-      "name": "Session API Copy",
+      "name": "Session API",
       "id": "6cee46c6-0af4-416a-af5a-36c62d2cf8b1",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
