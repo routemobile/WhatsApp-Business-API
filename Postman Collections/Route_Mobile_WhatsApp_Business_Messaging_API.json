@@ -939,6 +939,67 @@
           "body": "{\r\n    \"JWTAUTH\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiUk1MQm90IiwidXNlcm5hbWUiOiJSTUxCb3QiLCJleHAiOjE2MzAzMTU2MzIsImVtYWlsIjoid2hhdHNhcHBAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2MzAzMTIwMzIsImN1c3RvbWVyX2lkIjoiOXBGOGpUZ0pqSDdXIn0.r6h1mF6ZsMxzbJzfIWk-90Ubn-R3SbvvBr2PqLG4F\",\r\n    \"user_data\": {\r\n        \"username\": \"RMLBottt\",\r\n        \"first_name\": \"Route\",\r\n        \"last_name\": \"Bot.\",\r\n        \"email\": \"whatsapp@routemobile.com\",\r\n        \"phone_number\": \"+919372748624\",\r\n        \"password_reset\": false,\r\n        \"is_active\": true,\r\n        \"is_staff\": false\r\n    }\r\n}"
         }
       ]
+    },
+    {
+      "name": "Capability check",
+      "id": "a40045d2-1495-44f1-be0c-e81e55d9109e",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{token}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"contacts\":[\"<NUM1>\",\"<NUM2>\",...,\"NUM50\">]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://apis.rmlconnect.net/wba/v1/contacts",
+        "description": "Check WhatsApp enabled users via Capability check API.\n\n> *Note* :\n* Maximum 50 numbers are accepted in a request.\n* Do send messages to the end users post checking the capability to avoid account deactivation."
+      },
+      "response": [
+        {
+          "id": "f5b88efa-19d2-4297-ab7e-e16b40ae8c69",
+          "name": "Capability check",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{token}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"contacts\":[\"+917045345285\",\"+256708730000\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/contacts"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"status\": \"success\",\r\n    \"result\": [\r\n        {\r\n            \"input\": \"+917045345285\",\r\n            \"status\": \"valid\"\r\n        },\r\n        {\r\n            \"input\": \"+256708730000\",\r\n            \"status\": \"invalid\"\r\n        }\r\n    ]\r\n}"
+        }
+      ]
     }
   ]
 }
