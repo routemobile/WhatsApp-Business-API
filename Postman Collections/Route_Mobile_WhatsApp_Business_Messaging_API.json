@@ -633,7 +633,7 @@
       ]
     },
     {
-      "name": "Callback Copy",
+      "name": "Callback",
       "id": "b8362cba-2f37-4e06-824d-915744bcabac",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
