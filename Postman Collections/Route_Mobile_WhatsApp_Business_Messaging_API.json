@@ -885,28 +885,6 @@
       ]
     },
     {
-      "name": "Login",
-      "id": "662b1e61-ac43-4159-8b41-f0be0fb2f271",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"username\":\"{username}\",\r\n  \"password\":\"{password}\"\r\n}\r\n"
-        },
-        "url": "https://apis.rmlconnect.net/auth/v1/login/"
-      },
-      "response": []
-    },
-    {
       "name": "Capability check",
       "id": "2da9680e-ade1-40f1-a269-80f21e06b99e",
       "protocolProfileBehavior": {
