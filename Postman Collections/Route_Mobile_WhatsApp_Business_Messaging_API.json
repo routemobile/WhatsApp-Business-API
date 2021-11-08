@@ -635,7 +635,7 @@
           }
         },
         "url": "https://apis.rmlconnect.net/wba/templates",
-        "description": "Callback is configured against the WhatsApp Enterprise account for the clients to receive incoming messages and delivery reports.\n\n> *Note* :\n* End user incoming messages are received on callback shared by the the brand for the WhatsApp number. Response to those messages are sent using Session API.\n* Session works on rolling window concept which means brand's get 24 hour to reply back from the last incoming messages timestamp.\n* Timestamp shared on callback is in unix timestamp."
+        "description": "View Template message API helps you download all the approved and rejected list of templates added in the account."
       },
       "response": []
     },
