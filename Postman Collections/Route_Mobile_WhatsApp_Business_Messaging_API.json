@@ -61,7 +61,7 @@
                 }
               }
             },
-            "url": "https://rapidapi.rmlconnect.net/wba/v1/messages"
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "status": "Accepted",
           "code": 202,
@@ -98,7 +98,7 @@
                 }
               }
             },
-            "url": "https://rapidapi.rmlconnect.net/wba/v1/messages"
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "status": "Accepted",
           "code": 202,
@@ -135,7 +135,7 @@
                 }
               }
             },
-            "url": "https://rapidapi.rmlconnect.net/wba/v1/messages"
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "status": "Accepted",
           "code": 202,
@@ -172,7 +172,7 @@
                 }
               }
             },
-            "url": "https://rapidapi.rmlconnect.net/wba/v1/messages"
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "status": "Accepted",
           "code": 202,
@@ -209,7 +209,7 @@
                 }
               }
             },
-            "url": "https://rapidapi.rmlconnect.net/wba/v1/messages"
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "status": "Accepted",
           "code": 202,
@@ -277,7 +277,7 @@
                 }
               }
             },
-            "url": "https://rapidapi.rmlconnect.net/wba/v1/messages"
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "_postman_previewlanguage": null,
           "header": null,
@@ -312,7 +312,7 @@
                 }
               }
             },
-            "url": "https://rapidapi.rmlconnect.net/wba/v1/messages"
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "_postman_previewlanguage": null,
           "header": null,
@@ -347,7 +347,7 @@
                 }
               }
             },
-            "url": "https://rapidapi.rmlconnect.net/wba/v1/messages"
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "_postman_previewlanguage": null,
           "header": null,
@@ -382,7 +382,7 @@
                 }
               }
             },
-            "url": "https://rapidapi.rmlconnect.net/wba/v1/messages"
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "_postman_previewlanguage": null,
           "header": null,
@@ -417,7 +417,7 @@
                 }
               }
             },
-            "url": "https://rapidapi.rmlconnect.net/wba/v1/messages"
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "_postman_previewlanguage": null,
           "header": null,
@@ -452,7 +452,7 @@
                 }
               }
             },
-            "url": "https://rapidapi.rmlconnect.net/wba/v1/messages"
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "_postman_previewlanguage": null,
           "header": null,
@@ -487,7 +487,7 @@
                 }
               }
             },
-            "url": "https://rapidapi.rmlconnect.net/wba/v1/messages"
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "status": "Accepted",
           "code": 202,
@@ -524,7 +524,7 @@
                 }
               }
             },
-            "url": "https://rapidapi.rmlconnect.net/wba/v1/messages"
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "status": "Accepted",
           "code": 202,
@@ -561,7 +561,7 @@
                 }
               }
             },
-            "url": "https://rapidapi.rmlconnect.net/wba/v1/messages"
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "status": "Accepted",
           "code": 202,
@@ -598,7 +598,7 @@
                 }
               }
             },
-            "url": "https://rapidapi.rmlconnect.net/wba/v1/messages"
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
           },
           "status": "Accepted",
           "code": 202,
@@ -942,7 +942,7 @@
     },
     {
       "name": "Capability check",
-      "id": "2da9680e-ade1-40f1-a269-80f21e06b99e",
+      "id": "a40045d2-1495-44f1-be0c-e81e55d9109e",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -967,7 +967,255 @@
         "url": "https://apis.rmlconnect.net/wba/v1/contacts",
         "description": "Check WhatsApp enabled users via Capability check API.\n\n> *Note* :\n* Maximum 50 numbers are accepted in a request.\n* Do send messages to the end users post checking the capability to avoid account deactivation."
       },
-      "response": []
+      "response": [
+        {
+          "id": "f5b88efa-19d2-4297-ab7e-e16b40ae8c69",
+          "name": "Capability check",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{token}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"contacts\":[\"+917045345285\",\"+256708730000\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/contacts"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"status\": \"success\",\r\n    \"result\": [\r\n        {\r\n            \"input\": \"+917045345285\",\r\n            \"status\": \"valid\"\r\n        },\r\n        {\r\n            \"input\": \"+256708730000\",\r\n            \"status\": \"invalid\"\r\n        }\r\n    ]\r\n}"
+        }
+      ]
+    },
+    {
+      "name": "Send Template Message API Copy",
+      "id": "13c2317c-5a5a-4ee5-9b5d-5731b4163fab",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "type": "text",
+            "value": "{token}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n\t\t\"header\": [\n            {\n                \"image\": {\n                    \"link\": \"{sample image url hosted publicly starting with https:// and ending with file extension}\"\n                }\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}"
+        },
+        "url": "https://apis.rmlconnect.net/wba/v1/messages",
+        "description": "## API details:\n \n\nThis API is used to Broadcast WhatsApp pre-approved Messages( templates) to end user \n \n\n## API Request Details\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|-----------------------|-------------------------|\n|`phone`|Mandatory|end user phone number with country code and +|\n|`type`|Mandatory|API type|\n|`template_name`|Mandatory|Name of template approved with WhatsApp|\n|`lang_code`|Mandatory|language in which template is approved|\n|`header`|Optional|Add only for multimedia template|\n|`body`|Optional|Add only if you have variables in the template|\n|`button`|Optional|Add only if you have dynamic URL redirection button in the template|\n|`extra`|Optional|Add only if you wish to pass any extra value in API and the same will be recieved in delivery reports|\n \n## `header` Field Breakdown:\n \nheader is a JSON string consisting of a set of mandatory keys that define the text or multimedia based header section of a template:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|*Sample*|\n|-----|--------------------|-------------|--------|\n|`text`|Mandatory|Add only if you have template with text in the header|\"header\":[{\"text\":\"{variable}\"}]|\n|`link`|Mandatory|Add publicly hosted url for all multimedia template|\"header\":[{\"image\":{\"link\":\"{sample image url hosted publicly starting with https:// and ending with file extension}\"}}]|\n|`image`|Mandatory|Add only if you have image template|\"header\":[{\"image\":{\"link\":\"{sample image url hosted publicly starting with https:// and ending with file extension( you tube URL will not work)}\"}}]|\n|`document`|Mandatory|Add only if you have document template|\"header\":[{\"image\":{\"link\":\"{sample document url hosted publicly starting with https:// and ending with file extension}\"}}]|\n|`video`|Mandatory|Add only if you have video template|\"header\":[{\"image\":{\"link\":\"{sample video url hosted publicly starting with https:// and ending with file extension}\"}}]|\n \n\n## `body` Field Breakdown:\n \nbody is a JSON string consisting of a text key that defines the variables of a template:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|*Sample*|\n|-----|--------------------|-------------|--------|\n|`text`|Mandatory|Add if you have variable in the template|\"body\":[{\"text\":\"{variable}\"}]|\n|`text,text`|Mandatory|Add if you have multiple variable in the template|\"body\":[{\"text\":\"{variable}\"},{\"text\":\"{variable}\"}]|\n\n\n## `button` Field Breakdown:\n \nbutton is a JSON string consisting of a set of mandatory keys that define the dynamic variable pf the call to action url redirection button of a template:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|*Sample*|\n|-----|--------------------|-------------|--------|\n|`button_no`|Mandatory|Add only if you have dynamic url redirection button in the template, button_no key specified the position of dynamic url|\"button\":[{\"button_no\":\"0/1\",\"url\":\"{dynamic_url variable}\"}]|\n|`url`|Mandatory|Add only if you have dynamic url redirection button in the template, url key specifies the variable part of dynamic url redirection button|\"button\":[{\"button_no\":\"0/1\",\"url\":\"{dynamic_url variable}\"}]|\n\n\n## Success Response Structure:\nFor every success request, a JSON response is sent with key as status, message, and request_id.\n<br>\n \n|*Status*|*Message*|*Description*|*Response Code*|*Sample*|\n|--------|---------|-------------|---------------|--------|\n|processing|message received successfully|Valid payload structure with unique request_id per request|202|{\"message\":\"message received successfully\",\"status\":\"processing\",\"request_id\":\"794c3fd4-f142-11eb-8e02-0242ac120005\"}​​​​|\n \n\n## Failed Response Structure:\nFor every failed request, a JSON response is sent with key as status, message, and reason.\n<br>\n \n|*Status*|*Message*|*Description*|*Reason*|*Error Code*|*Sample*|\n|--------|---------|-------------|--------|---------------|--------|\n|failed|unable to process request|Incorrect Authorization token|Please check the integrity/validity of the token sent|202|{\"message\":\"unable to process request\",\"status\":\"failed\",\"reason\":\"Please check the integrity/validity of the token sent\"}|\n|-|The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.|Incorrect url|-|404|{\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"}|\n|-|The browser (or proxy) sent a request that this server could not understand.|Incorrect payload structure|-|400|{\"message\":\"The browser (or proxy) sent a request that this server could not understand.\"}|\n|failure|Please check API docs|Mandatory key is missing|unable to verify payload type|400|{\"message\":\"Please check API docs\",\"status\":\"failure\",\"reason\":\"unable to verify payload type\"}|\n \n> *Note* :\n* TPS around 100 provided multi-threading is implemented and utilize keepalive connections option in HTTP Client to minimize SSL overhead and latency.\n* Templates are triggered to users who are out of 24 hour window."
+      },
+      "response": [
+        {
+          "id": "075c1aa8-edf0-4cdc-a1cb-788ca121c91d",
+          "name": "Text",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "status": "Accepted",
+          "code": 202,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+        },
+        {
+          "id": "31a10c78-200e-4ea7-8397-87c0149af9bb",
+          "name": "Text with Text Header",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"text\": \"{variable}\"\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "status": "Accepted",
+          "code": 202,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+        },
+        {
+          "id": "2c46d450-720a-44dd-a010-abaaa8c10f63",
+          "name": "Media Image",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"image\": {\n                    \"link\": \"{sample image url hosted publicly starting with https:// and ending with file extension}\"\n                }\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "status": "Accepted",
+          "code": 202,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+        },
+        {
+          "id": "fa7cee9c-62a4-40fc-b05f-2e788a007474",
+          "name": "Media Document",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"document\": {\n                    \"link\": \"{sample document url hosted publicly starting with https:// and ending with file extension}\"\n                }\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "status": "Accepted",
+          "code": 202,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+        },
+        {
+          "id": "4f10ff12-5b8d-4af3-9de7-b03672d4df6d",
+          "name": "Media Video",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"video\": {\n                    \"link\": \"{sample video url hosted publicly starting with https:// and ending with file extension}\"\n                }\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "status": "Accepted",
+          "code": 202,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+        }
+      ]
     }
   ]
 }
