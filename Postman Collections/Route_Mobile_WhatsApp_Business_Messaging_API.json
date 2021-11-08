@@ -1029,6 +1029,280 @@
           "body": "{\r\n    \"status\": \"success\",\r\n    \"result\": [\r\n        {\r\n            \"input\": \"+917045345285\",\r\n            \"status\": \"valid\"\r\n        },\r\n        {\r\n            \"input\": \"+256708730000\",\r\n            \"status\": \"invalid\"\r\n        }\r\n    ]\r\n}"
         }
       ]
+    },
+    {
+      "name": "Callback Copy",
+      "id": "f6707cdb-5028-43ac-b01b-e68e363a18f6",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{client callback}",
+        "description": "Callback is configured against the WhatsApp Enterprise account for the clients to receive incoming messages and delivery reports.\n\n> *Note* :\n* End user incoming messages are received on callback shared by the the brand for the WhatsApp number. Response to those messages are sent using Session API.\n* Session works on rolling window concept which means brand's get 24 hour to reply back from the last incoming messages timestamp.\n* Timestamp shared on callback is in unix timestamp."
+      },
+      "response": [
+        {
+          "id": "813febc1-9427-4735-be1f-816706c29757",
+          "name": "Incoming Text",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"contacts\": [ {\n    \"profile\": {\n        \"name\": \"Kerry Fisher\"\n   \t        },\n    \"wa_id\": \"919941639697\"\n        } ],\n    \"messages\":[{\n    \"from\": \"919941639697\",\n    \"id\": \"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n    \"timestamp\": \"1518694235\",\n    \"text\": {\n    \"body\": \"Hello this is an answer\"\n    \t   \t\t},\n    \"type\": \"text\"\n    }],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": null
+        },
+        {
+          "id": "bc4bc70a-9218-4c3c-84f7-81fb5c51ae4b",
+          "name": "Incoming Image",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"apiKey\": \"IfgKh@jHkB5%232roUt20nhVgfb!ll*mv12lSt\",\n\t\"messages\":[{\n\"from\":\"919941639697\",\n\"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n      \t\"image\":{\n\"file\":\"/usr/local/wamedia/shared/b1cf38-8734-4ad3-b4a1-ef0c10d0d683\",\n\"id\":\"b1c68f38-8734-4ad3-b4a1-ef0c10d683\",\n\"mime_type\":\"image/jpeg\",\n\"sha256\":\"29ed500fa64eb55fc19dc4124acb300e5dcca301ae99944db\",\n\"caption\": \"Check out my new phone!\",\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\n},\n\"timestamp\":\"1521497954\",\n\"type\":\"image\"\n}],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": null
+        },
+        {
+          "id": "c5a6686f-4ccf-4052-94e7-de3034d40812",
+          "name": "Incoming Audio",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"messages\":[{\n\t        \"from\": \"919941639697\",\n\t        \"id\": \"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n\t        \"timestamp\": \"1521827831\",\n\t        \"type\": \"voice\",\n\t        \"voice\": {\n            \"file\": \"/usr/local/wamedia/shared/463e/b7ec/ff4e4d9bb11cbd411b2\",\n\t            \t\"id\": \"463eb7ec-ff4e-4d9b-b110-1879cbd411b2\",   \t\t     \n\"mime_type\": \"audio/ogg; codecs=opus\",\n\t           \t\t \"sha256\": \"fa9e1807d936b7cebe63654ea3a7912923590521ef53b0710\",\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\n}\n\t  }],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": null
+        },
+        {
+          "id": "daafd234-0fbe-4cc1-9e2d-8137625ef149",
+          "name": "Incoming Video",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"messages\":[{\n\t        \"from\": \"919941639697\",\n\t        \"id\": \"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n\t        \"timestamp\": \"1521827831\",\n\t        \"type\": \"voice\",\n\t        \"voice\": {\n            \"file\": \"/usr/local/wamedia/shared/463e/b7ec/ff4e4d9bb11cbd411b2\",\n\t            \t\"id\": \"463eb7ec-ff4e-4d9b-b110-1879cbd411b2\",   \t\t     \n\"mime_type\": \"audio/ogg; codecs=opus\",\n\t           \t\t \"sha256\": \"fa9e1807d936b7cebe63654ea3a7912923590521ef53b0710\",\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\n}\n\t  }],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": null
+        },
+        {
+          "id": "1f149b20-fcf0-4b56-98a7-a455e5a25b9a",
+          "name": "Incoming Document",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"apiKey\": \"IfgKh@jHkB5%232roUt20nhVgfb!ll*mv12lSt\",\n\t\"messages\":[{\n\"from\":\"919941639697\",\n\"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n\"timestamp\":\"1522189546\",\n\"type\":\"document\",\n\"document\":{\n\"caption\":\"80skaraokesonglistartist\",\n\"file\":\"/usr/local/wamedia/shared/fc233119-733f-49c-bcbd-b2f68f798e33\",\n\"id\":\"fc233119-733f-49c-bcbd-b2f68f798e33\",\n\"mime_type\":\"application/pdf\",\n\"sha256\":\"3b11fa6ef2bde1dd14726e09d3eda220f6484f32d5d5caa4b8e\",\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\n}\n}],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": null
+        },
+        {
+          "id": "259a986c-3160-45d1-b9e9-7d74056b985b",
+          "name": "Incoming Location",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"contacts\": [ {\n\t\"profile\": {\n\"name\": \"Kerry Fisher\"\n},\n\t\"wa_id\": \"919941639697\"\n} ],\n\"messages\":[{\n\"from\":\"919941639697\",\n\"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n\"location\":{\n\"address\":\"Main Street Beach, Santa Cruz, CA\",\n\"latitude\":38.9806263495,\n\"longitude\":-131.9428612257,\n\"name\":\"Main Street Beach\",\n\"url\":https://foursquare.com/v/4d7031d35b5df7744\n},\n\"timestamp\":\"1521497875\",\n\t\"type\":\"location\"\n}],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": null
+        },
+        {
+          "id": "baac4ecd-108d-483f-a015-bda46146d81f",
+          "name": "Incoming Interactive List",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"contacts\": [{\"profile\": {\"name\": \"overw@tch\"}, \"wa_id\": \"917045273671\"}], \"messages\": [{\"context\": {\"from\": \"919321821011\", \"id\": \"gBEGkXBFJzZxAgmfF7hnuD9l0C0\"}, \"from\": \"917045273671\", \"id\": \"b398502a-eea8-11eb-ac2a-0242ac120007\", \"interactive\": {\"list_reply\": {\"description\": \"yummy flavour\", \"id\": \"rd133\", \"title\": \"Fish Masala\"}, \"type\": \"list_reply\"}, \"timestamp\": \"1627369389\", \"type\": \"interactive\"}], \"brand_msisdn\": \"919321821011\", \"request_id\": \"b398502a-eea8-11eb-ac2a-0242ac120007\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": null
+        },
+        {
+          "id": "f56d0f4a-8f59-47df-905b-a80657775459",
+          "name": "Incoming Template Quick Reply",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"contacts\": [ {\r\n    \"profile\": {\r\n        \"name\": \"Kerry Fisher\"\r\n    },\r\n    \"wa_id\": \"16315551234\"\r\n  } ],\r\n   \"messages\":[{\r\n      \"context\":{\r\n         \"from\":\"16315558011\",\r\n         \"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\"\r\n         },\r\n      \"from\":\"16315551234\",\r\n      \"id\":\"gBGGFlA5FpafAgkOuJbRq54qwbM\",\r\n      \"text\":{\"body\":\"Yes, count me in!\"},\r\n      \"timestamp\":\"1521499915\",\r\n      \"type\":\"text\"\r\n  }],\r\n\"brand_msisdn\": \"97144501601\",\r\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": null
+        },
+        {
+          "id": "3e9de2bb-654e-48c6-a61b-cb3cbd2078d9",
+          "name": "Incoming Session Quick Reply",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"contacts\": [{\"profile\": {\"name\": \"overw@tch\"}, \"wa_id\": \"917045273671\"}], \"messages\": [{\"context\": {\"from\": \"919321821011\", \"id\": \"gBEGkXBFJzZxAgnSloIc4jvENOo\"}, \"from\": \"917045273671\", \"id\": \"c5e396fe-eea8-11eb-9e4e-0242ac120007\", \"interactive\": {\"button_reply\": {\"id\": \"aaaa\", \"title\": \"Yes\"}, \"type\": \"button_reply\"}, \"timestamp\": \"1627369420\", \"type\": \"interactive\"}]}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": null
+        },
+        {
+          "id": "8520cf8c-e81f-4191-a0fc-8b5eff837212",
+          "name": "Delivery Report",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"statuses\": [{\n\"conversation\": {\n\"id\": \"c58c55a6cae6d1cb43d0c37ef4defdbb\"\n},\n\"id\": \"da8e0ce4-bfbc-11eb-bb44-0242ac120005\",\n\"pricing\": {\n\"billable\": False/True,\n\"pricing_model\": \"NBP/CBP\"\n},\n\"recipient_id\": \"919941639697\",\n\"status\": \"sent/delivered/read/failed along with failure reason\",\n\"timestamp\": \"1579606105\",\n\"extra\": \"qwkfm9_606hbf105\"\n}]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": null
+        }
+      ]
     }
   ]
 }
