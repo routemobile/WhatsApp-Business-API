@@ -1216,6 +1216,395 @@
           "body": "{\r\n    \"status\": \"success\",\r\n    \"result\": [\r\n        {\r\n            \"input\": \"+917045345285\",\r\n            \"status\": \"valid\"\r\n        },\r\n        {\r\n            \"input\": \"+256708730000\",\r\n            \"status\": \"invalid\"\r\n        }\r\n    ]\r\n}"
         }
       ]
+    },
+    {
+      "name": "Send Session Message API Copy",
+      "id": "06c9706c-6889-45b7-9c13-4f8aa20b32cc",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "type": "text",
+            "value": "{token}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "https://apis.rmlconnect.net/wba/v1/messages",
+        "description": "## API details:\n \n\nThis API is used to trigger WhatsApp response to user initiated messages within 24 hour window.\n \n\n## API Request Details\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|-----------------------|-------------------------|\n|`phone`|Mandatory|end user phone number with country code and +|\n|`text`|Mandatory|Add only for text response|\n|`peview_url`|Mandatory|Add only if you wish to see thumbnail of url added in text response|\n|`media`|Mandatory|Add only for multimedia response|\n|`extra`|Optional|Add only if you wish to pass any extra value in API and the same will be recieved in delivery reports|\n \n## `media` Field Breakdown:\n \nmedia is a JSON string consisting of a set of mandatory keys that define the multimedia or button sections of a session response:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|--------------------|-------------|\n|`type`|Mandatory|Defines the multimedia shared|\n|`url`|Mandatory|Add publicly hosted url for all multimedia message|\n|`file`|Mandatory|Filename of the multimedia to be triggered|\n|`caption`|Mandatory|Text shared along with multimedia. Though it's mandatory still will not reflect for Audio|\n|`latitude`|Mandatory|Add only if you are sending Location in session message|\n|`longitude`|Mandatory|Add only if you are sending Location in session message|\n|`name`|Mandatory|Add only if you are sending Location in session message|\n|`address`|Mandatory|Add only if you are sending Location in session message|\n|`header`|Mandatory|Add only if you are sending button in session message. This defines the text or multimedia shared in the button|\n|`body`|Mandatory|Add only if you are sending button in session message. Defines the text descption at the top of the button options|\n|`footer_text`|Optional|Add only if you are sending button in session message. Add only if you want to show footer in button option|\n|`button`|Mandatory|Add only if you are sending button in session message|\n \n\n## `header` Field Breakdown:\n \nheader is a JSON string consisting of a set of mandatory keys that define the button based header section of a session response:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|--------------------|-------------|\n|`text`|Mandatory|Add only if you are sending text in the header|\n|`type`|Mandatory|Add only if you are sending multimedia in the header. Defines the button triggered|\n|`url`|Mandatory|Add only if you are sending multimedia in the header. Add publicly hosted url for all multimedia message|\n|`file`|Mandatory|Add only if you are sending multimedia in the header. Defines the filename of the multimedia to be triggered|\n|`caption`|Mandatory|Add only if you are sending multimedia in the header. Defines the text shared along with multimedia. Though it's mandatory still will not reflect for Audio|\n\n\n## `body` Field Breakdown:\n \nbody is a JSON string consisting of a text that defines the button options in session message:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|--------------------|-------------|\n|`body`|Mandatory|Defines the text descption at the top of the button options|\n\n\n## `button` Field Breakdown:\n \nbutton is a JSON string consisting of a set of mandatory keys of the button options in session message:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|--------------------|-------------|\n|`id`|Mandatory|Defines the position of the button|\n|`title`|Mandatory|Defines the button label. Max 20 charaters|\n|`description`|Optional|Add only if you want to describe more in regards to the interactive menu list button|\n|`section_title`|Mandatory|Add only if you have interactive menu list button. Describes the main list of the button|\n\n## Success Response Structure:\nFor every success request, a JSON response is sent with key as status, message, and request_id.\n<br>\n \n|*Status*|*Message*|*Description*|*Response Code*|*Sample*|\n|--------|---------|-------------|---------------|--------|\n|processing|message received successfully|Valid payload structure with unique request_id per request|202|{\"message\":\"message received successfully\",\"status\":\"processing\",\"request_id\":\"794c3fd4-f142-11eb-8e02-0242ac120005\"}​​​​|\n \n\n## Failed Response Structure:\nFor every failed request, a JSON response is sent with key as status, message, and reason.\n<br>\n \n|*Status*|*Message*|*Description*|*Reason*|*Error Code*|*Sample*|\n|--------|---------|-------------|--------|---------------|--------|\n|failed|unable to process request|Incorrect Authorization token|Please check the integrity/validity of the token sent|401|{\"message\":\"unable to process request\",\"status\":\"failed\",\"reason\":\"Please check the integrity/validity of the token sent\"}|\n|-|The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.|Incorrect url|-|404|{\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"}|\n|-|The browser (or proxy) sent a request that this server could not understand.|Incorrect payload structure|-|400|{\"message\":\"The browser (or proxy) sent a request that this server could not understand.\"}|\n|failure|Please check API docs|Mandatory key is missing|unable to verify payload type|400|{\"message\":\"Please check API docs\",\"status\":\"failure\",\"reason\":\"unable to verify payload type\"}|\n \n> *Note* :\n* TPS around 100 provided multi-threading is implemented and utilize keepalive connections option in HTTP Client to minimize SSL overhead and latency.\n* End user incoming messages are received on callback shared by the the brand for the WhatsApp number. Response to those messages are sent using Session API.\n* Session works on rolling window concept which means brand's get 24 hour to reply back from the last incoming messages timestamp.\n* Timestamp shared on callback is in unix timestamp.\n* Buttons are of 2 types: Interactive List menu (max 10) and Quick reply button (max 3).\n* Interactive list menu button supports only text in header.\n* Quick reply button supports both text and multimedia in header."
+      },
+      "response": [
+        {
+          "id": "a12a54c4-8b65-4087-96a7-6b23e4475202",
+          "name": "Session Text",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{sample text}\",\n    \"extra\": \"{your value}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+        },
+        {
+          "id": "f81a24bc-7fa1-431f-a212-21272294fc27",
+          "name": "Session Text With Preview Url",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{text with valid url}\",\n    \"preview_url\": true,\n    \"extra\": \"{your value}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+        },
+        {
+          "id": "8af7c289-b976-4264-9bf9-aa4cf92ad252",
+          "name": "Session Document",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"document\",\n        \"url\": \"{sample pdf url https://}\",\n        \"file\": \"{sample .pdf file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+        },
+        {
+          "id": "4ea16426-b8ea-4eb1-a2dd-c5b23c09b8ca",
+          "name": "Session Audio",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{token}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"audio\",\n        \"url\": \"{sample .mp3 url https://}\",\n        \"file\": \"{sample audio.mp3 file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+        },
+        {
+          "id": "b17f898c-48aa-472a-9373-a9d9a2a434c0",
+          "name": "Session Image",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"image\",\n        \"url\": \"{sample image url https://}\",\n        \"file\": \"{sample image .jpg file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+        },
+        {
+          "id": "b2118a7e-5333-491f-be03-21951effaa4c",
+          "name": "Session Video",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "{token}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"video\",\n        \"url\": \"{sample video url https://}\",\n        \"file\": \"{sample video .mp4 file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+        },
+        {
+          "id": "75bf0718-cf02-468d-a3b2-75b192e9473c",
+          "name": "Session Location",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{token}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"location\",\n        \"longitude\": \"{example: 72.838249}\",\n        \"latitude\": \"{example: 18.991341}\",\n        \"name\": \"{location name}\",\n        \"address\": \"{location address}\"\n    },\n    \"extra\": \"{your value}\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "status": "Accepted",
+          "code": 202,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+        },
+        {
+          "id": "96996abd-7b78-42b1-96ba-a09dcadd6789",
+          "name": "Session Interactive List",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{token}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{phone number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"interactive_list\",\n        \"header\": {\n        \"text\": \"ABC Food Items\"\n        },\n        \"body\": \"Hello TAN. Please select from the list below\",\n        \"footer_text\": \"Menu\",\n        \"button_text\": \"Select\",\n        \"button\": [\n            {\n                \"section_title\": \"Chicken\",\n                \"row\": [\n                    {\n                        \"id\": \"1\",\n                        \"title\": \"Chicken Kadai\",\n                        \"description\": \"tasty gravy\"\n                    }\n                ]\n            },\n            {\n                \"section_title\": \"Fish\",\n                \"row\": [\n                    {\n                        \"id\": \"2\",\n                        \"title\": \"Fish Masala\",\n                        \"description\": \"yummy flavour\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "status": "Accepted",
+          "code": 202,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+        },
+        {
+          "id": "6831381c-749a-4b8c-afe7-bafe6ac70dfe",
+          "name": "Session Quick Reply with Media",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{token}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"interactive_reply\",\n        \"header\": {\n            \"type\": \"video\",\n            \"url\": \"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4\",\n            \"file\": \"pdf.pdf\",\n            \"caption\": \"This is a test video\"\n        },\n        \"body\": \"HI TAN, please select an option below\",\n        \"footer_text\": \"c@2021\",\n        \"button\": [\n            {\n                \"id\": \"1\",\n                \"title\": \"Yes\"\n            },\n            {\n                \"id\": \"2\",\n                \"title\": \"No\"\n            },\n            {\n                \"id\": \"3\",\n                \"title\": \"Maybe\"\n            }\n        ]\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "status": "Accepted",
+          "code": 202,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+        },
+        {
+          "id": "94a8f43f-61e4-431a-896a-1e1a70014e23",
+          "name": "Session Quick Reply with Text",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "{token}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"interactive_reply\",\n        \"header\": {\n            \"text\": \"Super Selector Match\"\n        },\n        \"body\": \"HI TAN, please select an option below\",\n        \"footer_text\": \"c@2021\",\n        \"button\": [\n            {\n                \"id\": \"1\",\n                \"title\": \"Yes\"\n            },\n            {\n                \"id\": \"2\",\n                \"title\": \"No\"\n            },\n            {\n                \"id\": \"3\",\n                \"title\": \"Maybe\"\n            }\n        ]\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/messages"
+          },
+          "status": "Accepted",
+          "code": 202,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+        }
+      ]
     }
   ]
 }
