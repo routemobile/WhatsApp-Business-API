@@ -1359,6 +1359,67 @@
           "body": "{\r\n    \"status\": \"success\",\r\n    \"result\": [\r\n        {\r\n            \"input\": \"+917045345285\",\r\n            \"status\": \"valid\"\r\n        },\r\n        {\r\n            \"input\": \"+256708730000\",\r\n            \"status\": \"invalid\"\r\n        }\r\n    ]\r\n}"
         }
       ]
+    },
+    {
+      "name": "Capability check Copy",
+      "id": "d524c781-2a9a-4b5e-b53d-1591bcd517e0",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{token}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"contacts\":[\"<NUM1>\",\"<NUM2>\",...,\"NUM50\">]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://apis.rmlconnect.net/wba/v1/contacts",
+        "description": "Check WhatsApp enabled users via Capability check API.\n\n> *Note* :\n* Maximum 50 numbers are accepted in a request.\n* Do send messages to the end users post checking the capability to avoid account deactivation."
+      },
+      "response": [
+        {
+          "id": "0ce38003-24a8-4475-81ea-20047214d9c0",
+          "name": "Capability check",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{token}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"contacts\":[\"+917045345285\",\"+256708730000\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/v1/contacts"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": "{\r\n    \"status\": \"success\",\r\n    \"result\": [\r\n        {\r\n            \"input\": \"+917045345285\",\r\n            \"status\": \"valid\"\r\n        },\r\n        {\r\n            \"input\": \"+256708730000\",\r\n            \"status\": \"invalid\"\r\n        }\r\n    ]\r\n}"
+        }
+      ]
     }
   ]
 }
