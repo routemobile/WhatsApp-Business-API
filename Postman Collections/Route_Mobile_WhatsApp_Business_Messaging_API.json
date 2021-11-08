@@ -6,7 +6,7 @@
   },
   "item": [
     {
-      "name": "Send Template Message API Copy",
+      "name": "Send Template Message API",
       "id": "13c2317c-5a5a-4ee5-9b5d-5731b4163fab",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
