@@ -611,6 +611,35 @@
       ]
     },
     {
+      "name": "View Template Message",
+      "id": "5a227dad-e8bf-497d-9d51-02f058fd7347",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{token}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{client callback}",
+        "description": "Callback is configured against the WhatsApp Enterprise account for the clients to receive incoming messages and delivery reports.\n\n> *Note* :\n* End user incoming messages are received on callback shared by the the brand for the WhatsApp number. Response to those messages are sent using Session API.\n* Session works on rolling window concept which means brand's get 24 hour to reply back from the last incoming messages timestamp.\n* Timestamp shared on callback is in unix timestamp."
+      },
+      "response": []
+    },
+    {
       "name": "Callback",
       "id": "b8362cba-2f37-4e06-824d-915744bcabac",
       "protocolProfileBehavior": {
@@ -883,35 +912,6 @@
           "body": null
         }
       ]
-    },
-    {
-      "name": "View Template Message",
-      "id": "5a227dad-e8bf-497d-9d51-02f058fd7347",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "{token}",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": "{client callback}",
-        "description": "Callback is configured against the WhatsApp Enterprise account for the clients to receive incoming messages and delivery reports.\n\n> *Note* :\n* End user incoming messages are received on callback shared by the the brand for the WhatsApp number. Response to those messages are sent using Session API.\n* Session works on rolling window concept which means brand's get 24 hour to reply back from the last incoming messages timestamp.\n* Timestamp shared on callback is in unix timestamp."
-      },
-      "response": []
     },
     {
       "name": "Login",
