@@ -222,7 +222,7 @@
       ]
     },
     {
-      "name": "Send Session Message API Copy",
+      "name": "Send Session Message API",
       "id": "06c9706c-6889-45b7-9c13-4f8aa20b32cc",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
