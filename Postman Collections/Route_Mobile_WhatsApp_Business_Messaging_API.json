@@ -885,7 +885,7 @@
       ]
     },
     {
-      "name": "View Template Message Copy",
+      "name": "View Template Message",
       "id": "5a227dad-e8bf-497d-9d51-02f058fd7347",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
