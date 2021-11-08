@@ -1244,62 +1244,6 @@
       ]
     },
     {
-      "name": "Login Copy",
-      "id": "20b4410c-3d3b-4fdd-bc77-edb86a5220a3",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"username\":\"{username}\",\r\n  \"password\":\"{password}\"\r\n}\r\n"
-        },
-        "url": "https://apis.rmlconnect.net/auth/v1/login/",
-        "description": "To create Authorization token which is used in send message and Capability check APIs.\n\n> *Note* :\n* Validity of token is 1 hour."
-      },
-      "response": [
-        {
-          "id": "098b7f85-3419-442f-90e8-b4ff88126e64",
-          "name": "Login",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"username\":\"RMLBottt\",\r\n  \"password\":\"RMLBottt\"\r\n}\r\n",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/auth/v1/login/"
-          },
-          "status": "Created",
-          "code": 201,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"JWTAUTH\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiUk1MQm90IiwidXNlcm5hbWUiOiJSTUxCb3QiLCJleHAiOjE2MzAzMTU2MzIsImVtYWlsIjoid2hhdHNhcHBAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2MzAzMTIwMzIsImN1c3RvbWVyX2lkIjoiOXBGOGpUZ0pqSDdXIn0.r6h1mF6ZsMxzbJzfIWk-90Ubn-R3SbvvBr2PqLG4F\",\r\n    \"user_data\": {\r\n        \"username\": \"RMLBottt\",\r\n        \"first_name\": \"Route\",\r\n        \"last_name\": \"Bot.\",\r\n        \"email\": \"whatsapp@routemobile.com\",\r\n        \"phone_number\": \"+919372748624\",\r\n        \"password_reset\": false,\r\n        \"is_active\": true,\r\n        \"is_staff\": false\r\n    }\r\n}"
-        }
-      ]
-    },
-    {
       "name": "Capability check",
       "id": "a40045d2-1495-44f1-be0c-e81e55d9109e",
       "protocolProfileBehavior": {
