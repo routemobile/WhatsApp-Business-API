@@ -910,6 +910,31 @@
           "cookie": [],
           "responseTime": null,
           "body": null
+        },
+        {
+          "id": "cdb08eac-aec4-4c33-976d-901d751f8a9a",
+          "name": "Delivery Report Copy",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\"statuses\": [{\n\"conversation\": {\n\"id\": \"c58c55a6cae6d1cb43d0c37ef4defdbb\"\n},\n\"id\": \"da8e0ce4-bfbc-11eb-bb44-0242ac120005\",\n\"pricing\": {\n\"billable\": False/True,\n\"pricing_model\": \"NBP/CBP\"\n},\n\"recipient_id\": \"919941639697\",\n\"status\": \"sent/delivered/read/failed along with failure reason\",\n\"timestamp\": \"1579606105\",\n\"extra\": \"qwkfm9_606hbf105\"\n}]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{client callback}"
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "responseTime": null,
+          "body": null
         }
       ]
     },
