@@ -124,6 +124,35 @@
       "id": "db253cbc-e06b-4219-8284-ebd2f77f2888"
     },
     {
+      "name": "View Template Message",
+      "id": "5a227dad-e8bf-497d-9d51-02f058fd7347",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{token}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://apis.rmlconnect.net/wba/templates",
+        "description": "View Template message API helps you download all the approved and rejected list of templates added in the account."
+      },
+      "response": []
+    },
+    {
       "name": "Send Template Message API",
       "id": "13c2317c-5a5a-4ee5-9b5d-5731b4163fab",
       "protocolProfileBehavior": {
@@ -727,35 +756,6 @@
           "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
         }
       ]
-    },
-    {
-      "name": "View Template Message",
-      "id": "5a227dad-e8bf-497d-9d51-02f058fd7347",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "{token}",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": "https://apis.rmlconnect.net/wba/templates",
-        "description": "View Template message API helps you download all the approved and rejected list of templates added in the account."
-      },
-      "response": []
     },
     {
       "name": "Callback",
