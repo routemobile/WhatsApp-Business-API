@@ -19,13 +19,13 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTY0MDAwMjU4OSwiZW1haWwiOiJQcm9kdWN0LWRlc2tAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2Mzk5OTg5ODksImN1c3RvbWVyX2lkIjoiOWlyNURnN2J2c0NBIn0.hMFQipe-Eel1ClReaRNIyWS8KQyy8lE81O5cohm5_Cw",
+                "value": "{token}",
                 "type": "text"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"template_name\": \"testing_api_5\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"body text\"\n        },\n        \"buttons\": {\n            \"type\": \"call_to_action\",\n            \"elements\": [\n                {\n                    \"label\": \"Make a Call\",\n                    \"contact_no\": \"+919987862472\"\n                },\n                {\n                    \"label\": \"Visit Us\",\n                    \"type\": \"static\",\n                    \"website\": \"https://google.com\"\n                }\n            ]\n        }\n    }\n}",
+              "raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"body text\"\n        },\n        \"buttons\": {\n            \"type\": \"call_to_action\",\n            \"elements\": [\n                {\n                    \"label\": \"Make a Call\",\n                    \"contact_no\": \"+919987862472\"\n                },\n                {\n                    \"label\": \"Visit Us\",\n                    \"type\": \"static\",\n                    \"website\": \"https://google.com\"\n                }\n            ]\n        }\n    }\n}",
               "options": {
                 "raw": {
                   "language": "json"
