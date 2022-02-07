@@ -6,6 +6,124 @@
   },
   "item": [
     {
+      "name": "Create Template Copy",
+      "item": [
+        {
+          "name": "call to action template",
+          "id": "4d6995c7-29ad-493e-afbc-f639109b4cb9",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTY0MDAwMjU4OSwiZW1haWwiOiJQcm9kdWN0LWRlc2tAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2Mzk5OTg5ODksImN1c3RvbWVyX2lkIjoiOWlyNURnN2J2c0NBIn0.hMFQipe-Eel1ClReaRNIyWS8KQyy8lE81O5cohm5_Cw",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"template_name\": \"testing_api_5\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"body text\"\n        },\n        \"buttons\": {\n            \"type\": \"call_to_action\",\n            \"elements\": [\n                {\n                    \"label\": \"Make a Call\",\n                    \"contact_no\": \"+919987862472\"\n                },\n                {\n                    \"label\": \"Visit Us\",\n                    \"type\": \"static\",\n                    \"website\": \"https://google.com\"\n                }\n            ]\n        }\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/template/create"
+          },
+          "response": []
+        },
+        {
+          "name": "quick reply template",
+          "id": "40082a6c-7955-41c9-b1b6-48f15b640f7c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTY0MDAwMjU4OSwiZW1haWwiOiJQcm9kdWN0LWRlc2tAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2Mzk5OTg5ODksImN1c3RvbWVyX2lkIjoiOWlyNURnN2J2c0NBIn0.hMFQipe-Eel1ClReaRNIyWS8KQyy8lE81O5cohm5_Cw",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"template_name\": \"testing_api\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        },\n        \"buttons\": {\n            \"type\": \"quick_reply\",\n            \"elements\": [\n                {\n                    \"label\": \"Button 1\"\n                },\n                {\n                    \"label\": \"Button 2\"\n                },\n                {\n                    \"label\": \"Button 3\"\n                }\n            ]\n        }\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/template/create"
+          },
+          "response": []
+        },
+        {
+          "name": "media template",
+          "id": "39dda634-3a81-40b9-a671-6f25cb475ac1",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTY0MDAwMjU4OSwiZW1haWwiOiJQcm9kdWN0LWRlc2tAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2Mzk5OTg5ODksImN1c3RvbWVyX2lkIjoiOWlyNURnN2J2c0NBIn0.hMFQipe-Eel1ClReaRNIyWS8KQyy8lE81O5cohm5_Cw",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"template_name\": \"testing_api\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        }\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/template/create"
+          },
+          "response": []
+        },
+        {
+          "name": "text template",
+          "id": "ee586e08-ac2b-48f6-906c-b62ddda9fa52",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTY0MDAwMjU4OSwiZW1haWwiOiJQcm9kdWN0LWRlc2tAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2Mzk5OTg5ODksImN1c3RvbWVyX2lkIjoiOWlyNURnN2J2c0NBIn0.hMFQipe-Eel1ClReaRNIyWS8KQyy8lE81O5cohm5_Cw",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"template_name\": \"testing_api\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        }\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/template/create"
+          },
+          "response": []
+        }
+      ],
+      "id": "db253cbc-e06b-4219-8284-ebd2f77f2888"
+    },
+    {
       "name": "Send Template Message API",
       "id": "13c2317c-5a5a-4ee5-9b5d-5731b4163fab",
       "protocolProfileBehavior": {
@@ -894,7 +1012,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n\"statuses\": [{\n\"conversation\": {\n\"id\": \"c58c55a6cae6d1cb43d0c37ef4defdbb\"\n},\n\"id\": \"da8e0ce4-bfbc-11eb-bb44-0242ac120005\",\n\"pricing\": {\n\"billable\": False/True,\n\"pricing_model\": \"NBP/CBP\"\n},\n\"recipient_id\": \"919941639697\",\n\"status\": \"sent/delivered/read/deleted\",\n\"timestamp\": \"1579606105\",\n\"extra\": \"qwkfm9_606hbf105\"\n}]\n}",
+              "raw": "{\n    \"statuses\":[{\n    \"conversation\":{\n        \"expiration_timestamp\":1644060900,\n        \"id\":\"d24f4c6e3e2d731dea92fcbd2822fa6a\",\n        \"origin\":{\n            \"type\":\"user_initiated\"\n            }\n        },\n        \"id\":\"5a9f3040-85ae-11ec-8168-0242ac120005\",\n        \"pricing\":{\n            \"billable\":true,\n            \"category\":\"user_initiated\",\n            \"pricing_model\":\"CBP\"\n            },\n            \"recipient_id\":\"919860063600\",\n            \"status\":\"sent\",\n            \"timestamp\":\"1643974443\",\n            \"type\":\"message\",\n            \"extra\":null\n            }\n        ],\n        \"brand_msisdn\":\"917428182444\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
