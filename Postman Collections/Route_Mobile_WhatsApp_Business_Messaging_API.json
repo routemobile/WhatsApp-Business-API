@@ -47,7 +47,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTY0MDAwMjU4OSwiZW1haWwiOiJQcm9kdWN0LWRlc2tAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2Mzk5OTg5ODksImN1c3RvbWVyX2lkIjoiOWlyNURnN2J2c0NBIn0.hMFQipe-Eel1ClReaRNIyWS8KQyy8lE81O5cohm5_Cw",
+                "value": "{token}",
                 "type": "text"
               }
             ],
@@ -75,13 +75,13 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTY0MDAwMjU4OSwiZW1haWwiOiJQcm9kdWN0LWRlc2tAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2Mzk5OTg5ODksImN1c3RvbWVyX2lkIjoiOWlyNURnN2J2c0NBIn0.hMFQipe-Eel1ClReaRNIyWS8KQyy8lE81O5cohm5_Cw",
+                "value": "{token}",
                 "type": "text"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"template_name\": \"testing_api\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        }\n    }\n}",
+              "raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        }\n    }\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -103,13 +103,13 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTY0MDAwMjU4OSwiZW1haWwiOiJQcm9kdWN0LWRlc2tAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2Mzk5OTg5ODksImN1c3RvbWVyX2lkIjoiOWlyNURnN2J2c0NBIn0.hMFQipe-Eel1ClReaRNIyWS8KQyy8lE81O5cohm5_Cw",
+                "value": "{token}",
                 "type": "text"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n    \"template_name\": \"testing_api\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        }\n    }\n}",
+              "raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        }\n    }\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -122,6 +122,124 @@
         }
       ],
       "id": "db253cbc-e06b-4219-8284-ebd2f77f2888"
+    },
+    {
+      "name": "Create Template Copy",
+      "item": [
+        {
+          "name": "call to action template",
+          "id": "49bc13cc-ef21-44d5-92ab-b8d13fcc03f6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{token}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"body text\"\n        },\n        \"buttons\": {\n            \"type\": \"call_to_action\",\n            \"elements\": [\n                {\n                    \"label\": \"Make a Call\",\n                    \"contact_no\": \"+919987862472\"\n                },\n                {\n                    \"label\": \"Visit Us\",\n                    \"type\": \"static\",\n                    \"website\": \"https://google.com\"\n                }\n            ]\n        }\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/template/create"
+          },
+          "response": []
+        },
+        {
+          "name": "quick reply template",
+          "id": "f1166f62-99f5-469f-8c16-544164ebdfe5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{token}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        },\n        \"buttons\": {\n            \"type\": \"quick_reply\",\n            \"elements\": [\n                {\n                    \"label\": \"Button 1\"\n                },\n                {\n                    \"label\": \"Button 2\"\n                },\n                {\n                    \"label\": \"Button 3\"\n                }\n            ]\n        }\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/template/create"
+          },
+          "response": []
+        },
+        {
+          "name": "media template",
+          "id": "c55e80ae-2d08-4d58-ba6c-e3be579043bf",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{token}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        }\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/template/create"
+          },
+          "response": []
+        },
+        {
+          "name": "text template",
+          "id": "f9f93ea6-899c-4df6-8141-8a9be1e758b4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{token}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        }\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "https://apis.rmlconnect.net/wba/template/create"
+          },
+          "response": []
+        }
+      ],
+      "id": "f1896bdd-ca6f-46d1-a519-a020946c3442"
     },
     {
       "name": "View Template Message",
