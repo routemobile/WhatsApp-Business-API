@@ -47,7 +47,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTY0MDAwMjU4OSwiZW1haWwiOiJQcm9kdWN0LWRlc2tAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2Mzk5OTg5ODksImN1c3RvbWVyX2lkIjoiOWlyNURnN2J2c0NBIn0.hMFQipe-Eel1ClReaRNIyWS8KQyy8lE81O5cohm5_Cw",
+                "value": "{token}",
                 "type": "text"
               }
             ],
