@@ -1,1295 +1,1177 @@
 {
-  "info": {
-    "_postman_id": "ed7335bf-83bc-4ca2-95ae-a6fa9839284a",
-    "name": "Route Mobile WhatsApp Business Messaging API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "Create Template",
-      "item": [
-        {
-          "name": "call to action template",
-          "id": "4d6995c7-29ad-493e-afbc-f639109b4cb9",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"body text\"\n        },\n        \"buttons\": {\n            \"type\": \"call_to_action\",\n            \"elements\": [\n                {\n                    \"label\": \"Make a Call\",\n                    \"contact_no\": \"+919987862472\"\n                },\n                {\n                    \"label\": \"Visit Us\",\n                    \"type\": \"static\",\n                    \"website\": \"https://google.com\"\n                }\n            ]\n        }\n    }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/template/create"
-          },
-          "response": []
-        },
-        {
-          "name": "quick reply template",
-          "id": "40082a6c-7955-41c9-b1b6-48f15b640f7c",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        },\n        \"buttons\": {\n            \"type\": \"quick_reply\",\n            \"elements\": [\n                {\n                    \"label\": \"Button 1\"\n                },\n                {\n                    \"label\": \"Button 2\"\n                },\n                {\n                    \"label\": \"Button 3\"\n                }\n            ]\n        }\n    }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/template/create"
-          },
-          "response": []
-        },
-        {
-          "name": "media template",
-          "id": "39dda634-3a81-40b9-a671-6f25cb475ac1",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        }\n    }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/template/create"
-          },
-          "response": []
-        },
-        {
-          "name": "text template",
-          "id": "ee586e08-ac2b-48f6-906c-b62ddda9fa52",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        }\n    }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/template/create"
-          },
-          "response": []
-        }
-      ],
-      "id": "db253cbc-e06b-4219-8284-ebd2f77f2888"
-    },
-    {
-      "name": "Create Template Copy",
-      "item": [
-        {
-          "name": "call to action template",
-          "id": "49bc13cc-ef21-44d5-92ab-b8d13fcc03f6",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"body text\"\n        },\n        \"buttons\": {\n            \"type\": \"call_to_action\",\n            \"elements\": [\n                {\n                    \"label\": \"Make a Call\",\n                    \"contact_no\": \"+919987862472\"\n                },\n                {\n                    \"label\": \"Visit Us\",\n                    \"type\": \"static\",\n                    \"website\": \"https://google.com\"\n                }\n            ]\n        }\n    }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/template/create"
-          },
-          "response": []
-        },
-        {
-          "name": "quick reply template",
-          "id": "f1166f62-99f5-469f-8c16-544164ebdfe5",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        },\n        \"buttons\": {\n            \"type\": \"quick_reply\",\n            \"elements\": [\n                {\n                    \"label\": \"Button 1\"\n                },\n                {\n                    \"label\": \"Button 2\"\n                },\n                {\n                    \"label\": \"Button 3\"\n                }\n            ]\n        }\n    }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/template/create"
-          },
-          "response": []
-        },
-        {
-          "name": "media template",
-          "id": "c55e80ae-2d08-4d58-ba6c-e3be579043bf",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        }\n    }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/template/create"
-          },
-          "response": []
-        },
-        {
-          "name": "text template",
-          "id": "f9f93ea6-899c-4df6-8141-8a9be1e758b4",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        }\n    }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/template/create"
-          },
-          "response": []
-        }
-      ],
-      "id": "f1896bdd-ca6f-46d1-a519-a020946c3442"
-    },
-    {
-      "name": "View Template Message",
-      "id": "5a227dad-e8bf-497d-9d51-02f058fd7347",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "{token}",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": "https://apis.rmlconnect.net/wba/templates",
-        "description": "View Template message API helps you download all the approved and rejected list of templates added in the account."
-      },
-      "response": []
-    },
-    {
-      "name": "Send Template Message API",
-      "id": "13c2317c-5a5a-4ee5-9b5d-5731b4163fab",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "name": "Content-Type",
-            "type": "text",
-            "value": "application/json"
-          },
-          {
-            "key": "Authorization",
-            "type": "text",
-            "value": "{token}"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n\t\t\"header\": [\n            {\n                \"image\": {\n                    \"link\": \"{sample image url hosted publicly starting with https:// and ending with file extension}\"\n                }\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}"
-        },
-        "url": "https://apis.rmlconnect.net/wba/v1/messages",
-        "description": "## API details:\n \n\nThis API is used to Broadcast WhatsApp pre-approved Messages( templates) to end user \n \n\n## API Request Details\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|-----------------------|-------------------------|\n|`phone`|Mandatory|end user phone number with country code and +|\n|`type`|Mandatory|API type|\n|`template_name`|Mandatory|Name of template approved with WhatsApp|\n|`lang_code`|Mandatory|language in which template is approved|\n|`header`|Optional|Add only for multimedia template|\n|`body`|Optional|Add only if you have variables in the template|\n|`button`|Optional|Add only if you have dynamic URL redirection button in the template|\n|`extra`|Optional|Add only if you wish to pass any extra value in API and the same will be recieved in delivery reports|\n \n## `header` Field Breakdown:\n \nheader is a JSON string consisting of a set of mandatory keys that define the text or multimedia based header section of a template:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|*Sample*|\n|-----|--------------------|-------------|--------|\n|`text`|Mandatory|Add only if you have template with text in the header|\"header\":[{\"text\":\"{variable}\"}]|\n|`link`|Mandatory|Add publicly hosted url for all multimedia template|\"header\":[{\"image\":{\"link\":\"{sample image url hosted publicly starting with https:// and ending with file extension}\"}}]|\n|`image`|Mandatory|Add only if you have image template|\"header\":[{\"image\":{\"link\":\"{sample image url hosted publicly starting with https:// and ending with file extension( you tube URL will not work)}\"}}]|\n|`document`|Mandatory|Add only if you have document template|\"header\":[{\"image\":{\"link\":\"{sample document url hosted publicly starting with https:// and ending with file extension}\"}}]|\n|`video`|Mandatory|Add only if you have video template|\"header\":[{\"image\":{\"link\":\"{sample video url hosted publicly starting with https:// and ending with file extension}\"}}]|\n \n\n## `body` Field Breakdown:\n \nbody is a JSON string consisting of a text key that defines the variables of a template:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|*Sample*|\n|-----|--------------------|-------------|--------|\n|`text`|Mandatory|Add if you have variable in the template|\"body\":[{\"text\":\"{variable}\"}]|\n|`text,text`|Mandatory|Add if you have multiple variable in the template|\"body\":[{\"text\":\"{variable}\"},{\"text\":\"{variable}\"}]|\n\n\n## `button` Field Breakdown:\n \nbutton is a JSON string consisting of a set of mandatory keys that define the dynamic variable pf the call to action url redirection button of a template:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|*Sample*|\n|-----|--------------------|-------------|--------|\n|`button_no`|Mandatory|Add only if you have dynamic url redirection button in the template, button_no key specified the position of dynamic url|\"button\":[{\"button_no\":\"0/1\",\"url\":\"{dynamic_url variable}\"}]|\n|`url`|Mandatory|Add only if you have dynamic url redirection button in the template, url key specifies the variable part of dynamic url redirection button|\"button\":[{\"button_no\":\"0/1\",\"url\":\"{dynamic_url variable}\"}]|\n\n\n## Success Response Structure:\nFor every success request, a JSON response is sent with key as status, message, and request_id.\n<br>\n \n|*Status*|*Message*|*Description*|*Response Code*|*Sample*|\n|--------|---------|-------------|---------------|--------|\n|processing|message received successfully|Valid payload structure with unique request_id per request|202|{\"message\":\"message received successfully\",\"status\":\"processing\",\"request_id\":\"794c3fd4-f142-11eb-8e02-0242ac120005\"}​​​​|\n \n\n## Failed Response Structure:\nFor every failed request, a JSON response is sent with key as status, message, and reason.\n<br>\n \n|*Status*|*Message*|*Description*|*Reason*|*Error Code*|*Sample*|\n|--------|---------|-------------|--------|---------------|--------|\n|failed|unable to process request|Incorrect Authorization token|Please check the integrity/validity of the token sent|202|{\"message\":\"unable to process request\",\"status\":\"failed\",\"reason\":\"Please check the integrity/validity of the token sent\"}|\n|-|The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.|Incorrect url|-|404|{\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"}|\n|-|The browser (or proxy) sent a request that this server could not understand.|Incorrect payload structure|-|400|{\"message\":\"The browser (or proxy) sent a request that this server could not understand.\"}|\n|failure|Please check API docs|Mandatory key is missing|unable to verify payload type|400|{\"message\":\"Please check API docs\",\"status\":\"failure\",\"reason\":\"unable to verify payload type\"}|\n \n> *Note* :\n* TPS around 100 provided multi-threading is implemented and utilize keepalive connections option in HTTP Client to minimize SSL overhead and latency.\n* Templates are triggered to users who are out of 24 hour window."
-      },
-      "response": [
-        {
-          "id": "075c1aa8-edf0-4cdc-a1cb-788ca121c91d",
-          "name": "Text",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "type": "text",
-                "value": "{token}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "status": "Accepted",
-          "code": 202,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
-        },
-        {
-          "id": "31a10c78-200e-4ea7-8397-87c0149af9bb",
-          "name": "Text with Text Header",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "type": "text",
-                "value": "{token}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"text\": \"{variable}\"\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "status": "Accepted",
-          "code": 202,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
-        },
-        {
-          "id": "2c46d450-720a-44dd-a010-abaaa8c10f63",
-          "name": "Media Image",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "type": "text",
-                "value": "{token}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"image\": {\n                    \"link\": \"{sample image url hosted publicly starting with https:// and ending with file extension}\"\n                }\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "status": "Accepted",
-          "code": 202,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
-        },
-        {
-          "id": "fa7cee9c-62a4-40fc-b05f-2e788a007474",
-          "name": "Media Document",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "type": "text",
-                "value": "{token}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"document\": {\n                    \"link\": \"{sample document url hosted publicly starting with https:// and ending with file extension}\"\n                }\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "status": "Accepted",
-          "code": 202,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
-        },
-        {
-          "id": "4f10ff12-5b8d-4af3-9de7-b03672d4df6d",
-          "name": "Media Video",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "type": "text",
-                "value": "{token}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"video\": {\n                    \"link\": \"{sample video url hosted publicly starting with https:// and ending with file extension}\"\n                }\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "status": "Accepted",
-          "code": 202,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
-        }
-      ]
-    },
-    {
-      "name": "Send Session Message API",
-      "id": "06c9706c-6889-45b7-9c13-4f8aa20b32cc",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "name": "Content-Type",
-            "type": "text",
-            "value": "application/json"
-          },
-          {
-            "key": "Authorization",
-            "type": "text",
-            "value": "{token}"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "url": "https://apis.rmlconnect.net/wba/v1/messages",
-        "description": "## API details:\n \n\nThis API is used to trigger WhatsApp response to user initiated messages within 24 hour window.\n \n\n## API Request Details\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|-----------------------|-------------------------|\n|`phone`|Mandatory|end user phone number with country code and +|\n|`text`|Mandatory|Add only for text response|\n|`peview_url`|Mandatory|Add only if you wish to see thumbnail of url added in text response|\n|`media`|Mandatory|Add only for multimedia response|\n|`extra`|Optional|Add only if you wish to pass any extra value in API and the same will be recieved in delivery reports|\n \n## `media` Field Breakdown:\n \nmedia is a JSON string consisting of a set of mandatory keys that define the multimedia or button sections of a session response:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|--------------------|-------------|\n|`type`|Mandatory|Defines the multimedia shared|\n|`url`|Mandatory|Add publicly hosted url for all multimedia message|\n|`file`|Mandatory|Filename of the multimedia to be triggered|\n|`caption`|Mandatory|Text shared along with multimedia. Though it's mandatory still will not reflect for Audio|\n|`latitude`|Mandatory|Add only if you are sending Location in session message|\n|`longitude`|Mandatory|Add only if you are sending Location in session message|\n|`name`|Mandatory|Add only if you are sending Location in session message|\n|`address`|Mandatory|Add only if you are sending Location in session message|\n|`header`|Mandatory|Add only if you are sending button in session message. This defines the text or multimedia shared in the button|\n|`body`|Mandatory|Add only if you are sending button in session message. Defines the text descption at the top of the button options|\n|`footer_text`|Optional|Add only if you are sending button in session message. Add only if you want to show footer in button option|\n|`button`|Mandatory|Add only if you are sending button in session message|\n \n\n## `header` Field Breakdown:\n \nheader is a JSON string consisting of a set of mandatory keys that define the button based header section of a session response:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|--------------------|-------------|\n|`text`|Mandatory|Add only if you are sending text in the header|\n|`type`|Mandatory|Add only if you are sending multimedia in the header. Defines the button triggered|\n|`url`|Mandatory|Add only if you are sending multimedia in the header. Add publicly hosted url for all multimedia message|\n|`file`|Mandatory|Add only if you are sending multimedia in the header. Defines the filename of the multimedia to be triggered|\n|`caption`|Mandatory|Add only if you are sending multimedia in the header. Defines the text shared along with multimedia. Though it's mandatory still will not reflect for Audio|\n\n\n## `body` Field Breakdown:\n \nbody is a JSON string consisting of a text that defines the button options in session message:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|--------------------|-------------|\n|`body`|Mandatory|Defines the text descption at the top of the button options|\n\n\n## `button` Field Breakdown:\n \nbutton is a JSON string consisting of a set of mandatory keys of the button options in session message:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|--------------------|-------------|\n|`id`|Mandatory|Defines the position of the button|\n|`title`|Mandatory|Defines the button label. Max 20 charaters|\n|`description`|Optional|Add only if you want to describe more in regards to the interactive menu list button|\n|`section_title`|Mandatory|Add only if you have interactive menu list button. Describes the main list of the button|\n\n## Success Response Structure:\nFor every success request, a JSON response is sent with key as status, message, and request_id.\n<br>\n \n|*Status*|*Message*|*Description*|*Response Code*|*Sample*|\n|--------|---------|-------------|---------------|--------|\n|processing|message received successfully|Valid payload structure with unique request_id per request|202|{\"message\":\"message received successfully\",\"status\":\"processing\",\"request_id\":\"794c3fd4-f142-11eb-8e02-0242ac120005\"}​​​​|\n \n\n## Failed Response Structure:\nFor every failed request, a JSON response is sent with key as status, message, and reason.\n<br>\n \n|*Status*|*Message*|*Description*|*Reason*|*Error Code*|*Sample*|\n|--------|---------|-------------|--------|---------------|--------|\n|failed|unable to process request|Incorrect Authorization token|Please check the integrity/validity of the token sent|401|{\"message\":\"unable to process request\",\"status\":\"failed\",\"reason\":\"Please check the integrity/validity of the token sent\"}|\n|-|The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.|Incorrect url|-|404|{\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"}|\n|-|The browser (or proxy) sent a request that this server could not understand.|Incorrect payload structure|-|400|{\"message\":\"The browser (or proxy) sent a request that this server could not understand.\"}|\n|failure|Please check API docs|Mandatory key is missing|unable to verify payload type|400|{\"message\":\"Please check API docs\",\"status\":\"failure\",\"reason\":\"unable to verify payload type\"}|\n \n> *Note* :\n* TPS around 100 provided multi-threading is implemented and utilize keepalive connections option in HTTP Client to minimize SSL overhead and latency.\n* End user incoming messages are received on callback shared by the the brand for the WhatsApp number. Response to those messages are sent using Session API.\n* Session works on rolling window concept which means brand's get 24 hour to reply back from the last incoming messages timestamp.\n* Timestamp shared on callback is in unix timestamp.\n* Buttons are of 2 types: Interactive List menu (max 10) and Quick reply button (max 3).\n* Interactive list menu button supports only text in header.\n* Quick reply button supports both text and multimedia in header."
-      },
-      "response": [
-        {
-          "id": "a12a54c4-8b65-4087-96a7-6b23e4475202",
-          "name": "Session Text",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "type": "text",
-                "value": "{token}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{sample text}\",\n    \"extra\": \"{your value}\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
-        },
-        {
-          "id": "f81a24bc-7fa1-431f-a212-21272294fc27",
-          "name": "Session Text With Preview Url",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "type": "text",
-                "value": "{token}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{text with valid url}\",\n    \"preview_url\": true,\n    \"extra\": \"{your value}\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
-        },
-        {
-          "id": "8af7c289-b976-4264-9bf9-aa4cf92ad252",
-          "name": "Session Document",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "type": "text",
-                "value": "{token}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"document\",\n        \"url\": \"{sample pdf url https://}\",\n        \"file\": \"{sample .pdf file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
-        },
-        {
-          "id": "4ea16426-b8ea-4eb1-a2dd-c5b23c09b8ca",
-          "name": "Session Audio",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"audio\",\n        \"url\": \"{sample .mp3 url https://}\",\n        \"file\": \"{sample audio.mp3 file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
-        },
-        {
-          "id": "b17f898c-48aa-472a-9373-a9d9a2a434c0",
-          "name": "Session Image",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "type": "text",
-                "value": "{token}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"image\",\n        \"url\": \"{sample image url https://}\",\n        \"file\": \"{sample image .jpg file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
-        },
-        {
-          "id": "b2118a7e-5333-491f-be03-21951effaa4c",
-          "name": "Session Video",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "type": "text",
-                "value": "{token}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"video\",\n        \"url\": \"{sample video url https://}\",\n        \"file\": \"{sample video .mp4 file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
-        },
-        {
-          "id": "75bf0718-cf02-468d-a3b2-75b192e9473c",
-          "name": "Session Location",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"location\",\n        \"longitude\": \"{example: 72.838249}\",\n        \"latitude\": \"{example: 18.991341}\",\n        \"name\": \"{location name}\",\n        \"address\": \"{location address}\"\n    },\n    \"extra\": \"{your value}\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "status": "Accepted",
-          "code": 202,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
-        },
-        {
-          "id": "96996abd-7b78-42b1-96ba-a09dcadd6789",
-          "name": "Session Interactive List",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"phone\": \"{phone number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"interactive_list\",\n        \"header\": {\n        \"text\": \"ABC Food Items\"\n        },\n        \"body\": \"Hello TAN. Please select from the list below\",\n        \"footer_text\": \"Menu\",\n        \"button_text\": \"Select\",\n        \"button\": [\n            {\n                \"section_title\": \"Chicken\",\n                \"row\": [\n                    {\n                        \"id\": \"1\",\n                        \"title\": \"Chicken Kadai\",\n                        \"description\": \"tasty gravy\"\n                    }\n                ]\n            },\n            {\n                \"section_title\": \"Fish\",\n                \"row\": [\n                    {\n                        \"id\": \"2\",\n                        \"title\": \"Fish Masala\",\n                        \"description\": \"yummy flavour\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "status": "Accepted",
-          "code": 202,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
-        },
-        {
-          "id": "6831381c-749a-4b8c-afe7-bafe6ac70dfe",
-          "name": "Session Quick Reply with Media",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"interactive_reply\",\n        \"header\": {\n            \"type\": \"video\",\n            \"url\": \"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4\",\n            \"file\": \"pdf.pdf\",\n            \"caption\": \"This is a test video\"\n        },\n        \"body\": \"HI TAN, please select an option below\",\n        \"footer_text\": \"c@2021\",\n        \"button\": [\n            {\n                \"id\": \"1\",\n                \"title\": \"Yes\"\n            },\n            {\n                \"id\": \"2\",\n                \"title\": \"No\"\n            },\n            {\n                \"id\": \"3\",\n                \"title\": \"Maybe\"\n            }\n        ]\n    }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "status": "Accepted",
-          "code": 202,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
-        },
-        {
-          "id": "94a8f43f-61e4-431a-896a-1e1a70014e23",
-          "name": "Session Quick Reply with Text",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"interactive_reply\",\n        \"header\": {\n            \"text\": \"Super Selector Match\"\n        },\n        \"body\": \"HI TAN, please select an option below\",\n        \"footer_text\": \"c@2021\",\n        \"button\": [\n            {\n                \"id\": \"1\",\n                \"title\": \"Yes\"\n            },\n            {\n                \"id\": \"2\",\n                \"title\": \"No\"\n            },\n            {\n                \"id\": \"3\",\n                \"title\": \"Maybe\"\n            }\n        ]\n    }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/messages"
-          },
-          "status": "Accepted",
-          "code": 202,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
-        }
-      ]
-    },
-    {
-      "name": "Callback",
-      "id": "b8362cba-2f37-4e06-824d-915744bcabac",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": "{client callback}",
-        "description": "Callback is configured against the WhatsApp Enterprise account for the clients to receive incoming messages and delivery reports.\n\n> *Note* :\n\n*   End user incoming messages are received on callback shared by the the brand for the WhatsApp number. Response to those messages are sent using Session API.\n*   Session works on rolling window concept which means brand's get 24 hour to reply back from the last incoming messages timestamp.\n*   Timestamp shared on callback is in unix timestamp.\n    \n\n## Failure Error Details\n\n| *Error Code* | *Error Messages* |\n| --- | --- |\n| 400 | Media download error |\n| 401 | Group does not exist |\n| 402 | Others |\n| 408 | Message is not valid |\n| 410 | Message expired |\n| 429 | Rate limit hit |\n| 430 | Others |\n| 432 | Others |\n| 433 | Others |\n| 470 | Re-engagement message |\n| 471 | Spam Rate limit hit |\n| 472 | User's number is part of an experiment |\n| 500 | Unknown Error |\n| 1000 | Others |\n| 1001 | Message too long |\n| 1002 | Invalid recipient type |\n| 1003 | Not a group participant |\n| 1004 | Resource already exists |\n| 1005 | Others |\n| 1006 | Others |\n| 1008 | Required parameter is missing |\n| 1009 | Parameter value is not valid |\n| 1010 | Parameter is not required |\n| 1011 | Others |\n| 1012 | Group is unknown |\n| 1013 | User is not valid |\n| 1014 | Corrupt Image |\n| 1015 | Others |\n| 1016 | Others |\n| 1017 | Others |\n| 1018 | Others |\n| 1019 | Not a group admin |\n| 1020 | Bad group |\n| 1021 | Bad User |\n| 1022 | Others |\n| 1023 | Others |\n| 1024 | Others |\n| 1025 | Invalid Request |\n| 1026 | Receiver Incapable |\n| 2000 | Template Param Count Mismatch |\n| 2001 | Template Missing |\n| 2002 | Template Fetch Failed |\n| 2003 | Template Pack Missing |\n| 2004 | Template Param Length Too Long |\n| 2005 | Template Hydrated Text Too Long |\n| 2006 | Template White Space Policy Violated |\n| 2007 | Template Format Character Policy Violated |\n| 2008 | Template Media Format Unsupported |\n| 2009 | Template Required Component Missing |\n| 2010 | Template Invalid Hydrated URL |\n| 2011 | Template Invalid Phone Number |\n| 2012 | Template Parameter Format Mismatch |\n| 2013 | Template Buttons Unsupported |"
-      },
-      "response": [
-        {
-          "id": "2b385690-4eaf-4d51-b309-ea63b5ea8b63",
-          "name": "Incoming Text",
-          "originalRequest": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"contacts\": [ {\n    \"profile\": {\n        \"name\": \"Kerry Fisher\"\n   \t        },\n    \"wa_id\": \"919941639697\"\n        } ],\n    \"messages\":[{\n    \"from\": \"919941639697\",\n    \"id\": \"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n    \"timestamp\": \"1518694235\",\n    \"text\": {\n    \"body\": \"Hello this is an answer\"\n    \t   \t\t},\n    \"type\": \"text\"\n    }],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "{client callback}"
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": null
-        },
-        {
-          "id": "95c3b820-42b3-4d32-b739-d3c2f55c1c24",
-          "name": "Incoming Image",
-          "originalRequest": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\"apiKey\": \"IfgKh@jHkB5%232roUt20nhVgfb!ll*mv12lSt\",\n\t\"messages\":[{\n\"from\":\"919941639697\",\n\"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n      \t\"image\":{\n\"file\":\"/usr/local/wamedia/shared/b1cf38-8734-4ad3-b4a1-ef0c10d0d683\",\n\"id\":\"b1c68f38-8734-4ad3-b4a1-ef0c10d683\",\n\"mime_type\":\"image/jpeg\",\n\"sha256\":\"29ed500fa64eb55fc19dc4124acb300e5dcca301ae99944db\",\n\"caption\": \"Check out my new phone!\",\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\n},\n\"timestamp\":\"1521497954\",\n\"type\":\"image\"\n}],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "{client callback}"
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": null
-        },
-        {
-          "id": "1e2d6b9c-ac81-40e7-9337-37c979fef49d",
-          "name": "Incoming Audio",
-          "originalRequest": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"messages\":[{\n\t        \"from\": \"919941639697\",\n\t        \"id\": \"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n\t        \"timestamp\": \"1521827831\",\n\t        \"type\": \"voice\",\n\t        \"voice\": {\n            \"file\": \"/usr/local/wamedia/shared/463e/b7ec/ff4e4d9bb11cbd411b2\",\n\t            \t\"id\": \"463eb7ec-ff4e-4d9b-b110-1879cbd411b2\",   \t\t     \n\"mime_type\": \"audio/ogg; codecs=opus\",\n\t           \t\t \"sha256\": \"fa9e1807d936b7cebe63654ea3a7912923590521ef53b0710\",\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\n}\n\t  }],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "{client callback}"
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": null
-        },
-        {
-          "id": "98e744fe-7a74-4be5-a828-3b435566d14e",
-          "name": "Incoming Video",
-          "originalRequest": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"messages\":[{\n\t        \"from\": \"919941639697\",\n\t        \"id\": \"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n\t        \"timestamp\": \"1521827831\",\n\t        \"type\": \"voice\",\n\t        \"voice\": {\n            \"file\": \"/usr/local/wamedia/shared/463e/b7ec/ff4e4d9bb11cbd411b2\",\n\t            \t\"id\": \"463eb7ec-ff4e-4d9b-b110-1879cbd411b2\",   \t\t     \n\"mime_type\": \"audio/ogg; codecs=opus\",\n\t           \t\t \"sha256\": \"fa9e1807d936b7cebe63654ea3a7912923590521ef53b0710\",\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\n}\n\t  }],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "{client callback}"
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": null
-        },
-        {
-          "id": "c578f642-6659-4c73-a66b-98071d15ba5b",
-          "name": "Incoming Document",
-          "originalRequest": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"apiKey\": \"IfgKh@jHkB5%232roUt20nhVgfb!ll*mv12lSt\",\n\t\"messages\":[{\n\"from\":\"919941639697\",\n\"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n\"timestamp\":\"1522189546\",\n\"type\":\"document\",\n\"document\":{\n\"caption\":\"80skaraokesonglistartist\",\n\"file\":\"/usr/local/wamedia/shared/fc233119-733f-49c-bcbd-b2f68f798e33\",\n\"id\":\"fc233119-733f-49c-bcbd-b2f68f798e33\",\n\"mime_type\":\"application/pdf\",\n\"sha256\":\"3b11fa6ef2bde1dd14726e09d3eda220f6484f32d5d5caa4b8e\",\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\n}\n}],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "{client callback}"
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": null
-        },
-        {
-          "id": "cd019a2b-0204-4dd1-8ff0-6593f0276f5d",
-          "name": "Incoming Location",
-          "originalRequest": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\"contacts\": [ {\n\t\"profile\": {\n\"name\": \"Kerry Fisher\"\n},\n\t\"wa_id\": \"919941639697\"\n} ],\n\"messages\":[{\n\"from\":\"919941639697\",\n\"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n\"location\":{\n\"address\":\"Main Street Beach, Santa Cruz, CA\",\n\"latitude\":38.9806263495,\n\"longitude\":-131.9428612257,\n\"name\":\"Main Street Beach\",\n\"url\":https://foursquare.com/v/4d7031d35b5df7744\n},\n\"timestamp\":\"1521497875\",\n\t\"type\":\"location\"\n}],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "{client callback}"
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": null
-        },
-        {
-          "id": "793d5061-d596-4455-8623-beca07cb4892",
-          "name": "Incoming Interactive List",
-          "originalRequest": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\"contacts\": [{\"profile\": {\"name\": \"overw@tch\"}, \"wa_id\": \"917045273671\"}], \"messages\": [{\"context\": {\"from\": \"919321821011\", \"id\": \"gBEGkXBFJzZxAgmfF7hnuD9l0C0\"}, \"from\": \"917045273671\", \"id\": \"b398502a-eea8-11eb-ac2a-0242ac120007\", \"interactive\": {\"list_reply\": {\"description\": \"yummy flavour\", \"id\": \"rd133\", \"title\": \"Fish Masala\"}, \"type\": \"list_reply\"}, \"timestamp\": \"1627369389\", \"type\": \"interactive\"}], \"brand_msisdn\": \"919321821011\", \"request_id\": \"b398502a-eea8-11eb-ac2a-0242ac120007\"}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "{client callback}"
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": null
-        },
-        {
-          "id": "6421f0a6-3846-487c-bfe7-296d7dd13404",
-          "name": "Incoming Template Quick Reply",
-          "originalRequest": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n\"contacts\": [ {\r\n    \"profile\": {\r\n        \"name\": \"Kerry Fisher\"\r\n    },\r\n    \"wa_id\": \"16315551234\"\r\n  } ],\r\n   \"messages\":[{\r\n      \"context\":{\r\n         \"from\":\"16315558011\",\r\n         \"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\"\r\n         },\r\n      \"from\":\"16315551234\",\r\n      \"id\":\"gBGGFlA5FpafAgkOuJbRq54qwbM\",\r\n      \"text\":{\"body\":\"Yes, count me in!\"},\r\n      \"timestamp\":\"1521499915\",\r\n      \"type\":\"text\"\r\n  }],\r\n\"brand_msisdn\": \"97144501601\",\r\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "{client callback}"
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": null
-        },
-        {
-          "id": "2fa4c4f4-86e4-45bd-8702-c1200f9abde6",
-          "name": "Incoming Session Quick Reply",
-          "originalRequest": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\"contacts\": [{\"profile\": {\"name\": \"overw@tch\"}, \"wa_id\": \"917045273671\"}], \"messages\": [{\"context\": {\"from\": \"919321821011\", \"id\": \"gBEGkXBFJzZxAgnSloIc4jvENOo\"}, \"from\": \"917045273671\", \"id\": \"c5e396fe-eea8-11eb-9e4e-0242ac120007\", \"interactive\": {\"button_reply\": {\"id\": \"aaaa\", \"title\": \"Yes\"}, \"type\": \"button_reply\"}, \"timestamp\": \"1627369420\", \"type\": \"interactive\"}]}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "{client callback}"
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": null
-        },
-        {
-          "id": "f6fc5417-52e0-4c24-98c1-e3ef1bd5db9a",
-          "name": "Delivery Report",
-          "originalRequest": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"statuses\":[{\n    \"conversation\":{\n        \"expiration_timestamp\":1644060900,\n        \"id\":\"d24f4c6e3e2d731dea92fcbd2822fa6a\",\n        \"origin\":{\n            \"type\":\"user_initiated\"\n            }\n        },\n        \"id\":\"5a9f3040-85ae-11ec-8168-0242ac120005\",\n        \"pricing\":{\n            \"billable\":true,\n            \"category\":\"user_initiated\",\n            \"pricing_model\":\"CBP\"\n            },\n            \"recipient_id\":\"919860063600\",\n            \"status\":\"sent\",\n            \"timestamp\":\"1643974443\",\n            \"type\":\"message\",\n            \"extra\":null\n            }\n        ],\n        \"brand_msisdn\":\"917428182444\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "{client callback}"
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": null
-        },
-        {
-          "id": "cdb08eac-aec4-4c33-976d-901d751f8a9a",
-          "name": "Failed Delivery Report",
-          "originalRequest": {
-            "method": "POST",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"statuses\": [{\n    \"errors\": [{\n      \"code\": 470,\n      \"title\": \"reason for failure\" \n    }],\n    \"id\": \"c58c55a6cae6d1cb43d0c37ef4defdbb\",\n    \"recipient_id\": \"12064001000\",\n    \"status\": \"failed\",\n    \"timestamp\": \"1533332775\",\n    \"extra\": \"qwkfm9_606hbf105\"\n  }]\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "{client callback}"
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": null
-        }
-      ]
-    },
-    {
-      "name": "Login",
-      "id": "310510c5-caa9-451d-9635-37756a594240",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"username\":\"{username}\",\r\n  \"password\":\"{password}\"\r\n}\r\n"
-        },
-        "url": "https://apis.rmlconnect.net/auth/v1/login/",
-        "description": "To create Authorization token which is used in send message and Capability check APIs.\n\n> *Note* :\n* Validity of token is 1 hour."
-      },
-      "response": [
-        {
-          "id": "27aa4b56-23b6-46d5-89e7-3d82e6b01035",
-          "name": "Login",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"username\":\"RMLBottt\",\r\n  \"password\":\"RMLBottt\"\r\n}\r\n",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/auth/v1/login/"
-          },
-          "status": "Created",
-          "code": 201,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"JWTAUTH\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiUk1MQm90IiwidXNlcm5hbWUiOiJSTUxCb3QiLCJleHAiOjE2MzAzMTU2MzIsImVtYWlsIjoid2hhdHNhcHBAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2MzAzMTIwMzIsImN1c3RvbWVyX2lkIjoiOXBGOGpUZ0pqSDdXIn0.r6h1mF6ZsMxzbJzfIWk-90Ubn-R3SbvvBr2PqLG4F\",\r\n    \"user_data\": {\r\n        \"username\": \"RMLBottt\",\r\n        \"first_name\": \"Route\",\r\n        \"last_name\": \"Bot.\",\r\n        \"email\": \"whatsapp@routemobile.com\",\r\n        \"phone_number\": \"+919372748624\",\r\n        \"password_reset\": false,\r\n        \"is_active\": true,\r\n        \"is_staff\": false\r\n    }\r\n}"
-        }
-      ]
-    },
-    {
-      "name": "Capability check",
-      "id": "a40045d2-1495-44f1-be0c-e81e55d9109e",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "{token}",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n    \"contacts\":[\"<NUM1>\",\"<NUM2>\",...,\"NUM50\">]\r\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": "https://apis.rmlconnect.net/wba/v1/contacts",
-        "description": "Check WhatsApp enabled users via Capability check API.\n\n> *Note* :\n* Maximum 50 numbers are accepted in a request.\n* Do send messages to the end users post checking the capability to avoid account deactivation."
-      },
-      "response": [
-        {
-          "id": "f5b88efa-19d2-4297-ab7e-e16b40ae8c69",
-          "name": "Capability check",
-          "originalRequest": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "{token}",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"contacts\":[\"+917045345285\",\"+256708730000\"]\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": "https://apis.rmlconnect.net/wba/v1/contacts"
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": null,
-          "header": null,
-          "cookie": [],
-          "responseTime": null,
-          "body": "{\r\n    \"status\": \"success\",\r\n    \"result\": [\r\n        {\r\n            \"input\": \"+917045345285\",\r\n            \"status\": \"valid\"\r\n        },\r\n        {\r\n            \"input\": \"+256708730000\",\r\n            \"status\": \"invalid\"\r\n        }\r\n    ]\r\n}"
-        }
-      ]
-    }
-  ]
+	"info": {
+		"_postman_id": "ed7335bf-83bc-4ca2-95ae-a6fa9839284a",
+		"name": "Route Mobile WhatsApp Business Messaging API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Template",
+			"item": [
+				{
+					"name": "call to action template",
+					"id": "4d6995c7-29ad-493e-afbc-f639109b4cb9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"body text\"\n        },\n        \"buttons\": {\n            \"type\": \"call_to_action\",\n            \"elements\": [\n                {\n                    \"label\": \"Make a Call\",\n                    \"contact_no\": \"+919987862472\"\n                },\n                {\n                    \"label\": \"Visit Us\",\n                    \"type\": \"static\",\n                    \"website\": \"https://google.com\"\n                }\n            ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/template/create"
+					},
+					"response": []
+				},
+				{
+					"name": "quick reply template",
+					"id": "40082a6c-7955-41c9-b1b6-48f15b640f7c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        },\n        \"buttons\": {\n            \"type\": \"quick_reply\",\n            \"elements\": [\n                {\n                    \"label\": \"Button 1\"\n                },\n                {\n                    \"label\": \"Button 2\"\n                },\n                {\n                    \"label\": \"Button 3\"\n                }\n            ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/template/create"
+					},
+					"response": []
+				},
+				{
+					"name": "media template",
+					"id": "39dda634-3a81-40b9-a671-6f25cb475ac1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"footer text\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/template/create"
+					},
+					"response": []
+				},
+				{
+					"name": "text template",
+					"id": "ee586e08-ac2b-48f6-906c-b62ddda9fa52",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTk2NjE0NDA4Mi4wNjYsImVtYWlsIjoiYWthc3JhbmphbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTU3MTA0ODQ2NCwiY3VzdG9tZXJfaWQiOiI5aXI1RGc3YnZzQ0EiLCJpYXQiOjE2NTUxMDQwODJ9.BpjDZAXQTLlPb9zDPFA0KnYtzhfJErTAshKaNYjfBfg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"template_name\": \"admiammy\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"body\": {\n            \"text\": \"Hi {{1}},Congratulations on confirming your admission for {{2}}.We request you to join an online orientation on {{3}}. \"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/template/create"
+					},
+					"response": []
+				}
+			],
+			"id": "db253cbc-e06b-4219-8284-ebd2f77f2888"
+		},
+		{
+			"name": "View Template Message",
+			"id": "5a227dad-e8bf-497d-9d51-02f058fd7347",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{token}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://apis.rmlconnect.net/wba/templates",
+				"description": "View Template message API helps you download all the approved and rejected list of templates added in the account."
+			},
+			"response": []
+		},
+		{
+			"name": "Send Template Message API",
+			"id": "13c2317c-5a5a-4ee5-9b5d-5731b4163fab",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{token}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n\t\t\"header\": [\n            {\n                \"image\": {\n                    \"link\": \"{sample image url hosted publicly starting with https:// and ending with file extension}\"\n                }\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}"
+				},
+				"url": "https://apis.rmlconnect.net/wba/v1/messages",
+				"description": "## API details:\n \n\nThis API is used to Broadcast WhatsApp pre-approved Messages( templates) to end user \n \n\n## API Request Details\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|-----------------------|-------------------------|\n|`phone`|Mandatory|end user phone number with country code and +|\n|`type`|Mandatory|API type|\n|`template_name`|Mandatory|Name of template approved with WhatsApp|\n|`lang_code`|Mandatory|language in which template is approved|\n|`header`|Optional|Add only for multimedia template|\n|`body`|Optional|Add only if you have variables in the template|\n|`button`|Optional|Add only if you have dynamic URL redirection button in the template|\n|`extra`|Optional|Add only if you wish to pass any extra value in API and the same will be recieved in delivery reports|\n \n## `header` Field Breakdown:\n \nheader is a JSON string consisting of a set of mandatory keys that define the text or multimedia based header section of a template:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|*Sample*|\n|-----|--------------------|-------------|--------|\n|`text`|Mandatory|Add only if you have template with text in the header|\"header\":[{\"text\":\"{variable}\"}]|\n|`link`|Mandatory|Add publicly hosted url for all multimedia template|\"header\":[{\"image\":{\"link\":\"{sample image url hosted publicly starting with https:// and ending with file extension}\"}}]|\n|`image`|Mandatory|Add only if you have image template|\"header\":[{\"image\":{\"link\":\"{sample image url hosted publicly starting with https:// and ending with file extension( you tube URL will not work)}\"}}]|\n|`document`|Mandatory|Add only if you have document template|\"header\":[{\"image\":{\"link\":\"{sample document url hosted publicly starting with https:// and ending with file extension}\"}}]|\n|`video`|Mandatory|Add only if you have video template|\"header\":[{\"image\":{\"link\":\"{sample video url hosted publicly starting with https:// and ending with file extension}\"}}]|\n \n\n## `body` Field Breakdown:\n \nbody is a JSON string consisting of a text key that defines the variables of a template:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|*Sample*|\n|-----|--------------------|-------------|--------|\n|`text`|Mandatory|Add if you have variable in the template|\"body\":[{\"text\":\"{variable}\"}]|\n|`text,text`|Mandatory|Add if you have multiple variable in the template|\"body\":[{\"text\":\"{variable}\"},{\"text\":\"{variable}\"}]|\n\n\n## `button` Field Breakdown:\n \nbutton is a JSON string consisting of a set of mandatory keys that define the dynamic variable pf the call to action url redirection button of a template:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|*Sample*|\n|-----|--------------------|-------------|--------|\n|`button_no`|Mandatory|Add only if you have dynamic url redirection button in the template, button_no key specified the position of dynamic url|\"button\":[{\"button_no\":\"0/1\",\"url\":\"{dynamic_url variable}\"}]|\n|`url`|Mandatory|Add only if you have dynamic url redirection button in the template, url key specifies the variable part of dynamic url redirection button|\"button\":[{\"button_no\":\"0/1\",\"url\":\"{dynamic_url variable}\"}]|\n\n\n## Success Response Structure:\nFor every success request, a JSON response is sent with key as status, message, and request_id.\n<br>\n \n|*Status*|*Message*|*Description*|*Response Code*|*Sample*|\n|--------|---------|-------------|---------------|--------|\n|processing|message received successfully|Valid payload structure with unique request_id per request|202|{\"message\":\"message received successfully\",\"status\":\"processing\",\"request_id\":\"794c3fd4-f142-11eb-8e02-0242ac120005\"}​​​​|\n \n\n## Failed Response Structure:\nFor every failed request, a JSON response is sent with key as status, message, and reason.\n<br>\n \n|*Status*|*Message*|*Description*|*Reason*|*Error Code*|*Sample*|\n|--------|---------|-------------|--------|---------------|--------|\n|failed|unable to process request|Incorrect Authorization token|Please check the integrity/validity of the token sent|202|{\"message\":\"unable to process request\",\"status\":\"failed\",\"reason\":\"Please check the integrity/validity of the token sent\"}|\n|-|The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.|Incorrect url|-|404|{\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"}|\n|-|The browser (or proxy) sent a request that this server could not understand.|Incorrect payload structure|-|400|{\"message\":\"The browser (or proxy) sent a request that this server could not understand.\"}|\n|failure|Please check API docs|Mandatory key is missing|unable to verify payload type|400|{\"message\":\"Please check API docs\",\"status\":\"failure\",\"reason\":\"unable to verify payload type\"}|\n \n> *Note* :\n* TPS around 100 provided multi-threading is implemented and utilize keepalive connections option in HTTP Client to minimize SSL overhead and latency.\n* Templates are triggered to users who are out of 24 hour window."
+			},
+			"response": [
+				{
+					"id": "075c1aa8-edf0-4cdc-a1cb-788ca121c91d",
+					"name": "Text",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{token}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				},
+				{
+					"id": "31a10c78-200e-4ea7-8397-87c0149af9bb",
+					"name": "Text with Text Header",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{token}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"text\": \"{variable}\"\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				},
+				{
+					"id": "2c46d450-720a-44dd-a010-abaaa8c10f63",
+					"name": "Media Image",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{token}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"image\": {\n                    \"link\": \"{sample image url hosted publicly starting with https:// and ending with file extension}\"\n                }\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				},
+				{
+					"id": "fa7cee9c-62a4-40fc-b05f-2e788a007474",
+					"name": "Media Document",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{token}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"document\": {\n                    \"link\": \"{sample document url hosted publicly starting with https:// and ending with file extension}\"\n                }\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				},
+				{
+					"id": "4f10ff12-5b8d-4af3-9de7-b03672d4df6d",
+					"name": "Media Video",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{token}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"video\": {\n                    \"link\": \"{sample video url hosted publicly starting with https:// and ending with file extension}\"\n                }\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Send Session Message API",
+			"id": "06c9706c-6889-45b7-9c13-4f8aa20b32cc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{token}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://apis.rmlconnect.net/wba/v1/messages",
+				"description": "## API details:\n \n\nThis API is used to trigger WhatsApp response to user initiated messages within 24 hour window.\n \n\n## API Request Details\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|-----------------------|-------------------------|\n|`phone`|Mandatory|end user phone number with country code and +|\n|`text`|Mandatory|Add only for text response|\n|`peview_url`|Mandatory|Add only if you wish to see thumbnail of url added in text response|\n|`media`|Mandatory|Add only for multimedia response|\n|`extra`|Optional|Add only if you wish to pass any extra value in API and the same will be recieved in delivery reports|\n \n## `media` Field Breakdown:\n \nmedia is a JSON string consisting of a set of mandatory keys that define the multimedia or button sections of a session response:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|--------------------|-------------|\n|`type`|Mandatory|Defines the multimedia shared|\n|`url`|Mandatory|Add publicly hosted url for all multimedia message|\n|`file`|Mandatory|Filename of the multimedia to be triggered|\n|`caption`|Mandatory|Text shared along with multimedia. Though it's mandatory still will not reflect for Audio|\n|`latitude`|Mandatory|Add only if you are sending Location in session message|\n|`longitude`|Mandatory|Add only if you are sending Location in session message|\n|`name`|Mandatory|Add only if you are sending Location in session message|\n|`address`|Mandatory|Add only if you are sending Location in session message|\n|`header`|Mandatory|Add only if you are sending button in session message. This defines the text or multimedia shared in the button|\n|`body`|Mandatory|Add only if you are sending button in session message. Defines the text descption at the top of the button options|\n|`footer_text`|Optional|Add only if you are sending button in session message. Add only if you want to show footer in button option|\n|`button`|Mandatory|Add only if you are sending button in session message|\n \n\n## `header` Field Breakdown:\n \nheader is a JSON string consisting of a set of mandatory keys that define the button based header section of a session response:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|--------------------|-------------|\n|`text`|Mandatory|Add only if you are sending text in the header|\n|`type`|Mandatory|Add only if you are sending multimedia in the header. Defines the button triggered|\n|`url`|Mandatory|Add only if you are sending multimedia in the header. Add publicly hosted url for all multimedia message|\n|`file`|Mandatory|Add only if you are sending multimedia in the header. Defines the filename of the multimedia to be triggered|\n|`caption`|Mandatory|Add only if you are sending multimedia in the header. Defines the text shared along with multimedia. Though it's mandatory still will not reflect for Audio|\n\n\n## `body` Field Breakdown:\n \nbody is a JSON string consisting of a text that defines the button options in session message:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|--------------------|-------------|\n|`body`|Mandatory|Defines the text descption at the top of the button options|\n\n\n## `button` Field Breakdown:\n \nbutton is a JSON string consisting of a set of mandatory keys of the button options in session message:\n<br><br>\n \n|*Key*|*Mandatory/Optional*|*Description*|\n|-----|--------------------|-------------|\n|`id`|Mandatory|Defines the position of the button|\n|`title`|Mandatory|Defines the button label. Max 20 charaters|\n|`description`|Optional|Add only if you want to describe more in regards to the interactive menu list button|\n|`section_title`|Mandatory|Add only if you have interactive menu list button. Describes the main list of the button|\n\n## Success Response Structure:\nFor every success request, a JSON response is sent with key as status, message, and request_id.\n<br>\n \n|*Status*|*Message*|*Description*|*Response Code*|*Sample*|\n|--------|---------|-------------|---------------|--------|\n|processing|message received successfully|Valid payload structure with unique request_id per request|202|{\"message\":\"message received successfully\",\"status\":\"processing\",\"request_id\":\"794c3fd4-f142-11eb-8e02-0242ac120005\"}​​​​|\n \n\n## Failed Response Structure:\nFor every failed request, a JSON response is sent with key as status, message, and reason.\n<br>\n \n|*Status*|*Message*|*Description*|*Reason*|*Error Code*|*Sample*|\n|--------|---------|-------------|--------|---------------|--------|\n|failed|unable to process request|Incorrect Authorization token|Please check the integrity/validity of the token sent|401|{\"message\":\"unable to process request\",\"status\":\"failed\",\"reason\":\"Please check the integrity/validity of the token sent\"}|\n|-|The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.|Incorrect url|-|404|{\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"}|\n|-|The browser (or proxy) sent a request that this server could not understand.|Incorrect payload structure|-|400|{\"message\":\"The browser (or proxy) sent a request that this server could not understand.\"}|\n|failure|Please check API docs|Mandatory key is missing|unable to verify payload type|400|{\"message\":\"Please check API docs\",\"status\":\"failure\",\"reason\":\"unable to verify payload type\"}|\n \n> *Note* :\n* TPS around 100 provided multi-threading is implemented and utilize keepalive connections option in HTTP Client to minimize SSL overhead and latency.\n* End user incoming messages are received on callback shared by the the brand for the WhatsApp number. Response to those messages are sent using Session API.\n* Session works on rolling window concept which means brand's get 24 hour to reply back from the last incoming messages timestamp.\n* Timestamp shared on callback is in unix timestamp.\n* Buttons are of 2 types: Interactive List menu (max 10) and Quick reply button (max 3).\n* Interactive list menu button supports only text in header.\n* Quick reply button supports both text and multimedia in header."
+			},
+			"response": [
+				{
+					"id": "a12a54c4-8b65-4087-96a7-6b23e4475202",
+					"name": "Session Text",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{token}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{sample text}\",\n    \"extra\": \"{your value}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				},
+				{
+					"id": "f81a24bc-7fa1-431f-a212-21272294fc27",
+					"name": "Session Text With Preview Url",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{token}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{text with valid url}\",\n    \"preview_url\": true,\n    \"extra\": \"{your value}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				},
+				{
+					"id": "8af7c289-b976-4264-9bf9-aa4cf92ad252",
+					"name": "Session Document",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{token}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"document\",\n        \"url\": \"{sample pdf url https://}\",\n        \"file\": \"{sample .pdf file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				},
+				{
+					"id": "4ea16426-b8ea-4eb1-a2dd-c5b23c09b8ca",
+					"name": "Session Audio",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"audio\",\n        \"url\": \"{sample .mp3 url https://}\",\n        \"file\": \"{sample audio.mp3 file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				},
+				{
+					"id": "b17f898c-48aa-472a-9373-a9d9a2a434c0",
+					"name": "Session Image",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{token}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"image\",\n        \"url\": \"{sample image url https://}\",\n        \"file\": \"{sample image .jpg file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				},
+				{
+					"id": "b2118a7e-5333-491f-be03-21951effaa4c",
+					"name": "Session Video",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{token}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"video\",\n        \"url\": \"{sample video url https://}\",\n        \"file\": \"{sample video .mp4 file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				},
+				{
+					"id": "75bf0718-cf02-468d-a3b2-75b192e9473c",
+					"name": "Session Location",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"location\",\n        \"longitude\": \"{example: 72.838249}\",\n        \"latitude\": \"{example: 18.991341}\",\n        \"name\": \"{location name}\",\n        \"address\": \"{location address}\"\n    },\n    \"extra\": \"{your value}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				},
+				{
+					"id": "96996abd-7b78-42b1-96ba-a09dcadd6789",
+					"name": "Session Interactive List",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"{phone number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"interactive_list\",\n        \"header\": {\n        \"text\": \"ABC Food Items\"\n        },\n        \"body\": \"Hello TAN. Please select from the list below\",\n        \"footer_text\": \"Menu\",\n        \"button_text\": \"Select\",\n        \"button\": [\n            {\n                \"section_title\": \"Chicken\",\n                \"row\": [\n                    {\n                        \"id\": \"1\",\n                        \"title\": \"Chicken Kadai\",\n                        \"description\": \"tasty gravy\"\n                    }\n                ]\n            },\n            {\n                \"section_title\": \"Fish\",\n                \"row\": [\n                    {\n                        \"id\": \"2\",\n                        \"title\": \"Fish Masala\",\n                        \"description\": \"yummy flavour\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				},
+				{
+					"id": "6831381c-749a-4b8c-afe7-bafe6ac70dfe",
+					"name": "Session Quick Reply with Media",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"interactive_reply\",\n        \"header\": {\n            \"type\": \"video\",\n            \"url\": \"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4\",\n            \"file\": \"pdf.pdf\",\n            \"caption\": \"This is a test video\"\n        },\n        \"body\": \"HI TAN, please select an option below\",\n        \"footer_text\": \"c@2021\",\n        \"button\": [\n            {\n                \"id\": \"1\",\n                \"title\": \"Yes\"\n            },\n            {\n                \"id\": \"2\",\n                \"title\": \"No\"\n            },\n            {\n                \"id\": \"3\",\n                \"title\": \"Maybe\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				},
+				{
+					"id": "94a8f43f-61e4-431a-896a-1e1a70014e23",
+					"name": "Session Quick Reply with Text",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n    \"media\": {\n        \"type\": \"interactive_reply\",\n        \"header\": {\n            \"text\": \"Super Selector Match\"\n        },\n        \"body\": \"HI TAN, please select an option below\",\n        \"footer_text\": \"c@2021\",\n        \"button\": [\n            {\n                \"id\": \"1\",\n                \"title\": \"Yes\"\n            },\n            {\n                \"id\": \"2\",\n                \"title\": \"No\"\n            },\n            {\n                \"id\": \"3\",\n                \"title\": \"Maybe\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Callback",
+			"id": "b8362cba-2f37-4e06-824d-915744bcabac",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{client callback}",
+				"description": "Callback is configured against the WhatsApp Enterprise account for the clients to receive incoming messages and delivery reports.\n\n> *Note* :\n\n*   End user incoming messages are received on callback shared by the the brand for the WhatsApp number. Response to those messages are sent using Session API.\n*   Session works on rolling window concept which means brand's get 24 hour to reply back from the last incoming messages timestamp.\n*   Timestamp shared on callback is in unix timestamp.\n    \n\n## Failure Error Details\n\n| *Error Code* | *Error Messages* |\n| --- | --- |\n| 400 | Media download error |\n| 401 | Group does not exist |\n| 402 | Others |\n| 408 | Message is not valid |\n| 410 | Message expired |\n| 429 | Rate limit hit |\n| 430 | Others |\n| 432 | Others |\n| 433 | Others |\n| 470 | Re-engagement message |\n| 471 | Spam Rate limit hit |\n| 472 | User's number is part of an experiment |\n| 500 | Unknown Error |\n| 1000 | Others |\n| 1001 | Message too long |\n| 1002 | Invalid recipient type |\n| 1003 | Not a group participant |\n| 1004 | Resource already exists |\n| 1005 | Others |\n| 1006 | Others |\n| 1008 | Required parameter is missing |\n| 1009 | Parameter value is not valid |\n| 1010 | Parameter is not required |\n| 1011 | Others |\n| 1012 | Group is unknown |\n| 1013 | User is not valid |\n| 1014 | Corrupt Image |\n| 1015 | Others |\n| 1016 | Others |\n| 1017 | Others |\n| 1018 | Others |\n| 1019 | Not a group admin |\n| 1020 | Bad group |\n| 1021 | Bad User |\n| 1022 | Others |\n| 1023 | Others |\n| 1024 | Others |\n| 1025 | Invalid Request |\n| 1026 | Receiver Incapable |\n| 2000 | Template Param Count Mismatch |\n| 2001 | Template Missing |\n| 2002 | Template Fetch Failed |\n| 2003 | Template Pack Missing |\n| 2004 | Template Param Length Too Long |\n| 2005 | Template Hydrated Text Too Long |\n| 2006 | Template White Space Policy Violated |\n| 2007 | Template Format Character Policy Violated |\n| 2008 | Template Media Format Unsupported |\n| 2009 | Template Required Component Missing |\n| 2010 | Template Invalid Hydrated URL |\n| 2011 | Template Invalid Phone Number |\n| 2012 | Template Parameter Format Mismatch |\n| 2013 | Template Buttons Unsupported |"
+			},
+			"response": [
+				{
+					"id": "2b385690-4eaf-4d51-b309-ea63b5ea8b63",
+					"name": "Incoming Text",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"contacts\": [ {\n    \"profile\": {\n        \"name\": \"Kerry Fisher\"\n   \t        },\n    \"wa_id\": \"919941639697\"\n        } ],\n    \"messages\":[{\n    \"from\": \"919941639697\",\n    \"id\": \"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n    \"timestamp\": \"1518694235\",\n    \"text\": {\n    \"body\": \"Hello this is an answer\"\n    \t   \t\t},\n    \"type\": \"text\"\n    }],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{client callback}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
+					"id": "95c3b820-42b3-4d32-b739-d3c2f55c1c24",
+					"name": "Incoming Image",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"apiKey\": \"IfgKh@jHkB5%232roUt20nhVgfb!ll*mv12lSt\",\n\t\"messages\":[{\n\"from\":\"919941639697\",\n\"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n      \t\"image\":{\n\"file\":\"/usr/local/wamedia/shared/b1cf38-8734-4ad3-b4a1-ef0c10d0d683\",\n\"id\":\"b1c68f38-8734-4ad3-b4a1-ef0c10d683\",\n\"mime_type\":\"image/jpeg\",\n\"sha256\":\"29ed500fa64eb55fc19dc4124acb300e5dcca301ae99944db\",\n\"caption\": \"Check out my new phone!\",\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\n},\n\"timestamp\":\"1521497954\",\n\"type\":\"image\"\n}],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{client callback}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
+					"id": "1e2d6b9c-ac81-40e7-9337-37c979fef49d",
+					"name": "Incoming Audio",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"messages\":[{\n\t        \"from\": \"919941639697\",\n\t        \"id\": \"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n\t        \"timestamp\": \"1521827831\",\n\t        \"type\": \"voice\",\n\t        \"voice\": {\n            \"file\": \"/usr/local/wamedia/shared/463e/b7ec/ff4e4d9bb11cbd411b2\",\n\t            \t\"id\": \"463eb7ec-ff4e-4d9b-b110-1879cbd411b2\",   \t\t     \n\"mime_type\": \"audio/ogg; codecs=opus\",\n\t           \t\t \"sha256\": \"fa9e1807d936b7cebe63654ea3a7912923590521ef53b0710\",\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\n}\n\t  }],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{client callback}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
+					"id": "98e744fe-7a74-4be5-a828-3b435566d14e",
+					"name": "Incoming Video",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"messages\":[{\n\t        \"from\": \"919941639697\",\n\t        \"id\": \"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n\t        \"timestamp\": \"1521827831\",\n\t        \"type\": \"voice\",\n\t        \"voice\": {\n            \"file\": \"/usr/local/wamedia/shared/463e/b7ec/ff4e4d9bb11cbd411b2\",\n\t            \t\"id\": \"463eb7ec-ff4e-4d9b-b110-1879cbd411b2\",   \t\t     \n\"mime_type\": \"audio/ogg; codecs=opus\",\n\t           \t\t \"sha256\": \"fa9e1807d936b7cebe63654ea3a7912923590521ef53b0710\",\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\n}\n\t  }],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{client callback}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
+					"id": "c578f642-6659-4c73-a66b-98071d15ba5b",
+					"name": "Incoming Document",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"apiKey\": \"IfgKh@jHkB5%232roUt20nhVgfb!ll*mv12lSt\",\n\t\"messages\":[{\n\"from\":\"919941639697\",\n\"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n\"timestamp\":\"1522189546\",\n\"type\":\"document\",\n\"document\":{\n\"caption\":\"80skaraokesonglistartist\",\n\"file\":\"/usr/local/wamedia/shared/fc233119-733f-49c-bcbd-b2f68f798e33\",\n\"id\":\"fc233119-733f-49c-bcbd-b2f68f798e33\",\n\"mime_type\":\"application/pdf\",\n\"sha256\":\"3b11fa6ef2bde1dd14726e09d3eda220f6484f32d5d5caa4b8e\",\n\"media_url\": \"https://apis.rmlconnect.net/wba/v1/media?media_id=fc233119-733f-49c-bcbd-b2f68f798e33&username=demo\"\n}\n}],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{client callback}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
+					"id": "cd019a2b-0204-4dd1-8ff0-6593f0276f5d",
+					"name": "Incoming Location",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"contacts\": [ {\n\t\"profile\": {\n\"name\": \"Kerry Fisher\"\n},\n\t\"wa_id\": \"919941639697\"\n} ],\n\"messages\":[{\n\"from\":\"919941639697\",\n\"id\":\"ABGGFlA5FpafAgo6tHcNmNjXmuSf\",\n\"location\":{\n\"address\":\"Main Street Beach, Santa Cruz, CA\",\n\"latitude\":38.9806263495,\n\"longitude\":-131.9428612257,\n\"name\":\"Main Street Beach\",\n\"url\":https://foursquare.com/v/4d7031d35b5df7744\n},\n\"timestamp\":\"1521497875\",\n\t\"type\":\"location\"\n}],\n\"brand_msisdn\": \"97144501601\",\n\"request_id\": \"aebeca32-f125-11eb-8c86-0242ac120007\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{client callback}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
+					"id": "793d5061-d596-4455-8623-beca07cb4892",
+					"name": "Incoming Interactive List",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"contacts\": [{\"profile\": {\"name\": \"overw@tch\"}, \"wa_id\": \"917045273671\"}], \"messages\": [{\"context\": {\"from\": \"919321821011\", \"id\": \"gBEGkXBFJzZxAgmfF7hnuD9l0C0\"}, \"from\": \"917045273671\", \"id\": \"b398502a-eea8-11eb-ac2a-0242ac120007\", \"interactive\": {\"list_reply\": {\"description\": \"yummy flavour\", \"id\": \"rd133\", \"title\": \"Fish Masala\"}, \"type\": \"list_reply\"}, \"timestamp\": \"1627369389\", \"type\": \"interactive\"}], \"brand_msisdn\": \"919321821011\", \"request_id\": \"b398502a-eea8-11eb-ac2a-0242ac120007\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{client callback}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
+					"id": "6421f0a6-3846-487c-bfe7-296d7dd13404",
+					"name": "Incoming Template Quick Reply",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{'contacts': \r\n    [{'profile': \r\n        {\r\n         'name': '@@'\r\n            },\r\n      'wa_id': '918693883798'\r\n      }],\r\n      'messages': [{\r\n          'button': {\r\n              'text': 'Buy Now'\r\n              },\r\n          'context': {\r\n              'from': '911206810300',\r\n              'id': 'b7e984f4-94ad-11ec-b1f4-0a58a9feac02'\r\n              },\r\n          'from': '918693883798',\r\n          'id': 'd14b9dce-94ad-11ec-ad15-0242ac12000b',\r\n          'timestamp': '1645623480',\r\n          'type': 'button'\r\n          }],\r\n        'brand_msisdn': '911206810300',\r\n        'request_id': 'd14b9dce-94ad-11ec-ad15-0242ac12000b'\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{client callback}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
+					"id": "2fa4c4f4-86e4-45bd-8702-c1200f9abde6",
+					"name": "Incoming Session Quick Reply",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"contacts\": [{\"profile\": {\"name\": \"overw@tch\"}, \"wa_id\": \"917045273671\"}], \"messages\": [{\"context\": {\"from\": \"919321821011\", \"id\": \"gBEGkXBFJzZxAgnSloIc4jvENOo\"}, \"from\": \"917045273671\", \"id\": \"c5e396fe-eea8-11eb-9e4e-0242ac120007\", \"interactive\": {\"button_reply\": {\"id\": \"aaaa\", \"title\": \"Yes\"}, \"type\": \"button_reply\"}, \"timestamp\": \"1627369420\", \"type\": \"interactive\"}]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{client callback}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
+					"id": "f6fc5417-52e0-4c24-98c1-e3ef1bd5db9a",
+					"name": "Delivery Report",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"statuses\":[{\n    \"conversation\":{\n        \"expiration_timestamp\":1644060900,\n        \"id\":\"d24f4c6e3e2d731dea92fcbd2822fa6a\",\n        \"origin\":{\n            \"type\":\"user_initiated/business_initiated/referral_conversion\"\n            }\n        },\n        \"id\":\"5a9f3040-85ae-11ec-8168-0242ac120005\",\n        \"pricing\":{\n            \"billable\":true/false,\n            \"category\":\"user_initiated/business_initiated/referral_conversion\",\n            \"pricing_model\":\"CBP\"\n            },\n            \"recipient_id\":\"919860063600\",\n            \"status\":\"sent\",\n            \"timestamp\":\"1643974443\",\n            \"type\":\"message\",\n            \"extra\":null\n            }\n        ],\n        \"brand_msisdn\":\"917428182444\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{client callback}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
+					"id": "cdb08eac-aec4-4c33-976d-901d751f8a9a",
+					"name": "Failed Delivery Report",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"statuses\": [{\n    \"errors\": [{\n      \"code\": 470,\n      \"title\": \"reason for failure\" \n    }],\n    \"id\": \"c58c55a6cae6d1cb43d0c37ef4defdbb\",\n    \"recipient_id\": \"12064001000\",\n    \"status\": \"failed\",\n    \"timestamp\": \"1533332775\",\n    \"extra\": \"qwkfm9_606hbf105\"\n  }]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{client callback}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"id": "310510c5-caa9-451d-9635-37756a594240",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\":\"{username}\",\r\n  \"password\":\"{password}\"\r\n}\r\n"
+				},
+				"url": "https://apis.rmlconnect.net/auth/v1/login/",
+				"description": "To create Authorization token which is used in send message and Capability check APIs.\n\n> *Note* :\n* Validity of token is 1 hour."
+			},
+			"response": [
+				{
+					"id": "27aa4b56-23b6-46d5-89e7-3d82e6b01035",
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\":\"RMLBottt\",\r\n  \"password\":\"RMLBottt\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/auth/v1/login/"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"JWTAUTH\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiUk1MQm90IiwidXNlcm5hbWUiOiJSTUxCb3QiLCJleHAiOjE2MzAzMTU2MzIsImVtYWlsIjoid2hhdHNhcHBAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2MzAzMTIwMzIsImN1c3RvbWVyX2lkIjoiOXBGOGpUZ0pqSDdXIn0.r6h1mF6ZsMxzbJzfIWk-90Ubn-R3SbvvBr2PqLG4F\",\r\n    \"user_data\": {\r\n        \"username\": \"RMLBottt\",\r\n        \"first_name\": \"Route\",\r\n        \"last_name\": \"Bot.\",\r\n        \"email\": \"whatsapp@routemobile.com\",\r\n        \"phone_number\": \"+919372748624\",\r\n        \"password_reset\": false,\r\n        \"is_active\": true,\r\n        \"is_staff\": false\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Capability check",
+			"id": "a40045d2-1495-44f1-be0c-e81e55d9109e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{token}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contacts\":[\"<NUM1>\",\"<NUM2>\",...,\"NUM50\">]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://apis.rmlconnect.net/wba/v1/contacts",
+				"description": "Check WhatsApp enabled users via Capability check API.\n\n> *Note* :\n* Maximum 50 numbers are accepted in a request.\n* Do send messages to the end users post checking the capability to avoid account deactivation."
+			},
+			"response": [
+				{
+					"id": "f5b88efa-19d2-4297-ab7e-e16b40ae8c69",
+					"name": "Capability check",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contacts\":[\"+917045345285\",\"+256708730000\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/contacts"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"status\": \"success\",\r\n    \"result\": [\r\n        {\r\n            \"input\": \"+917045345285\",\r\n            \"status\": \"valid\"\r\n        },\r\n        {\r\n            \"input\": \"+256708730000\",\r\n            \"status\": \"invalid\"\r\n        }\r\n    ]\r\n}"
+				}
+			]
+		}
+	]
 }
