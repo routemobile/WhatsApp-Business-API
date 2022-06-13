@@ -19,13 +19,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{token}",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTk2NjE0NTYxMi4zNTcsImVtYWlsIjoiYWthc3JhbmphbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTU3MTA0ODQ2NCwiY3VzdG9tZXJfaWQiOiI5aXI1RGc3YnZzQ0EiLCJpYXQiOjE2NTUxMDU2MTJ9.3VRhKDKNpMXqax1wrrzzj5VpytCc3FX5pf0MgHZKyog",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"template_name\": \"template_name\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"4::aW1hZ2UvanBlZw==:ARZ7SaLWQd1OIIBFB6Nc5a7kWXNjo-67I_H-kF5kAtBzdDxi-sBqBuzokk-D6I46gZc1-Zl6RreX9MbNa0mgGo9UhzQo07mSE1_dmGQuF4R2jg:e:1640158199:1692001864332732:100067177466309:ARaOk_6MYGTCDAIpTmE\"\n        },\n        \"body\": {\n            \"text\": \"body text\"\n        },\n        \"footer\": {\n            \"text\": \"body text\"\n        },\n        \"buttons\": {\n            \"type\": \"call_to_action\",\n            \"elements\": [\n                {\n                    \"label\": \"Make a Call\",\n                    \"contact_no\": \"+919987862472\"\n                },\n                {\n                    \"label\": \"Visit Us\",\n                    \"type\": \"static\",\n                    \"website\": \"https://google.com\"\n                }\n            ]\n        }\n    }\n}",
+							"raw": "{\n    \"template_name\": \"dynamic\",\n    \"language\": [\n        \"en_US\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"TRANSACTIONAL\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image\",\n            \"example\": \"https://myaccount.rmlconnect.net/assets/images/Logo.png\"\n        },\n        \"body\": {\n            \"text\": \"hi test\"\n        },\n        \"footer\": {\n            \"text\": \"RML\"\n        },\n        \"buttons\": {\n            \"type\": \"call_to_action\",\n            \"elements\": [\n                {\n                    \"label\": \"Make a Call\",\n                    \"contact_no\": \"+919987862472\"\n                },\n                {\n                    \"label\": \"Visit Us\",\n                    \"type\": \"dynamic\",\n                    \"website\": \"https://routemobile.com/\"\n                }\n            ]\n        }\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
