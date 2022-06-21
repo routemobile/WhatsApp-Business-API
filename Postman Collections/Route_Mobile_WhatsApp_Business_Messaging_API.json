@@ -318,31 +318,36 @@
 			"id": "d4ccc4a3-8a9b-45cc-84ab-b9afab22bb5d"
 		},
 		{
-			"name": "Bulk Upload Copy",
-			"item": [
-				{
-					"name": "File Upload",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "b6f26f9e-3491-4340-be89-2f392636623d",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"campaign_id\", jsonData.campaign_id);"
-								],
-								"type": "text/javascript"
-							}
+			"name": "Create Template",
+			"id": "5ee19c13-a5b8-4e58-a452-a06ea591802c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{token}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"template_name\": \"{template name}\",\n    \"language\": [\n        \"{lang code}\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image/video/document\",\n            \"example\": \"{sample media url}\"\n        },\n        \"body\": {\n            \"text\": \"{body text}\"\n        },\n        \"footer\": {\n            \"text\": \"{footer text}\"\n        },\n        \"buttons\": {\n            \"type\": \"call_to_action\",\n            \"elements\": [\n                {\n                    \"label\": \"{phone number label}\",\n                    \"contact_no\": \"{phone number with + and country code}\"\n                },\n                {\n                    \"label\": \"{url label}\",\n                    \"type\": \"static/dynamic\",\n                    \"website\": \"{url with https}\"\n                }\n            ]\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					],
-					"id": "beb0f9c6-4b07-4361-9b3b-2f6ffaacbbc5",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
+					}
+				},
+				"url": "https://apis.rmlconnect.net/wba/template/create"
+			},
+			"response": [
+				{
+					"id": "105e40a6-2e8f-42f5-a1e8-27e2a268483e",
+					"name": "Call to Action Template",
+					"originalRequest": {
 						"method": "POST",
 						"header": [
 							{
@@ -352,84 +357,26 @@
 							}
 						],
 						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "file",
-									"type": "file",
-									"value": null
-								},
-								{
-									"key": "filename",
-									"value": "{file name}",
-									"type": "text"
-								},
-								{
-									"key": "file_mimetype",
-									"value": "text/plain or text/csv",
-									"type": "text"
-								},
-								{
-									"key": "message",
-									"value": "{payload}",
-									"type": "text"
-								},
-								{
-									"key": "campaign_type",
-									"value": "generalized/personalised",
-									"type": "text"
+							"mode": "raw",
+							"raw": "{\n    \"template_name\": \"{template name}\",\n    \"language\": [\n        \"{lang code}\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"{template category}\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image/video/document\",\n            \"example\": \"{sample media url}\"\n        },\n        \"body\": {\n            \"text\": \"{body text}\"\n        },\n        \"footer\": {\n            \"text\": \"{footer text}\"\n        },\n        \"buttons\": {\n            \"type\": \"call_to_action\",\n            \"elements\": [\n                {\n                    \"label\": \"{phone number label}\",\n                    \"contact_no\": \"{phone number with + and country code}\"\n                },\n                {\n                    \"label\": \"{url label}\",\n                    \"type\": \"static/dynamic\",\n                    \"website\": \"{url with https}\"\n                }\n            ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
-						"url": {
-							"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=UI",
-							"protocol": "https",
-							"host": [
-								"apis",
-								"rmlconnect",
-								"net"
-							],
-							"path": [
-								"wba",
-								"v2",
-								"upload"
-							],
-							"query": [
-								{
-									"key": "source",
-									"value": "UI"
-								},
-								{
-									"key": "debug",
-									"value": "True",
-									"disabled": true
-								}
-							]
-						}
+						"url": "https://apis.rmlconnect.net/wba/template/create"
 					},
-					"response": []
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
 				},
 				{
-					"name": "Send Bulk Campaign",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "7749538b-c6ba-4d7c-aae2-9ed3de0149dd",
-								"exec": [
-									"pm.test(\"Status code is 202\", function () {",
-									"    pm.response.to.have.status(202);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "c80d3310-c32f-4382-a096-c2cb596cbfbc",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
+					"id": "96b5cb16-c04d-4338-9231-79fd6ca19069",
+					"name": "Quick Reply Template",
+					"originalRequest": {
 						"method": "POST",
 						"header": [
 							{
@@ -440,43 +387,86 @@
 							{
 								"key": "Content-Type",
 								"name": "Content-Type",
-								"value": "application/json",
+								"value": "application/x-www-form-urlencoded",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"campaign_action\": \"start\",\n    \"campaign_id\": \"{campaign id}\",\n    \"campaign_name\": \"{campaign name}\",\n    \"file_mimetype\": \"text/plain or text/csv\",\n    \"filename\": \"{filename with extension}\",\n    \"payload\": {\n        \"type\": \"{payload type}\"\n    },\n    \"scheduled_time\":\"{date and time in UTC e.g.2021-12-08 13:36:00}\"\n}"
-						},
-						"url": {
-							"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=UI",
-							"protocol": "https",
-							"host": [
-								"apis",
-								"rmlconnect",
-								"net"
-							],
-							"path": [
-								"wba",
-								"v2",
-								"manage_campaign"
-							],
-							"query": [
-								{
-									"key": "debug",
-									"value": "True"
-								},
-								{
-									"key": "source",
-									"value": "UI"
+							"raw": "{\n    \"template_name\": \"{template name}\",\n    \"language\": [\n        \"{lang code}\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"{template category}\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image/video/document\",\n            \"example\": \"{sample media url}\"\n        },\n        \"body\": {\n            \"text\": \"{body text}\"\n        },\n        \"footer\": {\n            \"text\": \"{footer text}\"\n        },\n        \"buttons\": {\n            \"type\": \"quick_reply\",\n            \"elements\": [\n                {\n                    \"label\": \"{button 1 label}\"\n                },\n                {\n                    \"label\": \"{button 2 label}\"\n                },\n                {\n                    \"label\": \"{button 3 label}\"\n                }\n            ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
-						}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/template/create"
 					},
-					"response": []
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
+					"id": "e8239daa-42c2-4792-859f-4fe7bc098aac",
+					"name": "Media Template",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"template_name\": \"{template name}\",\n    \"language\": [\n        \"{lang code}\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"ACCOUNT_UPDATE\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image/video/document\",\n            \"example\": \"{sample media url}\"\n        },\n        \"body\": {\n            \"text\": \"{body text}\"\n        },\n        \"footer\": {\n            \"text\": \"{footer text}\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/template/create"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
+					"id": "c9fc900a-4623-4a14-bab8-2188efd2c230",
+					"name": "Text Template",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"template_name\": \"{template name}\",\n    \"language\": [\n        \"{lang code}\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"{template category\",\n    \"components\": {\n        \"body\": {\n            \"text\": \"{body text}\"\n        },\n        \"footer\": {\n            \"text\": \"{footer text}\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/template/create"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
 				}
-			],
-			"id": "08ac9c02-4a00-46a2-89be-e6192983d3ea"
+			]
 		},
 		{
 			"name": "View Template Message",
