@@ -134,7 +134,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"campaign_action\": \"start\",\n    \"campaign_id\": \"{campaign id}\",\n    \"campaign_name\": \"{campaign name}\",\n    \"file_mimetype\": \"text/plain\",\n    \"filename\": \"{filename with extension}\",\n    \"payload\": {\n        \"type\": \"{payload type}\"\n    },\n    \"scheduled_time\":\"{date and time in UTC e.g.2021-12-08 13:36:00}\"\n}"
+							"raw": "{\n    \"campaign_action\": \"start\",\n    \"campaign_id\": \"{campaign id}\",\n    \"campaign_name\": \"{campaign name}\",\n    \"file_mimetype\": \"text/plain or text/csv\",\n    \"filename\": \"{filename with extension}\",\n    \"payload\": {\n        \"type\": \"{payload type}\"\n    },\n    \"scheduled_time\":\"{date and time in UTC e.g.2021-12-08 13:36:00}\"\n}"
 						},
 						"url": {
 							"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=UI",
