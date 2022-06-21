@@ -1556,6 +1556,81 @@
 					"body": null
 				},
 				{
+					"id": "8554e71a-2ce5-45ee-8c23-d83789c23a83",
+					"name": "Session Message Business for Single Product",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{'contact_no': '971508529104', 'data': {'contacts': [{'profile': {'name': 'Justin Joy'}, 'wa_id': '919833026954'}], 'messages': [{'context': {'referred_product': {'catalog_id': '965968734067732', 'product_retailer_id': '20214701'}}, 'from': '919833026954', 'id': 'ABEGkZgzAmlUAgo6nHH9FkqiBiDQ', 'text': {'body': 'Hi'}, 'timestamp': '1655377850', 'type': 'text'}], 'brand_msisdn': '971508529104'}, 'time': '2022-06-16 11:10:50.560600', 'source': 'FROM_CALLBACK'}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{client callback}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
+					"id": "55a842e9-ce48-4620-83f5-470ca72d5396",
+					"name": "Add Single Product to Cart Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{'contact_no': '971508529104', 'data': {'contacts': [{'profile': {'name': 'Justin Joy'}, 'wa_id': '919833026954'}], 'messages': [{'from': '919833026954', 'id': 'ABEGkZgzAmlUAgo6JhpaRkzJmt4T', 'order': {'catalog_id': '965968734067732', 'product_items': [{'currency': 'AED', 'item_price': 54, 'product_retailer_id': '20214701', 'quantity': 1}]}, 'timestamp': '1655377900', 'type': 'order'}], 'brand_msisdn': '971508529104'}, 'time': '2022-06-16 11:11:41.204321', 'source': 'FROM_CALLBACK'}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{client callback}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
+					"id": "b83989c5-54dd-45b9-b738-91fa904b772c",
+					"name": "Add Multi Product to Cart Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{'contact_no': '971508529104', 'data': {'contacts': [{'profile': {'name': 'Justin Joy'}, 'wa_id': '919833026954'}], 'messages': [{'from': '919833026954', 'id': 'ABEGkZgzAmlUAgo635UDWxqR0PNx', 'order': {'catalog_id': '965968734067732', 'product_items': [{'currency': 'AED', 'item_price': 54, 'product_retailer_id': '20214701', 'quantity': 1}, {'currency': 'AED', 'item_price': 40, 'product_retailer_id': '20641700', 'quantity': 1}]}, 'timestamp': '1655377983', 'type': 'order'}], 'brand_msisdn': '971508529104'}, 'time': '2022-06-16 11:13:03.900579', 'source': 'FROM_CALLBACK'}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{client callback}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
 					"id": "f6fc5417-52e0-4c24-98c1-e3ef1bd5db9a",
 					"name": "Delivery Report",
 					"originalRequest": {
