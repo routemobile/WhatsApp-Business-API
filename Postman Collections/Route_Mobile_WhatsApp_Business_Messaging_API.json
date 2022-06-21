@@ -937,7 +937,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"video\",\n        \"url\": \"{sample video url https://}\",\n        \"file\": \"{sample video .mp4 file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
+							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"enable_acculync\": true,\n    \"media\": {\n        \"type\": \"video\",\n        \"url\": \"{sample video url https://}\",\n        \"file\": \"{sample video .mp4 file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
