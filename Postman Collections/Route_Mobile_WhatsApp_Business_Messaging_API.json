@@ -867,7 +867,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"media\": {\n        \"type\": \"audio\",\n        \"url\": \"{sample .mp3 url https://}\",\n        \"file\": \"{sample audio.mp3 file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
+							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"enable_acculync\": true,\n    \"media\": {\n        \"type\": \"audio\",\n        \"url\": \"{sample .mp3 url https://}\",\n        \"file\": \"{sample audio.mp3 file name}\",\n        \"caption\": \"{sample text}\"\n    },\n    \"extra\": \"{your value}\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
