@@ -419,35 +419,6 @@
 					"response": []
 				},
 				{
-					"name": "Check Optin Message",
-					"id": "994d30a3-7ad5-4081-b2f5-a67f1e7f0223",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTg4NjQwODQ2NCwiZW1haWwiOiJha2FzcmFuamFuQGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNTcxMDQ4NDY0LCJjdXN0b21lcl9pZCI6IjlpcjVEZzdidnNDQSJ9.xEY-8sDcUUDSz4F34aVqThCzGK9WSyO-VUuEIpVooS4",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"clientname\": \"RML demo2\",\n    \"optin_message\": {\n        \"phone\": \"\",\n        \"media\": {\n            \"type\": \"image\",\n            \"url\": \"https://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg\",\n            \"file\": \"flower.jpg\",\n            \"caption\": \"This is a test Image\"\n        }\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://apis.rmlconnect.net/wbo/v1/optin/message/get",
-						"description": "http://localhost:5001/v1/optin/message/get"
-					},
-					"response": []
-				},
-				{
 					"name": "Update Optin Message",
 					"id": "7cabc896-a915-4a14-a438-d3c03cd5d870",
 					"protocolProfileBehavior": {
