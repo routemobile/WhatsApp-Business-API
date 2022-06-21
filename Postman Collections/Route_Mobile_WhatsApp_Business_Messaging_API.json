@@ -1582,7 +1582,7 @@
 				},
 				{
 					"id": "55a842e9-ce48-4620-83f5-470ca72d5396",
-					"name": "Add Single Product to Cart Copy",
+					"name": "Add Single Product to Cart",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
