@@ -762,7 +762,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{sample text}\",\n    \"extra\": \"{your value}\"\n}",
+							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{sample text}\",\n    \"enable_acculync\": true,\n    \"extra\": \"{your value}\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
