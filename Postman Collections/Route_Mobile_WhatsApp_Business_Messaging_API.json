@@ -45,26 +45,26 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/RmlPro_Deeksha/Desktop/GBU.txt"
+									"value": null
 								},
 								{
 									"key": "filename",
-									"value": "WBSbulk.txt",
+									"value": "{file name}",
 									"type": "text"
 								},
 								{
 									"key": "file_mimetype",
-									"value": "media_template",
+									"value": "text/plain or text/csv",
 									"type": "text"
 								},
 								{
 									"key": "message",
-									"value": "\"type\": \"media_template\",\n        \"template_name\": \"welcome\",\n        \"lang_code\": \"en\",\n        \"body\": [\n            {\n                \"text\": \"xyz\"\n            }\n        ]\n    }\n}",
+									"value": "{payload}",
 									"type": "text"
 								},
 								{
 									"key": "campaign_type",
-									"value": "generalized",
+									"value": "generalized/personalised",
 									"type": "text"
 								}
 							]
