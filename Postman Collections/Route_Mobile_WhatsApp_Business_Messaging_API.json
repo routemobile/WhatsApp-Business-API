@@ -1607,7 +1607,7 @@
 				},
 				{
 					"id": "b83989c5-54dd-45b9-b738-91fa904b772c",
-					"name": "Add Multi Product to Cart Copy",
+					"name": "Add Multi Product to Cart",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
