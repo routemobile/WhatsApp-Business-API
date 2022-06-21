@@ -127,7 +127,7 @@
 			"name": "Bulk Upload",
 			"item": [
 				{
-					"name": "File Upload Generalized",
+					"name": "File Upload",
 					"event": [
 						{
 							"listen": "test",
