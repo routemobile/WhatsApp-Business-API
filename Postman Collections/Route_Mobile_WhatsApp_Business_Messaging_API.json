@@ -360,12 +360,12 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiTlZXaGF0c2FwcCIsInVzZXJuYW1lIjoiTlZXaGF0c2FwcCIsImV4cCI6MTkzMjQ3MDE4NiwiZW1haWwiOiJzb3VyYXYucGFuamFsQG51dm9jby5jb20iLCJvcmlnX2lhdCI6MTYxNzExMDE4NiwiY3VzdG9tZXJfaWQiOiJkVGJveUw5Wk9qeFIifQ.hnGRrnRb0uZjRTxyD9bN8Do-Rci8lc4O9fNCZNdrUEE",
+								"value": "{token}",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "https://apis.rmlconnect.net/wbo/v2/optin/check?msisdn=918097105676",
+							"raw": "https://apis.rmlconnect.net/wbo/v2/optin/check?msisdn={phone number with country code}",
 							"protocol": "https",
 							"host": [
 								"apis",
@@ -381,7 +381,7 @@
 							"query": [
 								{
 									"key": "msisdn",
-									"value": "918097105676"
+									"value": "{phone number with country code}"
 								}
 							]
 						},
