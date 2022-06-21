@@ -341,7 +341,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"campaign_action\": \"start\",\n    \"extra\":\"test\",\n    \"campaign_id\": \"6b4ab46e-d351-11ec-aa9a-0a58a9feac02\",\n    \"campaign_name\": \"pelocal_testing_1\",\n    \"file_mimetype\": \"text/plain\",\n    \"filename\": \"PBU.txt\",\n    \"payload\": {\n        \"type\": \"media_template\"\n    }\n}"
+							"raw": "{\n    \"campaign_action\": \"start\",\n    \"campaign_id\": \"6b4ab46e-d351-11ec-aa9a-0a58a9feac02\",\n    \"campaign_name\": \"pelocal_testing_1\",\n    \"file_mimetype\": \"text/plain\",\n    \"filename\": \"PBU.txt\",\n    \"payload\": {\n        \"type\": \"media_template\"\n    },\n    \"scheduled_time\":\"2021-12-08 13:36:00\"\n}"
 						},
 						"url": {
 							"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=UI",
