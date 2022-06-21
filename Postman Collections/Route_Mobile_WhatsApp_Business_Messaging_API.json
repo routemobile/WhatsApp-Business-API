@@ -400,13 +400,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTg4NjQwODQ2NCwiZW1haWwiOiJha2FzcmFuamFuQGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNTcxMDQ4NDY0LCJjdXN0b21lcl9pZCI6IjlpcjVEZzdidnNDQSJ9.xEY-8sDcUUDSz4F34aVqThCzGK9WSyO-VUuEIpVooS4",
+								"value": "{token}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"clientname\": \"Early Salary\",\n    \"optin_message\": {\n        \"phone\": \"\",\n        \"media\": {\n            \"type\": \"quick_reply\",\n            \"template_name\": \"cta_subscribe\"\n        }\n    }\n}",
+							"raw": "{\n    \"clientname\": \"{client name}\",\n    \"optin_message\": {\n        \"phone\": \"\",\n        \"media\": {\n            \"type\": \"media_template\",\n            \"template_name\": \"{template name}\"\n        }\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
