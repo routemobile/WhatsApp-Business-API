@@ -429,13 +429,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTg4NjQwODQ2NCwiZW1haWwiOiJha2FzcmFuamFuQGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNTcxMDQ4NDY0LCJjdXN0b21lcl9pZCI6IjlpcjVEZzdidnNDQSJ9.xEY-8sDcUUDSz4F34aVqThCzGK9WSyO-VUuEIpVooS4",
+								"value": "{token}",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"clientname\": \"RML demo2\",\n    \"optin_message\": {\n        \"phone\": \"\",\n        \"text\": \"new alert\"\n    }\n}",
+							"raw": "{\n    \"clientname\": \"{client name}\",\n    \"optin_message\": {\n        \"phone\": \"\",\n        \"text\": \"{message body}\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
