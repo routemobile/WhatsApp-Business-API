@@ -583,7 +583,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"text\": \"{variable}\"\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
+							"raw": "{\n\t\"phone\": \"{mobile number}\",\n    \"extra\": \"{your value}\",\n    \"enable_acculync\": true,\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"lang_code\": \"{code}\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"header\": [\n            {\n                \"text\": \"{variable}\"\n            }\n        ],\n\t\t\"body\": [\n\t\t\t{\n        \t\t\"text\": \"{variable}\"\n        \t},\n        \t{\n        \t\t\"text\": \"{variable}\"\n        \t}\n\t\t],\n        \"button\": [\n        \t{\n        \t\t\"button_no\": \"0/1\",\n                \"url\": \"{dynamic_url variable}\"\n        \t}\n        ]\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
