@@ -124,6 +124,322 @@
 			"id": "db253cbc-e06b-4219-8284-ebd2f77f2888"
 		},
 		{
+			"name": "Bulk Upload",
+			"item": [
+				{
+					"name": "File Upload Generalized",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b6f26f9e-3491-4340-be89-2f392636623d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"campaign_id\", jsonData.campaign_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f627d1aa-c35e-4237-8e6a-19b4b3bf2f5b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/RmlPro_Deeksha/Desktop/GBU.txt"
+								},
+								{
+									"key": "filename",
+									"value": "WBSbulk.txt",
+									"type": "text"
+								},
+								{
+									"key": "file_mimetype",
+									"value": "media_template",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "\"type\": \"media_template\",\n        \"template_name\": \"welcome\",\n        \"lang_code\": \"en\",\n        \"body\": [\n            {\n                \"text\": \"xyz\"\n            }\n        ]\n    }\n}",
+									"type": "text"
+								},
+								{
+									"key": "campaign_type",
+									"value": "generalized",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=UI",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"rmlconnect",
+								"net"
+							],
+							"path": [
+								"wba",
+								"v2",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "UI"
+								},
+								{
+									"key": "debug",
+									"value": "True",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "File Upload Personalized",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a898bb0c-a9c0-4078-a1f6-e9b2d32cff42",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"campaign_id\", jsonData.campaign_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "e9c315ef-71f6-4bb0-b4e1-44565d5b085c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTg4NjQwODQ2NCwiZW1haWwiOiJha2FzcmFuamFuQGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNTcxMDQ4NDY0LCJjdXN0b21lcl9pZCI6IjlpcjVEZzdidnNDQSJ9.xEY-8sDcUUDSz4F34aVqThCzGK9WSyO-VUuEIpVooS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/RmlPro_Deeksha/Desktop/PBU.txt"
+								},
+								{
+									"key": "filename",
+									"value": "PBU.txt",
+									"type": "text"
+								},
+								{
+									"key": "file_mimetype",
+									"value": "text/plain",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "{\n    \"phone\": \"\",\n    \"extra\": \"campaign\",\n    \"media\": {\n        \"type\": \"media_template\",\n        \"template_name\": \"admission_confirmation\",\n        \"lang_code\": \"en\",\n        \"body\": [\n            {\n                \"text\": \"{{name}}\"\n            },\n            {\n                \"text\": \"https://routemobile.com/\"\n            },\n            {\n                \"text\": \"3\"\n            },\n            {\n                \"text\": \"4\"\n            },\n            {\n                \"text\": \"5\"\n            }\n             ]\n    }\n}",
+									"type": "text"
+								},
+								{
+									"key": "campaign_type",
+									"value": "personalized",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=UI",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"rmlconnect",
+								"net"
+							],
+							"path": [
+								"wba",
+								"v2",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "UI"
+								},
+								{
+									"key": "debug",
+									"value": "True",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Bulk Campaign",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7749538b-c6ba-4d7c-aae2-9ed3de0149dd",
+								"exec": [
+									"pm.test(\"Status code is 202\", function () {",
+									"    pm.response.to.have.status(202);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "122bcc68-76de-4011-bcc9-429483cc8779",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTg4NjQwODQ2NCwiZW1haWwiOiJha2FzcmFuamFuQGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNTcxMDQ4NDY0LCJjdXN0b21lcl9pZCI6IjlpcjVEZzdidnNDQSJ9.xEY-8sDcUUDSz4F34aVqThCzGK9WSyO-VUuEIpVooS4",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"campaign_action\": \"start\",\n    \"extra\":\"test\",\n    \"campaign_id\": \"6b4ab46e-d351-11ec-aa9a-0a58a9feac02\",\n    \"campaign_name\": \"pelocal_testing_1\",\n    \"file_mimetype\": \"text/plain\",\n    \"filename\": \"PBU.txt\",\n    \"payload\": {\n        \"type\": \"media_template\"\n    }\n}"
+						},
+						"url": {
+							"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=UI",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"rmlconnect",
+								"net"
+							],
+							"path": [
+								"wba",
+								"v2",
+								"manage_campaign"
+							],
+							"query": [
+								{
+									"key": "debug",
+									"value": "True"
+								},
+								{
+									"key": "source",
+									"value": "UI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Scheduled Bulk Campaign",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 202\", function () {",
+									"    pm.response.to.have.status(202);",
+									"});"
+								],
+								"id": "1818bc7a-8f0e-4c55-b67e-4233f9282cea"
+							}
+						}
+					],
+					"id": "9ba5c3b7-c151-4ab8-bbb4-8d17a1e25153",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTg4NjQwODQ2NCwiZW1haWwiOiJha2FzcmFuamFuQGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNTcxMDQ4NDY0LCJjdXN0b21lcl9pZCI6IjlpcjVEZzdidnNDQSJ9.xEY-8sDcUUDSz4F34aVqThCzGK9WSyO-VUuEIpVooS4",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"campaign_action\": \"start\",\n    \"extra\":\"sample_text\",\n    \"campaign_id\": \"{{campaign_id}}\",\n    \"campaign_name\": \"text_testing\",\n    \"file_mimetype\": \"text/csv\",\n    \"filename\": \"new_bulk.csv\",\n    \"payload\": {\n        \"type\": \"text\"\n    },\n    \"scheduled_time\":\"2021-12-08 13:36:00\"\n}"
+						},
+						"url": {
+							"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=UI",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"rmlconnect",
+								"net"
+							],
+							"path": [
+								"wba",
+								"v2",
+								"manage_campaign"
+							],
+							"query": [
+								{
+									"key": "debug",
+									"value": "True"
+								},
+								{
+									"key": "source",
+									"value": "UI"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "d4ccc4a3-8a9b-45cc-84ab-b9afab22bb5d"
+		},
+		{
 			"name": "View Template Message",
 			"id": "5a227dad-e8bf-497d-9d51-02f058fd7347",
 			"protocolProfileBehavior": {
