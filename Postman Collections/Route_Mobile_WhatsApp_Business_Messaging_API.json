@@ -318,6 +318,167 @@
 			"id": "d4ccc4a3-8a9b-45cc-84ab-b9afab22bb5d"
 		},
 		{
+			"name": "Optin API",
+			"item": [
+				{
+					"name": "Create Optin",
+					"id": "34e6931c-375d-45c5-a4e0-c1b35f075977",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiTlZXaGF0c2FwcCIsInVzZXJuYW1lIjoiTlZXaGF0c2FwcCIsImV4cCI6MTkzMjQ3MDE4NiwiZW1haWwiOiJzb3VyYXYucGFuamFsQG51dm9jby5jb20iLCJvcmlnX2lhdCI6MTYxNzExMDE4NiwiY3VzdG9tZXJfaWQiOiJkVGJveUw5Wk9qeFIifQ.hnGRrnRb0uZjRTxyD9bN8Do-Rci8lc4O9fNCZNdrUEE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"msisdn\": \"+917045273671\",\n\"optin_channel\": \"whatsapp-api\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wbo/v2/optin/store",
+						"description": "http://localhost:5000/v1/optin/store?debug=s"
+					},
+					"response": []
+				},
+				{
+					"name": "Check Optin",
+					"id": "4bafc209-1a16-4453-8394-9c02e6b17cbd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiTlZXaGF0c2FwcCIsInVzZXJuYW1lIjoiTlZXaGF0c2FwcCIsImV4cCI6MTkzMjQ3MDE4NiwiZW1haWwiOiJzb3VyYXYucGFuamFsQG51dm9jby5jb20iLCJvcmlnX2lhdCI6MTYxNzExMDE4NiwiY3VzdG9tZXJfaWQiOiJkVGJveUw5Wk9qeFIifQ.hnGRrnRb0uZjRTxyD9bN8Do-Rci8lc4O9fNCZNdrUEE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://apis.rmlconnect.net/wbo/v2/optin/check?msisdn=918097105676",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"rmlconnect",
+								"net"
+							],
+							"path": [
+								"wbo",
+								"v2",
+								"optin",
+								"check"
+							],
+							"query": [
+								{
+									"key": "msisdn",
+									"value": "918097105676"
+								}
+							]
+						},
+						"description": "http://172.16.0.203:5000/v1/optin/check?msisdn=917045273671&debug=s"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Optin Message",
+					"id": "a7822f6f-ce74-4ef2-af8e-3ab3a630af14",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTg4NjQwODQ2NCwiZW1haWwiOiJha2FzcmFuamFuQGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNTcxMDQ4NDY0LCJjdXN0b21lcl9pZCI6IjlpcjVEZzdidnNDQSJ9.xEY-8sDcUUDSz4F34aVqThCzGK9WSyO-VUuEIpVooS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"clientname\": \"Early Salary\",\n    \"optin_message\": {\n        \"phone\": \"\",\n        \"media\": {\n            \"type\": \"quick_reply\",\n            \"template_name\": \"cta_subscribe\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wbo/v1/optin/message/store",
+						"description": "http://172.16.0.203:5000/v1/optin/message/store"
+					},
+					"response": []
+				},
+				{
+					"name": "Check Optin Message",
+					"id": "994d30a3-7ad5-4081-b2f5-a67f1e7f0223",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTg4NjQwODQ2NCwiZW1haWwiOiJha2FzcmFuamFuQGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNTcxMDQ4NDY0LCJjdXN0b21lcl9pZCI6IjlpcjVEZzdidnNDQSJ9.xEY-8sDcUUDSz4F34aVqThCzGK9WSyO-VUuEIpVooS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"clientname\": \"RML demo2\",\n    \"optin_message\": {\n        \"phone\": \"\",\n        \"media\": {\n            \"type\": \"image\",\n            \"url\": \"https://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg\",\n            \"file\": \"flower.jpg\",\n            \"caption\": \"This is a test Image\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wbo/v1/optin/message/get",
+						"description": "http://localhost:5001/v1/optin/message/get"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Optin Message",
+					"id": "7cabc896-a915-4a14-a438-d3c03cd5d870",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTg4NjQwODQ2NCwiZW1haWwiOiJha2FzcmFuamFuQGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNTcxMDQ4NDY0LCJjdXN0b21lcl9pZCI6IjlpcjVEZzdidnNDQSJ9.xEY-8sDcUUDSz4F34aVqThCzGK9WSyO-VUuEIpVooS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"clientname\": \"RML demo2\",\n    \"optin_message\": {\n        \"phone\": \"\",\n        \"text\": \"new alert\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wbo/v1/optin/message/update"
+					},
+					"response": []
+				}
+			],
+			"id": "aca69541-5c13-40d1-a183-0d3bcd0f4693"
+		},
+		{
 			"name": "Create Template",
 			"id": "5ee19c13-a5b8-4e58-a452-a06ea591802c",
 			"protocolProfileBehavior": {
