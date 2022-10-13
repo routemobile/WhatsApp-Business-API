@@ -388,34 +388,6 @@
 						"description": "http://172.16.0.203:5000/v1/optin/check?msisdn=917045273671&debug=s"
 					},
 					"response": []
-				},
-				{
-					"name": "Update Optin Message",
-					"id": "7cabc896-a915-4a14-a438-d3c03cd5d870",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{token}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"clientname\": \"{client name}\",\n    \"optin_message\": {\n        \"phone\": \"\",\n        \"text\": \"{message body}\"\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://apis.rmlconnect.net/wbo/v1/optin/message/update"
-					},
-					"response": []
 				}
 			],
 			"id": "aca69541-5c13-40d1-a183-0d3bcd0f4693"
