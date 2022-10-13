@@ -390,35 +390,6 @@
 					"response": []
 				},
 				{
-					"name": "Create Optin Message",
-					"id": "a7822f6f-ce74-4ef2-af8e-3ab3a630af14",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{token}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"clientname\": \"{client name}\",\n    \"optin_message\": {\n        \"phone\": \"\",\n        \"media\": {\n            \"type\": \"media_template\",\n            \"template_name\": \"{template name}\"\n        }\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://apis.rmlconnect.net/wbo/v1/optin/message/store",
-						"description": "http://172.16.0.203:5000/v1/optin/message/store"
-					},
-					"response": []
-				},
-				{
 					"name": "Update Optin Message",
 					"id": "7cabc896-a915-4a14-a438-d3c03cd5d870",
 					"protocolProfileBehavior": {
