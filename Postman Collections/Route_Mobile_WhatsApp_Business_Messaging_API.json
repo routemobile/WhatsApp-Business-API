@@ -318,6 +318,363 @@
 			"id": "d4ccc4a3-8a9b-45cc-84ab-b9afab22bb5d"
 		},
 		{
+			"name": "Catalog Manager",
+			"item": [
+				{
+					"name": "Upload File",
+					"id": "2fc2b4ce-fcee-4aa4-ac19-3e64c819857e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/home/anirudhpawar/Downloads/t1234.csv"
+								},
+								{
+									"key": "file_name",
+									"value": "{file_name}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "action",
+									"value": "update",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "https://apis.rmlconnect.net/wba/catalog/manager/v1/upload"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product Feed",
+					"id": "da021d9a-89a0-435e-ae4a-8e1f59376ee7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "{product_feed_name}",
+									"type": "text"
+								},
+								{
+									"key": "schedule",
+									"value": "{\"interval\":\"HOURLY\",\"scheduled_time\":\"2022-09-06 11:38:00\"}",
+									"description": "To Schedule Product Feed",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "file_url",
+									"value": "{file_url}",
+									"type": "text"
+								}
+							]
+						},
+						"url": "https://apis.rmlconnect.net/wba/catalog/manager/v1/create_product_feed"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product Feed",
+					"id": "ec208663-559d-4f48-8a20-3e678b229d79",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_feed_id",
+									"value": "{product-feed-id}",
+									"type": "text"
+								},
+								{
+									"key": "file_url",
+									"value": "{file_name}",
+									"type": "text"
+								},
+								{
+									"key": "schedule",
+									"value": "True",
+									"description": "For Updating Scheduled Product feed send schedule True and product_feed_id",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "https://apis.rmlconnect.net/wba/catalog/manager/v1/update_product_feed"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product Feed",
+					"id": "f10d5e6a-4ed6-49ef-8208-175b8236f09b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_feed_id\": \"{product_feed_id}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/catalog/manager/v1/delete_product_feed"
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Product Feed Details",
+					"id": "94fe4daf-2ee7-4780-ac25-77afbb5d9b0c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_product_feed?product_feed_id={product_feed_id}&fields=retailer_id,name,price,availability,id,description,color,size,condition,product_type,quantity_to_sell_on_facebook,url,gender,age_group,sale_price,mpn,sale_price_effective_date,brand,custom_label_0&limit=25",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"rmlconnect",
+								"net"
+							],
+							"path": [
+								"wba",
+								"catalog",
+								"manager",
+								"v1",
+								"fetch_product_feed"
+							],
+							"query": [
+								{
+									"key": "product_feed_id",
+									"value": "{product_feed_id}"
+								},
+								{
+									"key": "fields",
+									"value": "retailer_id,name,price,availability,id,description,color,size,condition,product_type,quantity_to_sell_on_facebook,url,gender,age_group,sale_price,mpn,sale_price_effective_date,brand,custom_label_0"
+								},
+								{
+									"key": "limit",
+									"value": "25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch All Product Feed",
+					"id": "4965eb3a-ed4d-4df1-a323-78e939da23b1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"url": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_product_details"
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Catalog Details",
+					"id": "f5aee524-3dff-4af1-a3b6-51d1729e296e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_catalog_details?catalog_id={catalog_id}&fetch_details=true&fields=retailer_id,name,price,availability,id,description,color,size,condition,product_type,quantity_to_sell_on_facebook,url,gender,age_group,sale_price,mpn,sale_price_effective_date,brand,custom_label_0,image_url",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"rmlconnect",
+								"net"
+							],
+							"path": [
+								"wba",
+								"catalog",
+								"manager",
+								"v1",
+								"fetch_catalog_details"
+							],
+							"query": [
+								{
+									"key": "catalog_id",
+									"value": "{catalog_id}"
+								},
+								{
+									"key": "fetch_details",
+									"value": "true"
+								},
+								{
+									"key": "fields",
+									"value": "name,product_count,schedule,latest_upload",
+									"disabled": true
+								},
+								{
+									"key": "fields",
+									"value": "retailer_id,name,price,availability,id,description,color,size,condition,product_type,quantity_to_sell_on_facebook,url,gender,age_group,sale_price,mpn,sale_price_effective_date,brand,custom_label_0,image_url"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Schedule Product Feed Details",
+					"id": "c542c3c5-c726-4071-80b7-bacc93c09ec0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/schedule_product_feed_details?product_feed_id={product_feed_id}",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"rmlconnect",
+								"net"
+							],
+							"path": [
+								"wba",
+								"catalog",
+								"manager",
+								"v1",
+								"schedule_product_feed_details"
+							],
+							"query": [
+								{
+									"key": "product_feed_id",
+									"value": "{product_feed_id}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Errors",
+					"id": "2b29b6b1-d9e0-408c-8fee-77cccf364fab",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_errors?upload_session_id={upload_session_id}",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"rmlconnect",
+								"net"
+							],
+							"path": [
+								"wba",
+								"catalog",
+								"manager",
+								"v1",
+								"fetch_errors"
+							],
+							"query": [
+								{
+									"key": "upload_session_id",
+									"value": "{upload_session_id}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "0e01fb37-9415-4e77-9949-c641fd0adf0d"
+		},
+		{
 			"name": "Optin API",
 			"item": [
 				{
