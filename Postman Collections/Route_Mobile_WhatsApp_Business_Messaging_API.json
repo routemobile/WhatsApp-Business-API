@@ -318,6 +318,247 @@
 			"id": "d4ccc4a3-8a9b-45cc-84ab-b9afab22bb5d"
 		},
 		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Create Report",
+					"id": "72952a8a-dda1-4438-aaf7-52b53153af1b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"projections\": [\n        \"country_code\",\n        \"msisdn\",\n        \"message_type\",\n        \"message_payload\",\n        \"request_id\",\n        \"conversation_id\",\n        \"message_id\",\n        \"submit_timestamp\",\n        \"sent_timestamp\",\n        \"delivery_timestamp\",\n        \"read_timestamp\",\n        \"failed_timestamp\",\n        \"deleted_timestamp\",\n        \"extra\",\n        \"pricing_model\"\n    ],\n    \"filters\": {\n        \"start_date\": \"{start-date}\",\n        \"end_date\": \"{end-date}\"\n    },\n    \"csv_max_lines\": 100000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/whatsapp/report/v1/create_report/myaccounts_panel"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Campaign Specific Report",
+					"id": "7ab369b8-bf93-4010-9a7f-2cede13872cd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"projections\": [\n        \"country_code\",\n        \"msisdn\",\n        \"message_type\",\n        \"message_payload\",\n        \"request_id\",\n        \"conversation_id\",\n        \"message_id\",\n        \"submit_timestamp\",\n        \"sent_timestamp\",\n        \"delivery_timestamp\",\n        \"read_timestamp\",\n        \"failed_timestamp\",\n        \"deleted_timestamp\",\n        \"extra\",\n        \"pricing_model\",\n        \"scheduled_time\"\n    ],\n    \"filters\": {\n        \"start_date\": \"{start-date}\",\n        \"end_date\": \"{end-date}\",\n        \"campaign_name\":\"{campaign-name}\",\n        \"campaign_id\":\"{campaign-id}\"\n    },\n    \"csv_max_lines\": 100000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/whatsapp/report/v1/create_campaign_specific_report/myaccounts_panel"
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Report URL",
+					"id": "ae436ca3-4833-4aef-8d6a-6a8f849addb2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{token}"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"url": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_campaign_specific_report/{report_id}"
+					},
+					"response": []
+				},
+				{
+					"name": "Download Campaign Summary",
+					"id": "0fe14b37-270d-4da9-9024-081062bcedd1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{token}"
+							}
+						],
+						"url": {
+							"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_campaign_details?download=true&end_date={end-date}&start_date={start-date}",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"rmlconnect",
+								"net"
+							],
+							"path": [
+								"whatsapp",
+								"report",
+								"v1",
+								"fetch_campaign_details"
+							],
+							"query": [
+								{
+									"key": "page_number",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "download",
+									"value": "true"
+								},
+								{
+									"key": "end_date",
+									"value": "{end-date}"
+								},
+								{
+									"key": "start_date",
+									"value": "{start-date}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Campaign Summary",
+					"id": "48a6adbb-eda7-4009-8439-0a61c68b64d0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_campaign_details?page_number=1&download=true&start_date={start-date}&end_date={end-date}",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"rmlconnect",
+								"net"
+							],
+							"path": [
+								"whatsapp",
+								"report",
+								"v1",
+								"fetch_campaign_details"
+							],
+							"query": [
+								{
+									"key": "page_number",
+									"value": "1"
+								},
+								{
+									"key": "download",
+									"value": "true"
+								},
+								{
+									"key": "start_date",
+									"value": "{start-date}"
+								},
+								{
+									"key": "end_date",
+									"value": "{end-date}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Report Summary",
+					"id": "d6a682e8-0ff0-4077-af03-925851f4ade9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{token}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_reports?start_date={start-date}&end_date={end-date}&page_number=1&page_size=5",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"rmlconnect",
+								"net"
+							],
+							"path": [
+								"whatsapp",
+								"report",
+								"v1",
+								"fetch_reports"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "{start-date}"
+								},
+								{
+									"key": "end_date",
+									"value": "{end-date}"
+								},
+								{
+									"key": "page_number",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "9ecdbe12-5fdc-47db-b2aa-0edfb228f269"
+		},
+		{
 			"name": "Catalog Manager",
 			"item": [
 				{
