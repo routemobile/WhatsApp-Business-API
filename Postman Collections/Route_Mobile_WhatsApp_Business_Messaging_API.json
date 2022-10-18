@@ -2047,7 +2047,7 @@
 				},
 				{
 					"id": "ef9ac97f-9622-4389-99ce-9cb17309179f",
-					"name": "Delivery Report Copy",
+					"name": "Read Report",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
