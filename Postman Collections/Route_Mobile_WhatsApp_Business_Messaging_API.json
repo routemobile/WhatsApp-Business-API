@@ -2022,7 +2022,32 @@
 				},
 				{
 					"id": "f6fc5417-52e0-4c24-98c1-e3ef1bd5db9a",
-					"name": "Delivery Report",
+					"name": "Sent/Delivery Report",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"statuses\":[{\n    \"conversation\":{\n        \"expiration_timestamp\":1644060900,\n        \"id\":\"d24f4c6e3e2d731dea92fcbd2822fa6a\",\n        \"origin\":{\n            \"type\":\"user_initiated/business_initiated/referral_conversion\"\n            }\n        },\n        \"id\":\"5a9f3040-85ae-11ec-8168-0242ac120005\",\n        \"pricing\":{\n            \"billable\":true/false,\n            \"category\":\"user_initiated/business_initiated/referral_conversion\",\n            \"pricing_model\":\"CBP\"\n            },\n            \"recipient_id\":\"919860063600\",\n            \"status\":\"sent\",\n            \"timestamp\":\"1643974443\",\n            \"type\":\"message\",\n            \"extra\":null\n            }\n        ],\n        \"brand_msisdn\":\"917428182444\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{client callback}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": null
+				},
+				{
+					"id": "ef9ac97f-9622-4389-99ce-9cb17309179f",
+					"name": "Delivery Report Copy",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
