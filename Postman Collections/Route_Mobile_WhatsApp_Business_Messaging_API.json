@@ -1319,7 +1319,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{sample text}\",\n    \"enable_acculync\": true,\n    \"extra\": \"{your value}\"\n}",
+							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{sample text}\",\n    \"reply_to\":\"wamid.HBgMOTE3MDQ1MzQ1Mjg1FQIAERgSQTg5MkYxNjM3QzU5OEFFODUyAA==\",\n    \"enable_acculync\": true,\n    \"extra\": \"{your value}\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
