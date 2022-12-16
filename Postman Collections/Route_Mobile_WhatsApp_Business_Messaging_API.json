@@ -1300,6 +1300,41 @@
 					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
 				},
 				{
+					"id": "ad44fb63-25ec-4c80-9769-1cef4037d5df",
+					"name": "Session Text Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{token}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"{mobile number}\",\n    \"text\": \"{sample text}\",\n    \"enable_acculync\": true,\n    \"extra\": \"{your value}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://apis.rmlconnect.net/wba/v1/messages"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+				},
+				{
 					"id": "f81a24bc-7fa1-431f-a212-21272294fc27",
 					"name": "Session Text With Preview Url",
 					"originalRequest": {
