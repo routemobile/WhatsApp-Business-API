@@ -1301,7 +1301,7 @@
 				},
 				{
 					"id": "ad44fb63-25ec-4c80-9769-1cef4037d5df",
-					"name": "Session Text Copy",
+					"name": "Session Text with Reply To",
 					"originalRequest": {
 						"method": "POST",
 						"header": [
