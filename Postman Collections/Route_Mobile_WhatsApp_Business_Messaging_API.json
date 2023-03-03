@@ -1120,7 +1120,7 @@
 								},
 								{
 									"key": "message",
-									"value": "{payload}\n\t\"phone\": \"{{phone}}\",\n    \"enable_acculync\": true,\n    \"extra\": \"extra\",\n\t\"media\": {\n\t\t\"type\": \"call_to_action\",\n\t\t\"template_name\": \"creditmantri\",\n        \"lang_code\": \"en\",\n        \"body\": [\n            {\n                \"text\": \"https://mail.google.com/\"\n            },\n            {\n                \"text\": \"2\"\n            },\n            {\n                \"text\": \"3\"\n            },\n            {\n                \"text\": \"4\"\n            },\n            {\n                \"text\": \"5\"\n            }\n             ],\n        \"button\": [\n            {\n                \"button_no\": \"0\",\n                \"url\": \"https://www.creditmantri.com/?act=show_login&utm_source=SMS-PA-TEST&utm_medium=SMS&utm_term=CMBASEAUTO100&tXcf={{tkn}}&utm_lender_id={{lid}}&utm_cmbase_id={{cmid}}\"\n            }\n        ]\n  }\n}",
+									"value": "{payload}",
 									"type": "text"
 								},
 								{
