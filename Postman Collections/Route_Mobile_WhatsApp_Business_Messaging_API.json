@@ -192,6 +192,11 @@
 			"id": "93237412-1e1b-48d9-b538-f77649be69e0"
 		},
 		{
+			"name": "Single Send Message",
+			"item": [],
+			"id": "166bb87e-c8c1-49f8-a259-0231dd70d25f"
+		},
+		{
 			"name": "Bulk Upload",
 			"item": [
 				{
@@ -1024,11 +1029,6 @@
 				}
 			],
 			"id": "aca69541-5c13-40d1-a183-0d3bcd0f4693"
-		},
-		{
-			"name": "New Folder",
-			"item": [],
-			"id": "166bb87e-c8c1-49f8-a259-0231dd70d25f"
 		},
 		{
 			"name": "Send Template Message API",
