@@ -1120,7 +1120,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"projections\": [\n        \"country_code\",\n        \"msisdn\",\n        \"message_type\",\n        \"message_payload\",\n        \"request_id\",\n        \"conversation_id\",\n        \"message_id\",\n        \"submit_timestamp\",\n        \"sent_timestamp\",\n        \"delivery_timestamp\",\n        \"read_timestamp\",\n        \"failed_timestamp\",\n        \"deleted_timestamp\",\n        \"extra\",\n        \"pricing_model\",\n        \"scheduled_time\"\n    ],\n    \"filters\": {\n        \"start_date\": \"{start-date}\",\n        \"end_date\": \"{end-date}\",\n        \"campaign_name\":\"{campaign-name}\",\n        \"campaign_id\":\"{campaign-id}\"\n    },\n    \"csv_max_lines\": 100000\n}",
+							"raw": "{\n    \"projections\": [\n        \"country_code\",\n        \"msisdn\",\n        \"message_type\",\n        \"message_payload\",\n        \"request_id\",\n        \"conversation_id\",\n        \"message_id\",\n        \"submit_timestamp\",\n        \"sent_timestamp\",\n        \"delivery_timestamp\",\n        \"read_timestamp\",\n        \"failed_timestamp\",\n        \"deleted_timestamp\",\n        \"extra\",\n        \"pricing_category\",\n        \"expiration_timestamp\"\n    ],\n    \"filters\": {\n        \"start_date\": \"{start-date}\",\n        \"end_date\": \"{end-date}\",\n        \"campaign_name\": \"{campaign-name}\",\n        \"campaign_id\": \"{campaign-id}\"\n    },\n    \"csv_max_lines\": 100000\n}",
 							"options": {
 								"raw": {
 									"language": "json"
