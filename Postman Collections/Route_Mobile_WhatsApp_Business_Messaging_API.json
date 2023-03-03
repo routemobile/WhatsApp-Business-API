@@ -1096,7 +1096,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTg4NjQwODQ2NCwiZW1haWwiOiJha2FzcmFuamFuQGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNTcxMDQ4NDY0LCJjdXN0b21lcl9pZCI6IjlpcjVEZzdidnNDQSJ9.xEY-8sDcUUDSz4F34aVqThCzGK9WSyO-VUuEIpVooS4",
+								"value": "{token}",
 								"type": "text"
 							}
 						],
@@ -1106,11 +1106,11 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/RmlPro_Deeksha/Desktop/PBU.txt"
+									"value": null
 								},
 								{
 									"key": "filename",
-									"value": "PBU.txt",
+									"value": "test.txt",
 									"type": "text"
 								},
 								{
