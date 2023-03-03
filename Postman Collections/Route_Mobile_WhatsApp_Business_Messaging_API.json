@@ -1068,6 +1068,95 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "File Upload Personalized",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d36bca67-c651-446c-9140-2c868f34a2ed",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"campaign_id\", jsonData.campaign_id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "c48bf808-060d-4702-b1fa-ed62a4b617e3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTg4NjQwODQ2NCwiZW1haWwiOiJha2FzcmFuamFuQGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNTcxMDQ4NDY0LCJjdXN0b21lcl9pZCI6IjlpcjVEZzdidnNDQSJ9.xEY-8sDcUUDSz4F34aVqThCzGK9WSyO-VUuEIpVooS4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/RmlPro_Deeksha/Desktop/PBU.txt"
+								},
+								{
+									"key": "filename",
+									"value": "PBU.txt",
+									"type": "text"
+								},
+								{
+									"key": "file_mimetype",
+									"value": "text/plain",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "{\n\t\"phone\": \"{{phone}}\",\n    \"enable_acculync\": true,\n    \"extra\": \"extra\",\n\t\"media\": {\n\t\t\"type\": \"call_to_action\",\n\t\t\"template_name\": \"creditmantri\",\n        \"lang_code\": \"en\",\n        \"body\": [\n            {\n                \"text\": \"https://mail.google.com/\"\n            },\n            {\n                \"text\": \"2\"\n            },\n            {\n                \"text\": \"3\"\n            },\n            {\n                \"text\": \"4\"\n            },\n            {\n                \"text\": \"5\"\n            }\n             ],\n        \"button\": [\n            {\n                \"button_no\": \"0\",\n                \"url\": \"https://www.creditmantri.com/?act=show_login&utm_source=SMS-PA-TEST&utm_medium=SMS&utm_term=CMBASEAUTO100&tXcf={{tkn}}&utm_lender_id={{lid}}&utm_cmbase_id={{cmid}}\"\n            }\n        ]\n  }\n}",
+									"type": "text"
+								},
+								{
+									"key": "campaign_type",
+									"value": "personalized",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=UI",
+							"protocol": "https",
+							"host": [
+								"apis",
+								"rmlconnect",
+								"net"
+							],
+							"path": [
+								"wba",
+								"v2",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "UI"
+								},
+								{
+									"key": "debug",
+									"value": "True",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "d4ccc4a3-8a9b-45cc-84ab-b9afab22bb5d"
