@@ -6,13 +6,13 @@
 	},
 	"item": [
 		{
+			"name": "Template",
+			"item": [],
+			"id": "93237412-1e1b-48d9-b538-f77649be69e0"
+		},
+		{
 			"name": "Bulk Upload",
 			"item": [
-				{
-					"name": "New Folder",
-					"item": [],
-					"id": "93237412-1e1b-48d9-b538-f77649be69e0"
-				},
 				{
 					"name": "File Upload",
 					"event": [
