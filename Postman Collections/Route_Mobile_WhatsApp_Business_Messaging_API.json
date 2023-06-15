@@ -159,7 +159,7 @@
 						},
 						{
 							"id": "1eb4efdd-761b-4a2f-ad65-a1f5754d9320",
-							"name": "Auth CopyCode",
+							"name": "Create Template",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -188,7 +188,7 @@
 						},
 						{
 							"id": "76d4e303-1a70-4931-9234-be3daa1d4281",
-							"name": "Auth Autofill",
+							"name": "Create Template",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
