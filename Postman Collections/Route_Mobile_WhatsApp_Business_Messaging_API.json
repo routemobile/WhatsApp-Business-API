@@ -159,7 +159,36 @@
 						},
 						{
 							"id": "1eb4efdd-761b-4a2f-ad65-a1f5754d9320",
-							"name": "Create Template",
+							"name": "Auth CopyCode",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{token}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"template_name\": \"{template name}\",\n    \"language\": [\n        \"{lang code}\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"MARKETING/TRANSACTIONAL\",\n    \"components\": {\n        \"header\": {\n            \"type\": \"image/video/document\",\n            \"example\": \"{sample media url}\"\n        },\n        \"body\": {\n            \"text\": \"{body text}\"\n        },\n        \"footer\": {\n            \"text\": \"{footer text}\"\n        },\n        \"buttons\": {\n            \"type\": \"call_to_action\",\n            \"elements\": [\n                {\n                    \"label\": \"{phone number label}\",\n                    \"contact_no\": \"{phone number with + and country code}\"\n                },\n                {\n                    \"label\": \"{url label}\",\n                    \"type\": \"static/dynamic\",\n                    \"website\": \"{url with https}\"\n                }\n            ]\n        }\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://apis.rmlconnect.net/wba/template/create"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						},
+						{
+							"id": "76d4e303-1a70-4931-9234-be3daa1d4281",
+							"name": "Auth Autofill",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
