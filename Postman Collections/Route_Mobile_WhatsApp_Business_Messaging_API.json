@@ -498,7 +498,7 @@
 						},
 						{
 							"id": "ba0fd7c9-6b5a-4ac9-a414-64b567501ff4",
-							"name": "Auth Autofill Copy",
+							"name": "Auth Autofill",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
