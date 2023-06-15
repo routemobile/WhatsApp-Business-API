@@ -171,7 +171,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"template_name\": \"testing_auth_copycode\",\n    \"language\": [\n        \"en\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"AUTHENTICATION\",\n    \"components\": {\n        \"body\": {\n           \"add_security_recommendation\":true\n        },\n        \"footer\": {\n            \"code_expiration_minutes\": 10\n        },\n            \"buttons\": {\n            \"type\": \"OTP\",\n            \"otp_type\": \"COPY_CODE\",\n            \"text\": \"Copy Code\"\n        }\n    }\n}",
+									"raw": "{\n    \"template_name\": \"{template name}\",\n    \"language\": [\n        \"{lang code}\"\n    ],\n    \"template_type\": \"template\",\n    \"template_category\": \"AUTHENTICATION\",\n    \"components\": {\n        \"body\": {\n           \"add_security_recommendation\":true/false\n        },\n        \"footer\": {\n            \"code_expiration_minutes\": {code expiry upto 90mins}\n        },\n            \"buttons\": {\n            \"type\": \"OTP\",\n            \"otp_type\": \"COPY_CODE\",\n            \"text\": \"Copy Code\"\n        }\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
