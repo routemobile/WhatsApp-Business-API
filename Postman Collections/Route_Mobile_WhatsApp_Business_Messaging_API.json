@@ -465,6 +465,66 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "{\r\n    \"message\": \"message received successfully\",\r\n    \"status\": \"processing\",\r\n    \"request_id\": \"794c3fd4-f142-11eb-8e02-0242ac120005\"\r\n}"
+						},
+						{
+							"id": "e280b977-553f-4e5b-b924-a015df5cafc8",
+							"name": "Auth CopyCode",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{token}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"phone\": \"+919833529117\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{template_name}\",\n\t\t\"lang_code\": \"{lang_code}\",\n     \"body\": [\n            {\n                \"text\": \"123523\"\n            } \n\t\t    ],\n        \"button\": [\n                {\n                        \"button_type\": \"authentication\",\n                        \"button_no\": \"0\",\n                        \"text\": \"123523\"\n                }\n\t]\n  }\n}"
+								},
+								"url": "https://apis.rmlconnect.net/wba/v1/messages"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": null
+						},
+						{
+							"id": "ba0fd7c9-6b5a-4ac9-a414-64b567501ff4",
+							"name": "Auth Autofill Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{token}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"phone\": \"+919833529117\",\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{template_name\",\n\t\t\"lang_code\": \"{lang_code}\",\n     \"body\": [\n            {\n                \"text\": \"123523\"\n            } \n\t\t    ],\n        \"button\": [\n                {\n                        \"button_type\": \"authentication\",\n                        \"button_no\": \"0\",\n                        \"text\": \"123523\"\n                }\n\t]\n  }\n}"
+								},
+								"url": "https://apis.rmlconnect.net/wba/v1/messages"
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"responseTime": null,
+							"body": null
 						}
 					]
 				},
