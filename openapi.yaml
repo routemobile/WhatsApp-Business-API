@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.5.0
+  version: 1.6.0
   title: Route Mobile WhatsApp API
   description: >
     Welcome to the Route Mobile developer hub. You'll find comprehensive
@@ -12,13 +12,11 @@ info:
     name: Route Mobile Development
 servers:
   - url: https://apis.rmlconnect.net
-  - url: '{client callback}'
 paths:
   /wba/v2/upload:
     post:
       tags:
-        - WhatsApp Business Messaging API
-        - Bulk Upload
+        - WhatsApp Bulk Upload
       summary: File Upload
       description: The File Upload API sends multiple messages to users in a single upload.
       operationId: fileUpload
@@ -178,8 +176,7 @@ paths:
   /wba/v2/manage_campaign:
     post:
       tags:
-        - WhatsApp Business Messaging API
-        - Bulk Upload
+        - WhatsApp Bulk Upload
       summary: Send Bulk Campaign
       description: >-
         The Send Bulk Campaign API sends messages in bulk to multiple users,
@@ -335,8 +332,7 @@ paths:
   /wba/catalog/manager/v1/upload:
     post:
       tags:
-        - WhatsApp Business Messaging API
-        - Catalog Manager
+        - WhatsApp Catalog Manager
       summary: Upload File
       description: Upload the product feed file.
       operationId: uploadFile
@@ -447,8 +443,7 @@ paths:
   /wba/catalog/manager/v1/create_product_feed:
     post:
       tags:
-        - WhatsApp Business Messaging API
-        - Catalog Manager
+        - WhatsApp Catalog Manager
       summary: Create Product Feed
       description: Create a feed of products for a WhatsApp Business account.
       operationId: createProductFeed
@@ -474,7 +469,7 @@ paths:
                 properties:
                   status:
                     type: string
-                    description: The status of the message delivery.
+                    description: The status of the create product feed.
               examples:
                 Example:
                   value:
@@ -557,15 +552,14 @@ paths:
   /wba/catalog/manager/v1/update_product_feed:
     post:
       tags:
-        - WhatsApp Business Messaging API
-        - Catalog Manager
+        - WhatsApp Catalog Manager
       summary: Update Product Feed
       description: Update an existing feed of products for a WhatsApp Business account.
       operationId: updateProductFeed
       requestBody:
         description: ''
         content:
-          application/json:
+          multipart/form-data:
             schema:
               $ref: '#/components/schemas/v1_update_product_feed_body'
             examples:
@@ -661,8 +655,7 @@ paths:
   /wba/catalog/manager/v1/delete_product_feed:
     post:
       tags:
-        - WhatsApp Business Messaging API
-        - Catalog Manager
+        - WhatsApp Catalog Manager
       summary: Delete product Feed
       description: Delete an existing feed of products for a WhatsApp Business account.
       operationId: deleteProductFeed
@@ -766,8 +759,7 @@ paths:
   /wba/catalog/manager/v1/fetch_product_feed/{product_feed_id}:
     get:
       tags:
-        - WhatsApp Business Messaging API
-        - Catalog Manager
+        - WhatsApp Catalog Manager
       summary: Fetch Product Feed Details
       description: >-
         Fetch product feed details, which is used to retrieve details about a
@@ -933,8 +925,7 @@ paths:
   /wba/catalog/manager/v1/fetch_product_details:
     get:
       tags:
-        - WhatsApp Business Messaging API
-        - Catalog Manager
+        - WhatsApp Catalog Manager
       summary: Fetch All Product Feed
       description: >-
         Fetch a list of all product feeds associated with a WhatsApp Business
@@ -1056,8 +1047,7 @@ paths:
   /wba/catalog/manager/v1/fetch_catalog_details/{catalog_id}:
     get:
       tags:
-        - WhatsApp Business Messaging API
-        - Catalog Manager
+        - WhatsApp Catalog Manager
       summary: Fetch Catalog Details
       description: >-
         Fetch details about a specific product catalog associated with a
@@ -1303,8 +1293,7 @@ paths:
   /wba/catalog/manager/v1/schedule_product_feed_details/{product_feed_id}:
     get:
       tags:
-        - WhatsApp Business Messaging API
-        - Catalog Manager
+        - WhatsApp Catalog Manager
       summary: Fetch Schedule Product Feed Details
       description: >-
         Fetch scheduled product feeds associated with a WhatsApp Business
@@ -1493,8 +1482,7 @@ paths:
   /wba/catalog/manager/v1/fetch_errors:
     get:
       tags:
-        - WhatsApp Business Messaging API
-        - Catalog Manager
+        - WhatsApp Catalog Manager
       summary: Fetch Errors
       description: >-
         The Fetch Errors API calls all error outputs for the particular upload
@@ -1615,8 +1603,7 @@ paths:
   /whatsapp/report/v1/create_report/myaccounts_panel:
     post:
       tags:
-        - WhatsApp Business Messaging API
-        - Reports
+        - WhatsApp Reports
       summary: Create Report
       description: >
         Create reports for your WhatsApp Business account. Use the projections
@@ -1766,8 +1753,7 @@ paths:
   /whatsapp/report/v1/create_campaign_specific_report/myaccounts_panel:
     post:
       tags:
-        - WhatsApp Business Messaging API
-        - Reports
+        - WhatsApp Reports
       summary: Create Campaign Specific Report
       description: >
         Create a campaign-specific report for WhatsApp Business account. The
@@ -1947,8 +1933,7 @@ paths:
   /whatsapp/report/v1/fetch_campaign_specific_report/{report_id}:
     get:
       tags:
-        - WhatsApp Business Messaging API
-        - Reports
+        - WhatsApp Reports
       summary: Fetch Report URL
       description: >-
         Fetch campaign data from the provided URL by entering the report_id
@@ -2055,8 +2040,7 @@ paths:
   /whatsapp/report/v1/fetch_campaign_details:
     get:
       tags:
-        - WhatsApp Business Messaging API
-        - Reports
+        - WhatsApp Reports
       summary: View Campaign Summary
       description: >-
         View the campaign summary for the WhatsApp Business account. Ensure that
@@ -2216,8 +2200,7 @@ paths:
   /whatsapp/report/v1/fetch_reports/{start_date}/{end_date}:
     get:
       tags:
-        - WhatsApp Business Messaging API
-        - Reports
+        - WhatsApp Reports
       summary: View Report Summary
       description: View report summary for the WhatsApp Business account.
       operationId: viewReportSummary
@@ -2383,8 +2366,7 @@ paths:
   /wbo/v2/optin/store:
     post:
       tags:
-        - WhatsApp Business Messaging API
-        - Optin API
+        - WhatsApp Optin API
       summary: Create Optin
       description: Create optin for the WhatsApp Business account.
       operationId: createOptin
@@ -2514,8 +2496,7 @@ paths:
   /wbo/v2/optin/check:
     get:
       tags:
-        - WhatsApp Business Messaging API
-        - Optin API
+        - WhatsApp Optin API
       summary: Check Optin
       description: >-
         Check optin if a particular phone number has opted-in to receive
@@ -3296,7 +3277,7 @@ paths:
   /wba/templates:
     get:
       tags:
-        - WhatsApp Business Messaging API
+        - WhatsApp Messaging Template API
       summary: View Template Message
       description: View template messages added to the WhatsApp Business account.
       operationId: viewTemplateMessage
@@ -3349,7 +3330,9 @@ paths:
                           description: The reason for rejection.
                         language:
                           type: string
-                          description: 'The language of the item. '
+                          description: >-
+                            Language code of language in which message text is
+                            written, such as "en" for English.
                         created_date:
                           type: string
                           description: The date and time when the item was created.
@@ -3466,9 +3449,13 @@ paths:
   /wba/template/create:
     post:
       tags:
-        - WhatsApp Business Messaging API
+        - WhatsApp Messaging Template API
       summary: Create Template
       description: Create a template for your message.
+      externalDocs:
+        description: Learn more about WhatsApp different type of templates.
+        url: >-
+          https://routemobile.github.io/WhatsApp-Business-API/trial.html#tag/WhatsApp-Messaging-Template-API/operation/createTemplate
       operationId: createTemplate
       requestBody:
         description: ''
@@ -3732,11 +3719,15 @@ paths:
   /wba/v1/messages:
     post:
       tags:
-        - WhatsApp Business Messaging API
+        - WhatsApp Messaging Template API
       summary: Send Template Message API
       description: >-
         Send Template Message API can be used to send either template or session
         messages to customers. 
+      externalDocs:
+        description: Learn more about WhatsApp different type of templates.
+        url: >-
+          https://routemobile.github.io/WhatsApp-Business-API/trial.html#tag/WhatsApp-Messaging-Template-API/operation/sendSessionMessageApi
       operationId: sendSessionMessageApi
       requestBody:
         content:
@@ -4208,7 +4199,7 @@ paths:
   /auth/v1/login/:
     post:
       tags:
-        - Login
+        - WhatsApp Login
       summary: Login API
       description: >-
         Login APIs provide a secure and standardized way for end users to add
@@ -4286,13 +4277,20 @@ paths:
         - url: https://apis.rmlconnect.net
         - url: '{client callback}'
 tags:
-  - name: Login
-  - name: WhatsApp Business Messaging API
-  - name: Bulk Upload
-  - name: Catalog Manager
-  - name: Reports
-  - name: Optin API
+  - name: WhatsApp Login
+    description: Login to WhatsApp Business account.
+  - name: WhatsApp Bulk Upload
+    description: Types of WhatsApp bulk upload APIs.
+  - name: WhatsApp Catalog Manager
+    description: Types of WhatsApp catalog manager APIs.
+  - name: WhatsApp Reports
+    description: WhatsApp Report APIs.
+  - name: WhatsApp Optin API
+    description: WhatsApp Optin APIs.
+  - name: WhatsApp Messaging Template API
+    description: WhatsApp messaging template and session message APIs.
   - name: WhatsApp Client Callback API
+    description: Different types of WhatsApp client callback APIs.
 components:
   securitySchemes:
     jwt:
@@ -4314,7 +4312,9 @@ components:
           description: >
             The CSV or plain text file path on your local system or network that
             you want to upload as part of a bulk campaign. The file contains the
-            list of phone numbers and messages.
+            list of phone numbers and messages. For example, ABC.xlsx, ABC.csv,
+            ABC.txt
+          example: ABC.xlsx, ABC.csv, ABC.txt
         file_mimetype:
           type: string
           description: >-
@@ -4403,7 +4403,9 @@ components:
           description: The name of the template to use.
         lang_code:
           type: string
-          description: The language code for the message template.
+          description: >-
+            Language code of language in which message text is written, such as
+            "en" for English.
         header:
           type: array
           items:
@@ -4633,7 +4635,8 @@ components:
           type: string
           description: >-
             The data of the product feed file that contains catalog details such
-            as ID, name, and image URL. 
+            as ID, name, and image URL. For example, ABC.csv
+          example: ABC.csv
         file_name:
           type: string
           description: >-
@@ -4655,7 +4658,9 @@ components:
       properties:
         file_url:
           type: string
-          description: The URL of the file that contains the product feed.
+          description: >-
+            The URL of the file that contains the product feed, hosted publicly
+            and starting with "https://" and ending with the file extension.
           example: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=
         name:
           type: string
@@ -4684,7 +4689,10 @@ components:
       properties:
         file_url:
           type: string
-          description: 'The URL of the file that contains the updated product feed. '
+          description: >-
+            The URL of the file that contains the updated product feed, hosted
+            publicly and starting with "https://" and ending with the file
+            extension.
         product_feed_id:
           type: string
           description: 'The unique ID of the product feed that should be updated. '
@@ -4972,7 +4980,9 @@ components:
       properties:
         lang_code:
           type: string
-          description: The language code.
+          description: >-
+            Language code of language in which message text is written, such as
+            "en" for English.
         template_name:
           type: string
           description: The name of the message template.
@@ -4999,7 +5009,7 @@ components:
           description: The response message.
         status:
           type: string
-          description: The status of the message delivery.
+          description: The optin status of msisdn.
         error:
           $ref: '#/components/schemas/inline_response_422_5_error'
     inline_response_422_5_error:
@@ -6083,7 +6093,9 @@ components:
           $ref: '#/components/schemas/wbatemplatecreate_components'
         language:
           type: array
-          description: The language usage in your template.
+          description: >-
+            Language code of language in which message text is written, such as
+            "en" for English.
           items:
             type: string
             example: '{lang code}'
@@ -6091,7 +6103,9 @@ components:
             - '{lang code}'
         template_category:
           type: string
-          description: The best notification category that fits your WhatsApp template.
+          description: >-
+            The best notification category that fits your WhatsApp template. For
+            example, MARKETING, AUTHENTICATION, UTILITY.
           example: MARKETING, AUTHENTICATION, UTILITY
         template_name:
           type: string
@@ -6101,8 +6115,8 @@ components:
           example: '{template name}'
         template_type:
           type: string
-          description: The type of template that WhatsApp allows.
-          example: template
+          description: The type of media template that WhatsApp allows.
+          example: media template
     wbatemplatecreate_components:
       type: object
       description: >+
@@ -6200,12 +6214,15 @@ components:
           description: Name of the template.
         language:
           type: array
-          description: The language of the template.
+          description: >-
+            Language code of language in which message text is written, such as
+            "en" for English.
           items:
             type: string
         template_type:
           type: string
-          description: Type of the template.
+          description: The type of media template that WhatsApp allows.
+          example: media template
         template_category:
           type: string
           description: >-
@@ -6275,12 +6292,14 @@ components:
           description: Name of the template.
         language:
           type: array
-          description: Language of the template.
+          description: >-
+            Language code of language in which message text is written, such as
+            "en" for English.
           items:
             type: string
         template_type:
           type: string
-          description: Type of the template.
+          description: The type of media template that WhatsApp allows.
         template_category:
           type: string
           description: >-
@@ -6339,12 +6358,14 @@ components:
           description: Name of the template.
         language:
           type: array
-          description: Language of the template.
+          description: >-
+            Language code of language in which message text is written, such as
+            "en" for English.
           items:
             type: string
         template_type:
           type: string
-          description: Type of the template.
+          description: The type of media template that WhatsApp allows.
         template_category:
           type: string
           description: >-
@@ -6387,12 +6408,14 @@ components:
           description: Name of the template.
         language:
           type: array
-          description: Language of the template.
+          description: >-
+            Language code of language in which message text is written, such as
+            "en" for English.
           items:
             type: string
         template_type:
           type: string
-          description: Type of the template.
+          description: The type of media template that WhatsApp allows.
         template_category:
           type: string
           description: >-
@@ -6425,12 +6448,14 @@ components:
           description: Name of the template.
         language:
           type: array
-          description: Language of the template.
+          description: >-
+            Language code of language in which message text is written, such as
+            "en" for English.
           items:
             type: string
         template_type:
           type: string
-          description: Type of the template.
+          description: The type of media template that WhatsApp allows.
         template_category:
           type: string
           description: >-
@@ -6488,12 +6513,14 @@ components:
           description: Name of the template.
         language:
           type: array
-          description: Language of the template.
+          description: >-
+            Language code of language in which message text is written, such as
+            "en" for English.
           items:
             type: string
         template_type:
           type: string
-          description: Type of the template.
+          description: The type of media template that WhatsApp allows.
         template_category:
           type: string
           description: >-
@@ -6578,7 +6605,9 @@ components:
               description: The name of the template to use.
             lang_code:
               type: string
-              description: The language code for the message template.
+              description: >-
+                Language code of language in which message text is written, such
+                as "en" for English.
             body:
               type: array
               description: An array of objects representing the body of the template.
@@ -6644,7 +6673,9 @@ components:
                 message, set to "media_template".
             lang_code:
               type: string
-              description: The language code for the message template.
+              description: >-
+                Language code of language in which message text is written, such
+                as "en" for English.
             template_name:
               type: string
               description: The name of the template to use.
@@ -6724,7 +6755,9 @@ components:
                 message, set to "media_template".
             lang_code:
               type: string
-              description: The language code for the message template.
+              description: >-
+                Language code of language in which message text is written, such
+                as "en" for English.
             template_name:
               type: string
               description: The name of the template to use.
@@ -6812,7 +6845,9 @@ components:
                 message, set to "media_template".
             lang_code:
               type: string
-              description: The language code for the message template.
+              description: >-
+                Language code of language in which message text is written, such
+                as "en" for English.
             template_name:
               type: string
               description: The name of the template to use.
@@ -6900,7 +6935,9 @@ components:
                 message, set to "media_template".
             lang_code:
               type: string
-              description: The language code for the message template.
+              description: >-
+                Language code of language in which message text is written, such
+                as "en" for English.
             template_name:
               type: string
               description: The name of the template to use.
@@ -6979,7 +7016,9 @@ components:
               description: The name of the template.
             lang_code:
               type: string
-              description: The language code for the template.
+              description: >-
+                Language code of language in which message text is written, such
+                as "en" for English.
             body:
               type: array
               description: An array of objects representing the body of the template.
@@ -7036,7 +7075,9 @@ components:
               description: The name of the template.
             lang_code:
               type: string
-              description: The language code for the template.
+              description: >-
+                Language code of language in which message text is written, such
+                as "en" for English.
             body:
               type: array
               description: An array of objects representing the body of the template.
@@ -7171,7 +7212,7 @@ components:
               type: string
               description: >-
                 The URL of the document, starting with "https://" and ending
-                with the file extension, such as ".doc".
+                with the file extension, such as ".pdf".
             file:
               type: string
               description: The file name of the document.
