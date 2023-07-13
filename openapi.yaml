@@ -3451,11 +3451,9 @@ paths:
       tags:
         - WhatsApp Messaging Template API
       summary: Create Template
-      description: Create a template for your message.
-      externalDocs:
-        description: Learn more about WhatsApp different type of templates.
-        url: >-
-          https://routemobile.github.io/WhatsApp-Business-API/trial.html#tag/WhatsApp-Messaging-Template-API/operation/createTemplate
+      description: >-
+        Create a template for your message. Learn more about [different WhatsApp
+        templates](https://routemobile.github.io/WhatsApp-Business-API/WBS.html#tag/WhatsApp-Messaging-Template-API/operation/createTemplate).
       operationId: createTemplate
       requestBody:
         description: ''
@@ -3723,11 +3721,9 @@ paths:
       summary: Send Template Message API
       description: >-
         Send Template Message API can be used to send either template or session
-        messages to customers. 
-      externalDocs:
-        description: Learn more about WhatsApp different type of templates.
-        url: >-
-          https://routemobile.github.io/WhatsApp-Business-API/trial.html#tag/WhatsApp-Messaging-Template-API/operation/sendSessionMessageApi
+        messages to customers. Learn more about [WhatsApp template and session
+        message
+        APIs](https://routemobile.github.io/WhatsApp-Business-API/WBS.html#tag/WhatsApp-Messaging-Template-API/operation/sendSessionMessageApi).
       operationId: sendSessionMessageApi
       requestBody:
         content:
@@ -4312,8 +4308,20 @@ components:
           description: >
             The CSV or plain text file path on your local system or network that
             you want to upload as part of a bulk campaign. The file contains the
-            list of phone numbers and messages. For example, ABC.xlsx, ABC.csv,
-            ABC.txt
+            list of phone numbers and messages. 
+
+
+            See the sample files for more information on bulk upload files and
+            their details:
+
+            - [Bulk Upload
+            File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Bulk%20Upload%20File.txt)
+
+            - [Bulk Upload Campaign
+            File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Bulk%20Upload%20Campaign%20File.xlsx)
+
+            - [Campaign
+            File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Campaign%20File%20.csv)
           example: ABC.xlsx, ABC.csv, ABC.txt
         file_mimetype:
           type: string
@@ -4635,7 +4643,11 @@ components:
           type: string
           description: >-
             The data of the product feed file that contains catalog details such
-            as ID, name, and image URL. For example, ABC.csv
+            as ID, name, and image URL. 
+
+            See the sample [catalog
+            file](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Catalog%20File.csv)
+            for more information on catalog details and its format.
           example: ABC.csv
         file_name:
           type: string
