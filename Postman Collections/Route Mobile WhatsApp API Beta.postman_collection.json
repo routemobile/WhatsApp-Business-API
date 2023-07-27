@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "5b4e05c1-65e1-4d92-8527-e290b5c4d70a",
+		"_postman_id": "f36a64dc-b434-40cd-8290-1e49cad2c43d",
 		"name": "Route Mobile WhatsApp API",
-		"description": "Welcome to the Route Mobile developer hub. You'll find comprehensive WhatsApp API documentation to help you start working with Route Mobile as quickly as possible, as well as support if you get stuck. Let's jump right in!\n\n\nContact Support:\n Name: Route Mobile Development",
+		"description": "Welcome to the Route Mobile developer hub. You'll find comprehensive WhatsApp API documentation to help you start working with Route Mobile as quickly as possible, as well as support if you get stuck. Let's jump right in!\n\nFor more information, see the [Route Mobile Open Specifications](https://routemobile.github.io/WhatsApp-Business-API/WBS.html).\n\n\nContact Support:\n Name: Route Mobile Development",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26115958"
 	},
@@ -11,7 +11,7 @@
 			"name": "WhatsApp Login",
 			"item": [
 				{
-					"name": "/auth/v1/login/",
+					"name": "Login API",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -26,7 +26,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"password\": \"<string>\",\n\t\"username\": \"<string>\"\n}",
+							"raw": "{\n\t\"password\": \"password\",\n\t\"username\": \"username\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -68,7 +68,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"password\": \"<string>\",\n\t\"username\": \"<string>\"\n}",
+									"raw": "{\n\t\"password\": \"password\",\n\t\"username\": \"username\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -102,7 +102,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"JWTAUTH\": \"<string>\",\n\t\"user_data\": {\n\t\t\"username\": \"<string>\",\n\t\t\"first_name\": \"<string>\",\n\t\t\"last_name\": \"<string>\",\n\t\t\"email\": \"<string>\",\n\t\t\"phone_number\": \"<string>\",\n\t\t\"password_reset\": \"<boolean>\",\n\t\t\"is_active\": \"<boolean>\",\n\t\t\"is_staff\": \"<boolean>\",\n\t\t\"ip\": \"<string>\",\n\t\t\"child_user\": \"<boolean>\",\n\t\t\"parent_username\": \"<string>\"\n\t}\n}"
+							"body": "{\n\t\"JWTAUTH\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.eyJ1c2VyX2lkIjoiZGVtbyIsIxxxxxxxxxxxxxxxxxxxxxxxxxxxcCI6MTY4Mzg4OTI0MSwiZW1haWwiOiJwcm9kdWN0LWRlc2tAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2ODM4ODU2NDEsImN1c3RvbWVyX2lkIjoiOWlyNURnN2J2c0NBIn0.gu2LO-bDVPqa35v_MnyO1KKxxxxxxxxxxxxxxxxxxTE\",\n\t\"user_data\": {\n\t\t\"username\": \"demo\",\n\t\t\"first_name\": \"First_Name\",\n\t\t\"last_name\": \"Last_Name\",\n\t\t\"email\": \"user@companydomain.com\",\n\t\t\"phone_number\": \"+XXXXXXXXXXXX\",\n\t\t\"password_reset\": false,\n\t\t\"is_active\": true,\n\t\t\"is_staff\": false,\n\t\t\"ip\": \"1stepauth\",\n\t\t\"child_user\": false,\n\t\t\"parent_username\": \"\"\n\t}\n}"
 						},
 						{
 							"name": "Forbidden",
@@ -120,7 +120,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"password\": \"<string>\",\n\t\"username\": \"<string>\"\n}",
+									"raw": "{\n\t\"password\": \"password\",\n\t\"username\": \"username\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -154,7 +154,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"invalid credentials or the account has been deactivated\"\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -172,7 +172,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"password\": \"<string>\",\n\t\"username\": \"<string>\"\n}",
+									"raw": "{\n\t\"password\": \"password\",\n\t\"username\": \"username\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -206,7 +206,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"<exception>\"\n}"
 						}
 					]
 				}
@@ -217,7 +217,7 @@
 			"name": "WhatsApp Bulk Upload",
 			"item": [
 				{
-					"name": "/wba/v2/upload",
+					"name": "File Upload",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -255,38 +255,38 @@
 							"formdata": [
 								{
 									"key": "campaign_type",
-									"value": "<string>",
+									"value": "Generalized",
 									"description": "(Required) The type of campaign being sent, which can be either generalized or personalized.\n",
 									"type": "text"
 								},
 								{
 									"key": "file",
-									"value": "<string>",
+									"value": "ABC.xlsx, ABC.csv, ABC.txt",
 									"description": "(Required) The CSV or plain text file path on your local system or network that you want to upload as part of a bulk campaign. The file contains the list of phone numbers and messages. \n\nSee the sample files for more information on bulk upload files and their details:\n- [Bulk Upload File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Bulk%20Upload%20File.txt)\n- [Bulk Upload Campaign File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Bulk%20Upload%20Campaign%20File.xlsx)\n- [Campaign File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Campaign%20File%20.csv)\n",
 									"type": "text"
 								},
 								{
 									"key": "file_mimetype",
-									"value": "<string>",
+									"value": "\"text/plain or text/csv\"",
 									"description": "(Required) The MIME type of the file containing the phone numbers of the recipients. The type of the file can be either \"text/plain\" or \"text/csv\".",
 									"type": "text"
 								},
 								{
 									"key": "filename",
-									"value": "<string>",
+									"value": "proident id consequat veniam consectetur",
 									"description": "(Required) The name of the file containing the phone numbers of the recipients, including the file extension.",
 									"type": "text"
 								},
 								{
 									"key": "message",
-									"value": "<string>",
+									"value": "incididunt",
 									"description": "(Required) The message that you want to send to the users along with the file. ",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=<string>&debug=True",
+							"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=UI&debug=True",
 							"protocol": "https",
 							"host": [
 								"apis",
@@ -301,7 +301,7 @@
 							"query": [
 								{
 									"key": "source",
-									"value": "<string>",
+									"value": "UI",
 									"description": "The details of the source for uploading the file for a bulk campaign."
 								},
 								{
@@ -338,38 +338,38 @@
 									"formdata": [
 										{
 											"key": "campaign_type",
-											"value": "<string>",
+											"value": "Generalized",
 											"description": "(Required) The type of campaign being sent, which can be either generalized or personalized.\n",
 											"type": "text"
 										},
 										{
 											"key": "file",
-											"value": "<string>",
+											"value": "ABC.xlsx, ABC.csv, ABC.txt",
 											"description": "(Required) The CSV or plain text file path on your local system or network that you want to upload as part of a bulk campaign. The file contains the list of phone numbers and messages. \n\nSee the sample files for more information on bulk upload files and their details:\n- [Bulk Upload File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Bulk%20Upload%20File.txt)\n- [Bulk Upload Campaign File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Bulk%20Upload%20Campaign%20File.xlsx)\n- [Campaign File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Campaign%20File%20.csv)\n",
 											"type": "text"
 										},
 										{
 											"key": "file_mimetype",
-											"value": "<string>",
+											"value": "\"text/plain or text/csv\"",
 											"description": "(Required) The MIME type of the file containing the phone numbers of the recipients. The type of the file can be either \"text/plain\" or \"text/csv\".",
 											"type": "text"
 										},
 										{
 											"key": "filename",
-											"value": "<string>",
+											"value": "proident id consequat veniam consectetur",
 											"description": "(Required) The name of the file containing the phone numbers of the recipients, including the file extension.",
 											"type": "text"
 										},
 										{
 											"key": "message",
-											"value": "<string>",
+											"value": "incididunt",
 											"description": "(Required) The message that you want to send to the users along with the file. ",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=<string>&debug=True",
+									"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=UI&debug=True",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -384,7 +384,7 @@
 									"query": [
 										{
 											"key": "source",
-											"value": "<string>",
+											"value": "UI",
 											"description": "The details of the source for uploading the file for a bulk campaign."
 										},
 										{
@@ -405,7 +405,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"campaign_id\": \"<string>\",\n\t\"file_type\": \"<string>\",\n\t\"file_size\": \"<string>\",\n\t\"total_records\": \"<integer>\",\n\t\"valid_records\": \"<integer>\",\n\t\"duplicate records\": \"<integer>\",\n\t\"campaign_type\": \"<string>\",\n\t\"message_preview\": {\n\t\t\"phone\": \"<string>\",\n\t\t\"enable_acculync\": \"<boolean>\",\n\t\t\"extra\": \"<string>\",\n\t\t\"media\": {\n\t\t\t\"type\": \"<string>\",\n\t\t\t\"template_name\": \"<string>\",\n\t\t\t\"lang_code\": \"<string>\",\n\t\t\t\"header\": [\n\t\t\t\t{\n\t\t\t\t\t\"image\": {\n\t\t\t\t\t\t\"link\": \"<string>\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"image\": {\n\t\t\t\t\t\t\"link\": \"<string>\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"body\": [\n\t\t\t\t{\n\t\t\t\t\t\"text\": \"<string>\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"text\": \"<string>\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t},\n\t\"asynchronous\": \"<boolean>\",\n\t\"country_code\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"File uploaded successfully\",\n\t\"campaign_id\": \"670b3fd4-d442-11ed-a821-xxxxxxxxxxxx\",\n\t\"file_type\": \"text/csv\",\n\t\"file_size\": \"19.0B\",\n\t\"total_records\": 1,\n\t\"valid_records\": 1,\n\t\"duplicate records\": 0,\n\t\"campaign_type\": \"generalized\",\n\t\"message_preview\": {\n\t\t\"phone\": \"91868841xxxx\",\n\t\t\"enable_acculync\": true,\n\t\t\"extra\": \"{'asd':'asd'}\",\n\t\t\"media\": {\n\t\t\t\"type\": \"media_template\",\n\t\t\t\"template_name\": \"boarding_pass_update\",\n\t\t\t\"lang_code\": \"en\",\n\t\t\t\"header\": [\n\t\t\t\t{\n\t\t\t\t\t\"image\": {\n\t\t\t\t\t\t\"link\": \"https://media.istockphoto.com/vectors/airplane-ticket-boarding-pass-ticket-template-vector-id878xxxxxx\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"body\": [\n\t\t\t\t{\n\t\t\t\t\t\"text\": \"Here is your boarding pass\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t},\n\t\"asynchronous\": false,\n\t\"country_code\": null\n}"
 						},
 						{
 							"name": "Unauthorized",
@@ -431,38 +431,38 @@
 									"formdata": [
 										{
 											"key": "campaign_type",
-											"value": "<string>",
+											"value": "Generalized",
 											"description": "(Required) The type of campaign being sent, which can be either generalized or personalized.\n",
 											"type": "text"
 										},
 										{
 											"key": "file",
-											"value": "<string>",
+											"value": "ABC.xlsx, ABC.csv, ABC.txt",
 											"description": "(Required) The CSV or plain text file path on your local system or network that you want to upload as part of a bulk campaign. The file contains the list of phone numbers and messages. \n\nSee the sample files for more information on bulk upload files and their details:\n- [Bulk Upload File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Bulk%20Upload%20File.txt)\n- [Bulk Upload Campaign File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Bulk%20Upload%20Campaign%20File.xlsx)\n- [Campaign File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Campaign%20File%20.csv)\n",
 											"type": "text"
 										},
 										{
 											"key": "file_mimetype",
-											"value": "<string>",
+											"value": "\"text/plain or text/csv\"",
 											"description": "(Required) The MIME type of the file containing the phone numbers of the recipients. The type of the file can be either \"text/plain\" or \"text/csv\".",
 											"type": "text"
 										},
 										{
 											"key": "filename",
-											"value": "<string>",
+											"value": "proident id consequat veniam consectetur",
 											"description": "(Required) The name of the file containing the phone numbers of the recipients, including the file extension.",
 											"type": "text"
 										},
 										{
 											"key": "message",
-											"value": "<string>",
+											"value": "incididunt",
 											"description": "(Required) The message that you want to send to the users along with the file. ",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=<string>&debug=True",
+									"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=UI&debug=True",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -477,7 +477,7 @@
 									"query": [
 										{
 											"key": "source",
-											"value": "<string>",
+											"value": "UI",
 											"description": "The details of the source for uploading the file for a bulk campaign."
 										},
 										{
@@ -498,7 +498,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\",\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"unable to process campaign request\",\n\t\"reason\": \"jwt token expired\",\n\t\"status\": \"failure\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -524,38 +524,38 @@
 									"formdata": [
 										{
 											"key": "campaign_type",
-											"value": "<string>",
+											"value": "Generalized",
 											"description": "(Required) The type of campaign being sent, which can be either generalized or personalized.\n",
 											"type": "text"
 										},
 										{
 											"key": "file",
-											"value": "<string>",
+											"value": "ABC.xlsx, ABC.csv, ABC.txt",
 											"description": "(Required) The CSV or plain text file path on your local system or network that you want to upload as part of a bulk campaign. The file contains the list of phone numbers and messages. \n\nSee the sample files for more information on bulk upload files and their details:\n- [Bulk Upload File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Bulk%20Upload%20File.txt)\n- [Bulk Upload Campaign File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Bulk%20Upload%20Campaign%20File.xlsx)\n- [Campaign File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Campaign%20File%20.csv)\n",
 											"type": "text"
 										},
 										{
 											"key": "file_mimetype",
-											"value": "<string>",
+											"value": "\"text/plain or text/csv\"",
 											"description": "(Required) The MIME type of the file containing the phone numbers of the recipients. The type of the file can be either \"text/plain\" or \"text/csv\".",
 											"type": "text"
 										},
 										{
 											"key": "filename",
-											"value": "<string>",
+											"value": "proident id consequat veniam consectetur",
 											"description": "(Required) The name of the file containing the phone numbers of the recipients, including the file extension.",
 											"type": "text"
 										},
 										{
 											"key": "message",
-											"value": "<string>",
+											"value": "incididunt",
 											"description": "(Required) The message that you want to send to the users along with the file. ",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=<string>&debug=True",
+									"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=UI&debug=True",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -570,7 +570,7 @@
 									"query": [
 										{
 											"key": "source",
-											"value": "<string>",
+											"value": "UI",
 											"description": "The details of the source for uploading the file for a bulk campaign."
 										},
 										{
@@ -591,7 +591,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Unprocessable Entity (WebDAV)",
@@ -617,38 +617,38 @@
 									"formdata": [
 										{
 											"key": "campaign_type",
-											"value": "<string>",
+											"value": "Generalized",
 											"description": "(Required) The type of campaign being sent, which can be either generalized or personalized.\n",
 											"type": "text"
 										},
 										{
 											"key": "file",
-											"value": "<string>",
+											"value": "ABC.xlsx, ABC.csv, ABC.txt",
 											"description": "(Required) The CSV or plain text file path on your local system or network that you want to upload as part of a bulk campaign. The file contains the list of phone numbers and messages. \n\nSee the sample files for more information on bulk upload files and their details:\n- [Bulk Upload File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Bulk%20Upload%20File.txt)\n- [Bulk Upload Campaign File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Bulk%20Upload%20Campaign%20File.xlsx)\n- [Campaign File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Campaign%20File%20.csv)\n",
 											"type": "text"
 										},
 										{
 											"key": "file_mimetype",
-											"value": "<string>",
+											"value": "\"text/plain or text/csv\"",
 											"description": "(Required) The MIME type of the file containing the phone numbers of the recipients. The type of the file can be either \"text/plain\" or \"text/csv\".",
 											"type": "text"
 										},
 										{
 											"key": "filename",
-											"value": "<string>",
+											"value": "proident id consequat veniam consectetur",
 											"description": "(Required) The name of the file containing the phone numbers of the recipients, including the file extension.",
 											"type": "text"
 										},
 										{
 											"key": "message",
-											"value": "<string>",
+											"value": "incididunt",
 											"description": "(Required) The message that you want to send to the users along with the file. ",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=<string>&debug=True",
+									"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=UI&debug=True",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -663,7 +663,7 @@
 									"query": [
 										{
 											"key": "source",
-											"value": "<string>",
+											"value": "UI",
 											"description": "The details of the source for uploading the file for a bulk campaign."
 										},
 										{
@@ -684,7 +684,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"status\": \"<string>\",\n\t\"reason\": {\n\t\t\"campaign_type\": [\n\t\t\t\"<string>\",\n\t\t\t\"<string>\"\n\t\t]\n\t}\n}"
+							"body": "{\n\t\"message\": \"please check API docs for more info\",\n\t\"status\": \"failed\",\n\t\"reason\": {\n\t\t\"campaign_type\": [\n\t\t\t\"Must be one of: generalized, personalized.\"\n\t\t]\n\t}\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -710,38 +710,38 @@
 									"formdata": [
 										{
 											"key": "campaign_type",
-											"value": "<string>",
+											"value": "Generalized",
 											"description": "(Required) The type of campaign being sent, which can be either generalized or personalized.\n",
 											"type": "text"
 										},
 										{
 											"key": "file",
-											"value": "<string>",
+											"value": "ABC.xlsx, ABC.csv, ABC.txt",
 											"description": "(Required) The CSV or plain text file path on your local system or network that you want to upload as part of a bulk campaign. The file contains the list of phone numbers and messages. \n\nSee the sample files for more information on bulk upload files and their details:\n- [Bulk Upload File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Bulk%20Upload%20File.txt)\n- [Bulk Upload Campaign File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Bulk%20Upload%20Campaign%20File.xlsx)\n- [Campaign File](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Campaign%20File%20.csv)\n",
 											"type": "text"
 										},
 										{
 											"key": "file_mimetype",
-											"value": "<string>",
+											"value": "\"text/plain or text/csv\"",
 											"description": "(Required) The MIME type of the file containing the phone numbers of the recipients. The type of the file can be either \"text/plain\" or \"text/csv\".",
 											"type": "text"
 										},
 										{
 											"key": "filename",
-											"value": "<string>",
+											"value": "proident id consequat veniam consectetur",
 											"description": "(Required) The name of the file containing the phone numbers of the recipients, including the file extension.",
 											"type": "text"
 										},
 										{
 											"key": "message",
-											"value": "<string>",
+											"value": "incididunt",
 											"description": "(Required) The message that you want to send to the users along with the file. ",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=<string>&debug=True",
+									"raw": "https://apis.rmlconnect.net/wba/v2/upload?source=UI&debug=True",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -756,7 +756,7 @@
 									"query": [
 										{
 											"key": "source",
-											"value": "<string>",
+											"value": "UI",
 											"description": "The details of the source for uploading the file for a bulk campaign."
 										},
 										{
@@ -777,12 +777,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failure\",\n\t\"message\": \"unable to process request\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/wba/v2/manage_campaign",
+					"name": "Send Bulk Campaign",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -817,7 +817,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"campaign_action\": \"<string>\",\n\t\"campaign_id\": \"<string>\",\n\t\"campaign_name\": \"<string>\",\n\t\"file_mimetype\": \"<string>\",\n\t\"filename\": \"<string>\",\n\t\"payload\": {\n\t\t\"type\": \"<string>\"\n\t},\n\t\"scheduled_time\": \"<string>\"\n}",
+							"raw": "{\n\t\"campaign_action\": \"start\",\n\t\"campaign_id\": \"{campaign id}\",\n\t\"campaign_name\": \"{campaign name}\",\n\t\"file_mimetype\": \"text/plain or text/csv\",\n\t\"filename\": \"{filename with extension}\",\n\t\"payload\": {\n\t\t\"type\": \"{payload type}\"\n\t},\n\t\"scheduled_time\": \"{date and time in UTC e.g.2021-12-08 13:36:00}\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -826,7 +826,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=<string>",
+							"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=UI",
 							"protocol": "https",
 							"host": [
 								"apis",
@@ -846,7 +846,7 @@
 								},
 								{
 									"key": "source",
-									"value": "<string>",
+									"value": "UI",
 									"description": "The details of the source for uploading the file for a bulk campaign."
 								}
 							]
@@ -875,7 +875,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"campaign_action\": \"<string>\",\n\t\"campaign_id\": \"<string>\",\n\t\"campaign_name\": \"<string>\",\n\t\"file_mimetype\": \"<string>\",\n\t\"filename\": \"<string>\",\n\t\"payload\": {\n\t\t\"type\": \"<string>\"\n\t},\n\t\"scheduled_time\": \"<string>\"\n}",
+									"raw": "{\n\t\"campaign_action\": \"start\",\n\t\"campaign_id\": \"{campaign id}\",\n\t\"campaign_name\": \"{campaign name}\",\n\t\"file_mimetype\": \"text/plain or text/csv\",\n\t\"filename\": \"{filename with extension}\",\n\t\"payload\": {\n\t\t\"type\": \"{payload type}\"\n\t},\n\t\"scheduled_time\": \"{date and time in UTC e.g.2021-12-08 13:36:00}\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -884,7 +884,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=UI",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -904,7 +904,7 @@
 										},
 										{
 											"key": "source",
-											"value": "<string>",
+											"value": "UI",
 											"description": "The details of the source for uploading the file for a bulk campaign."
 										}
 									]
@@ -920,7 +920,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"success\",\n\t\"message\": \"campaign with id 670b3fd4-d442-11ed-a821-xxxxxxxxxxxx is now processing\"\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -943,7 +943,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"campaign_action\": \"<string>\",\n\t\"campaign_id\": \"<string>\",\n\t\"campaign_name\": \"<string>\",\n\t\"file_mimetype\": \"<string>\",\n\t\"filename\": \"<string>\",\n\t\"payload\": {\n\t\t\"type\": \"<string>\"\n\t},\n\t\"scheduled_time\": \"<string>\"\n}",
+									"raw": "{\n\t\"campaign_action\": \"start\",\n\t\"campaign_id\": \"{campaign id}\",\n\t\"campaign_name\": \"{campaign name}\",\n\t\"file_mimetype\": \"text/plain or text/csv\",\n\t\"filename\": \"{filename with extension}\",\n\t\"payload\": {\n\t\t\"type\": \"{payload type}\"\n\t},\n\t\"scheduled_time\": \"{date and time in UTC e.g.2021-12-08 13:36:00}\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -952,7 +952,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=UI",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -972,7 +972,7 @@
 										},
 										{
 											"key": "source",
-											"value": "<string>",
+											"value": "UI",
 											"description": "The details of the source for uploading the file for a bulk campaign."
 										}
 									]
@@ -988,7 +988,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"file name mismatch between /upload and /campaign endpoints for 670b3fd4-d442-11ed-a821-xxxxxxxxxxxx\"\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -1011,7 +1011,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"campaign_action\": \"<string>\",\n\t\"campaign_id\": \"<string>\",\n\t\"campaign_name\": \"<string>\",\n\t\"file_mimetype\": \"<string>\",\n\t\"filename\": \"<string>\",\n\t\"payload\": {\n\t\t\"type\": \"<string>\"\n\t},\n\t\"scheduled_time\": \"<string>\"\n}",
+									"raw": "{\n\t\"campaign_action\": \"start\",\n\t\"campaign_id\": \"{campaign id}\",\n\t\"campaign_name\": \"{campaign name}\",\n\t\"file_mimetype\": \"text/plain or text/csv\",\n\t\"filename\": \"{filename with extension}\",\n\t\"payload\": {\n\t\t\"type\": \"{payload type}\"\n\t},\n\t\"scheduled_time\": \"{date and time in UTC e.g.2021-12-08 13:36:00}\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1020,7 +1020,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=UI",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -1040,7 +1040,7 @@
 										},
 										{
 											"key": "source",
-											"value": "<string>",
+											"value": "UI",
 											"description": "The details of the source for uploading the file for a bulk campaign."
 										}
 									]
@@ -1056,7 +1056,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"jwt token expired\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -1079,7 +1079,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"campaign_action\": \"<string>\",\n\t\"campaign_id\": \"<string>\",\n\t\"campaign_name\": \"<string>\",\n\t\"file_mimetype\": \"<string>\",\n\t\"filename\": \"<string>\",\n\t\"payload\": {\n\t\t\"type\": \"<string>\"\n\t},\n\t\"scheduled_time\": \"<string>\"\n}",
+									"raw": "{\n\t\"campaign_action\": \"start\",\n\t\"campaign_id\": \"{campaign id}\",\n\t\"campaign_name\": \"{campaign name}\",\n\t\"file_mimetype\": \"text/plain or text/csv\",\n\t\"filename\": \"{filename with extension}\",\n\t\"payload\": {\n\t\t\"type\": \"{payload type}\"\n\t},\n\t\"scheduled_time\": \"{date and time in UTC e.g.2021-12-08 13:36:00}\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1088,7 +1088,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=UI",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -1108,7 +1108,7 @@
 										},
 										{
 											"key": "source",
-											"value": "<string>",
+											"value": "UI",
 											"description": "The details of the source for uploading the file for a bulk campaign."
 										}
 									]
@@ -1124,7 +1124,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Unprocessable Entity (WebDAV)",
@@ -1147,7 +1147,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"campaign_action\": \"<string>\",\n\t\"campaign_id\": \"<string>\",\n\t\"campaign_name\": \"<string>\",\n\t\"file_mimetype\": \"<string>\",\n\t\"filename\": \"<string>\",\n\t\"payload\": {\n\t\t\"type\": \"<string>\"\n\t},\n\t\"scheduled_time\": \"<string>\"\n}",
+									"raw": "{\n\t\"campaign_action\": \"start\",\n\t\"campaign_id\": \"{campaign id}\",\n\t\"campaign_name\": \"{campaign name}\",\n\t\"file_mimetype\": \"text/plain or text/csv\",\n\t\"filename\": \"{filename with extension}\",\n\t\"payload\": {\n\t\t\"type\": \"{payload type}\"\n\t},\n\t\"scheduled_time\": \"{date and time in UTC e.g.2021-12-08 13:36:00}\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1156,7 +1156,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=UI",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -1176,7 +1176,7 @@
 										},
 										{
 											"key": "source",
-											"value": "<string>",
+											"value": "UI",
 											"description": "The details of the source for uploading the file for a bulk campaign."
 										}
 									]
@@ -1192,7 +1192,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"status\": \"<string>\",\n\t\"reason\": {\n\t\t\"payload\": [\n\t\t\t\"<string>\",\n\t\t\t\"<string>\"\n\t\t]\n\t}\n}"
+							"body": "{\n\t\"message\": \"please check API docs for more info\",\n\t\"status\": \"failed\",\n\t\"reason\": {\n\t\t\"payload\": [\n\t\t\t\"Unable to check payload type\"\n\t\t]\n\t}\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -1215,7 +1215,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"campaign_action\": \"<string>\",\n\t\"campaign_id\": \"<string>\",\n\t\"campaign_name\": \"<string>\",\n\t\"file_mimetype\": \"<string>\",\n\t\"filename\": \"<string>\",\n\t\"payload\": {\n\t\t\"type\": \"<string>\"\n\t},\n\t\"scheduled_time\": \"<string>\"\n}",
+									"raw": "{\n\t\"campaign_action\": \"start\",\n\t\"campaign_id\": \"{campaign id}\",\n\t\"campaign_name\": \"{campaign name}\",\n\t\"file_mimetype\": \"text/plain or text/csv\",\n\t\"filename\": \"{filename with extension}\",\n\t\"payload\": {\n\t\t\"type\": \"{payload type}\"\n\t},\n\t\"scheduled_time\": \"{date and time in UTC e.g.2021-12-08 13:36:00}\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -1224,7 +1224,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/v2/manage_campaign?debug=True&source=UI",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -1244,7 +1244,7 @@
 										},
 										{
 											"key": "source",
-											"value": "<string>",
+											"value": "UI",
 											"description": "The details of the source for uploading the file for a bulk campaign."
 										}
 									]
@@ -1260,7 +1260,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"<internal server error reason>\"\n}"
 						}
 					]
 				}
@@ -1271,7 +1271,7 @@
 			"name": "WhatsApp Catalog Manager",
 			"item": [
 				{
-					"name": "/wba/catalog/manager/v1/upload",
+					"name": "Upload File",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -1309,19 +1309,19 @@
 							"formdata": [
 								{
 									"key": "action",
-									"value": "<string>",
+									"value": "Update",
 									"description": "(Required) The action to be taken on the catalog. ",
 									"type": "text"
 								},
 								{
 									"key": "file",
-									"value": "<string>",
+									"value": "ABC.csv",
 									"description": "(Required) The data of the product feed file that contains catalog details such as ID, name, and image URL. \nSee the sample [catalog file](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Catalog%20File.csv) for more information on catalog details and its format.",
 									"type": "text"
 								},
 								{
 									"key": "file_name",
-									"value": "<string>",
+									"value": "file_name",
 									"description": "(Required) The name of the product feed file that contains the updated catalog. ",
 									"type": "text"
 								}
@@ -1370,19 +1370,19 @@
 									"formdata": [
 										{
 											"key": "action",
-											"value": "<string>",
+											"value": "Update",
 											"description": "(Required) The action to be taken on the catalog. ",
 											"type": "text"
 										},
 										{
 											"key": "file",
-											"value": "<string>",
+											"value": "ABC.csv",
 											"description": "(Required) The data of the product feed file that contains catalog details such as ID, name, and image URL. \nSee the sample [catalog file](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Catalog%20File.csv) for more information on catalog details and its format.",
 											"type": "text"
 										},
 										{
 											"key": "file_name",
-											"value": "<string>",
+											"value": "file_name",
 											"description": "(Required) The name of the product feed file that contains the updated catalog. ",
 											"type": "text"
 										}
@@ -1415,7 +1415,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"file_url\": \"<string>\",\n\t\"count\": \"<integer>\"\n}"
+							"body": "{\n\t\"status\": \"success\",\n\t\"file_url\": \"AWS S3 url\",\n\t\"count\": 20\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -1441,19 +1441,19 @@
 									"formdata": [
 										{
 											"key": "action",
-											"value": "<string>",
+											"value": "Update",
 											"description": "(Required) The action to be taken on the catalog. ",
 											"type": "text"
 										},
 										{
 											"key": "file",
-											"value": "<string>",
+											"value": "ABC.csv",
 											"description": "(Required) The data of the product feed file that contains catalog details such as ID, name, and image URL. \nSee the sample [catalog file](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Catalog%20File.csv) for more information on catalog details and its format.",
 											"type": "text"
 										},
 										{
 											"key": "file_name",
-											"value": "<string>",
+											"value": "file_name",
 											"description": "(Required) The name of the product feed file that contains the updated catalog. ",
 											"type": "text"
 										}
@@ -1486,7 +1486,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"error\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}"
+							"body": "{\n\t\"error\": [\n\t\t\"Provide file_name\"\n\t]\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -1512,19 +1512,19 @@
 									"formdata": [
 										{
 											"key": "action",
-											"value": "<string>",
+											"value": "Update",
 											"description": "(Required) The action to be taken on the catalog. ",
 											"type": "text"
 										},
 										{
 											"key": "file",
-											"value": "<string>",
+											"value": "ABC.csv",
 											"description": "(Required) The data of the product feed file that contains catalog details such as ID, name, and image URL. \nSee the sample [catalog file](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Catalog%20File.csv) for more information on catalog details and its format.",
 											"type": "text"
 										},
 										{
 											"key": "file_name",
-											"value": "<string>",
+											"value": "file_name",
 											"description": "(Required) The name of the product feed file that contains the updated catalog. ",
 											"type": "text"
 										}
@@ -1557,7 +1557,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"response\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"unable to process campaign request\",\n\t\"reason\": \"jwt token expired\",\n\t\"status\": \"failure\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -1583,19 +1583,19 @@
 									"formdata": [
 										{
 											"key": "action",
-											"value": "<string>",
+											"value": "Update",
 											"description": "(Required) The action to be taken on the catalog. ",
 											"type": "text"
 										},
 										{
 											"key": "file",
-											"value": "<string>",
+											"value": "ABC.csv",
 											"description": "(Required) The data of the product feed file that contains catalog details such as ID, name, and image URL. \nSee the sample [catalog file](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Catalog%20File.csv) for more information on catalog details and its format.",
 											"type": "text"
 										},
 										{
 											"key": "file_name",
-											"value": "<string>",
+											"value": "file_name",
 											"description": "(Required) The name of the product feed file that contains the updated catalog. ",
 											"type": "text"
 										}
@@ -1628,7 +1628,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -1654,19 +1654,19 @@
 									"formdata": [
 										{
 											"key": "action",
-											"value": "<string>",
+											"value": "Update",
 											"description": "(Required) The action to be taken on the catalog. ",
 											"type": "text"
 										},
 										{
 											"key": "file",
-											"value": "<string>",
+											"value": "ABC.csv",
 											"description": "(Required) The data of the product feed file that contains catalog details such as ID, name, and image URL. \nSee the sample [catalog file](https://github.com/routemobile/WhatsApp-Business-API/blob/master/Sample%20Catalog%20File.csv) for more information on catalog details and its format.",
 											"type": "text"
 										},
 										{
 											"key": "file_name",
-											"value": "<string>",
+											"value": "file_name",
 											"description": "(Required) The name of the product feed file that contains the updated catalog. ",
 											"type": "text"
 										}
@@ -1699,12 +1699,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"reason\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/wba/catalog/manager/v1/create_product_feed",
+					"name": "Create Product Feed",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -1742,19 +1742,19 @@
 							"formdata": [
 								{
 									"key": "file_url",
-									"value": "<string>",
+									"value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=",
 									"description": "(Required) The URL of the file that contains the product feed, hosted publicly and starting with \"https://\" and ending with the file extension.",
 									"type": "text"
 								},
 								{
 									"key": "name",
-									"value": "<string>",
+									"value": "product_feed_name",
 									"description": "(Required) The name of the product feed.",
 									"type": "text"
 								},
 								{
 									"key": "schedule",
-									"value": "<string>",
+									"value": " \"\\\"interval\\\":\\\"HOURLY\\\",\\\"scheduled_time\\\":\\\"2022-09-06 11:38:00\\\"\"",
 									"description": "The schedule for updating the product feed. It contains a JSON object with two keys:\n\na. interval: This key specifies the interval at which the product feed should be updated. In this case, it is set to \"HOURLY\", indicating that the feed should be updated hourly.\n\nb. scheduled_time: This key specifies the date and time at which the first update of the product feed should occur, in UTC format. ",
 									"type": "text"
 								}
@@ -1803,19 +1803,19 @@
 									"formdata": [
 										{
 											"key": "file_url",
-											"value": "<string>",
+											"value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=",
 											"description": "(Required) The URL of the file that contains the product feed, hosted publicly and starting with \"https://\" and ending with the file extension.",
 											"type": "text"
 										},
 										{
 											"key": "name",
-											"value": "<string>",
+											"value": "product_feed_name",
 											"description": "(Required) The name of the product feed.",
 											"type": "text"
 										},
 										{
 											"key": "schedule",
-											"value": "<string>",
+											"value": " \"\\\"interval\\\":\\\"HOURLY\\\",\\\"scheduled_time\\\":\\\"2022-09-06 11:38:00\\\"\"",
 											"description": "The schedule for updating the product feed. It contains a JSON object with two keys:\n\na. interval: This key specifies the interval at which the product feed should be updated. In this case, it is set to \"HOURLY\", indicating that the feed should be updated hourly.\n\nb. scheduled_time: This key specifies the date and time at which the first update of the product feed should occur, in UTC format. ",
 											"type": "text"
 										}
@@ -1848,7 +1848,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"processing\"\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -1874,19 +1874,19 @@
 									"formdata": [
 										{
 											"key": "file_url",
-											"value": "<string>",
+											"value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=",
 											"description": "(Required) The URL of the file that contains the product feed, hosted publicly and starting with \"https://\" and ending with the file extension.",
 											"type": "text"
 										},
 										{
 											"key": "name",
-											"value": "<string>",
+											"value": "product_feed_name",
 											"description": "(Required) The name of the product feed.",
 											"type": "text"
 										},
 										{
 											"key": "schedule",
-											"value": "<string>",
+											"value": " \"\\\"interval\\\":\\\"HOURLY\\\",\\\"scheduled_time\\\":\\\"2022-09-06 11:38:00\\\"\"",
 											"description": "The schedule for updating the product feed. It contains a JSON object with two keys:\n\na. interval: This key specifies the interval at which the product feed should be updated. In this case, it is set to \"HOURLY\", indicating that the feed should be updated hourly.\n\nb. scheduled_time: This key specifies the date and time at which the first update of the product feed should occur, in UTC format. ",
 											"type": "text"
 										}
@@ -1919,7 +1919,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"name\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}"
+							"body": "{\n\t\"name\": [\n\t\t\"Missing data for required field.\"\n\t]\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -1945,19 +1945,19 @@
 									"formdata": [
 										{
 											"key": "file_url",
-											"value": "<string>",
+											"value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=",
 											"description": "(Required) The URL of the file that contains the product feed, hosted publicly and starting with \"https://\" and ending with the file extension.",
 											"type": "text"
 										},
 										{
 											"key": "name",
-											"value": "<string>",
+											"value": "product_feed_name",
 											"description": "(Required) The name of the product feed.",
 											"type": "text"
 										},
 										{
 											"key": "schedule",
-											"value": "<string>",
+											"value": " \"\\\"interval\\\":\\\"HOURLY\\\",\\\"scheduled_time\\\":\\\"2022-09-06 11:38:00\\\"\"",
 											"description": "The schedule for updating the product feed. It contains a JSON object with two keys:\n\na. interval: This key specifies the interval at which the product feed should be updated. In this case, it is set to \"HOURLY\", indicating that the feed should be updated hourly.\n\nb. scheduled_time: This key specifies the date and time at which the first update of the product feed should occur, in UTC format. ",
 											"type": "text"
 										}
@@ -1990,7 +1990,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\",\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unable to process request\",\n\t\"status\": \"Failed\",\n\t\"reason\": \"Please check the integrity or validity of the token sent.\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -2016,19 +2016,19 @@
 									"formdata": [
 										{
 											"key": "file_url",
-											"value": "<string>",
+											"value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=",
 											"description": "(Required) The URL of the file that contains the product feed, hosted publicly and starting with \"https://\" and ending with the file extension.",
 											"type": "text"
 										},
 										{
 											"key": "name",
-											"value": "<string>",
+											"value": "product_feed_name",
 											"description": "(Required) The name of the product feed.",
 											"type": "text"
 										},
 										{
 											"key": "schedule",
-											"value": "<string>",
+											"value": " \"\\\"interval\\\":\\\"HOURLY\\\",\\\"scheduled_time\\\":\\\"2022-09-06 11:38:00\\\"\"",
 											"description": "The schedule for updating the product feed. It contains a JSON object with two keys:\n\na. interval: This key specifies the interval at which the product feed should be updated. In this case, it is set to \"HOURLY\", indicating that the feed should be updated hourly.\n\nb. scheduled_time: This key specifies the date and time at which the first update of the product feed should occur, in UTC format. ",
 											"type": "text"
 										}
@@ -2061,7 +2061,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -2087,19 +2087,19 @@
 									"formdata": [
 										{
 											"key": "file_url",
-											"value": "<string>",
+											"value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=",
 											"description": "(Required) The URL of the file that contains the product feed, hosted publicly and starting with \"https://\" and ending with the file extension.",
 											"type": "text"
 										},
 										{
 											"key": "name",
-											"value": "<string>",
+											"value": "product_feed_name",
 											"description": "(Required) The name of the product feed.",
 											"type": "text"
 										},
 										{
 											"key": "schedule",
-											"value": "<string>",
+											"value": " \"\\\"interval\\\":\\\"HOURLY\\\",\\\"scheduled_time\\\":\\\"2022-09-06 11:38:00\\\"\"",
 											"description": "The schedule for updating the product feed. It contains a JSON object with two keys:\n\na. interval: This key specifies the interval at which the product feed should be updated. In this case, it is set to \"HOURLY\", indicating that the feed should be updated hourly.\n\nb. scheduled_time: This key specifies the date and time at which the first update of the product feed should occur, in UTC format. ",
 											"type": "text"
 										}
@@ -2132,12 +2132,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"reason\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/wba/catalog/manager/v1/update_product_feed",
+					"name": "Update Product Feed",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -2175,19 +2175,19 @@
 							"formdata": [
 								{
 									"key": "file_url",
-									"value": "<string>",
+									"value": "cillum irure ad",
 									"description": "(Required) The URL of the file that contains the updated product feed, hosted publicly and starting with \"https://\" and ending with the file extension.",
 									"type": "text"
 								},
 								{
 									"key": "product_feed_id",
-									"value": "<string>",
+									"value": "dolor commodo elit",
 									"description": "(Required) The unique ID of the product feed that should be updated. ",
 									"type": "text"
 								},
 								{
 									"key": "schedule",
-									"value": "<string>",
+									"value": " \"\\\"interval\\\":\\\"HOURLY\\\",\\\"scheduled_time\\\":\\\"2022-09-06 11:38:00\\\"\"",
 									"description": "The schedule for recurrently updating the product feed. It contains a JSON object with two keys:\n\na. interval: This key specifies the interval at which the product feed should be updated. In this case, it is set to \"HOURLY\", indicating that the feed should be updated hourly.\n\nb. scheduled_time: This key specifies the date and time at which the first update of the product feed should occur, in UTC format. ",
 									"type": "text"
 								}
@@ -2236,19 +2236,19 @@
 									"formdata": [
 										{
 											"key": "file_url",
-											"value": "<string>",
+											"value": "cillum irure ad",
 											"description": "(Required) The URL of the file that contains the updated product feed, hosted publicly and starting with \"https://\" and ending with the file extension.",
 											"type": "text"
 										},
 										{
 											"key": "product_feed_id",
-											"value": "<string>",
+											"value": "dolor commodo elit",
 											"description": "(Required) The unique ID of the product feed that should be updated. ",
 											"type": "text"
 										},
 										{
 											"key": "schedule",
-											"value": "<string>",
+											"value": " \"\\\"interval\\\":\\\"HOURLY\\\",\\\"scheduled_time\\\":\\\"2022-09-06 11:38:00\\\"\"",
 											"description": "The schedule for recurrently updating the product feed. It contains a JSON object with two keys:\n\na. interval: This key specifies the interval at which the product feed should be updated. In this case, it is set to \"HOURLY\", indicating that the feed should be updated hourly.\n\nb. scheduled_time: This key specifies the date and time at which the first update of the product feed should occur, in UTC format. ",
 											"type": "text"
 										}
@@ -2281,7 +2281,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"processing\"\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -2307,19 +2307,19 @@
 									"formdata": [
 										{
 											"key": "file_url",
-											"value": "<string>",
+											"value": "cillum irure ad",
 											"description": "(Required) The URL of the file that contains the updated product feed, hosted publicly and starting with \"https://\" and ending with the file extension.",
 											"type": "text"
 										},
 										{
 											"key": "product_feed_id",
-											"value": "<string>",
+											"value": "dolor commodo elit",
 											"description": "(Required) The unique ID of the product feed that should be updated. ",
 											"type": "text"
 										},
 										{
 											"key": "schedule",
-											"value": "<string>",
+											"value": " \"\\\"interval\\\":\\\"HOURLY\\\",\\\"scheduled_time\\\":\\\"2022-09-06 11:38:00\\\"\"",
 											"description": "The schedule for recurrently updating the product feed. It contains a JSON object with two keys:\n\na. interval: This key specifies the interval at which the product feed should be updated. In this case, it is set to \"HOURLY\", indicating that the feed should be updated hourly.\n\nb. scheduled_time: This key specifies the date and time at which the first update of the product feed should occur, in UTC format. ",
 											"type": "text"
 										}
@@ -2352,7 +2352,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"product_feed_id\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}"
+							"body": "{\n\t\"product_feed_id\": [\n\t\t\"Missing data for required field.\"\n\t]\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -2378,19 +2378,19 @@
 									"formdata": [
 										{
 											"key": "file_url",
-											"value": "<string>",
+											"value": "cillum irure ad",
 											"description": "(Required) The URL of the file that contains the updated product feed, hosted publicly and starting with \"https://\" and ending with the file extension.",
 											"type": "text"
 										},
 										{
 											"key": "product_feed_id",
-											"value": "<string>",
+											"value": "dolor commodo elit",
 											"description": "(Required) The unique ID of the product feed that should be updated. ",
 											"type": "text"
 										},
 										{
 											"key": "schedule",
-											"value": "<string>",
+											"value": " \"\\\"interval\\\":\\\"HOURLY\\\",\\\"scheduled_time\\\":\\\"2022-09-06 11:38:00\\\"\"",
 											"description": "The schedule for recurrently updating the product feed. It contains a JSON object with two keys:\n\na. interval: This key specifies the interval at which the product feed should be updated. In this case, it is set to \"HOURLY\", indicating that the feed should be updated hourly.\n\nb. scheduled_time: This key specifies the date and time at which the first update of the product feed should occur, in UTC format. ",
 											"type": "text"
 										}
@@ -2423,7 +2423,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\",\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unable to process request\",\n\t\"status\": \"Failed\",\n\t\"reason\": \"Please check the integrity or validity of the token sent.\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -2449,19 +2449,19 @@
 									"formdata": [
 										{
 											"key": "file_url",
-											"value": "<string>",
+											"value": "cillum irure ad",
 											"description": "(Required) The URL of the file that contains the updated product feed, hosted publicly and starting with \"https://\" and ending with the file extension.",
 											"type": "text"
 										},
 										{
 											"key": "product_feed_id",
-											"value": "<string>",
+											"value": "dolor commodo elit",
 											"description": "(Required) The unique ID of the product feed that should be updated. ",
 											"type": "text"
 										},
 										{
 											"key": "schedule",
-											"value": "<string>",
+											"value": " \"\\\"interval\\\":\\\"HOURLY\\\",\\\"scheduled_time\\\":\\\"2022-09-06 11:38:00\\\"\"",
 											"description": "The schedule for recurrently updating the product feed. It contains a JSON object with two keys:\n\na. interval: This key specifies the interval at which the product feed should be updated. In this case, it is set to \"HOURLY\", indicating that the feed should be updated hourly.\n\nb. scheduled_time: This key specifies the date and time at which the first update of the product feed should occur, in UTC format. ",
 											"type": "text"
 										}
@@ -2494,7 +2494,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -2520,19 +2520,19 @@
 									"formdata": [
 										{
 											"key": "file_url",
-											"value": "<string>",
+											"value": "cillum irure ad",
 											"description": "(Required) The URL of the file that contains the updated product feed, hosted publicly and starting with \"https://\" and ending with the file extension.",
 											"type": "text"
 										},
 										{
 											"key": "product_feed_id",
-											"value": "<string>",
+											"value": "dolor commodo elit",
 											"description": "(Required) The unique ID of the product feed that should be updated. ",
 											"type": "text"
 										},
 										{
 											"key": "schedule",
-											"value": "<string>",
+											"value": " \"\\\"interval\\\":\\\"HOURLY\\\",\\\"scheduled_time\\\":\\\"2022-09-06 11:38:00\\\"\"",
 											"description": "The schedule for recurrently updating the product feed. It contains a JSON object with two keys:\n\na. interval: This key specifies the interval at which the product feed should be updated. In this case, it is set to \"HOURLY\", indicating that the feed should be updated hourly.\n\nb. scheduled_time: This key specifies the date and time at which the first update of the product feed should occur, in UTC format. ",
 											"type": "text"
 										}
@@ -2565,12 +2565,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"reason\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/wba/catalog/manager/v1/delete_product_feed",
+					"name": "Delete product Feed",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -2605,7 +2605,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"product_feed_id\": \"<string>\"\n}",
+							"raw": "{\n\t\"product_feed_id\": \"deserunt incididunt amet\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -2653,7 +2653,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"product_feed_id\": \"<string>\"\n}",
+									"raw": "{\n\t\"product_feed_id\": \"deserunt incididunt amet\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2688,7 +2688,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"processing\"\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -2711,7 +2711,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"product_feed_id\": \"<string>\"\n}",
+									"raw": "{\n\t\"product_feed_id\": \"deserunt incididunt amet\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2746,7 +2746,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"product_feed_id\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}"
+							"body": "{\n\t\"product_feed_id\": [\n\t\t\"Missing data for required field.\"\n\t]\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -2769,7 +2769,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"product_feed_id\": \"<string>\"\n}",
+									"raw": "{\n\t\"product_feed_id\": \"deserunt incididunt amet\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2804,7 +2804,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"status\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unable to process request\",\n\t\"status\": \"Failed\",\n\t\"reason\": \"Please check the integrity or validity of the token sent.\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -2827,7 +2827,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"product_feed_id\": \"<string>\"\n}",
+									"raw": "{\n\t\"product_feed_id\": \"deserunt incididunt amet\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2862,7 +2862,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -2885,7 +2885,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"product_feed_id\": \"<string>\"\n}",
+									"raw": "{\n\t\"product_feed_id\": \"deserunt incididunt amet\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -2920,12 +2920,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"reason\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/wba/catalog/manager/v1/fetch_product_feed/:product_feed_id",
+					"name": "Fetch Product Feed Details",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -2955,7 +2955,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_product_feed/:product_feed_id?fields=<string>&limit=<number>",
+							"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_product_feed/:product_feed_id?fields=incididunt adipisicing cupidatat&limit=-50638802.318101436",
 							"protocol": "https",
 							"host": [
 								"apis",
@@ -2973,19 +2973,19 @@
 							"query": [
 								{
 									"key": "fields",
-									"value": "<string>",
+									"value": "incididunt adipisicing cupidatat",
 									"description": "(Required) The fields that should be included in the response. The value should be a comma-separated list of field names, such as \"retailer_id, name, price, id\"."
 								},
 								{
 									"key": "limit",
-									"value": "<number>",
+									"value": "-50638802.318101436",
 									"description": "(Required) The maximum number of products to return in the response. The value should be an integer."
 								}
 							],
 							"variable": [
 								{
 									"key": "product_feed_id",
-									"value": "<string>"
+									"value": "incididunt adipisicing cupidatat"
 								}
 							]
 						},
@@ -3008,7 +3008,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_product_feed/:product_feed_id?fields=<string>&limit=<number>",
+									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_product_feed/:product_feed_id?fields=incididunt adipisicing cupidatat&limit=-50638802.318101436",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -3026,12 +3026,12 @@
 									"query": [
 										{
 											"key": "fields",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The fields that should be included in the response. The value should be a comma-separated list of field names, such as \"retailer_id, name, price, id\"."
 										},
 										{
 											"key": "limit",
-											"value": "<number>",
+											"value": "-50638802.318101436",
 											"description": "(Required) The maximum number of products to return in the response. The value should be an integer."
 										}
 									],
@@ -3052,7 +3052,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{}"
+							"body": "{\n\t\"data\": []\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -3070,7 +3070,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_product_feed/:product_feed_id?fields=<string>&limit=<number>",
+									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_product_feed/:product_feed_id?fields=incididunt adipisicing cupidatat&limit=-50638802.318101436",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -3088,12 +3088,12 @@
 									"query": [
 										{
 											"key": "fields",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The fields that should be included in the response. The value should be a comma-separated list of field names, such as \"retailer_id, name, price, id\"."
 										},
 										{
 											"key": "limit",
-											"value": "<number>",
+											"value": "-50638802.318101436",
 											"description": "(Required) The maximum number of products to return in the response. The value should be an integer."
 										}
 									],
@@ -3114,7 +3114,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Error validating access token: The session has been invalidated because the user changed their password or Facebook has changed the session for security reasons.\"\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -3132,7 +3132,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_product_feed/:product_feed_id?fields=<string>&limit=<number>",
+									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_product_feed/:product_feed_id?fields=incididunt adipisicing cupidatat&limit=-50638802.318101436",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -3150,12 +3150,12 @@
 									"query": [
 										{
 											"key": "fields",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The fields that should be included in the response. The value should be a comma-separated list of field names, such as \"retailer_id, name, price, id\"."
 										},
 										{
 											"key": "limit",
-											"value": "<number>",
+											"value": "-50638802.318101436",
 											"description": "(Required) The maximum number of products to return in the response. The value should be an integer."
 										}
 									],
@@ -3176,7 +3176,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\",\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"reason\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -3194,7 +3194,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_product_feed/:product_feed_id?fields=<string>&limit=<number>",
+									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_product_feed/:product_feed_id?fields=incididunt adipisicing cupidatat&limit=-50638802.318101436",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -3212,12 +3212,12 @@
 									"query": [
 										{
 											"key": "fields",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The fields that should be included in the response. The value should be a comma-separated list of field names, such as \"retailer_id, name, price, id\"."
 										},
 										{
 											"key": "limit",
-											"value": "<number>",
+											"value": "-50638802.318101436",
 											"description": "(Required) The maximum number of products to return in the response. The value should be an integer."
 										}
 									],
@@ -3238,7 +3238,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -3256,7 +3256,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_product_feed/:product_feed_id?fields=<string>&limit=<number>",
+									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_product_feed/:product_feed_id?fields=incididunt adipisicing cupidatat&limit=-50638802.318101436",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -3274,12 +3274,12 @@
 									"query": [
 										{
 											"key": "fields",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The fields that should be included in the response. The value should be a comma-separated list of field names, such as \"retailer_id, name, price, id\"."
 										},
 										{
 											"key": "limit",
-											"value": "<number>",
+											"value": "-50638802.318101436",
 											"description": "(Required) The maximum number of products to return in the response. The value should be an integer."
 										}
 									],
@@ -3300,12 +3300,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"status\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"reason\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/wba/catalog/manager/v1/fetch_product_details",
+					"name": "Fetch All Product Feed",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -3395,7 +3395,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"catalog_id\": \"<string>\",\n\t\"file_url\": \"<string>\",\n\t\"interval\": \"<string>\",\n\t\"product_feed_count\": \"<integer>\",\n\t\"product_feed_id\": \"<string>\",\n\t\"product_feed_name\": \"<string>\",\n\t\"scheduled\": \"<boolean>\",\n\t\"scheduled_timestamp\": \"<string>\",\n\t\"timestamp\": \"<string>\",\n\t\"upload_session_id\": \"<string>\"\n}"
+							"body": "{\n\t\"catalog_id\": \"62305622836xxxxx\",\n\t\"file_url\": \"https://wbm-nextgen.s3.ap-south-1.amazonaws.com/demo_xxxx-xxxd-965a-0a58a9feac02.csv\",\n\t\"interval\": null,\n\t\"product_feed_count\": 0,\n\t\"product_feed_id\": \"122543386xxxxxxx\",\n\t\"product_feed_name\": \"testammy\",\n\t\"scheduled\": false,\n\t\"scheduled_timestamp\": null,\n\t\"timestamp\": \"2023-02-27 09:54:47.337571\",\n\t\"upload_session_id\": \"1225433871xxxxxx\"\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -3439,7 +3439,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\",\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unable to process request\",\n\t\"status\": \"Failed\",\n\t\"reason\": \"Please check the integrity or validity of the token sent.\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -3483,7 +3483,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -3527,12 +3527,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"reason\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/wba/catalog/manager/v1/fetch_catalog_details/:catalog_id",
+					"name": "Fetch Catalog Details",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -3562,7 +3562,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_catalog_details/:catalog_id?fetch_details=False&fields=<string>",
+							"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_catalog_details/:catalog_id?fetch_details=False&fields=incididunt adipisicing cupidatat",
 							"protocol": "https",
 							"host": [
 								"apis",
@@ -3585,14 +3585,14 @@
 								},
 								{
 									"key": "fields",
-									"value": "<string>",
+									"value": "incididunt adipisicing cupidatat",
 									"description": "(Required) The fields that should be included in the response. The value should be a comma-separated list of field names, such as \"name, product_count\"."
 								}
 							],
 							"variable": [
 								{
 									"key": "catalog_id",
-									"value": "<string>"
+									"value": "incididunt adipisicing cupidatat"
 								}
 							]
 						},
@@ -3615,7 +3615,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_catalog_details/:catalog_id?fetch_details=False&fields=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_catalog_details/:catalog_id?fetch_details=False&fields=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -3638,7 +3638,7 @@
 										},
 										{
 											"key": "fields",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The fields that should be included in the response. The value should be a comma-separated list of field names, such as \"name, product_count\"."
 										}
 									],
@@ -3659,7 +3659,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"data\": [\n\t\t{\n\t\t\t\"retailer_id\": \"<string>\",\n\t\t\t\"name\": \"<string>\",\n\t\t\t\"price\": \"<string>\",\n\t\t\t\"availability\": \"<string>\",\n\t\t\t\"id\": \"<string>\",\n\t\t\t\"description\": \"<string>\",\n\t\t\t\"condition\": \"<string>\",\n\t\t\t\"quantity_to_sell_on_facebook\": \"<integer>\",\n\t\t\t\"url\": \"<string>\",\n\t\t\t\"gender\": \"<string>\",\n\t\t\t\"age_group\": \"<string>\",\n\t\t\t\"brand\": \"<string>\",\n\t\t\t\"image_url\": \"<string>\"\n\t\t},\n\t\t{\n\t\t\t\"retailer_id\": \"<string>\",\n\t\t\t\"name\": \"<string>\",\n\t\t\t\"price\": \"<string>\",\n\t\t\t\"availability\": \"<string>\",\n\t\t\t\"id\": \"<string>\",\n\t\t\t\"description\": \"<string>\",\n\t\t\t\"condition\": \"<string>\",\n\t\t\t\"quantity_to_sell_on_facebook\": \"<integer>\",\n\t\t\t\"url\": \"<string>\",\n\t\t\t\"gender\": \"<string>\",\n\t\t\t\"age_group\": \"<string>\",\n\t\t\t\"brand\": \"<string>\",\n\t\t\t\"image_url\": \"<string>\"\n\t\t}\n\t],\n\t\"next_url\": \"<string>\",\n\t\"prev_url\": \"<string>\"\n}"
+							"body": "{\n\t\"data\": [\n\t\t{\n\t\t\t\"retailer_id\": \"12641xxx\",\n\t\t\t\"name\": \"Coca-Cola Zero 500ml 1 24\",\n\t\t\t\"price\": \"د.إ.85.00\",\n\t\t\t\"availability\": \"in stock\",\n\t\t\t\"id\": \"5856857177xxxxxx\",\n\t\t\t\"description\": \"Coca-Cola Zero 500ml PET (Pack of 24)\",\n\t\t\t\"condition\": \"new\",\n\t\t\t\"quantity_to_sell_on_facebook\": 0,\n\t\t\t\"url\": \"https://en.coca-colaarabia.com/brands/coca-cola-original-taste\",\n\t\t\t\"gender\": \"\",\n\t\t\t\"age_group\": \"\",\n\t\t\t\"brand\": \"Coca-Cola\",\n\t\t\t\"image_url\": \"https://800mycoke.ae/app/images/wa/Cokexxxl.jpg\"\n\t\t}\n\t],\n\t\"next_url\": \"https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_catalog_details?access_token=EAAfkxRwYZCloBAPRyGP69xQcIf3MWYUZCwFcMyEHxTdnXCawZCVJy8AHX9ynmmYKNM0ZAgfSOCsdAkZBHPi6yauFIe682jfswkdWcotj5BMlHpjZCiuhWZCLYl52z4b6abEwsg1zxvOVLkBxxxxxxxxxxxxxxxxxxxxxZCBHEXZCK4UrnYL4ymHYHZB0&limit=10&fields=retailer_id,name,price,availability,id,description,color,size,condition,product_type,quantity_to_sell_on_facebook,url,gender,age_group,sale_price,mpn,sale_price_effective_date,brand,custom_label_0,image_url&catalog_id=965968734067732&fetch_details=true&after=QVFIUkFOVWJJX2d0a1BMbEw0Q0Jxxxxxxxxxxxxxxxxxxxx2Y2dDNQN0ZAMU0IzaGJtRlBKUXZACWHpuUEp6YUE5VWdmTWVyT0ZA5U1RBN0RaQ2owcDVPSkJNS3h3&before=\",\n\t\"prev_url\": \"https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_catalog_details?access_token=EAAfkxRwYZCloBAPRyGP69xQcIf3MWYUZxxxxxxxxxxxxxxxxxxxxx8AHX9ynmmYKNM0ZAgfSOCsdAkZBHPi6yauFIe682jfswkdWcotj5BMlHpjZCiuhWZCLYl52z4b6abEwsg1zxvOVLkBxxxxxxxzVElEol1kLrZCcZCBHEXZCK4UrnYL4ymHYHZB0&limit=10&fields=retailer_id,name,price,availability,id,description,color,size,condition,product_type,quantity_to_sell_on_facebook,url,gender,age_group,sale_price,mpn,sale_price_effective_date,brand,custom_label_0,image_url&catalog_id=9659687xxxxxxxx&fetch_details=true&after=&before=QVFIUl84bDh3UDlaU0tPZAkhDUVJNN3p6c0ktNUZAodktJTXpkekVLMFdwSzllOW5GZAWxSOTQ1NHloUWpxxxxxxxxxxxxxxxxxxVFsVU1ZAaDUzR0tVZAzM3VXZAB\"\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -3677,7 +3677,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_catalog_details/:catalog_id?fetch_details=False&fields=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_catalog_details/:catalog_id?fetch_details=False&fields=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -3700,7 +3700,7 @@
 										},
 										{
 											"key": "fields",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The fields that should be included in the response. The value should be a comma-separated list of field names, such as \"name, product_count\"."
 										}
 									],
@@ -3721,7 +3721,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"fields\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}"
+							"body": "{\n\t\"fields\": [\n\t\t\"Allowed fields are retailer_id,name,price,availability,id,description,color,size,condition,product_type,quantity_to_sell_on_facebook,url,gender,age_group,sale_price,mpn,sale_price_effective_date,brand,custom_label_0,image_url\"\n\t]\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -3739,7 +3739,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_catalog_details/:catalog_id?fetch_details=False&fields=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_catalog_details/:catalog_id?fetch_details=False&fields=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -3762,7 +3762,7 @@
 										},
 										{
 											"key": "fields",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The fields that should be included in the response. The value should be a comma-separated list of field names, such as \"name, product_count\"."
 										}
 									],
@@ -3783,7 +3783,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\",\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unable to process request\",\n\t\"status\": \"Failed\",\n\t\"reason\": \"Please check the integrity or validity of the token sent.\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -3801,7 +3801,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_catalog_details/:catalog_id?fetch_details=False&fields=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_catalog_details/:catalog_id?fetch_details=False&fields=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -3824,7 +3824,7 @@
 										},
 										{
 											"key": "fields",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The fields that should be included in the response. The value should be a comma-separated list of field names, such as \"name, product_count\"."
 										}
 									],
@@ -3845,7 +3845,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -3863,7 +3863,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_catalog_details/:catalog_id?fetch_details=False&fields=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_catalog_details/:catalog_id?fetch_details=False&fields=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -3886,7 +3886,7 @@
 										},
 										{
 											"key": "fields",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The fields that should be included in the response. The value should be a comma-separated list of field names, such as \"name, product_count\"."
 										}
 									],
@@ -3907,12 +3907,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"reason\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/wba/catalog/manager/v1/schedule_product_feed_details/:product_feed_id",
+					"name": "Fetch Schedule Product Feed Details",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -3960,7 +3960,7 @@
 							"variable": [
 								{
 									"key": "product_feed_id",
-									"value": "<string>"
+									"value": "incididunt adipisicing cupidatat"
 								}
 							]
 						},
@@ -4015,7 +4015,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"schedule\": {\n\t\t\"hour\": \"<integer>\",\n\t\t\"id\": \"<string>\",\n\t\t\"interval\": \"<string>\",\n\t\t\"interval_count\": \"<integer>\",\n\t\t\"minute\": \"<integer>\",\n\t\t\"timezone\": \"<string>\",\n\t\t\"url\": \"<string>\"\n\t},\n\t\"uploads\": {\n\t\t\"data\": [\n\t\t\t{\n\t\t\t\t\"id\": \"<string>\",\n\t\t\t\t\"start_time\": \"<string>\",\n\t\t\t\t\"end_time\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"id\": \"<string>\",\n\t\t\t\t\"start_time\": \"<string>\",\n\t\t\t\t\"end_time\": \"<string>\"\n\t\t\t}\n\t\t]\n\t},\n\t\"latest_upload\": {\n\t\t\"id\": \"<string>\",\n\t\t\"start_time\": \"<string>\",\n\t\t\"end_time\": \"<string>\"\n\t},\n\t\"name\": \"<string>\",\n\t\"id\": \"<string>\"\n}"
+							"body": "{\n\t\"schedule\": {\n\t\t\"hour\": 11,\n\t\t\"id\": \"51143928431xxxx\",\n\t\t\"interval\": \"HOURLY\",\n\t\t\"interval_count\": 1,\n\t\t\"minute\": 38,\n\t\t\"timezone\": \"UTC\",\n\t\t\"url\": \"http://wbm-nextgen.s3.ap-south-1.amazonaws.com/demo_af11-efe9f3bxxxxx.csv\"\n\t},\n\t\"uploads\": {\n\t\t\"data\": [\n\t\t\t{\n\t\t\t\t\"id\": \"128427331883xxxx\",\n\t\t\t\t\"start_time\": \"2023-04-28T10:28:24+0000\",\n\t\t\t\t\"end_time\": \"2023-04-28T10:38:17+0000\"\n\t\t\t}\n\t\t]\n\t},\n\t\"latest_upload\": {\n\t\t\"id\": \"128427331883xxxx\",\n\t\t\"start_time\": \"2023-04-28T10:28:24+0000\",\n\t\t\"end_time\": \"2023-04-28T10:38:17+0000\"\n\t},\n\t\"name\": \"schedule_product_feed\",\n\t\"id\": \"113616569031xxxx\"\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -4065,7 +4065,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unsupported get request. Object with ID '1136165690310xxxx' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\"\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -4115,7 +4115,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\",\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unable to process request\",\n\t\"status\": \"Failed\",\n\t\"reason\": \"Please check the integrity or validity of the token sent.\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -4165,7 +4165,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -4215,12 +4215,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"reason\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/wba/catalog/manager/v1/fetch_errors",
+					"name": "Fetch Errors",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -4250,7 +4250,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_errors?upload_session_id=<string>",
+							"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_errors?upload_session_id=incididunt adipisicing cupidatat",
 							"protocol": "https",
 							"host": [
 								"apis",
@@ -4267,7 +4267,7 @@
 							"query": [
 								{
 									"key": "upload_session_id",
-									"value": "<string>",
+									"value": "incididunt adipisicing cupidatat",
 									"description": "(Required) The unique ID for the product feed upload session that you want to retrieve the errors for."
 								}
 							]
@@ -4291,7 +4291,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_errors?upload_session_id=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_errors?upload_session_id=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -4308,7 +4308,7 @@
 									"query": [
 										{
 											"key": "upload_session_id",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The unique ID for the product feed upload session that you want to retrieve the errors for."
 										}
 									]
@@ -4324,7 +4324,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"error\": [\n\t\t{\n\t\t\t\"summary\": \"<string>\",\n\t\t\t\"description\": \"<string>\",\n\t\t\t\"severity\": \"<string>\"\n\t\t},\n\t\t{\n\t\t\t\"summary\": \"<string>\",\n\t\t\t\"description\": \"<string>\",\n\t\t\t\"severity\": \"<string>\"\n\t\t}\n\t]\n}"
+							"body": "{\n\t\"error\": [\n\t\t{\n\t\t\t\"summary\": \"\",\n\t\t\t\"description\": \"\",\n\t\t\t\"severity\": \"\"\n\t\t}\n\t]\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -4342,7 +4342,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_errors?upload_session_id=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_errors?upload_session_id=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -4359,7 +4359,7 @@
 									"query": [
 										{
 											"key": "upload_session_id",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The unique ID for the product feed upload session that you want to retrieve the errors for."
 										}
 									]
@@ -4375,7 +4375,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unsupported get request. Object with ID '44029838816xxxx' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\"\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -4393,7 +4393,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_errors?upload_session_id=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_errors?upload_session_id=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -4410,7 +4410,7 @@
 									"query": [
 										{
 											"key": "upload_session_id",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The unique ID for the product feed upload session that you want to retrieve the errors for."
 										}
 									]
@@ -4426,7 +4426,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\",\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unable to process request\",\n\t\"status\": \"Failed\",\n\t\"reason\": \"Please check the integrity or validity of the token sent.\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -4444,7 +4444,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_errors?upload_session_id=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_errors?upload_session_id=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -4461,7 +4461,7 @@
 									"query": [
 										{
 											"key": "upload_session_id",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The unique ID for the product feed upload session that you want to retrieve the errors for."
 										}
 									]
@@ -4477,7 +4477,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -4495,7 +4495,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_errors?upload_session_id=<string>",
+									"raw": "https://apis.rmlconnect.net/wba/catalog/manager/v1/fetch_errors?upload_session_id=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -4512,7 +4512,7 @@
 									"query": [
 										{
 											"key": "upload_session_id",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The unique ID for the product feed upload session that you want to retrieve the errors for."
 										}
 									]
@@ -4528,7 +4528,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"reason\"\n}"
 						}
 					]
 				}
@@ -4539,7 +4539,7 @@
 			"name": "WhatsApp Reports",
 			"item": [
 				{
-					"name": "/whatsapp/report/v1/create_report/myaccounts_panel",
+					"name": "Create Report",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -4574,7 +4574,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"csv_max_lines\": \"<number>\",\n\t\"filters\": {\n\t\t\"end_date\": \"<string>\",\n\t\t\"start_date\": \"<string>\"\n\t},\n\t\"projections\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}",
+							"raw": "{\n\t\"csv_max_lines\": 10000,\n\t\"filters\": {\n\t\t\"end_date\": \"{end-date}\",\n\t\t\"start_date\": \"{start-date}\"\n\t},\n\t\"projections\": [\n\t\t\"country_code\",\n\t\t\"msisdn\",\n\t\t\"message_type\",\n\t\t\"message_payload\",\n\t\t\"request_id\",\n\t\t\"conversation_id\",\n\t\t\"message_id\",\n\t\t\"submit_timestamp\",\n\t\t\"sent_timestamp\",\n\t\t\"delivery_timestamp\",\n\t\t\"read_timestamp\",\n\t\t\"failed_timestamp\",\n\t\t\"deleted_timestamp\",\n\t\t\"extra\",\n\t\t\"pricing_model\"\n\t]\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -4622,7 +4622,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"csv_max_lines\": \"<number>\",\n\t\"filters\": {\n\t\t\"end_date\": \"<string>\",\n\t\t\"start_date\": \"<string>\"\n\t},\n\t\"projections\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}",
+									"raw": "{\n\t\"csv_max_lines\": 10000,\n\t\"filters\": {\n\t\t\"end_date\": \"{end-date}\",\n\t\t\"start_date\": \"{start-date}\"\n\t},\n\t\"projections\": [\n\t\t\"country_code\",\n\t\t\"msisdn\",\n\t\t\"message_type\",\n\t\t\"message_payload\",\n\t\t\"request_id\",\n\t\t\"conversation_id\",\n\t\t\"message_id\",\n\t\t\"submit_timestamp\",\n\t\t\"sent_timestamp\",\n\t\t\"delivery_timestamp\",\n\t\t\"read_timestamp\",\n\t\t\"failed_timestamp\",\n\t\t\"deleted_timestamp\",\n\t\t\"extra\",\n\t\t\"pricing_model\"\n\t]\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -4657,7 +4657,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"id\": \"<integer>\"\n}"
+							"body": "{\n\t\"status\": \"success\",\n\t\"id\": 86\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -4680,7 +4680,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"csv_max_lines\": \"<number>\",\n\t\"filters\": {\n\t\t\"end_date\": \"<string>\",\n\t\t\"start_date\": \"<string>\"\n\t},\n\t\"projections\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}",
+									"raw": "{\n\t\"csv_max_lines\": 10000,\n\t\"filters\": {\n\t\t\"end_date\": \"{end-date}\",\n\t\t\"start_date\": \"{start-date}\"\n\t},\n\t\"projections\": [\n\t\t\"country_code\",\n\t\t\"msisdn\",\n\t\t\"message_type\",\n\t\t\"message_payload\",\n\t\t\"request_id\",\n\t\t\"conversation_id\",\n\t\t\"message_id\",\n\t\t\"submit_timestamp\",\n\t\t\"sent_timestamp\",\n\t\t\"delivery_timestamp\",\n\t\t\"read_timestamp\",\n\t\t\"failed_timestamp\",\n\t\t\"deleted_timestamp\",\n\t\t\"extra\",\n\t\t\"pricing_model\"\n\t]\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -4715,7 +4715,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"errors\": {\n\t\t\"filters\": {\n\t\t\t\"start_date\": [\n\t\t\t\t\"<string>\",\n\t\t\t\t\"<string>\"\n\t\t\t]\n\t\t}\n\t}\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"errors\": {\n\t\t\"filters\": {\n\t\t\t\"start_date\": [\n\t\t\t\t\"Missing data for required field.\"\n\t\t\t]\n\t\t}\n\t}\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -4738,7 +4738,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"csv_max_lines\": \"<number>\",\n\t\"filters\": {\n\t\t\"end_date\": \"<string>\",\n\t\t\"start_date\": \"<string>\"\n\t},\n\t\"projections\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}",
+									"raw": "{\n\t\"csv_max_lines\": 10000,\n\t\"filters\": {\n\t\t\"end_date\": \"{end-date}\",\n\t\t\"start_date\": \"{start-date}\"\n\t},\n\t\"projections\": [\n\t\t\"country_code\",\n\t\t\"msisdn\",\n\t\t\"message_type\",\n\t\t\"message_payload\",\n\t\t\"request_id\",\n\t\t\"conversation_id\",\n\t\t\"message_id\",\n\t\t\"submit_timestamp\",\n\t\t\"sent_timestamp\",\n\t\t\"delivery_timestamp\",\n\t\t\"read_timestamp\",\n\t\t\"failed_timestamp\",\n\t\t\"deleted_timestamp\",\n\t\t\"extra\",\n\t\t\"pricing_model\"\n\t]\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -4773,7 +4773,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\",\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unable to process request\",\n\t\"status\": \"Failed\",\n\t\"reason\": \"Please check the integrity or validity of the token sent.\"\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -4796,7 +4796,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"csv_max_lines\": \"<number>\",\n\t\"filters\": {\n\t\t\"end_date\": \"<string>\",\n\t\t\"start_date\": \"<string>\"\n\t},\n\t\"projections\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}",
+									"raw": "{\n\t\"csv_max_lines\": 10000,\n\t\"filters\": {\n\t\t\"end_date\": \"{end-date}\",\n\t\t\"start_date\": \"{start-date}\"\n\t},\n\t\"projections\": [\n\t\t\"country_code\",\n\t\t\"msisdn\",\n\t\t\"message_type\",\n\t\t\"message_payload\",\n\t\t\"request_id\",\n\t\t\"conversation_id\",\n\t\t\"message_id\",\n\t\t\"submit_timestamp\",\n\t\t\"sent_timestamp\",\n\t\t\"delivery_timestamp\",\n\t\t\"read_timestamp\",\n\t\t\"failed_timestamp\",\n\t\t\"deleted_timestamp\",\n\t\t\"extra\",\n\t\t\"pricing_model\"\n\t]\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -4831,12 +4831,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"errors\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"errors\": \"Contact administration for more info\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/whatsapp/report/v1/create_campaign_specific_report/myaccounts_panel",
+					"name": "Create Campaign Specific Report",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -4871,7 +4871,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"csv_max_lines\": \"<number>\",\n\t\"filters\": {\n\t\t\"campaign_id\": \"<string>\",\n\t\t\"campaign_name\": \"<string>\",\n\t\t\"end_date\": \"<string>\",\n\t\t\"start_date\": \"<string>\"\n\t},\n\t\"projections\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}",
+							"raw": "{\n\t\"csv_max_lines\": 100000,\n\t\"filters\": {\n\t\t\"campaign_id\": \"{campaign-id}\",\n\t\t\"campaign_name\": \"{campaign-name}\",\n\t\t\"end_date\": \"{end-date}\",\n\t\t\"start_date\": \"{start-date}\"\n\t},\n\t\"projections\": [\n\t\t\"country_code\",\n\t\t\"msisdn\",\n\t\t\"message_type\",\n\t\t\"message_payload\",\n\t\t\"request_id\",\n\t\t\"conversation_id\",\n\t\t\"message_id\",\n\t\t\"submit_timestamp\",\n\t\t\"sent_timestamp\",\n\t\t\"delivery_timestamp\",\n\t\t\"read_timestamp\",\n\t\t\"failed_timestamp\",\n\t\t\"deleted_timestamp\",\n\t\t\"extra\",\n\t\t\"pricing_model\",\n\t\t\"scheduled_time\"\n\t]\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -4919,7 +4919,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"csv_max_lines\": \"<number>\",\n\t\"filters\": {\n\t\t\"campaign_id\": \"<string>\",\n\t\t\"campaign_name\": \"<string>\",\n\t\t\"end_date\": \"<string>\",\n\t\t\"start_date\": \"<string>\"\n\t},\n\t\"projections\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}",
+									"raw": "{\n\t\"csv_max_lines\": 100000,\n\t\"filters\": {\n\t\t\"campaign_id\": \"{campaign-id}\",\n\t\t\"campaign_name\": \"{campaign-name}\",\n\t\t\"end_date\": \"{end-date}\",\n\t\t\"start_date\": \"{start-date}\"\n\t},\n\t\"projections\": [\n\t\t\"country_code\",\n\t\t\"msisdn\",\n\t\t\"message_type\",\n\t\t\"message_payload\",\n\t\t\"request_id\",\n\t\t\"conversation_id\",\n\t\t\"message_id\",\n\t\t\"submit_timestamp\",\n\t\t\"sent_timestamp\",\n\t\t\"delivery_timestamp\",\n\t\t\"read_timestamp\",\n\t\t\"failed_timestamp\",\n\t\t\"deleted_timestamp\",\n\t\t\"extra\",\n\t\t\"pricing_model\",\n\t\t\"scheduled_time\"\n\t]\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -4954,7 +4954,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"id\": \"<integer>\"\n}"
+							"body": "{\n\t\"status\": \"success\",\n\t\"id\": 186\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -4977,7 +4977,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"csv_max_lines\": \"<number>\",\n\t\"filters\": {\n\t\t\"campaign_id\": \"<string>\",\n\t\t\"campaign_name\": \"<string>\",\n\t\t\"end_date\": \"<string>\",\n\t\t\"start_date\": \"<string>\"\n\t},\n\t\"projections\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}",
+									"raw": "{\n\t\"csv_max_lines\": 100000,\n\t\"filters\": {\n\t\t\"campaign_id\": \"{campaign-id}\",\n\t\t\"campaign_name\": \"{campaign-name}\",\n\t\t\"end_date\": \"{end-date}\",\n\t\t\"start_date\": \"{start-date}\"\n\t},\n\t\"projections\": [\n\t\t\"country_code\",\n\t\t\"msisdn\",\n\t\t\"message_type\",\n\t\t\"message_payload\",\n\t\t\"request_id\",\n\t\t\"conversation_id\",\n\t\t\"message_id\",\n\t\t\"submit_timestamp\",\n\t\t\"sent_timestamp\",\n\t\t\"delivery_timestamp\",\n\t\t\"read_timestamp\",\n\t\t\"failed_timestamp\",\n\t\t\"deleted_timestamp\",\n\t\t\"extra\",\n\t\t\"pricing_model\",\n\t\t\"scheduled_time\"\n\t]\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -5012,7 +5012,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"errors\": {\n\t\t\"filters\": {\n\t\t\t\"start_date\": [\n\t\t\t\t\"<string>\",\n\t\t\t\t\"<string>\"\n\t\t\t]\n\t\t}\n\t}\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"errors\": {\n\t\t\"filters\": {\n\t\t\t\"start_date\": [\n\t\t\t\t\"Missing data for required field.\"\n\t\t\t]\n\t\t}\n\t}\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -5035,7 +5035,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"csv_max_lines\": \"<number>\",\n\t\"filters\": {\n\t\t\"campaign_id\": \"<string>\",\n\t\t\"campaign_name\": \"<string>\",\n\t\t\"end_date\": \"<string>\",\n\t\t\"start_date\": \"<string>\"\n\t},\n\t\"projections\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}",
+									"raw": "{\n\t\"csv_max_lines\": 100000,\n\t\"filters\": {\n\t\t\"campaign_id\": \"{campaign-id}\",\n\t\t\"campaign_name\": \"{campaign-name}\",\n\t\t\"end_date\": \"{end-date}\",\n\t\t\"start_date\": \"{start-date}\"\n\t},\n\t\"projections\": [\n\t\t\"country_code\",\n\t\t\"msisdn\",\n\t\t\"message_type\",\n\t\t\"message_payload\",\n\t\t\"request_id\",\n\t\t\"conversation_id\",\n\t\t\"message_id\",\n\t\t\"submit_timestamp\",\n\t\t\"sent_timestamp\",\n\t\t\"delivery_timestamp\",\n\t\t\"read_timestamp\",\n\t\t\"failed_timestamp\",\n\t\t\"deleted_timestamp\",\n\t\t\"extra\",\n\t\t\"pricing_model\",\n\t\t\"scheduled_time\"\n\t]\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -5070,7 +5070,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\",\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unable to process request\",\n\t\"status\": \"Failed\",\n\t\"reason\": \"Please check the integrity or validity of the token sent.\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -5093,7 +5093,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"csv_max_lines\": \"<number>\",\n\t\"filters\": {\n\t\t\"campaign_id\": \"<string>\",\n\t\t\"campaign_name\": \"<string>\",\n\t\t\"end_date\": \"<string>\",\n\t\t\"start_date\": \"<string>\"\n\t},\n\t\"projections\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}",
+									"raw": "{\n\t\"csv_max_lines\": 100000,\n\t\"filters\": {\n\t\t\"campaign_id\": \"{campaign-id}\",\n\t\t\"campaign_name\": \"{campaign-name}\",\n\t\t\"end_date\": \"{end-date}\",\n\t\t\"start_date\": \"{start-date}\"\n\t},\n\t\"projections\": [\n\t\t\"country_code\",\n\t\t\"msisdn\",\n\t\t\"message_type\",\n\t\t\"message_payload\",\n\t\t\"request_id\",\n\t\t\"conversation_id\",\n\t\t\"message_id\",\n\t\t\"submit_timestamp\",\n\t\t\"sent_timestamp\",\n\t\t\"delivery_timestamp\",\n\t\t\"read_timestamp\",\n\t\t\"failed_timestamp\",\n\t\t\"deleted_timestamp\",\n\t\t\"extra\",\n\t\t\"pricing_model\",\n\t\t\"scheduled_time\"\n\t]\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -5128,7 +5128,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -5151,7 +5151,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"csv_max_lines\": \"<number>\",\n\t\"filters\": {\n\t\t\"campaign_id\": \"<string>\",\n\t\t\"campaign_name\": \"<string>\",\n\t\t\"end_date\": \"<string>\",\n\t\t\"start_date\": \"<string>\"\n\t},\n\t\"projections\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}",
+									"raw": "{\n\t\"csv_max_lines\": 100000,\n\t\"filters\": {\n\t\t\"campaign_id\": \"{campaign-id}\",\n\t\t\"campaign_name\": \"{campaign-name}\",\n\t\t\"end_date\": \"{end-date}\",\n\t\t\"start_date\": \"{start-date}\"\n\t},\n\t\"projections\": [\n\t\t\"country_code\",\n\t\t\"msisdn\",\n\t\t\"message_type\",\n\t\t\"message_payload\",\n\t\t\"request_id\",\n\t\t\"conversation_id\",\n\t\t\"message_id\",\n\t\t\"submit_timestamp\",\n\t\t\"sent_timestamp\",\n\t\t\"delivery_timestamp\",\n\t\t\"read_timestamp\",\n\t\t\"failed_timestamp\",\n\t\t\"deleted_timestamp\",\n\t\t\"extra\",\n\t\t\"pricing_model\",\n\t\t\"scheduled_time\"\n\t]\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -5186,12 +5186,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"errors\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"errors\": \"Contact administration for more info\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/whatsapp/report/v1/fetch_campaign_specific_report/:report_id",
+					"name": "Fetch Report URL",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -5238,7 +5238,7 @@
 							"variable": [
 								{
 									"key": "report_id",
-									"value": "<string>"
+									"value": "incididunt adipisicing cupidatat"
 								}
 							]
 						},
@@ -5292,7 +5292,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"report is not yet generated\"\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -5341,7 +5341,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"report_url\": \"<string>\"\n}"
+							"body": "{\n\t\"report_url\": \"url\"\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -5390,7 +5390,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"status\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unable to process request\",\n\t\"status\": \"Failed\",\n\t\"reason\": \"Please check the integrity or validity of the token sent.\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -5439,7 +5439,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -5488,12 +5488,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Exception in Fetch Campaign Report\",\n\t\"reason\": \"reason\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/whatsapp/report/v1/fetch_campaign_details",
+					"name": "View Campaign Summary",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -5523,7 +5523,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_campaign_details?page_number=<number>&example=true&start-date=<string>&end-date=<string>",
+							"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_campaign_details?page_number=91903443.90497822&download=true&start-date=incididunt adipisicing cupidatat&end-date=incididunt adipisicing cupidatat",
 							"protocol": "https",
 							"host": [
 								"apis",
@@ -5539,22 +5539,22 @@
 							"query": [
 								{
 									"key": "page_number",
-									"value": "<number>",
+									"value": "91903443.90497822",
 									"description": "(Required) The page number of the results to be fetched. Default is \"1\"."
 								},
 								{
-									"key": "example",
+									"key": "download",
 									"value": "true",
 									"description": "(Required) A boolean flag indicating whether to download the report or not. Default value is 'false'."
 								},
 								{
 									"key": "start-date",
-									"value": "<string>",
+									"value": "incididunt adipisicing cupidatat",
 									"description": "(Required) The start date in format \"YYYY-MM-DD\", specifies the beginning of the date range for which to fetch campaign summary report."
 								},
 								{
 									"key": "end-date",
-									"value": "<string>",
+									"value": "incididunt adipisicing cupidatat",
 									"description": "(Required) The end date in format \"YYYY-MM-DD\", specifies the end of the date range for which to fetch campaign summary report."
 								}
 							]
@@ -5578,7 +5578,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_campaign_details?page_number=<number>&example=true&start-date=<string>&end-date=<string>",
+									"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_campaign_details?page_number=91903443.90497822&download=true&start-date=incididunt adipisicing cupidatat&end-date=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -5594,22 +5594,22 @@
 									"query": [
 										{
 											"key": "page_number",
-											"value": "<number>",
+											"value": "91903443.90497822",
 											"description": "(Required) The page number of the results to be fetched. Default is \"1\"."
 										},
 										{
-											"key": "example",
+											"key": "download",
 											"value": "true",
 											"description": "(Required) A boolean flag indicating whether to download the report or not. Default value is 'false'."
 										},
 										{
 											"key": "start-date",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The start date in format \"YYYY-MM-DD\", specifies the beginning of the date range for which to fetch campaign summary report."
 										},
 										{
 											"key": "end-date",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The end date in format \"YYYY-MM-DD\", specifies the end of the date range for which to fetch campaign summary report."
 										}
 									]
@@ -5625,7 +5625,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"result\": [\n\t\t{\n\t\t\t\"campaign_id\": \"<string>\",\n\t\t\t\"campaign_name\": \"<string>\",\n\t\t\t\"campaign_status\": \"<string>\",\n\t\t\t\"campaign_type\": \"<string>\",\n\t\t\t\"delivered\": \"<integer>\",\n\t\t\t\"failed\": \"<integer>\",\n\t\t\t\"message_payload\": {\n\t\t\t\t\"country_code\": \"<string>\",\n\t\t\t\t\"media\": {\n\t\t\t\t\t\"lang_code\": \"<string>\",\n\t\t\t\t\t\"template_name\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\"\n\t\t\t\t},\n\t\t\t\t\"phone\": \"<string>\"\n\t\t\t},\n\t\t\t\"message_type\": \"<string>\",\n\t\t\t\"process_end_timestamp\": \"<string>\",\n\t\t\t\"process_start_timestamp\": \"<string>\",\n\t\t\t\"read\": \"<integer>\",\n\t\t\t\"scheduled_time\": \"<string>\",\n\t\t\t\"sent\": \"<integer>\",\n\t\t\t\"submit\": \"<integer>\",\n\t\t\t\"user_name\": \"<string>\"\n\t\t},\n\t\t{\n\t\t\t\"campaign_id\": \"<string>\",\n\t\t\t\"campaign_name\": \"<string>\",\n\t\t\t\"campaign_status\": \"<string>\",\n\t\t\t\"campaign_type\": \"<string>\",\n\t\t\t\"delivered\": \"<integer>\",\n\t\t\t\"failed\": \"<integer>\",\n\t\t\t\"message_payload\": {\n\t\t\t\t\"country_code\": \"<string>\",\n\t\t\t\t\"media\": {\n\t\t\t\t\t\"lang_code\": \"<string>\",\n\t\t\t\t\t\"template_name\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\"\n\t\t\t\t},\n\t\t\t\t\"phone\": \"<string>\"\n\t\t\t},\n\t\t\t\"message_type\": \"<string>\",\n\t\t\t\"process_end_timestamp\": \"<string>\",\n\t\t\t\"process_start_timestamp\": \"<string>\",\n\t\t\t\"read\": \"<integer>\",\n\t\t\t\"scheduled_time\": \"<string>\",\n\t\t\t\"sent\": \"<integer>\",\n\t\t\t\"submit\": \"<integer>\",\n\t\t\t\"user_name\": \"<string>\"\n\t\t}\n\t]\n}"
+							"body": "{\n\t\"result\": [\n\t\t{\n\t\t\t\"campaign_id\": \"276f63e2-cb36-11ed-af9d-0242ac13xxxx\",\n\t\t\t\"campaign_name\": \"rmluxxx1-3\",\n\t\t\t\"campaign_status\": \"done\",\n\t\t\t\"campaign_type\": \"generalized\",\n\t\t\t\"delivered\": 2,\n\t\t\t\"failed\": 1,\n\t\t\t\"message_payload\": {\n\t\t\t\t\"country_code\": \"+91\",\n\t\t\t\t\"media\": {\n\t\t\t\t\t\"lang_code\": \"en\",\n\t\t\t\t\t\"template_name\": \"testing_16_03\",\n\t\t\t\t\t\"type\": \"media_template\"\n\t\t\t\t},\n\t\t\t\t\"phone\": \"704527xxxx\"\n\t\t\t},\n\t\t\t\"message_type\": \"media_template\",\n\t\t\t\"process_end_timestamp\": \"2023-03-25 17:55:02.815756\",\n\t\t\t\"process_start_timestamp\": \"2023-03-25 17:55:00.051162\",\n\t\t\t\"read\": 1,\n\t\t\t\"scheduled_time\": null,\n\t\t\t\"sent\": 3,\n\t\t\t\"submit\": 3,\n\t\t\t\"user_name\": \"RMLxxx11\"\n\t\t},\n\t\t{\n\t\t\t\"campaign_id\": \"1fd39188-cb2e-11ed-9866-0242acxxxxx5\",\n\t\t\t\"campaign_name\": \"testuxxx1-2\",\n\t\t\t\"campaign_status\": \"done\",\n\t\t\t\"campaign_type\": \"generalized\",\n\t\t\t\"delivered\": 2,\n\t\t\t\"failed\": 1,\n\t\t\t\"message_payload\": {\n\t\t\t\t\"country_code\": \"+91\",\n\t\t\t\t\"media\": {\n\t\t\t\t\t\"lang_code\": \"en\",\n\t\t\t\t\t\"template_name\": \"testing_16_03\",\n\t\t\t\t\t\"type\": \"media_template\"\n\t\t\t\t},\n\t\t\t\t\"phone\": \"704527xxxx\"\n\t\t\t},\n\t\t\t\"message_type\": \"media_template\",\n\t\t\t\"process_end_timestamp\": \"2023-03-25 16:58:45.853958\",\n\t\t\t\"process_start_timestamp\": \"2023-03-25 16:58:43.181214\",\n\t\t\t\"read\": 1,\n\t\t\t\"scheduled_time\": null,\n\t\t\t\"sent\": 3,\n\t\t\t\"submit\": 3,\n\t\t\t\"user_name\": \"RMLUxxxx\"\n\t\t}\n\t]\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -5643,7 +5643,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_campaign_details?page_number=<number>&example=true&start-date=<string>&end-date=<string>",
+									"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_campaign_details?page_number=91903443.90497822&download=true&start-date=incididunt adipisicing cupidatat&end-date=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -5659,22 +5659,22 @@
 									"query": [
 										{
 											"key": "page_number",
-											"value": "<number>",
+											"value": "91903443.90497822",
 											"description": "(Required) The page number of the results to be fetched. Default is \"1\"."
 										},
 										{
-											"key": "example",
+											"key": "download",
 											"value": "true",
 											"description": "(Required) A boolean flag indicating whether to download the report or not. Default value is 'false'."
 										},
 										{
 											"key": "start-date",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The start date in format \"YYYY-MM-DD\", specifies the beginning of the date range for which to fetch campaign summary report."
 										},
 										{
 											"key": "end-date",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The end date in format \"YYYY-MM-DD\", specifies the end of the date range for which to fetch campaign summary report."
 										}
 									]
@@ -5690,7 +5690,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"status\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unable to process request\",\n\t\"status\": \"Failed\",\n\t\"reason\": \"Please check the integrity or validity of the token sent.\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -5708,7 +5708,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_campaign_details?page_number=<number>&example=true&start-date=<string>&end-date=<string>",
+									"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_campaign_details?page_number=91903443.90497822&download=true&start-date=incididunt adipisicing cupidatat&end-date=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -5724,22 +5724,22 @@
 									"query": [
 										{
 											"key": "page_number",
-											"value": "<number>",
+											"value": "91903443.90497822",
 											"description": "(Required) The page number of the results to be fetched. Default is \"1\"."
 										},
 										{
-											"key": "example",
+											"key": "download",
 											"value": "true",
 											"description": "(Required) A boolean flag indicating whether to download the report or not. Default value is 'false'."
 										},
 										{
 											"key": "start-date",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The start date in format \"YYYY-MM-DD\", specifies the beginning of the date range for which to fetch campaign summary report."
 										},
 										{
 											"key": "end-date",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The end date in format \"YYYY-MM-DD\", specifies the end of the date range for which to fetch campaign summary report."
 										}
 									]
@@ -5755,7 +5755,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -5773,7 +5773,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_campaign_details?page_number=<number>&example=true&start-date=<string>&end-date=<string>",
+									"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_campaign_details?page_number=91903443.90497822&download=true&start-date=incididunt adipisicing cupidatat&end-date=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -5789,22 +5789,22 @@
 									"query": [
 										{
 											"key": "page_number",
-											"value": "<number>",
+											"value": "91903443.90497822",
 											"description": "(Required) The page number of the results to be fetched. Default is \"1\"."
 										},
 										{
-											"key": "example",
+											"key": "download",
 											"value": "true",
 											"description": "(Required) A boolean flag indicating whether to download the report or not. Default value is 'false'."
 										},
 										{
 											"key": "start-date",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The start date in format \"YYYY-MM-DD\", specifies the beginning of the date range for which to fetch campaign summary report."
 										},
 										{
 											"key": "end-date",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The end date in format \"YYYY-MM-DD\", specifies the end of the date range for which to fetch campaign summary report."
 										}
 									]
@@ -5820,12 +5820,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Exception in Fetch Campaign Manager\",\n\t\"reason\": \"'Request' object has no attribute 'username'\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/whatsapp/report/v1/fetch_reports/:start_date/:end_date",
+					"name": "View Report Summary",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -5855,7 +5855,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_reports/:start_date/:end_date?page_number=<string>&page_size=<string>",
+							"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_reports/:start_date/:end_date?page_number=incididunt adipisicing cupidatat&page_size=incididunt adipisicing cupidatat",
 							"protocol": "https",
 							"host": [
 								"apis",
@@ -5873,23 +5873,23 @@
 							"query": [
 								{
 									"key": "page_number",
-									"value": "<string>",
+									"value": "incididunt adipisicing cupidatat",
 									"description": "The page number of the paginated results to return. The default value is 1."
 								},
 								{
 									"key": "page_size",
-									"value": "<string>",
+									"value": "incididunt adipisicing cupidatat",
 									"description": "The number of results to return per page. The default value is 5."
 								}
 							],
 							"variable": [
 								{
 									"key": "start_date",
-									"value": "<string>"
+									"value": "incididunt adipisicing cupidatat"
 								},
 								{
 									"key": "end_date",
-									"value": "<string>"
+									"value": "incididunt adipisicing cupidatat"
 								}
 							]
 						},
@@ -5912,7 +5912,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_reports/:start_date/:end_date?page_number=<string>&page_size=<string>",
+									"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_reports/:start_date/:end_date?page_number=incididunt adipisicing cupidatat&page_size=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -5930,12 +5930,12 @@
 									"query": [
 										{
 											"key": "page_number",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "The page number of the paginated results to return. The default value is 1."
 										},
 										{
 											"key": "page_size",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "The number of results to return per page. The default value is 5."
 										}
 									],
@@ -5959,7 +5959,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"result\": [\n\t\t{\n\t\t\t\"file_path\": \"<string>\",\n\t\t\t\"id\": \"<integer>\",\n\t\t\t\"msisdn\": \"<string>\",\n\t\t\t\"payload\": {\n\t\t\t\t\"csv_max_lines\": \"<integer>\",\n\t\t\t\t\"filters\": {\n\t\t\t\t\t\"end_date\": \"<string>\",\n\t\t\t\t\t\"start_date\": \"<string>\"\n\t\t\t\t},\n\t\t\t\t\"projections\": [\n\t\t\t\t\t\"<string>\",\n\t\t\t\t\t\"<string>\"\n\t\t\t\t],\n\t\t\t\t\"request_source\": \"<string>\"\n\t\t\t},\n\t\t\t\"status\": \"<string>\",\n\t\t\t\"timestamp\": \"<string>\",\n\t\t\t\"username\": \"<string>\"\n\t\t},\n\t\t{\n\t\t\t\"file_path\": \"<string>\",\n\t\t\t\"id\": \"<integer>\",\n\t\t\t\"msisdn\": \"<string>\",\n\t\t\t\"payload\": {\n\t\t\t\t\"csv_max_lines\": \"<integer>\",\n\t\t\t\t\"filters\": {\n\t\t\t\t\t\"end_date\": \"<string>\",\n\t\t\t\t\t\"start_date\": \"<string>\"\n\t\t\t\t},\n\t\t\t\t\"projections\": [\n\t\t\t\t\t\"<string>\",\n\t\t\t\t\t\"<string>\"\n\t\t\t\t],\n\t\t\t\t\"request_source\": \"<string>\"\n\t\t\t},\n\t\t\t\"status\": \"<string>\",\n\t\t\t\"timestamp\": \"<string>\",\n\t\t\t\"username\": \"<string>\"\n\t\t}\n\t]\n}"
+							"body": "{\n\t\"result\": [\n\t\t{\n\t\t\t\"file_path\": \"fa15c156-8dba-11ed-bc2b-0242acxxxxx5.zip\",\n\t\t\t\"id\": \"107xxx\",\n\t\t\t\"msisdn\": null,\n\t\t\t\"payload\": {\n\t\t\t\t\"csv_max_lines\": 100000,\n\t\t\t\t\"filters\": {\n\t\t\t\t\t\"end_date\": \"2023-01-06\",\n\t\t\t\t\t\"start_date\": \"2023-01-06\"\n\t\t\t\t},\n\t\t\t\t\"projections\": [\n\t\t\t\t\t\"country_code\",\n\t\t\t\t\t\"msisdn\",\n\t\t\t\t\t\"message_type\",\n\t\t\t\t\t\"message_payload\",\n\t\t\t\t\t\"request_id\",\n\t\t\t\t\t\"conversation_id\",\n\t\t\t\t\t\"message_id\",\n\t\t\t\t\t\"submit_timestamp\",\n\t\t\t\t\t\"sent_timestamp\",\n\t\t\t\t\t\"delivery_timestamp\",\n\t\t\t\t\t\"read_timestamp\",\n\t\t\t\t\t\"failed_timestamp\",\n\t\t\t\t\t\"deleted_timestamp\",\n\t\t\t\t\t\"extra\",\n\t\t\t\t\t\"pricing_model\",\n\t\t\t\t\t\"pricing_category\",\n\t\t\t\t\t\"expiration_timestamp\"\n\t\t\t\t],\n\t\t\t\t\"request_source\": \"support_panel\"\n\t\t\t},\n\t\t\t\"status\": \"deleted\",\n\t\t\t\"timestamp\": \"Fri, 06 Jan 2023 12:09:31 GMT\",\n\t\t\t\"username\": \"dxxxxhatsapp\"\n\t\t}\n\t]\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -5977,7 +5977,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_reports/:start_date/:end_date?page_number=<string>&page_size=<string>",
+									"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_reports/:start_date/:end_date?page_number=incididunt adipisicing cupidatat&page_size=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -5995,12 +5995,12 @@
 									"query": [
 										{
 											"key": "page_number",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "The page number of the paginated results to return. The default value is 1."
 										},
 										{
 											"key": "page_size",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "The number of results to return per page. The default value is 5."
 										}
 									],
@@ -6024,7 +6024,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"Unauthorized\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -6042,7 +6042,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_reports/:start_date/:end_date?page_number=<string>&page_size=<string>",
+									"raw": "https://apis.rmlconnect.net/whatsapp/report/v1/fetch_reports/:start_date/:end_date?page_number=incididunt adipisicing cupidatat&page_size=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -6060,12 +6060,12 @@
 									"query": [
 										{
 											"key": "page_number",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "The page number of the paginated results to return. The default value is 1."
 										},
 										{
 											"key": "page_size",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "The number of results to return per page. The default value is 5."
 										}
 									],
@@ -6089,7 +6089,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						}
 					]
 				}
@@ -6100,7 +6100,7 @@
 			"name": "WhatsApp Optin API",
 			"item": [
 				{
-					"name": "/wbo/v2/optin/store",
+					"name": "Create Optin",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -6135,7 +6135,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"msisdn\": \"<string>\",\n\t\"optin_channel\": \"<string>\",\n\t\"extra\": \"<string>\"\n}",
+							"raw": "{\n\t\"extra\": \"{extra}\",\n\t\"msisdn\": \"{phone number with + and country code}\",\n\t\"optin_channel\": \"whatsapp-api/third-party/sms/landing-page/email/voice/missed-call/physical-form\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -6182,7 +6182,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"msisdn\": \"<string>\",\n\t\"optin_channel\": \"<string>\",\n\t\"extra\": \"<string>\"\n}",
+									"raw": "{\n\t\"extra\": \"{extra}\",\n\t\"msisdn\": \"{phone number with + and country code}\",\n\t\"optin_channel\": \"whatsapp-api/third-party/sms/landing-page/email/voice/missed-call/physical-form\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -6216,7 +6216,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"details\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"success\",\n\t\"message\": \"api execution successful\",\n\t\"details\": \"given 'msisdn' is not opted in for user Demo8\"\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -6239,7 +6239,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"msisdn\": \"<string>\",\n\t\"optin_channel\": \"<string>\",\n\t\"extra\": \"<string>\"\n}",
+									"raw": "{\n\t\"extra\": \"{extra}\",\n\t\"msisdn\": \"{phone number with + and country code}\",\n\t\"optin_channel\": \"whatsapp-api/third-party/sms/landing-page/email/voice/missed-call/physical-form\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -6273,7 +6273,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\",\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unable to process request\",\n\t\"status\": \"Failed\",\n\t\"reason\": \"Please check the integrity or validity of the token sent.\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -6296,7 +6296,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"msisdn\": \"<string>\",\n\t\"optin_channel\": \"<string>\",\n\t\"extra\": \"<string>\"\n}",
+									"raw": "{\n\t\"extra\": \"{extra}\",\n\t\"msisdn\": \"{phone number with + and country code}\",\n\t\"optin_channel\": \"whatsapp-api/third-party/sms/landing-page/email/voice/missed-call/physical-form\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -6330,7 +6330,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Unprocessable Entity (WebDAV)",
@@ -6353,7 +6353,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"msisdn\": \"<string>\",\n\t\"optin_channel\": \"<string>\",\n\t\"extra\": \"<string>\"\n}",
+									"raw": "{\n\t\"extra\": \"{extra}\",\n\t\"msisdn\": \"{phone number with + and country code}\",\n\t\"optin_channel\": \"whatsapp-api/third-party/sms/landing-page/email/voice/missed-call/physical-form\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -6387,7 +6387,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"status\": \"<string>\",\n\t\"error\": {\n\t\t\"optin_channel\": [\n\t\t\t\"<string>\",\n\t\t\t\"<string>\"\n\t\t]\n\t}\n}"
+							"body": "{\n\t\"message\": \"unable to process request\",\n\t\"status\": \"failed\",\n\t\"error\": {\n\t\t\"optin_channel\": [\n\t\t\t\"Unknown field.\"\n\t\t]\n\t}\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -6410,7 +6410,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"msisdn\": \"<string>\",\n\t\"optin_channel\": \"<string>\",\n\t\"extra\": \"<string>\"\n}",
+									"raw": "{\n\t\"extra\": \"{extra}\",\n\t\"msisdn\": \"{phone number with + and country code}\",\n\t\"optin_channel\": \"whatsapp-api/third-party/sms/landing-page/email/voice/missed-call/physical-form\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -6444,12 +6444,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"reason\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/wbo/v2/optin/check",
+					"name": "Check Optin",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -6479,7 +6479,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://apis.rmlconnect.net/wbo/v2/optin/check?msisdn=<string>",
+							"raw": "https://apis.rmlconnect.net/wbo/v2/optin/check?msisdn=incididunt adipisicing cupidatat",
 							"protocol": "https",
 							"host": [
 								"apis",
@@ -6495,7 +6495,7 @@
 							"query": [
 								{
 									"key": "msisdn",
-									"value": "<string>",
+									"value": "incididunt adipisicing cupidatat",
 									"description": "(Required) The phone number with '+' and country code for the user opting in."
 								}
 							]
@@ -6519,7 +6519,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wbo/v2/optin/check?msisdn=<string>",
+									"raw": "https://apis.rmlconnect.net/wbo/v2/optin/check?msisdn=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -6535,7 +6535,7 @@
 									"query": [
 										{
 											"key": "msisdn",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The phone number with '+' and country code for the user opting in."
 										}
 									]
@@ -6551,7 +6551,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"details\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"success\",\n\t\"message\": \"api execution successful\",\n\t\"details\": \"Given 'msisdn' is not opted in  'channel' missed-call\"\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -6569,7 +6569,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wbo/v2/optin/check?msisdn=<string>",
+									"raw": "https://apis.rmlconnect.net/wbo/v2/optin/check?msisdn=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -6585,7 +6585,7 @@
 									"query": [
 										{
 											"key": "msisdn",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The phone number with '+' and country code for the user opting in."
 										}
 									]
@@ -6601,7 +6601,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\",\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unable to process request\",\n\t\"status\": \"Failed\",\n\t\"reason\": \"Please check the integrity or validity of the token sent.\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -6619,7 +6619,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wbo/v2/optin/check?msisdn=<string>",
+									"raw": "https://apis.rmlconnect.net/wbo/v2/optin/check?msisdn=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -6635,7 +6635,7 @@
 									"query": [
 										{
 											"key": "msisdn",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The phone number with '+' and country code for the user opting in."
 										}
 									]
@@ -6651,7 +6651,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Unprocessable Entity (WebDAV)",
@@ -6669,7 +6669,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wbo/v2/optin/check?msisdn=<string>",
+									"raw": "https://apis.rmlconnect.net/wbo/v2/optin/check?msisdn=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -6685,7 +6685,7 @@
 									"query": [
 										{
 											"key": "msisdn",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The phone number with '+' and country code for the user opting in."
 										}
 									]
@@ -6701,7 +6701,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"status\": \"<string>\",\n\t\"error\": {\n\t\t\"msisdn\": [\n\t\t\t\"<string>\",\n\t\t\t\"<string>\"\n\t\t]\n\t}\n}"
+							"body": "{\n\t\"message\": \"unable to process request\",\n\t\"status\": \"failed\",\n\t\"error\": {\n\t\t\"msisdn\": [\n\t\t\t\"Field may not be null.\"\n\t\t]\n\t}\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -6719,7 +6719,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://apis.rmlconnect.net/wbo/v2/optin/check?msisdn=<string>",
+									"raw": "https://apis.rmlconnect.net/wbo/v2/optin/check?msisdn=incididunt adipisicing cupidatat",
 									"protocol": "https",
 									"host": [
 										"apis",
@@ -6735,7 +6735,7 @@
 									"query": [
 										{
 											"key": "msisdn",
-											"value": "<string>",
+											"value": "incididunt adipisicing cupidatat",
 											"description": "(Required) The phone number with '+' and country code for the user opting in."
 										}
 									]
@@ -6751,7 +6751,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"reason\"\n}"
 						}
 					]
 				}
@@ -6762,7 +6762,7 @@
 			"name": "WhatsApp Messaging Template API",
 			"item": [
 				{
-					"name": "/wba/templates",
+					"name": "View Template Message",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -6846,7 +6846,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"total\": \"<integer>\",\n\t\"data\": [\n\t\t{\n\t\t\t\"name\": \"<string>\",\n\t\t\t\"id\": \"<string>\",\n\t\t\t\"components\": [\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"text\": \"<string>\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"text\": \"<string>\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"category\": \"<string>\",\n\t\t\t\"status\": \"<string>\",\n\t\t\t\"quality_rating\": \"<string>\",\n\t\t\t\"rejected_reason\": \"<string>\",\n\t\t\t\"language\": \"<string>\",\n\t\t\t\"created_date\": \"<string>\",\n\t\t\t\"deleted_date\": \"<string>\",\n\t\t\t\"waba_id\": \"<string>\",\n\t\t\t\"previous_category\": \"<string>\"\n\t\t},\n\t\t{\n\t\t\t\"name\": \"<string>\",\n\t\t\t\"id\": \"<string>\",\n\t\t\t\"components\": [\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"text\": \"<string>\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"text\": \"<string>\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"category\": \"<string>\",\n\t\t\t\"status\": \"<string>\",\n\t\t\t\"quality_rating\": \"<string>\",\n\t\t\t\"rejected_reason\": \"<string>\",\n\t\t\t\"language\": \"<string>\",\n\t\t\t\"created_date\": \"<string>\",\n\t\t\t\"deleted_date\": \"<string>\",\n\t\t\t\"waba_id\": \"<string>\",\n\t\t\t\"previous_category\": \"<string>\"\n\t\t}\n\t]\n}"
+							"body": "{\n\t\"total\": 1,\n\t\"data\": [\n\t\t{\n\t\t\t\"name\": \"welcome\",\n\t\t\t\"id\": \"640099017215xxx\",\n\t\t\t\"components\": [\n\t\t\t\t{\n\t\t\t\t\t\"type\": \"BODY\",\n\t\t\t\t\t\"text\": \"Hi, Thank you for Opt-ing in to receive notifications from us on WhatsApp. \\n\\nWe will send you regular updates on our services and promotions. If you wish to unsubscribe, please reply with STOP. \\n\\nHave a good day.\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"category\": \"MARKETING\",\n\t\t\t\"status\": \"APPROVED\",\n\t\t\t\"quality_rating\": \"UNKNOWN\",\n\t\t\t\"rejected_reason\": \"NONE\",\n\t\t\t\"language\": \"en\",\n\t\t\t\"created_date\": \"21-Feb-2022 04:53 PM\",\n\t\t\t\"deleted_date\": null,\n\t\t\t\"waba_id\": \"629529078253xxx\",\n\t\t\t\"previous_category\": \"ALERT_UPDATE\"\n\t\t}\n\t]\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -6887,7 +6887,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"template with name : testing_v160405xx7 and language : ['en_US'] already exists.\"\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -6928,7 +6928,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"response\": \"<string>\"\n}"
+							"body": "{\n\t\"response\": \"Unauthorized\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -6969,7 +6969,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -7010,12 +7010,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"status\": \"failed\",\n\t\"message\": \"unable to process request\",\n\t\"reason\": \"reason\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/wba/template/create",
+					"name": "Create Template",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -7050,7 +7050,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"components\": {\n\t\t\"body\": {\n\t\t\t\"text\": \"<string>\"\n\t\t},\n\t\t\"buttons\": {\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"<string>\",\n\t\t\t\t\t\"label\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"website\": \"<string>\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"<string>\",\n\t\t\t\t\t\"label\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"website\": \"<string>\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"type\": \"<string>\"\n\t\t},\n\t\t\"footer\": {\n\t\t\t\"text\": \"<string>\"\n\t\t},\n\t\t\"header\": {\n\t\t\t\"example\": \"<string>\",\n\t\t\t\"type\": \"<string>\"\n\t\t}\n\t},\n\t\"language\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t],\n\t\"template_category\": \"<string>\",\n\t\"template_name\": \"<string>\",\n\t\"template_type\": \"<string>\"\n}",
+							"raw": "{\n\t\"components\": {\n\t\t\"body\": {\n\t\t\t\"text\": \"{body text}\"\n\t\t},\n\t\t\"buttons\": {\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"{phone number with + and country code}\",\n\t\t\t\t\t\"label\": \"{phone number label}\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"label\": \"{url label}\",\n\t\t\t\t\t\"type\": \"static/dynamic\",\n\t\t\t\t\t\"website\": \"{url with https}\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"type\": \"call_to_action\"\n\t\t},\n\t\t\"footer\": {\n\t\t\t\"text\": \"{footer text}\"\n\t\t},\n\t\t\"header\": {\n\t\t\t\"example\": \"{sample media url}\",\n\t\t\t\"type\": \"image/video/document\"\n\t\t}\n\t},\n\t\"language\": [\n\t\t\"{lang code}\"\n\t],\n\t\"template_category\": \"ACCOUNT_UPDATE\",\n\t\"template_name\": \"{template name}\",\n\t\"template_type\": \"template\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -7096,7 +7096,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"components\": {\n\t\t\"body\": {\n\t\t\t\"text\": \"<string>\"\n\t\t},\n\t\t\"buttons\": {\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"<string>\",\n\t\t\t\t\t\"label\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"website\": \"<string>\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"<string>\",\n\t\t\t\t\t\"label\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"website\": \"<string>\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"type\": \"<string>\"\n\t\t},\n\t\t\"footer\": {\n\t\t\t\"text\": \"<string>\"\n\t\t},\n\t\t\"header\": {\n\t\t\t\"example\": \"<string>\",\n\t\t\t\"type\": \"<string>\"\n\t\t}\n\t},\n\t\"language\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t],\n\t\"template_category\": \"<string>\",\n\t\"template_name\": \"<string>\",\n\t\"template_type\": \"<string>\"\n}",
+									"raw": "{\n\t\"components\": {\n\t\t\"body\": {\n\t\t\t\"text\": \"{body text}\"\n\t\t},\n\t\t\"buttons\": {\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"{phone number with + and country code}\",\n\t\t\t\t\t\"label\": \"{phone number label}\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"label\": \"{url label}\",\n\t\t\t\t\t\"type\": \"static/dynamic\",\n\t\t\t\t\t\"website\": \"{url with https}\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"type\": \"call_to_action\"\n\t\t},\n\t\t\"footer\": {\n\t\t\t\"text\": \"{footer text}\"\n\t\t},\n\t\t\"header\": {\n\t\t\t\"example\": \"{sample media url}\",\n\t\t\t\"type\": \"image/video/document\"\n\t\t}\n\t},\n\t\"language\": [\n\t\t\"{lang code}\"\n\t],\n\t\"template_category\": \"ACCOUNT_UPDATE\",\n\t\"template_name\": \"{template name}\",\n\t\"template_type\": \"template\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -7129,7 +7129,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"id\": \"<string>\",\n\t\"status\": \"<string>\",\n\t\"category\": \"<string>\"\n}"
+							"body": "{\n\t\"id\": \"79804437842xxxx\",\n\t\"status\": \"APPROVED\",\n\t\"category\": \"MARKETING\"\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -7152,7 +7152,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"components\": {\n\t\t\"body\": {\n\t\t\t\"text\": \"<string>\"\n\t\t},\n\t\t\"buttons\": {\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"<string>\",\n\t\t\t\t\t\"label\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"website\": \"<string>\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"<string>\",\n\t\t\t\t\t\"label\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"website\": \"<string>\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"type\": \"<string>\"\n\t\t},\n\t\t\"footer\": {\n\t\t\t\"text\": \"<string>\"\n\t\t},\n\t\t\"header\": {\n\t\t\t\"example\": \"<string>\",\n\t\t\t\"type\": \"<string>\"\n\t\t}\n\t},\n\t\"language\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t],\n\t\"template_category\": \"<string>\",\n\t\"template_name\": \"<string>\",\n\t\"template_type\": \"<string>\"\n}",
+									"raw": "{\n\t\"components\": {\n\t\t\"body\": {\n\t\t\t\"text\": \"{body text}\"\n\t\t},\n\t\t\"buttons\": {\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"{phone number with + and country code}\",\n\t\t\t\t\t\"label\": \"{phone number label}\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"label\": \"{url label}\",\n\t\t\t\t\t\"type\": \"static/dynamic\",\n\t\t\t\t\t\"website\": \"{url with https}\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"type\": \"call_to_action\"\n\t\t},\n\t\t\"footer\": {\n\t\t\t\"text\": \"{footer text}\"\n\t\t},\n\t\t\"header\": {\n\t\t\t\"example\": \"{sample media url}\",\n\t\t\t\"type\": \"image/video/document\"\n\t\t}\n\t},\n\t\"language\": [\n\t\t\"{lang code}\"\n\t],\n\t\"template_category\": \"ACCOUNT_UPDATE\",\n\t\"template_name\": \"{template name}\",\n\t\"template_type\": \"template\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -7185,7 +7185,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"template with name : testdocum1 and language : ['en'] already exists.\"\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -7208,7 +7208,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"components\": {\n\t\t\"body\": {\n\t\t\t\"text\": \"<string>\"\n\t\t},\n\t\t\"buttons\": {\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"<string>\",\n\t\t\t\t\t\"label\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"website\": \"<string>\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"<string>\",\n\t\t\t\t\t\"label\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"website\": \"<string>\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"type\": \"<string>\"\n\t\t},\n\t\t\"footer\": {\n\t\t\t\"text\": \"<string>\"\n\t\t},\n\t\t\"header\": {\n\t\t\t\"example\": \"<string>\",\n\t\t\t\"type\": \"<string>\"\n\t\t}\n\t},\n\t\"language\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t],\n\t\"template_category\": \"<string>\",\n\t\"template_name\": \"<string>\",\n\t\"template_type\": \"<string>\"\n}",
+									"raw": "{\n\t\"components\": {\n\t\t\"body\": {\n\t\t\t\"text\": \"{body text}\"\n\t\t},\n\t\t\"buttons\": {\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"{phone number with + and country code}\",\n\t\t\t\t\t\"label\": \"{phone number label}\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"label\": \"{url label}\",\n\t\t\t\t\t\"type\": \"static/dynamic\",\n\t\t\t\t\t\"website\": \"{url with https}\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"type\": \"call_to_action\"\n\t\t},\n\t\t\"footer\": {\n\t\t\t\"text\": \"{footer text}\"\n\t\t},\n\t\t\"header\": {\n\t\t\t\"example\": \"{sample media url}\",\n\t\t\t\"type\": \"image/video/document\"\n\t\t}\n\t},\n\t\"language\": [\n\t\t\"{lang code}\"\n\t],\n\t\"template_category\": \"ACCOUNT_UPDATE\",\n\t\"template_name\": \"{template name}\",\n\t\"template_type\": \"template\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -7241,7 +7241,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"reason\": \"<string>\",\n\t\"status\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"unable to process campaign request\",\n\t\"reason\": \"jwt token expired\",\n\t\"status\": \"failure\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -7264,7 +7264,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"components\": {\n\t\t\"body\": {\n\t\t\t\"text\": \"<string>\"\n\t\t},\n\t\t\"buttons\": {\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"<string>\",\n\t\t\t\t\t\"label\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"website\": \"<string>\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"<string>\",\n\t\t\t\t\t\"label\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"website\": \"<string>\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"type\": \"<string>\"\n\t\t},\n\t\t\"footer\": {\n\t\t\t\"text\": \"<string>\"\n\t\t},\n\t\t\"header\": {\n\t\t\t\"example\": \"<string>\",\n\t\t\t\"type\": \"<string>\"\n\t\t}\n\t},\n\t\"language\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t],\n\t\"template_category\": \"<string>\",\n\t\"template_name\": \"<string>\",\n\t\"template_type\": \"<string>\"\n}",
+									"raw": "{\n\t\"components\": {\n\t\t\"body\": {\n\t\t\t\"text\": \"{body text}\"\n\t\t},\n\t\t\"buttons\": {\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"{phone number with + and country code}\",\n\t\t\t\t\t\"label\": \"{phone number label}\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"label\": \"{url label}\",\n\t\t\t\t\t\"type\": \"static/dynamic\",\n\t\t\t\t\t\"website\": \"{url with https}\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"type\": \"call_to_action\"\n\t\t},\n\t\t\"footer\": {\n\t\t\t\"text\": \"{footer text}\"\n\t\t},\n\t\t\"header\": {\n\t\t\t\"example\": \"{sample media url}\",\n\t\t\t\"type\": \"image/video/document\"\n\t\t}\n\t},\n\t\"language\": [\n\t\t\"{lang code}\"\n\t],\n\t\"template_category\": \"ACCOUNT_UPDATE\",\n\t\"template_name\": \"{template name}\",\n\t\"template_type\": \"template\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -7297,7 +7297,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Unprocessable Entity (WebDAV)",
@@ -7320,7 +7320,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"components\": {\n\t\t\"body\": {\n\t\t\t\"text\": \"<string>\"\n\t\t},\n\t\t\"buttons\": {\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"<string>\",\n\t\t\t\t\t\"label\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"website\": \"<string>\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"<string>\",\n\t\t\t\t\t\"label\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"website\": \"<string>\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"type\": \"<string>\"\n\t\t},\n\t\t\"footer\": {\n\t\t\t\"text\": \"<string>\"\n\t\t},\n\t\t\"header\": {\n\t\t\t\"example\": \"<string>\",\n\t\t\t\"type\": \"<string>\"\n\t\t}\n\t},\n\t\"language\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t],\n\t\"template_category\": \"<string>\",\n\t\"template_name\": \"<string>\",\n\t\"template_type\": \"<string>\"\n}",
+									"raw": "{\n\t\"components\": {\n\t\t\"body\": {\n\t\t\t\"text\": \"{body text}\"\n\t\t},\n\t\t\"buttons\": {\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"{phone number with + and country code}\",\n\t\t\t\t\t\"label\": \"{phone number label}\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"label\": \"{url label}\",\n\t\t\t\t\t\"type\": \"static/dynamic\",\n\t\t\t\t\t\"website\": \"{url with https}\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"type\": \"call_to_action\"\n\t\t},\n\t\t\"footer\": {\n\t\t\t\"text\": \"{footer text}\"\n\t\t},\n\t\t\"header\": {\n\t\t\t\"example\": \"{sample media url}\",\n\t\t\t\"type\": \"image/video/document\"\n\t\t}\n\t},\n\t\"language\": [\n\t\t\"{lang code}\"\n\t],\n\t\"template_category\": \"ACCOUNT_UPDATE\",\n\t\"template_name\": \"{template name}\",\n\t\"template_type\": \"template\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -7353,7 +7353,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"template_category\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}"
+							"body": "{\n\t\"template_category\": [\n\t\t\"Must be one of: MARKETING, UTILITY, AUTHENTICATION.\"\n\t]\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -7376,7 +7376,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"components\": {\n\t\t\"body\": {\n\t\t\t\"text\": \"<string>\"\n\t\t},\n\t\t\"buttons\": {\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"<string>\",\n\t\t\t\t\t\"label\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"website\": \"<string>\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"<string>\",\n\t\t\t\t\t\"label\": \"<string>\",\n\t\t\t\t\t\"type\": \"<string>\",\n\t\t\t\t\t\"website\": \"<string>\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"type\": \"<string>\"\n\t\t},\n\t\t\"footer\": {\n\t\t\t\"text\": \"<string>\"\n\t\t},\n\t\t\"header\": {\n\t\t\t\"example\": \"<string>\",\n\t\t\t\"type\": \"<string>\"\n\t\t}\n\t},\n\t\"language\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t],\n\t\"template_category\": \"<string>\",\n\t\"template_name\": \"<string>\",\n\t\"template_type\": \"<string>\"\n}",
+									"raw": "{\n\t\"components\": {\n\t\t\"body\": {\n\t\t\t\"text\": \"{body text}\"\n\t\t},\n\t\t\"buttons\": {\n\t\t\t\"elements\": [\n\t\t\t\t{\n\t\t\t\t\t\"contact_no\": \"{phone number with + and country code}\",\n\t\t\t\t\t\"label\": \"{phone number label}\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"label\": \"{url label}\",\n\t\t\t\t\t\"type\": \"static/dynamic\",\n\t\t\t\t\t\"website\": \"{url with https}\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"type\": \"call_to_action\"\n\t\t},\n\t\t\"footer\": {\n\t\t\t\"text\": \"{footer text}\"\n\t\t},\n\t\t\"header\": {\n\t\t\t\"example\": \"{sample media url}\",\n\t\t\t\"type\": \"image/video/document\"\n\t\t}\n\t},\n\t\"language\": [\n\t\t\"{lang code}\"\n\t],\n\t\"template_category\": \"ACCOUNT_UPDATE\",\n\t\"template_name\": \"{template name}\",\n\t\"template_type\": \"template\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -7409,12 +7409,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Internal Server Error\"\n}"
 						}
 					]
 				},
 				{
-					"name": "/wba/v1/messages",
+					"name": "Send Template and Session Messages API",
 					"request": {
 						"auth": {
 							"type": "apikey",
@@ -7449,7 +7449,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"phone\": \"<string>\",\n\t\"media\": {\n\t\t\"type\": \"<string>\",\n\t\t\"template_name\": \"<string>\",\n\t\t\"lang_code\": \"<string>\",\n\t\t\"body\": [\n\t\t\t{\n\t\t\t\t\"text\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"text\": \"<string>\"\n\t\t\t}\n\t\t],\n\t\t\"button\": [\n\t\t\t{\n\t\t\t\t\"button_no\": \"<string>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"button_no\": \"<string>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t}\n\t\t]\n\t},\n\t\"extra\": \"<string>\",\n\t\"enable_acculync\": \"<boolean>\"\n}",
+							"raw": "{\n\t\"phone\": \"{mobile number}\",\n\t\"extra\": \"{your value}\",\n\t\"enable_acculync\": true,\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n\t\t\"body\": [\n\t\t\t{\n\t\t\t\t\"text\": \"{variable}\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"text\": \"{variable}\"\n\t\t\t}\n\t\t],\n\t\t\"button\": [\n\t\t\t{\n\t\t\t\t\"button_no\": \"0/1\",\n\t\t\t\t\"url\": \"{dynamic_url variable}\"\n\t\t\t}\n\t\t]\n\t}\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -7471,7 +7471,7 @@
 								"messages"
 							]
 						},
-						"description": "Send Template Message API can be used to send either template or session messages to customers. Learn more about [WhatsApp template and session message APIs](https://routemobile.github.io/WhatsApp-Business-API/WBS.html#tag/WhatsApp-Messaging-Template-API/operation/sendSessionMessageApi)."
+						"description": "Send Template and Session Messages API can be used to send either template or session messages to customers. Learn more about [WhatsApp template and session message APIs](https://routemobile.github.io/WhatsApp-Business-API/WBS.html#tag/WhatsApp-Messaging-Template-API/operation/sendSessionMessageApi)."
 					},
 					"response": [
 						{
@@ -7495,7 +7495,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"phone\": \"<string>\",\n\t\"media\": {\n\t\t\"type\": \"<string>\",\n\t\t\"template_name\": \"<string>\",\n\t\t\"lang_code\": \"<string>\",\n\t\t\"body\": [\n\t\t\t{\n\t\t\t\t\"text\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"text\": \"<string>\"\n\t\t\t}\n\t\t],\n\t\t\"button\": [\n\t\t\t{\n\t\t\t\t\"button_no\": \"<string>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"button_no\": \"<string>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t}\n\t\t]\n\t},\n\t\"extra\": \"<string>\",\n\t\"enable_acculync\": \"<boolean>\"\n}",
+									"raw": "{\n\t\"phone\": \"{mobile number}\",\n\t\"extra\": \"{your value}\",\n\t\"enable_acculync\": true,\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n\t\t\"body\": [\n\t\t\t{\n\t\t\t\t\"text\": \"{variable}\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"text\": \"{variable}\"\n\t\t\t}\n\t\t],\n\t\t\"button\": [\n\t\t\t{\n\t\t\t\t\"button_no\": \"0/1\",\n\t\t\t\t\"url\": \"{dynamic_url variable}\"\n\t\t\t}\n\t\t]\n\t}\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -7528,7 +7528,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"status\": \"<string>\",\n\t\"request_id\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"message received successfully\",\n\t\"status\": \"processing\",\n\t\"request_id\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n}"
 						},
 						{
 							"name": "Bad Request",
@@ -7551,7 +7551,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"phone\": \"<string>\",\n\t\"media\": {\n\t\t\"type\": \"<string>\",\n\t\t\"template_name\": \"<string>\",\n\t\t\"lang_code\": \"<string>\",\n\t\t\"body\": [\n\t\t\t{\n\t\t\t\t\"text\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"text\": \"<string>\"\n\t\t\t}\n\t\t],\n\t\t\"button\": [\n\t\t\t{\n\t\t\t\t\"button_no\": \"<string>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"button_no\": \"<string>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t}\n\t\t]\n\t},\n\t\"extra\": \"<string>\",\n\t\"enable_acculync\": \"<boolean>\"\n}",
+									"raw": "{\n\t\"phone\": \"{mobile number}\",\n\t\"extra\": \"{your value}\",\n\t\"enable_acculync\": true,\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n\t\t\"body\": [\n\t\t\t{\n\t\t\t\t\"text\": \"{variable}\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"text\": \"{variable}\"\n\t\t\t}\n\t\t],\n\t\t\"button\": [\n\t\t\t{\n\t\t\t\t\"button_no\": \"0/1\",\n\t\t\t\t\"url\": \"{dynamic_url variable}\"\n\t\t\t}\n\t\t]\n\t}\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -7584,7 +7584,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"status\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The browser (or proxy) sent a request that this server could not understand.\"\n}"
 						},
 						{
 							"name": "Authentication Failure",
@@ -7607,7 +7607,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"phone\": \"<string>\",\n\t\"media\": {\n\t\t\"type\": \"<string>\",\n\t\t\"template_name\": \"<string>\",\n\t\t\"lang_code\": \"<string>\",\n\t\t\"body\": [\n\t\t\t{\n\t\t\t\t\"text\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"text\": \"<string>\"\n\t\t\t}\n\t\t],\n\t\t\"button\": [\n\t\t\t{\n\t\t\t\t\"button_no\": \"<string>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"button_no\": \"<string>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t}\n\t\t]\n\t},\n\t\"extra\": \"<string>\",\n\t\"enable_acculync\": \"<boolean>\"\n}",
+									"raw": "{\n\t\"phone\": \"{mobile number}\",\n\t\"extra\": \"{your value}\",\n\t\"enable_acculync\": true,\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n\t\t\"body\": [\n\t\t\t{\n\t\t\t\t\"text\": \"{variable}\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"text\": \"{variable}\"\n\t\t\t}\n\t\t],\n\t\t\"button\": [\n\t\t\t{\n\t\t\t\t\"button_no\": \"0/1\",\n\t\t\t\t\"url\": \"{dynamic_url variable}\"\n\t\t\t}\n\t\t]\n\t}\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -7640,7 +7640,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\",\n\t\"status\": \"<string>\",\n\t\"reason\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"Unable to process request\",\n\t\"status\": \"Failed\",\n\t\"reason\": \"Please check the integrity or validity of the token sent.\"\n}"
 						},
 						{
 							"name": "Page Not Found",
@@ -7663,7 +7663,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"phone\": \"<string>\",\n\t\"media\": {\n\t\t\"type\": \"<string>\",\n\t\t\"template_name\": \"<string>\",\n\t\t\"lang_code\": \"<string>\",\n\t\t\"body\": [\n\t\t\t{\n\t\t\t\t\"text\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"text\": \"<string>\"\n\t\t\t}\n\t\t],\n\t\t\"button\": [\n\t\t\t{\n\t\t\t\t\"button_no\": \"<string>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"button_no\": \"<string>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t}\n\t\t]\n\t},\n\t\"extra\": \"<string>\",\n\t\"enable_acculync\": \"<boolean>\"\n}",
+									"raw": "{\n\t\"phone\": \"{mobile number}\",\n\t\"extra\": \"{your value}\",\n\t\"enable_acculync\": true,\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n\t\t\"body\": [\n\t\t\t{\n\t\t\t\t\"text\": \"{variable}\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"text\": \"{variable}\"\n\t\t\t}\n\t\t],\n\t\t\"button\": [\n\t\t\t{\n\t\t\t\t\"button_no\": \"0/1\",\n\t\t\t\t\"url\": \"{dynamic_url variable}\"\n\t\t\t}\n\t\t]\n\t}\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -7696,7 +7696,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.\"\n}"
 						},
 						{
 							"name": "Unprocessable Entity (WebDAV)",
@@ -7719,7 +7719,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"phone\": \"<string>\",\n\t\"media\": {\n\t\t\"type\": \"<string>\",\n\t\t\"template_name\": \"<string>\",\n\t\t\"lang_code\": \"<string>\",\n\t\t\"body\": [\n\t\t\t{\n\t\t\t\t\"text\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"text\": \"<string>\"\n\t\t\t}\n\t\t],\n\t\t\"button\": [\n\t\t\t{\n\t\t\t\t\"button_no\": \"<string>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"button_no\": \"<string>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t}\n\t\t]\n\t},\n\t\"extra\": \"<string>\",\n\t\"enable_acculync\": \"<boolean>\"\n}",
+									"raw": "{\n\t\"phone\": \"{mobile number}\",\n\t\"extra\": \"{your value}\",\n\t\"enable_acculync\": true,\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n\t\t\"body\": [\n\t\t\t{\n\t\t\t\t\"text\": \"{variable}\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"text\": \"{variable}\"\n\t\t\t}\n\t\t],\n\t\t\"button\": [\n\t\t\t{\n\t\t\t\t\"button_no\": \"0/1\",\n\t\t\t\t\"url\": \"{dynamic_url variable}\"\n\t\t\t}\n\t\t]\n\t}\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -7752,7 +7752,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"template_type\": [\n\t\t\"<string>\",\n\t\t\"<string>\"\n\t]\n}"
+							"body": "{\n\t\"template_type\": [\n\t\t\"Must be one of: template, text_template, media_template, interactive_template.\"\n\t]\n}"
 						},
 						{
 							"name": "Internal Server Error",
@@ -7775,7 +7775,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"phone\": \"<string>\",\n\t\"media\": {\n\t\t\"type\": \"<string>\",\n\t\t\"template_name\": \"<string>\",\n\t\t\"lang_code\": \"<string>\",\n\t\t\"body\": [\n\t\t\t{\n\t\t\t\t\"text\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"text\": \"<string>\"\n\t\t\t}\n\t\t],\n\t\t\"button\": [\n\t\t\t{\n\t\t\t\t\"button_no\": \"<string>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"button_no\": \"<string>\",\n\t\t\t\t\"url\": \"<string>\"\n\t\t\t}\n\t\t]\n\t},\n\t\"extra\": \"<string>\",\n\t\"enable_acculync\": \"<boolean>\"\n}",
+									"raw": "{\n\t\"phone\": \"{mobile number}\",\n\t\"extra\": \"{your value}\",\n\t\"enable_acculync\": true,\n\t\"media\": {\n\t\t\"type\": \"media_template\",\n\t\t\"template_name\": \"{your template}\",\n\t\t\"lang_code\": \"{lang_code}\",\n\t\t\"body\": [\n\t\t\t{\n\t\t\t\t\"text\": \"{variable}\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"text\": \"{variable}\"\n\t\t\t}\n\t\t],\n\t\t\"button\": [\n\t\t\t{\n\t\t\t\t\"button_no\": \"0/1\",\n\t\t\t\t\"url\": \"{dynamic_url variable}\"\n\t\t\t}\n\t\t]\n\t}\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -7808,7 +7808,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"status\": \"<string>\",\n\t\"message\": \"<string>\"\n}"
+							"body": "{\n\t\"message\": \"unable to process request\",\n\t\"status\": \"failed\"\n}"
 						}
 					]
 				}
@@ -7819,7 +7819,7 @@
 			"name": "WhatsApp Client Callback API",
 			"item": [
 				{
-					"name": "/callbacks",
+					"name": "WhatsApp Client Callback",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -7830,7 +7830,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"messages\": [\n\t\t{\n\t\t\t\"id\": \"<string>\",\n\t\t\t\"from\": \"<string>\",\n\t\t\t\"type\": \"<string>\",\n\t\t\t\"timestamp\": \"<string>\",\n\t\t\t\"text\": {\n\t\t\t\t\"body\": \"<string>\"\n\t\t\t},\n\t\t\t\"message_id\": \"<string>\"\n\t\t},\n\t\t{\n\t\t\t\"id\": \"<string>\",\n\t\t\t\"from\": \"<string>\",\n\t\t\t\"type\": \"<string>\",\n\t\t\t\"timestamp\": \"<string>\",\n\t\t\t\"text\": {\n\t\t\t\t\"body\": \"<string>\"\n\t\t\t},\n\t\t\t\"message_id\": \"<string>\"\n\t\t}\n\t],\n\t\"contacts\": [\n\t\t{\n\t\t\t\"profile\": {\n\t\t\t\t\"name\": \"<string>\"\n\t\t\t},\n\t\t\t\"wa_id\": \"<string>\"\n\t\t},\n\t\t{\n\t\t\t\"profile\": {\n\t\t\t\t\"name\": \"<string>\"\n\t\t\t},\n\t\t\t\"wa_id\": \"<string>\"\n\t\t}\n\t],\n\t\"brand_msisdn\": \"<string>\",\n\t\"request_id\": \"<string>\"\n}",
+							"raw": "{\n\t\"messages\": [\n\t\t{\n\t\t\t\"id\": \"6af19ee2-72d9-11ed-88f4-0a58a9fxxxx2\",\n\t\t\t\"from\": \"91704534xxx5\",\n\t\t\t\"type\": \"text\",\n\t\t\t\"timestamp\": \"1670051363\",\n\t\t\t\"text\": {\n\t\t\t\t\"body\": \"Hi\"\n\t\t\t},\n\t\t\t\"message_id\": \"wamid.HBgMOTE3MDQ1MzQ1Mjg1FQIAEhggNEI0OUxxxxxxxxxxxzUxOEVGODBDMEE2QUFCQTg1ODkA\"\n\t\t}\n\t],\n\t\"contacts\": [\n\t\t{\n\t\t\t\"profile\": {\n\t\t\t\t\"name\": \"Darryl\"\n\t\t\t},\n\t\t\t\"wa_id\": \"91704xxxx285\"\n\t\t}\n\t],\n\t\"brand_msisdn\": \"9193218xxxx1\",\n\t\"request_id\": \"6af19ee2-72d9-11ed-88f4-0a58xxxxxc02\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -7865,7 +7865,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"messages\": [\n\t\t{\n\t\t\t\"id\": \"<string>\",\n\t\t\t\"from\": \"<string>\",\n\t\t\t\"type\": \"<string>\",\n\t\t\t\"timestamp\": \"<string>\",\n\t\t\t\"text\": {\n\t\t\t\t\"body\": \"<string>\"\n\t\t\t},\n\t\t\t\"message_id\": \"<string>\"\n\t\t},\n\t\t{\n\t\t\t\"id\": \"<string>\",\n\t\t\t\"from\": \"<string>\",\n\t\t\t\"type\": \"<string>\",\n\t\t\t\"timestamp\": \"<string>\",\n\t\t\t\"text\": {\n\t\t\t\t\"body\": \"<string>\"\n\t\t\t},\n\t\t\t\"message_id\": \"<string>\"\n\t\t}\n\t],\n\t\"contacts\": [\n\t\t{\n\t\t\t\"profile\": {\n\t\t\t\t\"name\": \"<string>\"\n\t\t\t},\n\t\t\t\"wa_id\": \"<string>\"\n\t\t},\n\t\t{\n\t\t\t\"profile\": {\n\t\t\t\t\"name\": \"<string>\"\n\t\t\t},\n\t\t\t\"wa_id\": \"<string>\"\n\t\t}\n\t],\n\t\"brand_msisdn\": \"<string>\",\n\t\"request_id\": \"<string>\"\n}",
+									"raw": "{\n\t\"messages\": [\n\t\t{\n\t\t\t\"id\": \"6af19ee2-72d9-11ed-88f4-0a58a9fxxxx2\",\n\t\t\t\"from\": \"91704534xxx5\",\n\t\t\t\"type\": \"text\",\n\t\t\t\"timestamp\": \"1670051363\",\n\t\t\t\"text\": {\n\t\t\t\t\"body\": \"Hi\"\n\t\t\t},\n\t\t\t\"message_id\": \"wamid.HBgMOTE3MDQ1MzQ1Mjg1FQIAEhggNEI0OUxxxxxxxxxxxzUxOEVGODBDMEE2QUFCQTg1ODkA\"\n\t\t}\n\t],\n\t\"contacts\": [\n\t\t{\n\t\t\t\"profile\": {\n\t\t\t\t\"name\": \"Darryl\"\n\t\t\t},\n\t\t\t\"wa_id\": \"91704xxxx285\"\n\t\t}\n\t],\n\t\"brand_msisdn\": \"9193218xxxx1\",\n\t\"request_id\": \"6af19ee2-72d9-11ed-88f4-0a58xxxxxc02\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
