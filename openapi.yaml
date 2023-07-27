@@ -7,6 +7,9 @@ info:
     WhatsApp API documentation to help you start working with Route Mobile as
     quickly as possible, as well as support if you get stuck. Let's jump right
     in!
+    
+    
+    For more information, see the [Route Mobile Open Specifications](https://routemobile.github.io/WhatsApp-Business-API/WBS.html).
   contact:
     url: https://developers.routemobile.com/
     name: Route Mobile Development
@@ -3718,9 +3721,9 @@ paths:
     post:
       tags:
         - WhatsApp Messaging Template API
-      summary: Send Template Message API
+      summary: Send Template and Session Messages API
       description: >-
-        Send Template Message API can be used to send either template or session
+        Send Template and Session Messages API can be used to send either template or session
         messages to customers. Learn more about [WhatsApp template and session
         message
         APIs](https://routemobile.github.io/WhatsApp-Business-API/WBS.html#tag/WhatsApp-Messaging-Template-API/operation/sendSessionMessageApi).
