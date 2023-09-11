@@ -1,15 +1,16 @@
 openapi: 3.0.0
 info:
-  version: 1.6.0
+  version: 1.8.0
   title: Route Mobile WhatsApp API
-  description: >
+  description: >-
     Welcome to the Route Mobile developer hub. You'll find comprehensive
     WhatsApp API documentation to help you start working with Route Mobile as
     quickly as possible, as well as support if you get stuck. Let's jump right
     in!
-    
-    
-    For more information, see the [Route Mobile Open Specifications](https://routemobile.github.io/WhatsApp-Business-API/WBS.html).
+
+
+    For more information, see the [Route Mobile WhatsApp OpenAPI
+    Specifications](https://routemobile.github.io/WhatsApp-Business-API/WBS.html).
   contact:
     url: https://developers.routemobile.com/
     name: Route Mobile Development
@@ -96,7 +97,7 @@ paths:
                         body:
                           - text: Here is your boarding pass
                     asynchronous: false
-                    country_code: null
+                    country_code: string
         '401':
           description: Unauthorized
           content:
@@ -175,7 +176,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /wba/v2/manage_campaign:
     post:
       tags:
@@ -331,7 +331,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /wba/catalog/manager/v1/upload:
     post:
       tags:
@@ -442,7 +441,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /wba/catalog/manager/v1/create_product_feed:
     post:
       tags:
@@ -551,7 +549,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /wba/catalog/manager/v1/update_product_feed:
     post:
       tags:
@@ -654,7 +651,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /wba/catalog/manager/v1/delete_product_feed:
     post:
       tags:
@@ -758,8 +754,7 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
-  /wba/catalog/manager/v1/fetch_product_feed/{product_feed_id}:
+  /wba/catalog/manager/v1/fetch_product_feed:
     get:
       tags:
         - WhatsApp Catalog Manager
@@ -809,6 +804,14 @@ paths:
         - custom_label_0: A custom label for the product.
       operationId: fetchProductFeedDetails
       parameters:
+        - name: product_feed_id
+          in: query
+          description: >-
+            The unique ID of the product feed for which details should be
+            fetched.
+          required: true
+          schema:
+            type: string
         - name: fields
           in: query
           description: >-
@@ -816,8 +819,6 @@ paths:
             be a comma-separated list of field names, such as "retailer_id,
             name, price, id".
           required: true
-          style: form
-          explode: true
           schema:
             type: string
         - name: limit
@@ -825,17 +826,6 @@ paths:
           description: >-
             The maximum number of products to return in the response. The value
             should be an integer.
-          required: true
-          style: form
-          explode: true
-          schema:
-            type: number
-            maximum: 25
-        - name: product_feed_id
-          in: path
-          description: >-
-            The unique ID of the product feed for which details should be
-            fetched.
           required: true
           schema:
             type: string
@@ -924,7 +914,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /wba/catalog/manager/v1/fetch_product_details:
     get:
       tags:
@@ -986,13 +975,13 @@ paths:
                   value:
                     catalog_id: 62305622836xxxxx
                     file_url: >-
-                      https://wbm-nextgen.s3.ap-south-1.amazonaws.com/demo_xxxx-xxxd-965a-0a58a9feac02.csv
-                    interval: null
+                      https://www.example.com/demo_xxxx-xxxd-965a-0a58a9feac02.csv
+                    interval: string
                     product_feed_count: 0
                     product_feed_id: 122543386xxxxxxx
                     product_feed_name: testammy
                     scheduled: false
-                    scheduled_timestamp: null
+                    scheduled_timestamp: string
                     timestamp: '2023-02-27 09:54:47.337571'
                     upload_session_id: 1225433871xxxxxx
         '401':
@@ -1046,8 +1035,7 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
-  /wba/catalog/manager/v1/fetch_catalog_details/{catalog_id}:
+  /wba/catalog/manager/v1/fetch_catalog_details:
     get:
       tags:
         - WhatsApp Catalog Manager
@@ -1108,30 +1096,24 @@ paths:
         - image_url: The URL of the product image.
       operationId: fetchCatalogDetails
       parameters:
+        - name: catalog_id
+          in: query
+          description: The ID of the catalog the product belongs to.
+          required: true
+          schema:
+            type: string
         - name: fetch_details
           in: query
           description: Option to fetch the product catalog details.
           required: true
-          style: form
-          explode: true
           schema:
-            enum:
-              - 'True'
-              - 'False'
+            type: string
         - name: fields
           in: query
           description: >-
             The fields that should be included in the response. The value should
             be a comma-separated list of field names, such as "name,
             product_count".
-          required: true
-          style: form
-          explode: true
-          schema:
-            type: string
-        - name: catalog_id
-          in: path
-          description: The ID of the catalog the product belongs to.
           required: true
           schema:
             type: string
@@ -1292,8 +1274,7 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
-  /wba/catalog/manager/v1/schedule_product_feed_details/{product_feed_id}:
+  /wba/catalog/manager/v1/schedule_product_feed_details:
     get:
       tags:
         - WhatsApp Catalog Manager
@@ -1304,7 +1285,7 @@ paths:
       operationId: fetchScheduleProductFeedDetails
       parameters:
         - name: product_feed_id
-          in: path
+          in: query
           description: >-
             The unique ID of the product feed fetches from your system and then
             schedules the product feed.
@@ -1481,7 +1462,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /wba/catalog/manager/v1/fetch_errors:
     get:
       tags:
@@ -1602,7 +1582,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /whatsapp/report/v1/create_report/myaccounts_panel:
     post:
       tags:
@@ -1752,7 +1731,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /whatsapp/report/v1/create_campaign_specific_report/myaccounts_panel:
     post:
       tags:
@@ -1932,7 +1910,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /whatsapp/report/v1/fetch_campaign_specific_report/{report_id}:
     get:
       tags:
@@ -1947,8 +1924,6 @@ paths:
           in: path
           description: Unique ID of the report.
           required: true
-          style: simple
-          explode: false
           schema:
             type: string
       responses:
@@ -2039,7 +2014,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /whatsapp/report/v1/fetch_campaign_details:
     get:
       tags:
@@ -2068,20 +2042,23 @@ paths:
           style: form
           explode: true
           schema:
+            type: boolean
             example: 'true'
         - name: start-date
           in: query
           description: >-
-            The start date in format "YYYY-MM-DD", specifies the beginning of
-            the date range for which to fetch campaign summary report.
+            The start date in "YYYY-MM-DD" order followed by the time in the
+            "HH:MM:SS" format, that specifies the beginning of the date range
+            for which to fetch campaign summary report.
           required: true
           schema:
             type: string
         - name: end-date
           in: query
           description: >-
-            The end date in format "YYYY-MM-DD", specifies the end of the date
-            range for which to fetch campaign summary report.
+            The end date in "YYYY-MM-DD" order followed by the time in the
+            "HH:MM:SS" format, that specifies the end of the date range for
+            which to fetch campaign summary report.
           required: true
           schema:
             type: string
@@ -2113,7 +2090,7 @@ paths:
                         process_end_timestamp: '2023-03-25 17:55:02.815756'
                         process_start_timestamp: '2023-03-25 17:55:00.051162'
                         read: 1
-                        scheduled_time: null
+                        scheduled_time: string
                         sent: 3
                         submit: 3
                         user_name: RMLxxx11
@@ -2134,7 +2111,7 @@ paths:
                         process_end_timestamp: '2023-03-25 16:58:45.853958'
                         process_start_timestamp: '2023-03-25 16:58:43.181214'
                         read: 1
-                        scheduled_time: null
+                        scheduled_time: string
                         sent: 3
                         submit: 3
                         user_name: RMLUxxxx
@@ -2199,8 +2176,7 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
-  /whatsapp/report/v1/fetch_reports/{start_date}/{end_date}:
+  /whatsapp/report/v1/fetch_reports:
     get:
       tags:
         - WhatsApp Reports
@@ -2208,36 +2184,34 @@ paths:
       description: View report summary for the WhatsApp Business account.
       operationId: viewReportSummary
       parameters:
+        - name: start_date
+          in: query
+          description: >-
+            The start date in "YYYY-MM-DD" order followed by the time in the
+            "HH:MM:SS" format, that specifies the beginning of the date range
+            for which to fetch reports.
+          required: true
+          schema:
+            type: string
+        - name: end_date
+          in: query
+          description: >-
+            The end date in "YYYY-MM-DD" order followed by the time in the
+            "HH:MM:SS" format, that specifies the end of the date range for
+            which to fetch reports.
+          required: true
+          schema:
+            type: string
         - name: page_number
           in: query
           description: >-
             The page number of the paginated results to return. The default
             value is 1.
-          style: form
-          explode: true
           schema:
             type: string
         - name: page_size
           in: query
           description: The number of results to return per page. The default value is 5.
-          style: form
-          explode: true
-          schema:
-            type: string
-        - name: start_date
-          in: path
-          description: >-
-            The start date in format "YYYY-MM-DD", specifies the beginning of
-            the date range for which to fetch reports.
-          required: true
-          schema:
-            type: string
-        - name: end_date
-          in: path
-          description: >-
-            The end date in format "YYYY-MM-DD", specifies the end of the date
-            range for which to fetch reports.
-          required: true
           schema:
             type: string
       responses:
@@ -2306,7 +2280,7 @@ paths:
                     result:
                       - file_path: fa15c156-8dba-11ed-bc2b-0242acxxxxx5.zip
                         id: 107xxx
-                        msisdn: null
+                        msisdn: string
                         payload:
                           csv_max_lines: 100000
                           filters:
@@ -2365,7 +2339,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /wbo/v2/optin/store:
     post:
       tags:
@@ -2495,7 +2468,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /wbo/v2/optin/check:
     get:
       tags:
@@ -2602,7 +2574,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /callbacks:
     post:
       tags:
@@ -3276,7 +3247,6 @@ paths:
           description: Success
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /wba/templates:
     get:
       tags:
@@ -3376,7 +3346,7 @@ paths:
                         rejected_reason: NONE
                         language: en
                         created_date: 21-Feb-2022 04:53 PM
-                        deleted_date: null
+                        deleted_date: string
                         waba_id: 629529078253xxx
                         previous_category: ALERT_UPDATE
         '400':
@@ -3448,7 +3418,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /wba/template/create:
     post:
       tags:
@@ -3578,7 +3547,7 @@ paths:
                       add_security_recommendation: true/false
                     footer:
                       code_expiration_minutes:
-                        code expiry upto 90mins: null
+                        code expiry upto 90mins: string
                     buttons:
                       type: OTP
                       otp_type: COPY_CODE
@@ -3595,7 +3564,7 @@ paths:
                       add_security_recommendation: true/false
                     footer:
                       code_expiration_minutes:
-                        upto 90 mins possible: null
+                        upto 90 mins possible: string
                     buttons:
                       type: OTP
                       otp_type: ONE_TAP
@@ -3716,16 +3685,15 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /wba/v1/messages:
     post:
       tags:
         - WhatsApp Messaging Template API
       summary: Send Template and Session Messages API
       description: >-
-        Send Template and Session Messages API can be used to send either template or session
-        messages to customers. Learn more about [WhatsApp template and session
-        message
+        Send Template and Session Messages API can be used to send either
+        template or session messages to customers. Learn more about [WhatsApp
+        template and session message
         APIs](https://routemobile.github.io/WhatsApp-Business-API/WBS.html#tag/WhatsApp-Messaging-Template-API/operation/sendSessionMessageApi).
       operationId: sendSessionMessageApi
       requestBody:
@@ -3743,6 +3711,7 @@ paths:
                     - $ref: '#/components/schemas/send_template_message_mediavideo'
                     - $ref: '#/components/schemas/send_template_message_auth_copycode'
                     - $ref: '#/components/schemas/send_template_message_auth_autofill'
+                    - $ref: '#/components/schemas/send_template_message_quickreplyID'
                 - title: Session Message Types
                   oneOf:
                     - $ref: '#/components/schemas/send_session_text'
@@ -3880,6 +3849,24 @@ paths:
                       - button_type: authentication
                         button_no: '0'
                         text: '123523'
+              Send Template Message - Quick Reply with ID:
+                value:
+                  phone: '+919739059585'
+                  enable_acculync: true
+                  extra: extra
+                  media:
+                    type: media_template
+                    lang_code: en
+                    template_name: quick_reply_tim_new
+                    header:
+                      - image:
+                          link: >-
+                            https://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg
+                    button:
+                      - button_no: '0'
+                        payload: tri
+                      - button_no: '1'
+                        payload: tan
               Send Session Message - Session Text:
                 value:
                   phone: '{mobile number}'
@@ -4194,7 +4181,6 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
   /auth/v1/login/:
     post:
       tags:
@@ -4274,10 +4260,1053 @@ paths:
                     status: <exception>
       servers:
         - url: https://apis.rmlconnect.net
-        - url: '{client callback}'
+  /whatsapp/report/v1/optin-download:
+    get:
+      tags:
+        - WhatsApp Reports
+      summary: Optin Create Report
+      description: >-
+        The Optin Create Report endpoint is used to report user opt-ins for
+        receiving messages from a business.
+      operationId: optindownload
+      parameters:
+        - name: from_date
+          in: query
+          description: The starting date of the user opt-ins for receiving messages.
+          required: true
+          schema:
+            type: string
+            format: date
+            example: '2023-08-07'
+        - name: to_date
+          in: query
+          description: The end date of the user opt-ins for receiving messages.
+          required: true
+          schema:
+            type: string
+            format: date
+            example: '2023-08-07'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: The status of the optin create report.
+                  id:
+                    type: integer
+                    description: "The unique identifier that represents the report.\r\n\r\n"
+              examples:
+                Example 1:
+                  value:
+                    status: success
+                    id: 5748
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+                  reason:
+                    type: string
+                    description: The reason for not generating the optin create report.
+                  status:
+                    type: string
+                    description: "The status of the report.\r\n\r\n"
+              examples:
+                Example 1:
+                  value:
+                    message: unable to process campaign request
+                    reason: jwt token expired
+                    status: failure
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+              examples:
+                Example 1:
+                  value:
+                    message: >-
+                      The requested URL was not found on the server. If you
+                      entered the URL manually please check your spelling and
+                      try again.
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: "The response message.\r\n"
+                  reason:
+                    type: string
+                    description: The reason for not generating the option create report.
+                  status:
+                    type: string
+                    description: "The status of the report.\r\n\r\n"
+              examples:
+                Example 1:
+                  value:
+                    status: failure
+                    message: unable to process request
+                    reason: internal server error
+      security:
+        - jwt: []
+      servers:
+        - url: https://apis.rmlconnect.net
+  /whatsapp/report/v1/summary/download_optin_report:
+    get:
+      tags:
+        - WhatsApp Reports
+      summary: Download Optin Report
+      description: >-
+        The Download Optin Report endpoint is used to download the user opt-ins
+        report for receiving messages from a business.
+      operationId: downloadOptin
+      parameters:
+        - name: from_date
+          in: query
+          description: The starting date of the user opt-ins for receiving messages.
+          required: true
+          schema:
+            type: string
+            example: '2023-08-07'
+        - name: to_date
+          in: query
+          description: The end date of the user opt-ins for receiving messages.
+          required: true
+          schema:
+            type: string
+            example: '2023-08-07'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  country_code:
+                    type: string
+                    description: The country code of the phone number.
+                  msisdn:
+                    type: string
+                    description: The phone number of the customer.
+                  timestamp:
+                    type: string
+                    description: The timestamp of the message.
+                  channel:
+                    type: string
+                    description: "The channel through which the user opted in.\r\n\r\n"
+                  status:
+                    type: string
+                    description: "The status of the optin report download.\r\n\r\n"
+                  extra:
+                    type: string
+                    description: "Any additional information related to the optin process.\r\n\r\n"
+              examples:
+                Example 1:
+                  value:
+                    country_code: '91'
+                    msisdn: 973905xxxx
+                    timestamp: '2022 - 09 - 06 10: 47: 01.198255'
+                    channel: whatsapp-api
+                    status: optin
+                    extra: ''
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+                  reason:
+                    type: string
+                    description: >-
+                      The reason for not processing the download optin report
+                      request.
+                  status:
+                    type: string
+                    description: "The status of the optin report download.\r\n\r\n"
+              examples:
+                Example 1:
+                  value:
+                    message: unable to process campaign request
+                    reason: jwt token expired
+                    status: failure
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+              examples:
+                Example 1:
+                  value:
+                    message: >-
+                      The requested URL was not found on the server. If you
+                      entered the URL manually please check your spelling and
+                      try again.
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: The status of the optin report download.
+                  message:
+                    type: string
+                    description: The response message.
+                  reason:
+                    type: string
+                    description: >-
+                      The reason for not processing the download optin report
+                      request.
+              examples:
+                Example 1:
+                  value:
+                    status: failure
+                    message: unable to process request
+                    reason: internal server error
+      security:
+        - jwt: []
+      servers:
+        - url: https://apis.rmlconnect.net
+  /wba/media/v1/get-media-id:
+    post:
+      tags:
+        - WhatsApp Messaging Template API
+      summary: Generate Media ID API
+      description: >-
+        The Generate Media ID endpoint is used to generate a unique ID for the
+        media file. 
+      operationId: media-idapi
+      requestBody:
+        description: ''
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  description: The path of the media file.
+              required:
+                - file
+            examples:
+              Example 1:
+                value:
+                  file: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  media_id:
+                    type: string
+                    description: Unique ID for the media file.
+                  mimetype:
+                    type: string
+                    description: The MIME type of the file.
+                  size:
+                    type: string
+                    description: The size of the file in mega bytes.
+                  status:
+                    type: string
+                    description: The status of the request.
+              examples:
+                Example 1:
+                  value:
+                    media_id: 80653814102xxxx
+                    mimetype: video/mp4
+                    size: 7.8125e-05 MB
+                    status: Success
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: The status of the request.
+                  message:
+                    type: string
+                    description: The response message.
+                  reason:
+                    type: string
+                    description: The reason for not generating the media ID.
+              examples:
+                Example 1:
+                  value:
+                    message: unable to process campaign request
+                    reason: jwt token expired
+                    status: failure
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+              examples:
+                Example 1:
+                  value:
+                    message: >-
+                      The requested URL was not found on the server. If you
+                      entered the URL manually please check your spelling and
+                      try again.
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: The status of the request.
+                  message:
+                    type: string
+                    description: The response message.
+                  reason:
+                    type: string
+                    description: The reason for not generating the media ID.
+              examples:
+                Example 1:
+                  value:
+                    status: failure
+                    message: unable to process request
+                    reason: internal server error
+      security:
+        - jwt: []
+      servers:
+        - url: https://apis.rmlconnect.net
+  /wba/management/v1/wbp-account-details:
+    get:
+      tags:
+        - WhatsApp Account Details
+      summary: WBP Account Details
+      description: >-
+        The WBP Account Details endpoint fetches the account details for the
+        WhatsApp business profile by entering the authorization token key.
+      operationId: wbamanage
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  callback_url:
+                    type: string
+                    description: The URL where callback notifications are sent.
+                  send_status:
+                    type: string
+                    description: >-
+                      A boolean value indicates whether the sending status
+                      update is enabled.
+                  available_verticals:
+                    type: array
+                    description: A list of available verticals or business categories.
+                    items:
+                      type: string
+                  account_hosting:
+                    type: string
+                    description: The hosting type for the account.
+                  user_details:
+                    type: object
+                    description: Details about the user.
+                    properties:
+                      client_msisdn:
+                        type: string
+                        description: The user's mobile number.
+                      waba_id:
+                        type: string
+                        description: WhatsApp Business Account (WABA) identifier.
+                      catalog_id:
+                        type: string
+                        description: Identifier for the catalog associated with the user.
+                  business_details:
+                    type: object
+                    description: Details about the business.
+                    properties:
+                      business:
+                        type: object
+                        description: Business profile information.
+                        properties:
+                          profile:
+                            type: object
+                            description: Business profile details.
+                            properties:
+                              address:
+                                type: string
+                                description: The business address.
+                              description:
+                                type: string
+                                description: The business description.
+                              email:
+                                type: string
+                                description: The business email address.
+                              websites:
+                                type: array
+                                description: List of business websites.
+                                items:
+                                  type: string
+                              vertical:
+                                type: string
+                                description: Business vertical or category.
+                              about:
+                                type: string
+                                description: About the business.
+                              messaging_product:
+                                type: string
+                                description: Messaging product used.
+                  about_details:
+                    type: object
+                    description: About section details.
+                    properties:
+                      profile:
+                        type: object
+                        description: About section information.
+                        properties:
+                          about:
+                            type: object
+                            description: About text.
+                            properties:
+                              text:
+                                type: string
+                                description: The text content.
+                  health_check_details:
+                    type: object
+                    description: Health check information.
+                    properties:
+                      health_check:
+                        type: object
+                        description: Health check details.
+                        properties:
+                          username:
+                            type: string
+                            description: Username for health check.
+                          health:
+                            type: string
+                            description: Health status.
+                          request_url:
+                            type: string
+                            description: URL for health check request.
+                          response_body:
+                            type: object
+                            description: Health check response.
+                            properties:
+                              health:
+                                type: object
+                                description: Health status.
+                                properties:
+                                  gateway_status:
+                                    type: string
+                                    description: The gateway status.
+                                  meta:
+                                    type: object
+                                    description: Metadata information.
+                                    properties:
+                                      api_status:
+                                        type: string
+                                        description: API status.
+                                      version:
+                                        type: string
+                                        description: API version.
+                          response_status_code:
+                            type: integer
+                            description: HTTP status code of the response.
+                  meta:
+                    type: object
+                    description: Metadata information.
+                    properties:
+                      api_status:
+                        type: string
+                        description: API status.
+                      version:
+                        type: string
+                        description: API version.
+                  phone_number_updates:
+                    type: object
+                    description: Phone number update details.
+                    properties:
+                      waba_id:
+                        type: string
+                        description: WhatsApp Business Account (WABA) identifier.
+                      number_quality:
+                        type: string
+                        description: Quality of the phone number.
+                      messaging_limit:
+                        type: string
+                        description: Messaging limit for the number.
+                      number_status:
+                        type: string
+                        description: Status of the number.
+                        example: Connected
+                      rejection_reason:
+                        type: string
+                        nullable: true
+                        description: Reason for number rejection.
+                      verified_name:
+                        type: string
+                        description: Verified name for the number.
+                  waba_updates:
+                    type: object
+                    description: WABA update details.
+                    properties:
+                      waba_status:
+                        type: string
+                        description: WABA status.
+                      waba_quality:
+                        type: string
+                        description: Quality of the WABA.
+                      waba_ban_date:
+                        nullable: true
+                        description: Date of WABA ban.
+                      waba_ban_state:
+                        nullable: true
+                        description: State of WABA ban.
+                      violation_type:
+                        nullable: true
+                        description: Type of violation.
+                      restriction_type:
+                        nullable: true
+                        description: Type of restriction.
+                      expiration:
+                        nullable: true
+                        description: Expiration details.
+                      waba_id:
+                        type: string
+                        description: WABA identifier.
+                  business_capabilities_updates:
+                    type: object
+                    description: Business capabilities update details.
+                    properties:
+                      max_phone_numbers_per_business:
+                        type: string
+                        description: Maximum phone numbers allowed for the business.
+                      max_daily_conversation_per_phone:
+                        type: string
+                        description: Maximum daily conversations per phone.
+              examples:
+                Example 1:
+                  value:
+                    callback_url: http://<domain_name>/v2/optin-callback-rmlbot2
+                    send_status: 'True'
+                    available_verticals:
+                      - OTHER
+                      - AUTO
+                      - BEAUTY
+                      - APPAREL
+                      - EDU
+                      - ENTERTAIN
+                      - EVENT_PLAN
+                      - FINANCE
+                      - GROCERY
+                      - GOVT
+                      - HOTEL
+                      - HEALTH
+                      - NONPROFIT
+                      - PROF_SERVICES
+                      - RETAIL
+                      - TRAVEL
+                      - RESTAURANT
+                    account_hosting: cloud
+                    user_details:
+                      client_msisdn: 91937274xxxx
+                      waba_id: 206162977746xxxx
+                      catalog_id: 623056228363xxxx
+                    business_details:
+                      business:
+                        profile:
+                          address: Mumbai, Bengaluru
+                          description: Route Mobile, Route Lab
+                          email: username@domain.com
+                          websites:
+                            - http://www.routemobile.com/
+                          vertical: OTHER
+                          about: RML TEST Bot2
+                          messaging_product: whatsapp
+                    about_details:
+                      profile:
+                        about:
+                          text: RML TEST Bot2
+                    health_check_details:
+                      health_check:
+                        username: RMLBot2
+                        health: CONNECTED
+                        request_url: >-
+                          https://<domain_name>/v15.0/2061629777463969/phone_numbers
+                        response_body:
+                          health:
+                            gateway_status: CONNECTED
+                            meta:
+                              api_status: stable
+                              version: '15.0'
+                        response_status_code: 200
+                    meta:
+                      api_status: stable
+                      version: '15.0'
+                    phone_number_updates:
+                      waba_id: 206162977746xxxx
+                      number_quality: high
+                      messaging_limit: TIER_1K
+                      number_status: CONNECTED
+                      rejection_reason: string
+                      verified_name: RouteMobile (Testing)
+                    waba_updates:
+                      waba_status: CONNECTED
+                      waba_quality: high
+                      waba_ban_date: string
+                      waba_ban_state: string
+                      violation_type: string
+                      restriction_type: string
+                      expiration: string
+                      waba_id: 206162977746xxxx
+                    business_capabilities_updates:
+                      max_phone_numbers_per_business: '25'
+                      max_daily_conversation_per_phone: TIER_1K
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+                  reason:
+                    type: string
+                    description: The reason for not processing the request.
+                  status:
+                    type: string
+                    description: The status of the request.
+              examples:
+                Example 1:
+                  value:
+                    message: unable to process campaign request
+                    reason: jwt token expired
+                    status: failure
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+              examples:
+                Example 1:
+                  value:
+                    message: >-
+                      The requested URL was not found on the server. If you
+                      entered the URL manually please check your spelling and
+                      try again.
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+                  reason:
+                    type: string
+                    description: The reason for not processing the request.
+                  status:
+                    type: string
+                    description: The status of the request.
+              examples:
+                Example 1:
+                  value:
+                    status: failure
+                    message: unable to process request
+                    reason: internal server error
+      security:
+        - jwt: []
+      servers:
+        - url: https://apis.rmlconnect.net
+  /wba/template/update:
+    patch:
+      tags:
+        - WhatsApp Messaging Template API
+      summary: Edit Template
+      description: >-
+        The Edit Template API allows you to edit a WhatsApp Business template by
+        providing a new template name and updated components.
+      operationId: patch-wba-template-update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                template_name:
+                  type: string
+                  description: The name of the template you want to edit.
+                components:
+                  type: object
+                  description: An object containing the components of the template.
+                  properties:
+                    body:
+                      type: object
+                      description: The body component of the template.
+                      properties:
+                        text:
+                          type: string
+                          description: The updated text for the body of the template.
+                      required:
+                        - text
+                  required:
+                    - body
+              required:
+                - template_name
+                - components
+            examples:
+              Example 1:
+                value:
+                  template_name: test_vid2
+                  components:
+                    body:
+                      text: WELCOME TO TECH
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: Indicates the template edit process is successful or not.
+              examples:
+                Example 1:
+                  value:
+                    success: true
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+                  reason:
+                    type: string
+                    description: The reason for not processing the request.
+                  status:
+                    type: string
+                    description: The template edit status.
+              examples:
+                Example 1:
+                  value:
+                    message: unable to process campaign request
+                    reason: jwt token expired
+                    status: failure
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+              examples:
+                Example 1:
+                  value:
+                    message: Unknown template
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+                  reason:
+                    type: string
+                    description: The reason for not processing the request.
+                  status:
+                    type: string
+                    description: The status of the request.
+              examples:
+                Example 1:
+                  value:
+                    status: failure
+                    message: unable to process request
+                    reason: internal server error
+      security:
+        - jwt: []
+      servers:
+        - url: https://apis.rmlconnect.net
+  /wba/template/:
+    delete:
+      tags:
+        - WhatsApp Messaging Template API
+      summary: Delete Template
+      description: >-
+        The Delete Template API allows you to delete a WhatsApp Business
+        template by providing a template name.
+      operationId: delete-t-wba-template
+      parameters:
+        - name: name
+          in: query
+          description: Name of the WhatsApp business template.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    description: >-
+                      Indicates whether the template delete request is
+                      successful.
+              examples:
+                Example 1:
+                  value:
+                    success: true
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: The status of the delete template request.
+                  message:
+                    type: string
+                    description: The response message.
+                  reason:
+                    type: string
+                    description: The reason for not processing the delete template request.
+              examples:
+                Example 1:
+                  value:
+                    message: unable to process campaign request
+                    reason: jwt token expired
+                    status: failure
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+              examples:
+                Example 1:
+                  value:
+                    message: template not found
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: The status of the delete template request.
+                  message:
+                    type: string
+                    description: The response message.
+                  reason:
+                    type: string
+                    description: The reason for not processing the delete template request.
+              examples:
+                Example 1:
+                  value:
+                    status: failure
+                    message: unable to process request
+                    reason: internal server error
+      security:
+        - jwt: []
+      servers:
+        - url: https://apis.rmlconnect.net
+  /whatsapp/report/v1/template-count:
+    get:
+      tags:
+        - WhatsApp Reports
+      summary: Template Wise Count
+      description: >-
+        The Template Wise Count endpoint is used to count approved templates
+        associated with a WhatsApp Business account. 
+      operationId: get-whatsapp-report-v1-template-count
+      parameters:
+        - name: start_date
+          in: query
+          description: The start date for the template count in "YYYY-MM-DD" format.
+          required: true
+          schema:
+            type: string
+        - name: end_date
+          in: query
+          description: The end date for the template count in "YYYY-MM-DD" format.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        template_count:
+                          type: integer
+                          description: The template count number.
+                        template_name:
+                          type: string
+                          description: The template name.
+              examples:
+                Example 1:
+                  value:
+                    result:
+                      - template_count: 8
+                        template_name: bilan
+                      - template_count: 3
+                        template_name: bmntest12
+                      - template_count: 1
+                        template_name: delhi_metro_english_quick_n
+                      - template_count: 4
+                        template_name: demo202
+                      - template_count: 7
+                        template_name: xyzz888
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+                  reason:
+                    type: string
+                    description: The reason for not processing the template count request.
+                  status:
+                    type: string
+                    description: The status of the template count request.
+              examples:
+                Example 1:
+                  value:
+                    message: unable to process campaign request
+                    reason: jwt token expired
+                    status: failure
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+              examples:
+                Example 1:
+                  value:
+                    message: >-
+                      The requested URL was not found on the server. If you
+                      entered the URL manually please check your spelling and
+                      try again.
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The message response.
+                  reason:
+                    type: string
+                    description: The reason for not processing the template count request.
+                  status:
+                    type: string
+                    description: The status of the template count request.
+              examples:
+                Example 1:
+                  value:
+                    status: failure
+                    message: unable to process request
+                    reason: internal server error
+      security:
+        - jwt: []
+      servers:
+        - url: https://apis.rmlconnect.net
 tags:
   - name: WhatsApp Login
     description: Login to WhatsApp Business account.
+  - name: WhatsApp Account Details
+    description: Account details for the WhatsApp business profile.
   - name: WhatsApp Bulk Upload
     description: Types of WhatsApp bulk upload APIs.
   - name: WhatsApp Catalog Manager
@@ -4803,11 +5832,15 @@ components:
       properties:
         end_date:
           type: string
-          description: The end date for the report in the format of YYYY-MM-DD.
+          description: >-
+            The end date for the report in "YYYY-MM-DD" order, followed by the
+            time in the "HH:MM:SS" format.
           example: '{end-date}'
         start_date:
           type: string
-          description: The start date for the report in the format of YYYY-MM-DD.
+          description: >-
+            The start date for the report in "YYYY-MM-DD" order, followed by the
+            time in the "HH:MM:SS" format.
           example: '{start-date}'
       required:
         - end_date
@@ -4911,14 +5944,14 @@ components:
         end_date:
           type: string
           description: >-
-            The end date for the campaign specific report in the format of
-            YYYY-MM-DD.
+            The end date for the campaign specific report in "YYYY-MM-DD" order,
+            followed by the time in the "HH:MM:SS" format.
           example: '{end-date}'
         start_date:
           type: string
           description: >-
-            The start date for the campaign specific report in the format of
-            YYYY-MM-DD.
+            The start date for the campaign specific report in "YYYY-MM-DD"
+            order, followed by the time in the "HH:MM:SS" format.
           example: '{start-date}'
       required:
         - campaign_id
@@ -6134,10 +7167,9 @@ components:
           example: media template
     wbatemplatecreate_components:
       type: object
-      description: >+
+      description: >
         The message components describe the template contents and include
         placeholders for dynamic variables.
-
       properties:
         body:
           $ref: '#/components/schemas/wbatemplatecreate_components_body'
@@ -7127,6 +8159,69 @@ components:
             - type
             - template_name
             - lang_code
+      required:
+        - phone
+        - media
+    send_template_message_quickreplyID:
+      type: object
+      title: Quick Reply With ID
+      properties:
+        phone:
+          type: string
+          description: "The phone number of the recipient.\r\n\r\n"
+        enable_acculync:
+          type: boolean
+          description: "A boolean indicating whether or not to enable Acculync.\r\n\r\n"
+        extra:
+          type: string
+          description: "Additional information to include in the message.\r\n\r\n"
+        media:
+          type: object
+          description: "An object containing the message template details.\r\n\r\n"
+          properties:
+            type:
+              type: string
+              description: "The type of message template. For sending a media template message, set to \"media_template\".\r\n\r\n"
+            lang_code:
+              type: string
+              description: "Language code of language in which message text is written, such as \"en\" for English.\r\n\r\n"
+            template_name:
+              type: string
+              description: "The name of the template to use.\r\n\r\n"
+            header:
+              type: array
+              description: "The header section of the message template.\r\n\r\n"
+              items:
+                type: object
+                properties:
+                  image:
+                    type: object
+                    description: "An object representing the image to include in the header. This object includes 'link' and 'file_name'.\r\n\r\n"
+                    properties:
+                      link:
+                        type: string
+                        description: "The URL of the image file, hosted publicly and starting with \"https://\" and ending with the file extension, such as \".png\".\r\n\r\n"
+            button:
+              type: array
+              description: "The button section of the message template.\r\n\r\n"
+              items:
+                type: object
+                properties:
+                  button_no:
+                    type: string
+                    description: "The button number; the value is either \"0\" or \"1\".\r\n\r\n"
+                  payload:
+                    type: string
+                    description: An object representing the message to be sent.
+                required:
+                  - button_no
+                  - payload
+          required:
+            - type
+            - lang_code
+            - template_name
+            - header
+            - button
       required:
         - phone
         - media
