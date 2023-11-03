@@ -217,18 +217,30 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/v2_manage_campaign_body'
+              oneOf:
+                - "$ref": "#/components/schemas/Start_Campaign"
+                - "$ref": "#/components/schemas/Resume_Campaign"
+                - "$ref": "#/components/schemas/Pause_Campaign"
             examples:
-              Example 1:
+              Start Campaign:
                 value:
                   campaign_action: start
-                  campaign_id: '{campaign id}'
-                  campaign_name: '{campaign name}'
+                  campaign_id: "{campaign id}"
+                  campaign_name: "{campaign name}"
                   file_mimetype: text/plain or text/csv
-                  filename: '{filename with extension}'
+                  filename: "{filename with extension}"
                   payload:
-                    type: '{payload type}'
-                  scheduled_time: '{date and time in UTC e.g.2021-12-08 13:36:00}'
+                    type: "{payload type}"
+                  scheduled_time: "{date and time in UTC e.g.2021-12-08 13:36:00}"
+              Pause Campaign:
+                value:
+                  campaign_action: pause
+                  campaign_id: "{campaign id}"
+              Resume Campaign:
+                value:
+                  campaign_action: resume
+                  campaign_id: "{campaign id}"             
+
       responses:
         '202':
           description: Accepted
@@ -829,6 +841,7 @@ paths:
           required: true
           schema:
             type: string
+        
       responses:
         '200':
           description: Success
@@ -845,7 +858,66 @@ paths:
               examples:
                 Example 1:
                   value:
-                    data: []
+                    data:
+                    - name: Dairy Milk Silk
+                      id: 'xxxxxxxxxxxxxxxxx'
+                      price: "₹125.00"
+                      description: Dairy Products
+                      retailer_id: xxxxx
+                    - name: Maggie Pasta
+                      id: 'xxxxxxxxxxxxxxxxx'
+                      price: "₹25.00"
+                      description: Instant Food
+                      retailer_id: xxxxx
+                    - name: Pulses 1kg
+                      id: 'xxxxxxxxxxxxxxxxx'
+                      price: "₹200.00"
+                      description: Pulses are very good for health
+                      retailer_id: xxxxx
+                    - name: Cow Ghee
+                      id: 'xxxxxxxxxxxxxxxxx'
+                      price: "₹499.00"
+                      description: Healty  Cow Ghee
+                      retailer_id: xxxxx
+                    - name: BESAN 250 Gm
+                      id: 'xxxxxxxxxxxxxxxxx'
+                      price: "₹32.00"
+                      description: Besan or Gram flour is made from Chana Dal. Besan atta is used too
+                        make Bhaji, Vada , Sev, Chaklis, and many more items. It has various beauty benefits.
+                      retailer_id: xxxxx
+                    - name: Pastry
+                      id: 'xxxxxxxxxxxxxxxxx'
+                      price: "₹50.00"
+                      description: Dairy Products
+                      retailer_id: xxxxx
+                    - name: Tea 2 kg
+                      id: 'xxxxxxxxxxxxxxxxx'
+                      price: "₹800.00"
+                      description: Tea & Coffee
+                      retailer_id: xxxxx
+                    - name: Olive Oil 1L
+                      id: 'xxxxxxxxxxxxxxxxx'
+                      price: "₹400.00"
+                      description: Olive Oil
+                      retailer_id: xxxxx
+                    - name: Olive Oil 2L
+                      id: 'xxxxxxxxxxxxxxxxx'
+                      price: "₹799.00"
+                      description: Olive Oil
+                      retailer_id: xxxxx
+                    - name: Yippe Pasta
+                      id: 'xxxxxxxxxxxxxxxxx'
+                      price: "₹25.00"
+                      description: Instant Food
+                      retailer_id: xxxxx
+                    - name: Cotton Oil
+                      id: 'xxxxxxxxxxxxxxxxx'
+                      price: "₹499.00"
+                      description: Cotton Oil
+                      retailer_id: xxxxx
+                    next_url: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/v1/fetch_product_feed?access_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&limit=10&fields=name,id,price,description,retailer_id&product_feed_id=xxxxxxxxxxxxxxx&after=xxxxxxxxxxxxxxxxxxxxxxxx&before=
+                    prev_url: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/v1/fetch_product_feed?access_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&limit=10&fields=name,id,price,description,retailer_id&product_feed_id=xxxxxxxxxxxxxx&after=&before=xxxxxxxxxxxxxxxxx
+
         '400':
           description: Bad Request
           content:
@@ -2468,6 +2540,141 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
+
+  /wbo/v2/optinout/store:
+    post:
+      tags:
+        - WhatsApp Optin API
+      summary: Create Optin and Optout
+      description: Create optin/optout for the WhatsApp Business account.
+      operationId: createOptinOut
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                msisdn:
+                  type: string
+                  description: >-
+                    The phone number with '+' and country code for the user
+                    opting in.
+                optin_channel:
+                  type: string
+                  description: The channel through which the user opted in.
+                extra:
+                  type: string
+                  description: Any additional information related to the optin process.
+                status:
+                  type: string
+                  description: Status which implies whether user is being opt-in or opt out 
+              required:
+                - msisdn
+                - optin_channel
+                - status
+            examples:
+              default:
+                value:
+                  extra: '{extra}'
+                  msisdn: '{phone number with + and country code}'
+                  optin_channel: >-
+                    whatsapp-api/third-party/sms/landing-page/email/voice/missed-call/physical-form
+                  status: optin/optout
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_201'
+              examples:
+                Example 1:
+                  value:
+                    status: success
+                    message: api execution successful
+                    details: given 'msisdn' is now opted out  for user <channel_name>
+        '401':
+          description: Authentication Failure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401_5'
+              examples:
+                Incorrect authorization token:
+                  value:
+                    message: Unable to process request
+                    status: Failed
+                    reason: Please check the integrity or validity of the token sent.
+        '404':
+          description: Page Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_404'
+              examples:
+                Incorrect API URL:
+                  value:
+                    message: >-
+                      The requested URL was not found on the server. If you
+                      entered the URL manually please check your spelling and
+                      try again.
+        '422':
+          description: Unprocessable Entity (WebDAV)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+                  status:
+                    type: string
+                    description: The status for the optin.
+                  error:
+                    type: object
+                    description: The error for not processing the optin request.
+                    properties:
+                      optin_channel:
+                        type: array
+                        description: The channel through which the user opted in.
+                        items:
+                          type: string
+              examples:
+                Validation Error:
+                  value:
+                    message: unable to process request
+                    status: failed
+                    error:
+                      optin_channel:
+                        - Unknown field.
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: The status for creating optin.
+                  message:
+                    type: string
+                    description: The response message.
+                  reason:
+                    type: string
+                    description: The reason for not processing the request.
+              examples:
+                Example 1:
+                  value:
+                    status: failed
+                    message: unable to process request
+                    reason: reason
+      security:
+        - jwt: []
+      servers:
+        - url: https://apis.rmlconnect.net
   /wbo/v2/optin/check:
     get:
       tags:
@@ -2585,6 +2792,10 @@ paths:
         These callbacks are triggered by events that occur on the WhatsApp
         server, and are delivered to a URL that you specify in your webhook
         configuration.
+
+
+        For more information, see the [Route Mobile WhatsApp OpenAPI
+        Specifications](https://routemobile.github.io/WhatsApp-Business-API/WBS.html).
 
 
         ## Callback Error Codes
@@ -2831,6 +3042,23 @@ paths:
         registered. |
 
         | 135000 | Generic user error | A generic error occurred for the user. |
+
+        ## Template Status Logs
+
+        | **Template Status**| **Logs** |
+
+        | --- | --- | 
+
+        |Template Approved | {"product": "whatsapp", "component": "whatsapp-callback-event-worker", "level": "debug", "timestamp": "2023-11-02 07:40:04.402735", "message": {"URL": "xxxxxxxxxxxxxxxxx", "data": {"statuses": [{"id": "xxxxxxxxxxxxxx", "template_name": "xxxxx", "template_id": xxxxxxxxxxxxxx, "template_language": "en", "reason": "NONE", "status": "APPROVED", "timestamp": xxxxxxxx, "type": "event", "information": null}], "brand_msisdn": "91xxxxxxxxxx"}, "status": 200, "response_time": 0.0xxxxxxxxxxxxxx, "current_time": "xx:xx:xx.xxxxxx", "response": "{\"success\":true}"}}|
+
+        | Template Paused | {"product": "whatsapp", "component": "whatsapp-callback-event-worker", "level": "debug", "timestamp": "2023-11-02 07:37:58.285408", "message": {"URL": "xxxxxxxxxxxxxxxxxxxxx", "data": {"statuses": [{"id": "xxxxxxxxxxxxxxx", "template_name": "abc__1", "template_id": xxxxxxxxxxxxxxx, "template_language": "en", "reason": "NONE", "status": "PAUSED", "timestamp": xxxxxxxxxx, "type": "event", "information": {"title": "FIRST_PAUSE", "description": "Your WhatsApp message template has been paused for x hours until xxx x at xx:xx AM UTC because it had issues."}}], "brand_msisdn": "91xxxxxxxxxx"}, "status": 200, "response_time": 0.0xxxxxxxxxxxxxxx, "current_time": "xxxx-xx-xx xx:xx:xx.xxxxxx", "response": "{\"success\":true}"}} |
+
+        |Template Disabled| {"product": "whatsapp", "component": "whatsapp-callback-event-worker", "level": "debug", "timestamp": "2023-11-02 09:57:45.920074", "message": {"URL": "xxxxxxxxxxxxxxxxxxxxxx", "data": {"statuses": [{"id": "xxxxxxxxxxxxxxxxx", "template_name": "xxxxxxxxxxxxxxx", "template_id": xxxxxxxxxxxxxx, "template_language": "en_US", "reason": "NONE", "status": "FLAGGED", "timestamp": xxxxxxxxxx, "type": "event", "information": null}], "brand_msisdn": "xxxxxxxxxxxxx"}, "status": 200, "response_time": 0.011070728302001953, "current_time": "xxxx-xx-xx xx:xx:xx.xxxxxx", "response": "{\"status\":\"ok\"}\n"}} |
+
+        |Template Deleted |{"product": "whatsapp", "component": "whatsapp-callback-event-worker", "level": "debug", "timestamp": "2023-11-02 10:36:44.798440", "message": {"URL": "xxxxxxxxxxxxxxxxxxxxxxxx", "data": {"statuses": [{"id": "xxxxxxxxxxxxxxxx", "template_name": "testing_02_2023", "template_id": xxxxxxxxxxxxxx, "template_language": "en_US", "reason": "NONE", "status": "PENDING_DELETION", "timestamp": xxxxxxxxxxx, "type": "event", "information": null}], "brand_msisdn": "91xxxxxxxxxxx"}, "status": 200, "response_time": 0.0xxxxxxxxxxxxxxxxxx, "current_time": "xxxx-xx-xx xx:xx:xx.xxxxxx", "response": "{\"status\":\"ok\"}\n"}}|
+
+
+
       operationId: whatsappClientCallback
       requestBody:
         description: ''
@@ -3484,9 +3712,9 @@ paths:
                       elements:
                         - label: '{phone number label}'
                           contact_no: '{phone number with + and country code}'
-                        - label: '{url label}'
+                        - label: '{url label}/{url label/{{1}}}'
                           type: static/dynamic
-                          website: '{url with https}'
+                          website: '{url with https}/{url with https/{{1}}}'
               Quick Reply Template:
                 value:
                   template_name: '{template name}'
@@ -5532,7 +5760,7 @@ components:
                 recipients.
               items:
                 type: string
-    v2_manage_campaign_body:
+    Start_Campaign:
       type: object
       properties:
         campaign_action:
@@ -5581,6 +5809,39 @@ components:
         - filename
         - payload
         - scheduled_time
+    Resume_Campaign:
+      type: object
+      properties:
+        campaign_action:
+          type: string
+          description: The action to be taken for the campaign. For sending a bulk
+            campaign, the value should be set to "resume".
+          example: '"resum"'
+        campaign_id:
+          type: string
+          description: The unique identifier for the campaign. This ID is generated
+            by WhatsApp when you execute the File Upload API.
+          example: 670b3fd4-xxxx-11ed-a821-xxxxxxxxxxxx
+      required:
+      - campaign_action
+      - campaign_id
+    
+    Pause_Campaign:
+      type: object
+      properties:
+        campaign_action:
+          type: string
+          description: The action to be taken for the campaign. For sending a bulk
+            campaign, the value should be set to "pause".
+          example: '"pause"'
+        campaign_id:
+          type: string
+          description: The unique identifier for the campaign. This ID is generated
+            by WhatsApp when you execute the File Upload API.
+          example: 670b3fd4-xxxx-11ed-a821-xxxxxxxxxxxx
+      required:
+      - campaign_action
+      - campaign_id
     wbav2manage_campaign_payload:
       type: object
       description: An object representing the template type, such as media template.
@@ -5728,6 +5989,56 @@ components:
       required:
         - file_url
         - name
+    v1_fetch_product_feed_body:
+      type: object
+      properties:
+        file_url:
+          type: string
+          description: >-
+            The URL of the file that contains the updated product feed, hosted
+            publicly and starting with "https://" and ending with the file
+            extension.
+        product_feed_id:
+          type: string
+          description: 'The unique ID of the product feed that is fetched '
+        name:
+          type: string
+          description: 'The name of product feed fetched'
+          example: 'Maggy'
+        id:
+          type: string
+          description: 'The id of product feed fetched'
+          example: '922943435434'
+        price:
+          type: string
+          description: 'The price of product feed fetched'
+          example: '25.00'
+        description:
+          type: string
+          description: 'The description of product feed fetched'
+          example: 'Instant noodles'
+        retailer_id:
+          type: string
+          description: 'The retailer id of product feed fetched'
+          example: 'IT158'
+        next_url:
+          type: string
+          description: 'The next url of product feed fetched'
+          example: 'xxxxxxxxxxxxxxxxxxxxxxxx/v1/fetch_product_feed?access_token=xxxxxxxxxxxxxxxxxxxxxxx&limit=10&fields=name,id,price,description,retailer_id&product_feed_id=xxxxxxxxxxx&after=xxxxxxxxxxxxxx&before='
+        prev_url:
+          type: string
+          description: 'The previous url of product feed fetched'
+          example: 'xxxxxxxxxxxxxxxxxxxxxx/v1/fetch_product_feed?access_token=xxxxxxxxxxxxxxxxxxxxxxx&limit=10&fields=name,id,price,description,retailer_id&product_feed_id=xxxxxxxxxxx&before=xxxxxxxxxxxxxx&before='
+      required:
+        - file_url
+        - product_feed_id
+        - name
+        - id
+        - price
+        - description
+        - retailer_id
+        - next_url
+        - prev_url
     v1_update_product_feed_body:
       type: object
       properties:
