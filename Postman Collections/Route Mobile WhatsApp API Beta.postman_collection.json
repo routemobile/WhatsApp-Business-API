@@ -11131,7 +11131,10 @@
                   },
                   "button_types": {
                     "type": "array",
-                    "description": "Array storing the type of buttons which can be used among which iunclude url and quick reply"
+                    "description": "Array storing the type of buttons which can be used among which iunclude url and quick reply",
+                    "items": {
+                      "type": "object"
+                    }
                   },
                   "elements": {
                     "type": "string",
@@ -14027,7 +14030,10 @@
                   },
                   "button_types": {
                     "type": "array",
-                    "description": "Array storing the type of buttons which can be used among which iunclude url and quick reply"
+                    "description": "Array storing the type of buttons which can be used among which iunclude url and quick reply",
+                    "items": {
+                      "type": "object"
+                    }
                   },
                   "elements": {
                     "type": "string",
