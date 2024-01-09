@@ -4553,6 +4553,21 @@
                   },
                   {
                     "$ref": "#/components/schemas/auth_autofill_wbatemplatecreate"
+                  },
+                  {
+                    "$ref": "#/components/schemas/catalog_wbatemplatecreate"
+                  },
+                  {
+                    "$ref": "#/components/schemas/copy_code_wbatemplatecreate"
+                  },
+                  {
+                    "$ref": "#/components/schemas/carousel_wbatemplatecreate"
+                  },
+                  {
+                    "$ref": "#/components/schemas/limited_time_offer_wbatemplatecreate"
+                  },
+                  {
+                    "$ref": "#/components/schemas/multi_product_wbatemplatecreate"
                   }
                 ]
               },
@@ -4694,7 +4709,7 @@
                       "{lang code}"
                     ],
                     "template_type": "template",
-                    "template_category": "{template category",
+                    "template_category": "{template category}",
                     "components": {
                       "body": {
                         "text": "{body text}"
@@ -4754,6 +4769,205 @@
                         "autofill_text": "Autofill",
                         "package_name": "{package name of App}",
                         "signature_hash": "{signature_hash of App}"
+                      }
+                    }
+                  }
+                },
+                "Catalog": {
+                  "value": {
+                    "template_name": "{template name}",
+                    "language": [
+                      "en"
+                    ],
+                    "template_category": "{template category}",
+                    "template_type": "{template type}",
+                    "components": {
+                      "body": {
+                        "text": "{body text}",
+                        "example": [
+                          "{example}"
+                        ]
+                      },
+                      "buttons": {
+                        "type": "{button type}",
+                        "elements": [
+                          {
+                            "type": "{button elements type}"
+                          }
+                        ]
+                      },
+                      "footer": {
+                        "text": "Thank You"
+                      }
+                    }
+                  }
+                },
+                "Copy Code": {
+                  "value": {
+                    "template_name": "{template name}",
+                    "language": [
+                      "en"
+                    ],
+                    "template_category": "{template category}",
+                    "template_type": "{ template type }",
+                    "components": {
+                      "body": {
+                        "text": "{body text}",
+                        "example": [
+                          "10"
+                        ]
+                      },
+                      "header": {
+                        "type": "{header type}",
+                        "text": "{header text}"
+                      },
+                      "buttons": {
+                        "type": "{button type}",
+                        "elements": [
+                          {
+                            "type": "{button element type}",
+                            "label": "{button element label}",
+                            "website": "{sample url}"
+                          },
+                          {
+                            "type": "{button element type}",
+                            "example": "{button text example}"
+                          }
+                        ]
+                      },
+                      "footer": {
+                        "text": "{footer text}"
+                      }
+                    }
+                  }
+                },
+                "Carousel": {
+                  "value": {
+                    "template_name": "{template name}",
+                    "language": [
+                      "{lang code}"
+                    ],
+                    "template_category": "{template category}",
+                    "template_type": "{template type}",
+                    "components": {
+                      "body": {
+                        "text": "{body text}",
+                        "example": [
+                          "100"
+                        ]
+                      },
+                      "cards": {
+                        "header_type": "{ card header type}",
+                        "header_example": "xxxxx://xxxxxxxxxxxx/200/300?xxxxxxxx",
+                        "button_types": [
+                          "{button type 1}",
+                          "{button type 2}"
+                        ],
+                        "elements": [
+                          {
+                            "body": {
+                              "text": "{element body text}",
+                              "example": [
+                                "{example 1}",
+                                "{example 2}"
+                              ]
+                            },
+                            "buttons": [
+                              {
+                                "type": "{element button type}",
+                                "text": "{element button text}"
+                              },
+                              {
+                                "type": "{element button type}",
+                                "label": "{element button label}",
+                                "website": "xxxxx://xxxxxxx/{{1}}",
+                                "website_example": "xxxxx://xxxxxxxxxx/client"
+                              }
+                            ]
+                          },
+                          {
+                            "body": {
+                              "text": "{element body text}",
+                              "example": [
+                                "{example 1}",
+                                "{example 2}"
+                              ]
+                            },
+                            "buttons": [
+                              {
+                                "type": "{element button type}",
+                                "text": "{element button text}"
+                              },
+                              {
+                                "type": "{element button type}",
+                                "label": "{element button label}",
+                                "website": "xxxxx://xxxxxxxx/{{1}}",
+                                "website_example": "xxxxx://xxxxxxx/student"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "Limited Time Offer": {
+                  "value": {
+                    "template_name": "{template_name}",
+                    "language": [
+                      "{lang code}"
+                    ],
+                    "template_type": "template",
+                    "template_category": "MARKETING",
+                    "components": {
+                      "limited_time_offer": {
+                        "text": "{lto text}",
+                        "has_expiration": true
+                      },
+                      "body": {
+                        "text": "{body text}"
+                      },
+                      "buttons": {
+                        "type": "{button type}",
+                        "elements": [
+                          {
+                            "type": "{button element type}",
+                            "example": "{button element example}"
+                          },
+                          {
+                            "label": "{button element label}",
+                            "type": "{button element type}",
+                            "website": "xxxxx://xxxxxxxx/",
+                            "website_example": "xxxxx://xxxxxxxxxx/student"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "Multi Product": {
+                  "value": {
+                    "template_name": "{template_name}",
+                    "language": [
+                      "{lang code}"
+                    ],
+                    "template_type": "{template type}",
+                    "template_category": "{template category}",
+                    "components": {
+                      "header": {
+                        "type": "{header type}",
+                        "text": "{header text}"
+                      },
+                      "body": {
+                        "text": "{body text}"
+                      },
+                      "buttons": {
+                        "type": "{button  type}",
+                        "elements": [
+                          {
+                            "text": "{button element text}"
+                          }
+                        ]
                       }
                     }
                   }
@@ -4972,6 +5186,21 @@
                       },
                       {
                         "$ref": "#/components/schemas/send_template_message_quickreplyID"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_template_message_carousel"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_template_message_couponcode"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_template_message_catalogthumbnail"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_template_message_multiproduct"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_template_message_limitedtimeoffer"
                       }
                     ]
                   },
@@ -5227,7 +5456,7 @@
                 },
                 "Send Template Message - Quick Reply with ID": {
                   "value": {
-                    "phone": "+919739059585",
+                    "phone": "{mobile number}",
                     "enable_acculync": true,
                     "extra": "extra",
                     "media": {
@@ -5249,6 +5478,185 @@
                         {
                           "button_no": "1",
                           "payload": "tan"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Send Template Message - Carousel": {
+                  "value": {
+                    "phone": "{mobile number}",
+                    "media": {
+                      "type": "media_template",
+                      "template_name": "testing_carousel_pranit",
+                      "lang_code": "en_US",
+                      "body": [
+                        {
+                          "text": "15OFF"
+                        },
+                        {
+                          "text": "15%"
+                        }
+                      ],
+                      "carousel": [
+                        {
+                          "type": "image",
+                          "url": "https://picsum.photos/id/237/200/300",
+                          "body": [
+                            {
+                              "text": "10OFF"
+                            },
+                            {
+                              "text": "10OFF"
+                            }
+                          ],
+                          "button": [
+                            {
+                              "button_no": "0",
+                              "payload": "7C4xhY"
+                            },
+                            {
+                              "button_no": "1",
+                              "url": "summer_blues_2023"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "image",
+                          "url": "https://picsum.photos/200/300?grayscale",
+                          "body": [
+                            {
+                              "text": "10OFF"
+                            },
+                            {
+                              "text": "10OFF"
+                            }
+                          ],
+                          "button": [
+                            {
+                              "button_no": "0",
+                              "payload": "7C4xhY"
+                            },
+                            {
+                              "button_no": "1",
+                              "url": "summer_blues_2023"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Send Template Message - Copy Code": {
+                  "value": {
+                    "phone": "{mobile number}",
+                    "media": {
+                      "type": "media_template",
+                      "template_name": "coupon_code_pranit",
+                      "lang_code": "en_US",
+                      "body": [
+                        {
+                          "text": "Sir"
+                        },
+                        {
+                          "text": "25"
+                        },
+                        {
+                          "text": "DUSSHERA23"
+                        },
+                        {
+                          "text": "24-10-2023"
+                        }
+                      ],
+                      "button": [
+                        {
+                          "button_no": "1",
+                          "coupon_code": "DUSSHERA23"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Send Template Message -  Catalog Thumbnail": {
+                  "value": {
+                    "phone": "{mobile number}",
+                    "media": {
+                      "type": "media_template",
+                      "template_name": "test_pranit_catalogue_2",
+                      "lang_code": "en_US",
+                      "body": [
+                        {
+                          "text": "Test"
+                        }
+                      ],
+                      "button": [
+                        {
+                          "button_no": "0",
+                          "thumbnail_product_retailer_id": "vendee2"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Send Template Message - Multi Product Template Message": {
+                  "value": {
+                    "phone": "{mobile number}",
+                    "media": {
+                      "type": "media_template",
+                      "template_name": "testing_api_mpm9",
+                      "lang_code": "en_us",
+                      "multi_product": [
+                        {
+                          "product_thumbnail": "IT173",
+                          "title": "image",
+                          "product_retailer_ids": [
+                            "1",
+                            "1-1135-2742-HI"
+                          ]
+                        },
+                        {
+                          "title": "Premium Packages",
+                          "product_retailer_ids": [
+                            "2"
+                          ]
+                        },
+                        {
+                          "title": "Best Packages",
+                          "product_retailer_ids": [
+                            "IT1260"
+                          ]
+                        },
+                        {
+                          "title": "Premium Packages",
+                          "product_retailer_ids": [
+                            "IT173"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                "Send Template Message - Limited Time Offer": {
+                  "value": {
+                    "phone": "{mobile number}",
+                    "media": {
+                      "type": "media_template",
+                      "template_name": "testing_api_lto111",
+                      "lang_code": "en",
+                      "body": [
+                        {
+                          "text": "Pablo"
+                        }
+                      ],
+                      "limited_time": [
+                        {
+                          "expiration_time": 1702373850000,
+                          "button": [
+                            {
+                              "button_no": "0",
+                              "coupon_code": "CARIBE26"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -6859,47 +7267,264 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "template_name": {
-                    "type": "string",
-                    "description": "The name of the template you want to edit."
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/example_wbatemplateupdate"
                   },
-                  "components": {
-                    "type": "object",
-                    "description": "An object containing the components of the template.",
-                    "properties": {
-                      "body": {
-                        "type": "object",
-                        "description": "The body component of the template.",
-                        "properties": {
-                          "text": {
-                            "type": "string",
-                            "description": "The updated text for the body of the template."
-                          }
-                        },
-                        "required": [
-                          "text"
-                        ]
-                      }
-                    },
-                    "required": [
-                      "body"
-                    ]
+                  {
+                    "$ref": "#/components/schemas/limited_time_offer_wbatemplateupdate"
+                  },
+                  {
+                    "$ref": "#/components/schemas/multi_product_wbatemplateupdate"
+                  },
+                  {
+                    "$ref": "#/components/schemas/auth_autofill_wbatemplateupdate"
+                  },
+                  {
+                    "$ref": "#/components/schemas/catalog_wbatemplateupdate"
+                  },
+                  {
+                    "$ref": "#/components/schemas/copy_code_wbatemplateupdate"
+                  },
+                  {
+                    "$ref": "#/components/schemas/carousel_wbatemplateupdate"
                   }
-                },
-                "required": [
-                  "template_name",
-                  "components"
                 ]
               },
               "examples": {
-                "Example 1": {
+                "Example": {
                   "value": {
                     "template_name": "test_vid2",
                     "components": {
                       "body": {
                         "text": "WELCOME TO TECH"
+                      }
+                    }
+                  }
+                },
+                "Auth Autofill": {
+                  "value": {
+                    "template_name": "{template_name}",
+                    "language": [
+                      "{lang code}"
+                    ],
+                    "template_type": "template",
+                    "template_category": "AUTHENTICATION",
+                    "components": {
+                      "body": {
+                        "add_security_recommendation": "true/false"
+                      },
+                      "footer": {
+                        "code_expiration_minutes": {
+                          "upto 90 mins possible": "string"
+                        }
+                      },
+                      "buttons": {
+                        "type": "OTP",
+                        "otp_type": "ONE_TAP",
+                        "text": "Copy Code",
+                        "autofill_text": "Autofill",
+                        "package_name": "{package name of App}",
+                        "signature_hash": "{signature_hash of App}"
+                      }
+                    }
+                  }
+                },
+                "Catalog": {
+                  "value": {
+                    "template_name": "{template name}",
+                    "language": [
+                      "en"
+                    ],
+                    "template_category": "MARKETING",
+                    "template_type": "template",
+                    "components": {
+                      "body": {
+                        "text": "Now shop for your favourite products right here on WhatsApp! Get Rs {{1}} off on all orders",
+                        "example": [
+                          "10"
+                        ]
+                      },
+                      "buttons": {
+                        "type": "call_to_action",
+                        "elements": [
+                          {
+                            "type": "view_catalog"
+                          }
+                        ]
+                      },
+                      "footer": {
+                        "text": "Thank You"
+                      }
+                    }
+                  }
+                },
+                "Copy Code": {
+                  "value": {
+                    "template_name": "{template name}",
+                    "language": [
+                      "en"
+                    ],
+                    "template_category": "MARKETING",
+                    "template_type": "template",
+                    "components": {
+                      "body": {
+                        "text": "Get flat {{1}} off on women's jeans, sarees online - Free Shipping, Cash On Delivery, Easy Returns & Exchange",
+                        "example": [
+                          "10"
+                        ]
+                      },
+                      "header": {
+                        "type": "text",
+                        "text": "Hello"
+                      },
+                      "buttons": {
+                        "type": "call_to_action",
+                        "elements": [
+                          {
+                            "type": "static",
+                            "label": "view",
+                            "website": "xxxxx://xxxxxxx"
+                          },
+                          {
+                            "type": "copy_code",
+                            "example": "5Tdg0"
+                          }
+                        ]
+                      },
+                      "footer": {
+                        "text": "Thank You"
+                      }
+                    }
+                  }
+                },
+                "Carousel": {
+                  "value": {
+                    "template_name": "{template name}",
+                    "language": [
+                      "en"
+                    ],
+                    "template_category": "MARKETING",
+                    "template_type": "template",
+                    "components": {
+                      "body": {
+                        "text": "Summer is here, and we have the freshest produce around! get {{1}} off your next order.",
+                        "example": [
+                          "100"
+                        ]
+                      },
+                      "cards": {
+                        "header_type": "image",
+                        "header_example": "https://picsum.photos/200/xxx?gxxxxx",
+                        "button_types": [
+                          "url",
+                          "quick_reply"
+                        ],
+                        "elements": [
+                          {
+                            "body": {
+                              "text": "Rare lemons for unique cocktails. Use code {{1}} to get {{2}} off all produce.",
+                              "example": [
+                                "10O2P",
+                                "10%"
+                              ]
+                            },
+                            "buttons": [
+                              {
+                                "type": "quick_reply",
+                                "text": "view more"
+                              },
+                              {
+                                "type": "dynamic",
+                                "label": "open",
+                                "website": "xxxxx://xxxxxxx/{{1}}",
+                                "website_example": "xxxxx://xxxxxxxxx/client"
+                              }
+                            ]
+                          },
+                          {
+                            "body": {
+                              "text": "Exotic fruit for unique cocktails! Use code {{1}} to get {{2}} off all exotic produce.",
+                              "example": [
+                                "10O2P",
+                                "10%"
+                              ]
+                            },
+                            "buttons": [
+                              {
+                                "type": "quick_reply",
+                                "text": "view"
+                              },
+                              {
+                                "type": "dynamic",
+                                "label": "visit",
+                                "website": "xxxxx://xxxxxxxxx/{{1}}",
+                                "website_example": "xxxxx://xxxxxxx/student"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "Limited Time Offer": {
+                  "value": {
+                    "template_name": "{template_name}",
+                    "language": [
+                      "{lang code}"
+                    ],
+                    "template_type": "template",
+                    "template_category": "MARKETING",
+                    "components": {
+                      "limited_time_offer": {
+                        "text": "limited offer",
+                        "has_expiration": true
+                      },
+                      "body": {
+                        "text": "TEXT FOR BODY"
+                      },
+                      "buttons": {
+                        "type": "limited_time_offer",
+                        "elements": [
+                          {
+                            "type": "copy_code",
+                            "example": "CARIBE25"
+                          },
+                          {
+                            "label": "action",
+                            "type": "static",
+                            "website": "xxxxx://xxxxxxxxxxxx/",
+                            "website_example": "xxxxx://xxxxxxxxx/"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "Multi Product": {
+                  "value": {
+                    "template_name": "{template_name}",
+                    "language": [
+                      "{lang code}"
+                    ],
+                    "template_type": "template",
+                    "template_category": "MARKETING",
+                    "components": {
+                      "header": {
+                        "type": "text",
+                        "text": "header - text"
+                      },
+                      "body": {
+                        "text": "test for body - 1"
+                      },
+                      "buttons": {
+                        "type": "mpm",
+                        "elements": [
+                          {
+                            "text": "View items"
+                          }
+                        ]
                       }
                     }
                   }
@@ -10261,6 +10886,471 @@
           }
         }
       },
+      "catalog_wbatemplatecreate": {
+        "type": "object",
+        "title": "Catalog Template",
+        "properties": {
+          "template_name": {
+            "type": "string",
+            "description": "Name of the template."
+          },
+          "language": {
+            "type": "array",
+            "description": "Language code of language in which message text is written, such as \"en\" for English.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "template_type": {
+            "type": "string",
+            "description": "The type of media template that WhatsApp allows."
+          },
+          "template_category": {
+            "type": "string",
+            "description": "The category of the template. Must be one of: MARKETING, UTILITY, AUTHENTICATION."
+          },
+          "components": {
+            "type": "object",
+            "description": "Object containing the components of the template.",
+            "properties": {
+              "body": {
+                "type": "object",
+                "description": "The body component of the template.",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "Plain text describing body of the catalog template."
+                  },
+                  "example": {
+                    "type": "string",
+                    "description": "Example of text written in body for catalog template."
+                  }
+                }
+              },
+              "footer": {
+                "type": "object",
+                "description": "The footer component of the template.",
+                "properties": {
+                  "code_expiration_minutes": {
+                    "type": "object",
+                    "description": "The duration in minutes until the code provided in the template expires. ",
+                    "properties": {
+                      "upto 90 mins possible": {
+                        "nullable": true,
+                        "description": "The default is 90 minutes."
+                      }
+                    }
+                  }
+                }
+              },
+              "buttons": {
+                "type": "object",
+                "description": "The buttons component of the template.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of button, which should be \"call_to_action\"."
+                  },
+                  "elements": {
+                    "type": "string",
+                    "description": "The elements of a button to be added for button type \"call_to_action\".",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "description": "The text that appears on the button. In this example, it is set to \"view_catalog\". \r\n"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "copy_code_wbatemplatecreate": {
+        "type": "object",
+        "title": "Copy Code Template",
+        "properties": {
+          "template_name": {
+            "type": "string",
+            "description": "Name of the template."
+          },
+          "language": {
+            "type": "array",
+            "description": "Language code of language in which message text is written, such as \"en\" for English.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "template_type": {
+            "type": "string",
+            "description": "The type of media template that WhatsApp allows."
+          },
+          "template_category": {
+            "type": "string",
+            "description": "The category of the template. Must be one of: MARKETING, UTILITY, AUTHENTICATION."
+          },
+          "components": {
+            "type": "object",
+            "description": "Object containing the components of the template.",
+            "properties": {
+              "body": {
+                "type": "object",
+                "description": "The body component of the template.",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "Plain text describing body of the catalog template."
+                  },
+                  "example": {
+                    "type": "string",
+                    "description": "Example of text written in body for catalog template."
+                  }
+                }
+              },
+              "footer": {
+                "type": "object",
+                "description": "The footer component of the template.",
+                "properties": {
+                  "code_expiration_minutes": {
+                    "type": "object",
+                    "description": "The duration in minutes until the code provided in the template expires. ",
+                    "properties": {
+                      "upto 90 mins possible": {
+                        "nullable": true,
+                        "description": "The default is 90 minutes."
+                      }
+                    }
+                  }
+                }
+              },
+              "buttons": {
+                "type": "object",
+                "description": "The buttons component of the template.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of button, which should be \"call_to_action\"."
+                  },
+                  "elements": {
+                    "type": "string",
+                    "description": "The elements of a button to be added for button type \"call_to_action\".",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "description": "The text that appears on the button. In this example, it is set to \"view_catalog\". \r\n"
+                      },
+                      "example": {
+                        "type": "string",
+                        "description": "Example for text appearing as Copy Code \r\n"
+                      },
+                      "label": {
+                        "type": "string",
+                        "description": "The label of button associated and in this example value is \"action\" \r\n"
+                      },
+                      "website": {
+                        "type": "string",
+                        "description": "The website url associated with the button .\r\n"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "carousel_wbatemplatecreate": {
+        "type": "object",
+        "title": "Carousel Template",
+        "properties": {
+          "template_name": {
+            "type": "string",
+            "description": "Name of the template."
+          },
+          "language": {
+            "type": "array",
+            "description": "Language code of language in which message text is written, such as \"en\" for English.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "template_type": {
+            "type": "string",
+            "description": "The type of media template that WhatsApp allows."
+          },
+          "template_category": {
+            "type": "string",
+            "description": "The category of the template. Must be one of: MARKETING, UTILITY, AUTHENTICATION."
+          },
+          "components": {
+            "type": "object",
+            "description": "Object containing the components of the template.",
+            "properties": {
+              "body": {
+                "type": "object",
+                "description": "The body component of the template.",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "Plain text describing body of the catalog template."
+                  },
+                  "example": {
+                    "type": "string",
+                    "description": "Example of text written in body for catalog template."
+                  }
+                }
+              },
+              "footer": {
+                "type": "object",
+                "description": "The footer component of the template.",
+                "properties": {
+                  "code_expiration_minutes": {
+                    "type": "object",
+                    "description": "The duration in minutes until the code provided in the template expires. ",
+                    "properties": {
+                      "upto 90 mins possible": {
+                        "nullable": true,
+                        "description": "The default is 90 minutes."
+                      }
+                    }
+                  }
+                }
+              },
+              "cards": {
+                "type": "object",
+                "description": "The card component of the carousel template.",
+                "properties": {
+                  "header_type": {
+                    "type": "object",
+                    "description": "The type of header used in cards which can be text or image"
+                  },
+                  "header_example": {
+                    "type": "string",
+                    "description": "The example of header to be used either in form of text or image url provided for same"
+                  },
+                  "button_types": {
+                    "type": "array",
+                    "description": "Array storing the type of buttons which can be used among which iunclude url and quick reply"
+                  },
+                  "elements": {
+                    "type": "string",
+                    "description": "The elements of a button to be added for button type \"call_to_action\".",
+                    "properties": {
+                      "body": {
+                        "type": "object",
+                        "description": "The body component of the template.",
+                        "properties": {
+                          "text": {
+                            "type": "string",
+                            "description": "Plain text describing body of the catalog template."
+                          },
+                          "example": {
+                            "type": "string",
+                            "description": "Example of text written in body for catalog template."
+                          }
+                        }
+                      },
+                      "buttons": {
+                        "type": "object",
+                        "description": "The buttons component of the template.",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "description": "Type of button to be used . In this example, it is set to \"quick_reply\" or \"dynamic\" . \r\n"
+                          },
+                          "text": {
+                            "type": "string",
+                            "description": "The text that appears on the button. In this example, it is set to \"view_more\". \r\n"
+                          },
+                          "label": {
+                            "type": "string",
+                            "description": "The label of button associated and in this example value is \"action\" \r\n"
+                          },
+                          "website": {
+                            "type": "string",
+                            "description": "The website url associated with the button .\r\n"
+                          },
+                          "website_example": {
+                            "type": "string",
+                            "description": "The example of website url to check on button .\r\n"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "limited_time_offer_wbatemplatecreate": {
+        "type": "object",
+        "title": "Limited Time Offer Template",
+        "properties": {
+          "template_name": {
+            "type": "string",
+            "description": "Name of the template."
+          },
+          "language": {
+            "type": "array",
+            "description": "Language code of language in which message text is written, such as \"en\" for English.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "template_type": {
+            "type": "string",
+            "description": "The type of media template that WhatsApp allows."
+          },
+          "template_category": {
+            "type": "string",
+            "description": "The category of the template. Must be one of: MARKETING, UTILITY, AUTHENTICATION."
+          },
+          "components": {
+            "type": "object",
+            "description": "Object containing the components of the template.",
+            "properties": {
+              "body": {
+                "type": "object",
+                "description": "The body component of the template.",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "Plain text describing body of the lto template."
+                  }
+                }
+              },
+              "limited_time_offer": {
+                "type": "object",
+                "description": "The limited time offer component of the template.",
+                "properties": {
+                  "has_expiration": {
+                    "type": "object",
+                    "description": "The boolean value (True/False) used to explain if limited time offer has an expiration time. "
+                  },
+                  "text": {
+                    "type": "string",
+                    "description": "The default value is limited offer which is usually used for same."
+                  }
+                }
+              },
+              "buttons": {
+                "type": "object",
+                "description": "The buttons component of the template.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of button, which should be \"limited_time_offer\"."
+                  },
+                  "elements": {
+                    "type": "string",
+                    "description": "The elements of a button to be added for button type \"limited_time_offer\".",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "description": "The text that appears on the button. In this example, it is set to \"Copy Code\". or it could be set to \"static\" \r\n"
+                      },
+                      "example": {
+                        "type": "string",
+                        "description": "Example for text appearing as Copy Code \r\n"
+                      },
+                      "label": {
+                        "type": "string",
+                        "description": "The label of button associated and in this example value is \"action\" \r\n"
+                      },
+                      "website": {
+                        "type": "string",
+                        "description": "The website url associated with the button .\r\n"
+                      },
+                      "website_example": {
+                        "type": "string",
+                        "description": "The example of website url to check on button .\r\n"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "multi_product_wbatemplatecreate": {
+        "type": "object",
+        "title": "Multi Product Message Template",
+        "properties": {
+          "template_name": {
+            "type": "string",
+            "description": "Name of the template."
+          },
+          "language": {
+            "type": "array",
+            "description": "Language code of language in which message text is written, such as \"en\" for English.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "template_type": {
+            "type": "string",
+            "description": "The type of media template that WhatsApp allows."
+          },
+          "template_category": {
+            "type": "string",
+            "description": "The category of the template. Must be one of: MARKETING, UTILITY, AUTHENTICATION."
+          },
+          "components": {
+            "type": "object",
+            "description": "Object containing the components of the template.",
+            "properties": {
+              "header": {
+                "type": "object",
+                "description": "The header component of the template.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of media in the header, which can be image, video, or document.\r\n"
+                  },
+                  "text": {
+                    "type": "string",
+                    "description": "The text related to the header."
+                  }
+                }
+              },
+              "body": {
+                "type": "object",
+                "description": "The body component of the template.",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "The value for body text for multi_poroduct."
+                  }
+                }
+              },
+              "buttons": {
+                "type": "object",
+                "description": "The buttons component of the template.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of button, which should be \"mpm\"."
+                  },
+                  "elements": {
+                    "type": "string",
+                    "description": "The elements of a button to be added for button type \"multi_product\".",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "description": "The text that appears on the button. In this example, it is set to \"View Items\". or it could be set to \"static\" \r\n"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "send_template_message_text": {
         "type": "object",
         "title": "Text",
@@ -10994,6 +12084,482 @@
               "header",
               "button"
             ]
+          }
+        },
+        "required": [
+          "phone",
+          "media"
+        ]
+      },
+      "send_template_message_carousel": {
+        "type": "object",
+        "title": "Carousel",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "description": "The phone number of the recipient."
+          },
+          "enable_acculync": {
+            "type": "boolean",
+            "description": "A boolean indicating whether or not to enable Acculync."
+          },
+          "extra": {
+            "type": "string",
+            "description": "Additional information to include in the message."
+          },
+          "media": {
+            "type": "object",
+            "description": "An object containing the message template details.",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "The type of message template. Set to 'media_template' for a media template message."
+              },
+              "lang_code": {
+                "type": "string",
+                "description": "Language code of the language in which message text is written (e.g., 'en' for English)."
+              },
+              "template_name": {
+                "type": "string",
+                "description": "The name of the template to use."
+              },
+              "header": {
+                "type": "array",
+                "description": "The header section of the message template.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "image": {
+                      "type": "object",
+                      "description": "An object representing the image to include in the header.",
+                      "properties": {
+                        "link": {
+                          "type": "string",
+                          "description": "The URL of the image file (e.g., 'https://example.com/image.png')."
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "body": {
+                "type": "array",
+                "description": "The body section of the message template.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "object",
+                      "description": "An object representing the plain text to be included in the body."
+                    }
+                  }
+                }
+              },
+              "carousel": {
+                "type": "array",
+                "description": "The carousel section of the message template, a list of items with images and text.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "object",
+                      "description": "An object representing the type of carousel."
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "The URL of the image file (e.g., 'https://example.com/image.png')."
+                    },
+                    "body": {
+                      "type": "array",
+                      "description": "The body section of the message template.",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "text": {
+                            "type": "object",
+                            "description": "An object representing the plain text to be included in the body."
+                          }
+                        }
+                      }
+                    },
+                    "button": {
+                      "type": "array",
+                      "description": "The button section of the message template.",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "button_no": {
+                            "type": "string",
+                            "description": "The button number; the value is either '0' or '1'."
+                          },
+                          "payload": {
+                            "type": "string",
+                            "description": "An object representing the message to be sent."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "phone",
+          "media"
+        ]
+      },
+      "send_template_message_couponcode": {
+        "type": "object",
+        "title": "Copy Code",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "description": "The phone number of the recipient.\r\n\r\n"
+          },
+          "enable_acculync": {
+            "type": "boolean",
+            "description": "A boolean indicating whether or not to enable Acculync.\r\n\r\n"
+          },
+          "extra": {
+            "type": "string",
+            "description": "Additional information to include in the message.\r\n\r\n"
+          },
+          "media": {
+            "type": "object",
+            "description": "An object containing the message template details.\r\n\r\n",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "The type of message template. For sending a media template message, set to \"media_template\".\r\n\r\n"
+              },
+              "lang_code": {
+                "type": "string",
+                "description": "Language code of language in which message text is written, such as \"en\" for English.\r\n\r\n"
+              },
+              "template_name": {
+                "type": "string",
+                "description": "The name of the template to use.\r\n\r\n"
+              },
+              "header": {
+                "type": "array",
+                "description": "The header section of the message template.\r\n\r\n",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "image": {
+                      "type": "object",
+                      "description": "An object representing the image to include in the header. This object includes 'link' and 'file_name'.\r\n\r\n",
+                      "properties": {
+                        "link": {
+                          "type": "string",
+                          "description": "The URL of the image file, hosted publicly and starting with \"https://\" and ending with the file extension, such as \".png\".\r\n\r\n"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "body": {
+                "type": "array",
+                "description": "The body section of the message template.\r\n\r\n",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "object",
+                      "description": "An object representing the plain text to be included  in the body'.\r\n\r\n"
+                    }
+                  }
+                }
+              },
+              "button": {
+                "type": "array",
+                "description": "The button section of the message template.\r\n\r\n",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "button_no": {
+                      "type": "string",
+                      "description": "The button number; the value is either \"0\" or \"1\".\r\n\r\n"
+                    },
+                    "payload": {
+                      "type": "string",
+                      "description": "An object representing the message to be sent"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "phone",
+          "media"
+        ]
+      },
+      "send_template_message_catalogthumbnail": {
+        "type": "object",
+        "title": "Catalog Thumbnail",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "description": "The phone number of the recipient.\r\n\r\n"
+          },
+          "enable_acculync": {
+            "type": "boolean",
+            "description": "A boolean indicating whether or not to enable Acculync.\r\n\r\n"
+          },
+          "extra": {
+            "type": "string",
+            "description": "Additional information to include in the message.\r\n\r\n"
+          },
+          "media": {
+            "type": "object",
+            "description": "An object containing the message template details.\r\n\r\n",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "The type of message template. For sending a media template message, set to \"media_template\".\r\n\r\n"
+              },
+              "lang_code": {
+                "type": "string",
+                "description": "Language code of language in which message text is written, such as \"en\" for English.\r\n\r\n"
+              },
+              "template_name": {
+                "type": "string",
+                "description": "The name of the template to use.\r\n\r\n"
+              },
+              "header": {
+                "type": "array",
+                "description": "The header section of the message template.\r\n\r\n",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "image": {
+                      "type": "object",
+                      "description": "An object representing the image to include in the header. This object includes 'link' and 'file_name'.\r\n\r\n",
+                      "properties": {
+                        "link": {
+                          "type": "string",
+                          "description": "The URL of the image file, hosted publicly and starting with \"https://\" and ending with the file extension, such as \".png\".\r\n\r\n"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "body": {
+                "type": "array",
+                "description": "The body section of the message template.\r\n\r\n",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "object",
+                      "description": "An object representing the plain text to be included  in the body'.\r\n\r\n"
+                    }
+                  }
+                }
+              },
+              "button": {
+                "type": "array",
+                "description": "The button section of the message template.\r\n\r\n",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "button_no": {
+                      "type": "string",
+                      "description": "The button number; the value is either \"0\" or \"1\".\r\n\r\n"
+                    },
+                    "thumbnail_product_retailer_id": {
+                      "type": "string",
+                      "description": "An object representing the thumbnail product retailer id of product"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "phone",
+          "media"
+        ]
+      },
+      "send_template_message_multiproduct": {
+        "type": "object",
+        "title": "Multi Product Template Messages",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "description": "The phone number of the recipient.\r\n\r\n"
+          },
+          "enable_acculync": {
+            "type": "boolean",
+            "description": "A boolean indicating whether or not to enable Acculync.\r\n\r\n"
+          },
+          "extra": {
+            "type": "string",
+            "description": "Additional information to include in the message.\r\n\r\n"
+          },
+          "media": {
+            "type": "object",
+            "description": "An object containing the message template details.\r\n\r\n",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "The type of message template. For sending a media template message, set to \"media_template\".\r\n\r\n"
+              },
+              "lang_code": {
+                "type": "string",
+                "description": "Language code of language in which message text is written, such as \"en\" for English.\r\n\r\n"
+              },
+              "template_name": {
+                "type": "string",
+                "description": "The name of the template to use.\r\n\r\n"
+              },
+              "header": {
+                "type": "array",
+                "description": "The header section of the message template.\r\n\r\n",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "image": {
+                      "type": "object",
+                      "description": "An object representing the image to include in the header. This object includes 'link' and 'file_name'.\r\n\r\n",
+                      "properties": {
+                        "link": {
+                          "type": "string",
+                          "description": "The URL of the image file, hosted publicly and starting with \"https://\" and ending with the file extension, such as \".png\".\r\n\r\n"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "multi_product": {
+                "type": "array",
+                "description": "The multi product section of the message template, a list of products with image and text.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "product_thumbnail": {
+                      "type": "object",
+                      "description": "An object representing the product thumbnail  which is common for all listed products."
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "The title of list of products to be displayed "
+                    },
+                    "product_retailer_ids": {
+                      "type": "array",
+                      "description": "The array or list of product retailer ids for the products registered",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "phone",
+          "media"
+        ]
+      },
+      "send_template_message_limitedtimeoffer": {
+        "type": "object",
+        "title": "Limited Time Offer",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "description": "The phone number of the recipient.\r\n\r\n"
+          },
+          "enable_acculync": {
+            "type": "boolean",
+            "description": "A boolean indicating whether or not to enable Acculync.\r\n\r\n"
+          },
+          "extra": {
+            "type": "string",
+            "description": "Additional information to include in the message.\r\n\r\n"
+          },
+          "media": {
+            "type": "object",
+            "description": "An object containing the message template details.\r\n\r\n",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "The type of message template. For sending a media template message, set to \"media_template\".\r\n\r\n"
+              },
+              "lang_code": {
+                "type": "string",
+                "description": "Language code of language in which message text is written, such as \"en\" for English.\r\n\r\n"
+              },
+              "template_name": {
+                "type": "string",
+                "description": "The name of the template to use.\r\n\r\n"
+              },
+              "header": {
+                "type": "array",
+                "description": "The header section of the message template.\r\n\r\n",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "image": {
+                      "type": "object",
+                      "description": "An object representing the image to include in the header. This object includes 'link' and 'file_name'.\r\n\r\n",
+                      "properties": {
+                        "link": {
+                          "type": "string",
+                          "description": "The URL of the image file, hosted publicly and starting with \"https://\" and ending with the file extension, such as \".png\".\r\n\r\n"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "body": {
+                "type": "array",
+                "description": "The body section of the message template.\r\n\r\n",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "object",
+                      "description": "An object representing the plain text to be included  in the body'.\r\n\r\n"
+                    }
+                  }
+                }
+              },
+              "limited_time": {
+                "type": "array",
+                "description": "The limited time section of the message template, expiration and a list",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "product_thumbnail": {
+                      "type": "object",
+                      "description": "An object representing the product thumbnail  which is common for all listed products."
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "The title of list of products to be displayed "
+                    },
+                    "product_retailer_ids": {
+                      "type": "array",
+                      "description": "The array or list of product retailer ids for the products registered",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "required": [
@@ -11924,6 +13490,594 @@
           "parent_username": {
             "type": "string",
             "description": "The user of child's parent."
+          }
+        }
+      },
+      "example_wbatemplateupdate": {
+        "type": "object",
+        "title": "Example For Template Update",
+        "properties": {
+          "template_name": {
+            "type": "string",
+            "description": "The name of the template you want to edit."
+          },
+          "components": {
+            "type": "object",
+            "description": "An object containing the components of the template.",
+            "properties": {
+              "body": {
+                "type": "object",
+                "description": "The body component of the template.",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "The updated text for the body of the template."
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            },
+            "required": [
+              "body"
+            ]
+          }
+        },
+        "required": [
+          "template_name",
+          "components"
+        ]
+      },
+      "limited_time_offer_wbatemplateupdate": {
+        "type": "object",
+        "title": "Limited Time Offer Template",
+        "properties": {
+          "template_name": {
+            "type": "string",
+            "description": "Name of the template."
+          },
+          "language": {
+            "type": "array",
+            "description": "Language code of language in which message text is written, such as \"en\" for English.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "template_type": {
+            "type": "string",
+            "description": "The type of media template that WhatsApp allows."
+          },
+          "template_category": {
+            "type": "string",
+            "description": "The category of the template. Must be one of: MARKETING, UTILITY, AUTHENTICATION."
+          },
+          "components": {
+            "type": "object",
+            "description": "Object containing the components of the template.",
+            "properties": {
+              "body": {
+                "type": "object",
+                "description": "The body component of the template.",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "Plain text describing body of the lto template."
+                  }
+                }
+              },
+              "limited_time_offer": {
+                "type": "object",
+                "description": "The limited time offer component of the template.",
+                "properties": {
+                  "has_expiration": {
+                    "type": "object",
+                    "description": "The boolean value (True/False) used to explain if limited time offer has an expiration time. "
+                  },
+                  "text": {
+                    "type": "string",
+                    "description": "The default value is limited offer which is usually used for same."
+                  }
+                }
+              },
+              "buttons": {
+                "type": "object",
+                "description": "The buttons component of the template.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of button, which should be \"limited_time_offer\"."
+                  },
+                  "elements": {
+                    "type": "string",
+                    "description": "The elements of a button to be added for button type \"limited_time_offer\".",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "description": "The text that appears on the button. In this example, it is set to \"Copy Code\". or it could be set to \"static\" \r\n"
+                      },
+                      "example": {
+                        "type": "string",
+                        "description": "Example for text appearing as Copy Code \r\n"
+                      },
+                      "label": {
+                        "type": "string",
+                        "description": "The label of button associated and in this example value is \"action\" \r\n"
+                      },
+                      "website": {
+                        "type": "string",
+                        "description": "The website url associated with the button .\r\n"
+                      },
+                      "website_example": {
+                        "type": "string",
+                        "description": "The example of website url to check on button .\r\n"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "multi_product_wbatemplateupdate": {
+        "type": "object",
+        "title": "Multi Product Message Template",
+        "properties": {
+          "template_name": {
+            "type": "string",
+            "description": "Name of the template."
+          },
+          "language": {
+            "type": "array",
+            "description": "Language code of language in which message text is written, such as \"en\" for English.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "template_type": {
+            "type": "string",
+            "description": "The type of media template that WhatsApp allows."
+          },
+          "template_category": {
+            "type": "string",
+            "description": "The category of the template. Must be one of: MARKETING, UTILITY, AUTHENTICATION."
+          },
+          "components": {
+            "type": "object",
+            "description": "Object containing the components of the template.",
+            "properties": {
+              "header": {
+                "type": "object",
+                "description": "The header component of the template.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of media in the header, which can be image, video, or document.\r\n"
+                  },
+                  "text": {
+                    "type": "string",
+                    "description": "The text related to the header."
+                  }
+                }
+              },
+              "body": {
+                "type": "object",
+                "description": "The body component of the template.",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "The value for body text for multi_poroduct."
+                  }
+                }
+              },
+              "buttons": {
+                "type": "object",
+                "description": "The buttons component of the template.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of button, which should be \"mpm\"."
+                  },
+                  "elements": {
+                    "type": "string",
+                    "description": "The elements of a button to be added for button type \"multi_product\".",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "description": "The text that appears on the button. In this example, it is set to \"View Items\". or it could be set to \"static\" \r\n"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "auth_autofill_wbatemplateupdate": {
+        "type": "object",
+        "title": "Auth Autofill",
+        "properties": {
+          "template_name": {
+            "type": "string",
+            "description": "Name of the template."
+          },
+          "language": {
+            "type": "array",
+            "description": "Language code of language in which message text is written, such as \"en\" for English.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "template_type": {
+            "type": "string",
+            "description": "The type of media template that WhatsApp allows."
+          },
+          "template_category": {
+            "type": "string",
+            "description": "The category of the template. Must be one of: MARKETING, UTILITY, AUTHENTICATION."
+          },
+          "components": {
+            "type": "object",
+            "description": "Object containing the components of the template.",
+            "properties": {
+              "body": {
+                "type": "object",
+                "description": "The body component of the template.",
+                "properties": {
+                  "add_security_recommendation": {
+                    "type": "string",
+                    "description": "A boolean value (true/false) indicating whether to include a security recommendation in the body of the template."
+                  }
+                }
+              },
+              "footer": {
+                "type": "object",
+                "description": "The footer component of the template.",
+                "properties": {
+                  "code_expiration_minutes": {
+                    "type": "object",
+                    "description": "The duration in minutes until the code provided in the template expires. ",
+                    "properties": {
+                      "upto 90 mins possible": {
+                        "nullable": true,
+                        "description": "The default is 90 minutes."
+                      }
+                    }
+                  }
+                }
+              },
+              "buttons": {
+                "type": "object",
+                "description": "The buttons component of the template.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of button, which should be \"OTP\"."
+                  },
+                  "otp_type": {
+                    "type": "string",
+                    "description": "The behavior of the OTP (One-Time Password) button. In this example, it is set to \"ONE_TAP\"."
+                  },
+                  "text": {
+                    "type": "string",
+                    "description": "The text that appears on the button. In this example, it is set to \"Copy Code\".\r\n"
+                  },
+                  "autofill_text": {
+                    "type": "string",
+                    "description": "The text that appears on the autofill button. In this example, it is set to \"Autofill\".\r\n"
+                  },
+                  "package_name": {
+                    "type": "string",
+                    "description": "The package name of the app associated with the template. \r\n"
+                  },
+                  "signature_hash": {
+                    "type": "string",
+                    "description": "The signature hash of the app associated with the template.\r\n"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "catalog_wbatemplateupdate": {
+        "type": "object",
+        "title": "Catalog Template",
+        "properties": {
+          "template_name": {
+            "type": "string",
+            "description": "Name of the template."
+          },
+          "language": {
+            "type": "array",
+            "description": "Language code of language in which message text is written, such as \"en\" for English.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "template_type": {
+            "type": "string",
+            "description": "The type of media template that WhatsApp allows."
+          },
+          "template_category": {
+            "type": "string",
+            "description": "The category of the template. Must be one of: MARKETING, UTILITY, AUTHENTICATION."
+          },
+          "components": {
+            "type": "object",
+            "description": "Object containing the components of the template.",
+            "properties": {
+              "body": {
+                "type": "object",
+                "description": "The body component of the template.",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "Plain text describing body of the catalog template."
+                  },
+                  "example": {
+                    "type": "string",
+                    "description": "Example of text written in body for catalog template."
+                  }
+                }
+              },
+              "footer": {
+                "type": "object",
+                "description": "The footer component of the template.",
+                "properties": {
+                  "code_expiration_minutes": {
+                    "type": "object",
+                    "description": "The duration in minutes until the code provided in the template expires. ",
+                    "properties": {
+                      "upto 90 mins possible": {
+                        "nullable": true,
+                        "description": "The default is 90 minutes."
+                      }
+                    }
+                  }
+                }
+              },
+              "buttons": {
+                "type": "object",
+                "description": "The buttons component of the template.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of button, which should be \"call_to_action\"."
+                  },
+                  "elements": {
+                    "type": "string",
+                    "description": "The elements of a button to be added for button type \"call_to_action\".",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "description": "The text that appears on the button. In this example, it is set to \"view_catalog\". \r\n"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "copy_code_wbatemplateupdate": {
+        "type": "object",
+        "title": "Copy Code Template",
+        "properties": {
+          "template_name": {
+            "type": "string",
+            "description": "Name of the template."
+          },
+          "language": {
+            "type": "array",
+            "description": "Language code of language in which message text is written, such as \"en\" for English.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "template_type": {
+            "type": "string",
+            "description": "The type of media template that WhatsApp allows."
+          },
+          "template_category": {
+            "type": "string",
+            "description": "The category of the template. Must be one of: MARKETING, UTILITY, AUTHENTICATION."
+          },
+          "components": {
+            "type": "object",
+            "description": "Object containing the components of the template.",
+            "properties": {
+              "body": {
+                "type": "object",
+                "description": "The body component of the template.",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "Plain text describing body of the catalog template."
+                  },
+                  "example": {
+                    "type": "string",
+                    "description": "Example of text written in body for catalog template."
+                  }
+                }
+              },
+              "footer": {
+                "type": "object",
+                "description": "The footer component of the template.",
+                "properties": {
+                  "code_expiration_minutes": {
+                    "type": "object",
+                    "description": "The duration in minutes until the code provided in the template expires. ",
+                    "properties": {
+                      "upto 90 mins possible": {
+                        "nullable": true,
+                        "description": "The default is 90 minutes."
+                      }
+                    }
+                  }
+                }
+              },
+              "buttons": {
+                "type": "object",
+                "description": "The buttons component of the template.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of button, which should be \"call_to_action\"."
+                  },
+                  "elements": {
+                    "type": "string",
+                    "description": "The elements of a button to be added for button type \"call_to_action\".",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "description": "The text that appears on the button. In this example, it is set to \"view_catalog\". \r\n"
+                      },
+                      "example": {
+                        "type": "string",
+                        "description": "Example for text appearing as Copy Code \r\n"
+                      },
+                      "label": {
+                        "type": "string",
+                        "description": "The label of button associated and in this example value is \"action\" \r\n"
+                      },
+                      "website": {
+                        "type": "string",
+                        "description": "The website url associated with the button .\r\n"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "carousel_wbatemplateupdate": {
+        "type": "object",
+        "title": "Carousel Template",
+        "properties": {
+          "template_name": {
+            "type": "string",
+            "description": "Name of the template."
+          },
+          "language": {
+            "type": "array",
+            "description": "Language code of language in which message text is written, such as \"en\" for English.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "template_type": {
+            "type": "string",
+            "description": "The type of media template that WhatsApp allows."
+          },
+          "template_category": {
+            "type": "string",
+            "description": "The category of the template. Must be one of: MARKETING, UTILITY, AUTHENTICATION."
+          },
+          "components": {
+            "type": "object",
+            "description": "Object containing the components of the template.",
+            "properties": {
+              "body": {
+                "type": "object",
+                "description": "The body component of the template.",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "Plain text describing body of the catalog template."
+                  },
+                  "example": {
+                    "type": "string",
+                    "description": "Example of text written in body for catalog template."
+                  }
+                }
+              },
+              "footer": {
+                "type": "object",
+                "description": "The footer component of the template.",
+                "properties": {
+                  "code_expiration_minutes": {
+                    "type": "object",
+                    "description": "The duration in minutes until the code provided in the template expires. ",
+                    "properties": {
+                      "upto 90 mins possible": {
+                        "nullable": true,
+                        "description": "The default is 90 minutes."
+                      }
+                    }
+                  }
+                }
+              },
+              "cards": {
+                "type": "object",
+                "description": "The card component of the carousel template.",
+                "properties": {
+                  "header_type": {
+                    "type": "object",
+                    "description": "The type of header used in cards which can be text or image"
+                  },
+                  "header_example": {
+                    "type": "string",
+                    "description": "The example of header to be used either in form of text or image url provided for same"
+                  },
+                  "button_types": {
+                    "type": "array",
+                    "description": "Array storing the type of buttons which can be used among which iunclude url and quick reply"
+                  },
+                  "elements": {
+                    "type": "string",
+                    "description": "The elements of a button to be added for button type \"call_to_action\".",
+                    "properties": {
+                      "body": {
+                        "type": "object",
+                        "description": "The body component of the template.",
+                        "properties": {
+                          "text": {
+                            "type": "string",
+                            "description": "Plain text describing body of the catalog template."
+                          },
+                          "example": {
+                            "type": "string",
+                            "description": "Example of text written in body for catalog template."
+                          }
+                        }
+                      },
+                      "buttons": {
+                        "type": "object",
+                        "description": "The buttons component of the template.",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "description": "Type of button to be used . In this example, it is set to \"quick_reply\" or \"dynamic\" . \r\n"
+                          },
+                          "text": {
+                            "type": "string",
+                            "description": "The text that appears on the button. In this example, it is set to \"view_more\". \r\n"
+                          },
+                          "label": {
+                            "type": "string",
+                            "description": "The label of button associated and in this example value is \"action\" \r\n"
+                          },
+                          "website": {
+                            "type": "string",
+                            "description": "The website url associated with the button .\r\n"
+                          },
+                          "website_example": {
+                            "type": "string",
+                            "description": "The example of website url to check on button .\r\n"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
