@@ -8507,6 +8507,8 @@ components:
                 button_types:
                   type: array
                   description: Array storing the type of buttons which can be used among which iunclude url and quick reply
+                  items:
+                   type: object
                 elements:
                   type: string
                   description: The elements of a button to be added for button type "call_to_action".
@@ -10790,6 +10792,8 @@ components:
                 button_types:
                   type: array
                   description: Array storing the type of buttons which can be used among which iunclude url and quick reply
+                  items:
+                    type: object
                 elements:
                   type: string
                   description: The elements of a button to be added for button type "call_to_action".
