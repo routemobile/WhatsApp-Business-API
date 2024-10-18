@@ -5457,7 +5457,7 @@ paths:
   /wba/management/v1/wbp-account-details:
     get:
       tags:
-        - WhatsApp Account Details
+        - WhatsApp Management APIs
       summary: WBP Account Details
       description: >-
         The WBP Account Details endpoint fetches the account details for the
@@ -5806,6 +5806,164 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
+  /wba/management/v1/settings/profile/photo:
+    post:
+      tags:
+        - WhatsApp Management APIs
+      summary: Profile Photo API
+      description: >-
+        The Profile Photo API endpoint uploads the profile photo for account and updates  the account details for the
+        WhatsApp business profile by entering the authorization token key.
+      operationId: wbamanagement
+      parameters:
+        - name: source
+          in: query
+          description: >-
+            The details of the source for uploading the file for a bulk
+            campaign.
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+            example: UI
+        - name: debug
+          in: query
+          description: >-
+            The parameter that enables or disables the debug mode.   Set the
+            default value of "debug=True" to enable the debug mode. The system
+            generates additional information and logs to help resolving
+            troubleshoot and debug issues with the bulk campaigns.
+          style: form
+          explode: true
+          schema:
+            enum:
+              - 'True'
+              - 'False'
+            example: 'True'
+      requestBody:
+        description: ''
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/settings_profile_photo'
+            examples:
+              Example:
+                value:
+                  file: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_4'
+              examples:
+                Example 1:
+                  value:
+                    message: File uploaded successfully
+                    campaign_id: 670b3fd4-d442-11ed-a821-xxxxxxxxxxxx
+                    file_type: text/csv
+                    file_size: 19.0B
+                    total_records: 1
+                    valid_records: 1
+                    duplicate records: 0
+                    campaign_type: generalized
+                    message_preview:
+                      phone: 91868841xxxx
+                      enable_acculync: true
+                      extra: '{''asd'':''asd''}'
+                      media:
+                        type: media_template
+                        template_name: boarding_pass_update
+                        lang_code: en
+                        header:
+                          - image:
+                              link: >-
+                                https://media.istockphoto.com/vectors/airplane-ticket-boarding-pass-ticket-template-vector-id878xxxxxx
+                        body:
+                          - text: Here is your boarding pass
+                    asynchronous: false
+                    country_code: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_401_5'
+              examples:
+                JWT Token Expired:
+                  value:
+                    message: unable to process campaign request
+                    reason: jwt token expired
+                    status: failure
+        '404':
+          description: Page Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_404'
+              examples:
+                Incorrect API URL:
+                  value:
+                    message: >-
+                      The requested URL was not found on the server. If you
+                      entered the URL manually please check your spelling and
+                      try again.
+        '422':
+          description: Unprocessable Entity (WebDAV)
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/file_upload_422_unknown_campaigntype'
+                  - $ref: '#/components/schemas/file_upload_422_filemimetype'
+              examples:
+                Unknown campaign type:
+                  value:
+                    message: please check API docs for more info
+                    status: failed
+                    reason:
+                      campaign_type:
+                        - 'Must be one of: generalized, personalized.'
+                File Mimetype error:
+                  value:
+                    message: please check API docs for more info
+                    status: failed
+                    reason:
+                      file_mimetype:
+                        - >-
+                          Must be one of: text/csv, text/plain,
+                          application/vnd.ms-excel,
+                          application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,
+                          application/vnd.openxmlformats-officedocument.spreadsheetml.template,
+                          application/vnd.ms-excel.sheet.macroEnabled.12,
+                          application/vnd.ms-excel.template.macroEnabled.12,
+                          application/vnd.ms-excel.addin.macroEnabled.12,
+                          application/vnd.ms-excel.sheet.binary.macroEnabled.12.
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: The status of the message delivery.
+                  message:
+                    type: string
+                    description: The message response.
+              examples:
+                Internal server error:
+                  value:
+                    status: failure
+                    message: unable to process request
+      security:
+        - jwt: []
+      servers:
+        - url: https://apis.rmlconnect.net
+
   /wba/template/update:
     patch:
       tags:
@@ -6280,8 +6438,8 @@ paths:
 tags:
   - name: WhatsApp Login
     description: Login to WhatsApp Business account.
-  - name: WhatsApp Account Details
-    description: Account details for the WhatsApp business profile.
+  - name: WhatsApp Management APIs
+    description: Management APIS for the WhatsApp business profile.
   - name: WhatsApp Bulk Upload
     description: Types of WhatsApp bulk upload APIs.
   - name: WhatsApp Catalog Manager
@@ -12365,3 +12523,14 @@ components:
                         website_example:
                           type: string
                           description: "The example of website url to check on button .\r\n"
+    settings_profile_photo:
+      type: object
+      properties:
+        file:
+          type: string
+          description: >
+            This Paramter contains Profile Photo which has image file which can be uploaded with the formats as mentioned in facebook documentation
+
+          example: ABC.jpeg, ABC.jpg, ABC.png
+      required:
+        - file
