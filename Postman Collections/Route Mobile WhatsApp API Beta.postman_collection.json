@@ -4568,6 +4568,12 @@
                   },
                   {
                     "$ref": "#/components/schemas/multi_product_wbatemplatecreate"
+                  },
+                  {
+                    "$ref": "#/components/schemas/payment_order_details_wbatemplatecreate"
+                  },
+                  {
+                    "$ref": "#/components/schemas/flow_wbatemplatecreate"
                   }
                 ]
               },
@@ -4971,6 +4977,67 @@
                       }
                     }
                   }
+                },
+                "Payment Order Details": {
+                  "value": {
+                    "template_name": "{template_name}",
+                    "language": [
+                      "{lang code}"
+                    ],
+                    "template_type": "{template type}",
+                    "template_category": "{template category}",
+                    "template_sub_category": "{template sub category}",
+                    "components": {
+                      "header": {
+                        "type": "{header type}",
+                        "text": "{header text}"
+                      },
+                      "body": {
+                        "text": "{body text}"
+                      },
+                      "footer": {
+                        "text": "{fotter text}"
+                      },
+                      "buttons": {
+                        "type": "{button  type}",
+                        "elements": [
+                          {
+                            "text": "{button element text}"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "Flows creation": {
+                  "value": {
+                    "template_name": "{template_name}",
+                    "language": [
+                      "{lang code}"
+                    ],
+                    "template_type": "{template type}",
+                    "template_category": "{template category}",
+                    "components": {
+                      "header": {
+                        "type": "{header type}",
+                        "text": "{header text}"
+                      },
+                      "body": {
+                        "text": "{body text}"
+                      },
+                      "buttons": {
+                        "type": "{button  type}",
+                        "elements": [
+                          {
+                            "text": "{button element text}",
+                            "flow_id": "{flow id}",
+                            "navigation_screen": "{Flows Json screen name}",
+                            "flow_action": "{flow action}"
+                          }
+                        ]
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -5201,6 +5268,12 @@
                       },
                       {
                         "$ref": "#/components/schemas/send_template_message_limitedtimeoffer"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_template_message_payment"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_template_message_flow"
                       }
                     ]
                   },
@@ -5245,6 +5318,30 @@
                       },
                       {
                         "$ref": "#/components/schemas/send_session_multiproduct"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_session_flow"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_session_send_message_with_catalog"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_session_send_message_without_catalog"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_session_payment_gateway_payu"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_session_payment_gateway_razorpay"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_session_payment_upi"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_session_payment_link"
+                      },
+                      {
+                        "$ref": "#/components/schemas/send_session_order_status"
                       }
                     ]
                   }
@@ -5662,6 +5759,94 @@
                     }
                   }
                 },
+                "Send Template Message - Payment": {
+                  "value": {
+                    "phone": "{mobile number}",
+                    "enable_acculync": "false",
+                    "media": {
+                      "type": "media_template",
+                      "template_name": "testing_order_*************",
+                      "lang_code": "en_US",
+                      "payment": [
+                        {
+                          "reference_id": "12F14****",
+                          "order_type": "order_details",
+                          "product_type": "digital-goods",
+                          "payment_gateway": {
+                            "type": "razorpay",
+                            "configuration_name": "RPca***"
+                          },
+                          "address": {
+                            "first_name": "first name of recipient",
+                            "address_line1": "address",
+                            "address_line2": "address",
+                            "city": "city",
+                            "state": "state",
+                            "country": "India",
+                            "postal_code": "560066"
+                          },
+                          "items": [
+                            {
+                              "name": "test language",
+                              "product_id": "106299316140****",
+                              "quantity": "1",
+                              "amount": "10",
+                              "retailer_id": "1-1135-2*****",
+                              "country_of_origin": "ORIGIN_COUNTRY",
+                              "importer_name": "IMPORTER_NAME",
+                              "importer_address": {
+                                "address_line1": "IMPORTER_ADDRESS",
+                                "city": "CITY",
+                                "country_code": "COUNTRY",
+                                "postal_code": "534280"
+                              }
+                            }
+                          ],
+                          "subtotal_amount": "10",
+                          "discount_amount": "0",
+                          "shipping_amount": "0",
+                          "shipping_description": "optional_text",
+                          "total_amount": "10",
+                          "tax_amount": "0",
+                          "tax_description": "optional_text"
+                        }
+                      ]
+                    },
+                    "extra": "samplepayment"
+                  }
+                },
+                "Send Template Message - Flow": {
+                  "value": {
+                    "phone": "{mobile number}",
+                    "media": {
+                      "type": "media_template",
+                      "template_name": "nn_t***",
+                      "lang_code": "en",
+                      "header": [
+                        {
+                          "text": "offer"
+                        }
+                      ],
+                      "body": [
+                        {
+                          "text": "the end of August"
+                        },
+                        {
+                          "text": "25OFF"
+                        },
+                        {
+                          "text": "20%"
+                        }
+                      ],
+                      "button": [
+                        {
+                          "button_no": "0",
+                          "flow": "PAYLOAD"
+                        }
+                      ]
+                    }
+                  }
+                },
                 "Send Session Message - Session Text": {
                   "value": {
                     "phone": "{mobile number}",
@@ -5855,7 +6040,7 @@
                 },
                 "Send Session Message - Session Single Product": {
                   "value": {
-                    "phone": "+91809710xxxx",
+                    "phone": "{mobile number}",
                     "extra": "extra",
                     "enable_acculync": true,
                     "catalog": {
@@ -5872,7 +6057,7 @@
                 },
                 "Send Session Message - Session Multi Product": {
                   "value": {
-                    "phone": "+918097105xxx",
+                    "phone": "{mobile number}",
                     "enable_acculync": true,
                     "extra": "extra",
                     "catalog": {
@@ -5912,6 +6097,329 @@
                         ]
                       }
                     }
+                  }
+                },
+                "Send Session Message - Session Flow": {
+                  "value": {
+                    "phone": "{mobile number}",
+                    "enable_acculync": false,
+                    "type": "flow",
+                    "header": {
+                      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg"
+                    },
+                    "footer": "this test belongs to footer",
+                    "body": "https://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg",
+                    "flow": {
+                      "flow_mode": "draft",
+                      "flow_token": "abc********.",
+                      "flow_id": "856082929******",
+                      "flow_cta": "Book!",
+                      "flow_action": "navigate",
+                      "flow_action_payload": {
+                        "screen": "MY_FIRST_SCREEN",
+                        "data": {
+                          "hi": "hello"
+                        }
+                      }
+                    }
+                  }
+                },
+                "Send Session Message - Session Send Message with catalog": {
+                  "value": {
+                    "phone": "{mobile number}",
+                    "enable_acculync": false,
+                    "body": "with catalog",
+                    "footer": "this is your text",
+                    "image": {
+                      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg"
+                    },
+                    "payment": {
+                      "reference_id": "q2",
+                      "order_type": "order_details",
+                      "product_type": "digital-goods",
+                      "payment_configuration": "RML****1",
+                      "address": {
+                        "first_name": "first name of recipient",
+                        "address_line1": "address",
+                        "address_line2": "address",
+                        "city": "city",
+                        "state": "state",
+                        "country": "India",
+                        "postal_code": "560066"
+                      },
+                      "items": [
+                        {
+                          "retailer_id": "1",
+                          "catalog_id": "62305622836*****",
+                          "product_name": "Product name, for example bread",
+                          "amount": 100,
+                          "quantity": "1",
+                          "expiration_timestamp": "1797885016",
+                          "expiration_description": "expiration-explanation"
+                        }
+                      ],
+                      "subtotal_amount": 100,
+                      "discount_amount": 100,
+                      "discount_description": "optional_text",
+                      "shipping_amount": 0,
+                      "shipping_description": "optional_text",
+                      "total_amount": 100,
+                      "tax_amount": 100,
+                      "tax_description": "optional_text"
+                    },
+                    "extra": "samplepayment"
+                  }
+                },
+                "Send Session Message - Session Send Message without catalog": {
+                  "value": {
+                    "phone": "{mobile number}",
+                    "enable_acculync": false,
+                    "body": "without catalog_id",
+                    "footer": "this is your text",
+                    "payment": {
+                      "reference_id": "y**",
+                      "order_type": "order_details",
+                      "product_type": "digital-goods",
+                      "payment_configuration": "RML****1",
+                      "address": {
+                        "first_name": "first name of recipient",
+                        "address_line1": "address",
+                        "address_line2": "address",
+                        "city": "city",
+                        "state": "state",
+                        "country": "India",
+                        "postal_code": "560066"
+                      },
+                      "items": [
+                        {
+                          "image": {
+                            "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg"
+                          },
+                          "product_name": "Product name, for example bread",
+                          "amount": 100,
+                          "quantity": "1",
+                          "expiration_timestamp": "1797885016",
+                          "expiration_description": "expiration-explanation"
+                        }
+                      ],
+                      "subtotal_amount": 100,
+                      "discount_amount": 100,
+                      "discount_description": "optional_text",
+                      "shipping_amount": 0,
+                      "shipping_description": "optional_text",
+                      "total_amount": 100,
+                      "tax_amount": 100,
+                      "tax_description": "optional_text",
+                      "extra": "samplepayment"
+                    }
+                  }
+                },
+                "Send Session Message - Session Payment Gateway PayU": {
+                  "value": {
+                    "phone": "{mobile number}",
+                    "enable_acculync": false,
+                    "body": "payment gateway_payu",
+                    "footer": "this is your text",
+                    "image": {
+                      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg"
+                    },
+                    "payment": {
+                      "reference_id": "g**",
+                      "order_type": "order_details",
+                      "product_type": "digital-goods",
+                      "payment_gateway": {
+                        "type": "payu",
+                        "configuration_name": "PUca***",
+                        "notes": {
+                          "udf1": "TNXID:1221***",
+                          "udf2": "TNXID:1221WE***",
+                          "udf3": "TNXID:12WE322***"
+                        }
+                      },
+                      "address": {
+                        "first_name": "first name of recipient",
+                        "address_line1": "address",
+                        "address_line2": "address",
+                        "city": "city",
+                        "state": "state",
+                        "country": "India",
+                        "postal_code": "560066"
+                      },
+                      "items": [
+                        {
+                          "retailer_id": "1*",
+                          "catalog_id": "623056228363****",
+                          "product_name": "Product name, for example bread",
+                          "amount": 100,
+                          "quantity": "1",
+                          "expiration_timestamp": "1797885016",
+                          "expiration_description": "expiration-explanation"
+                        }
+                      ],
+                      "subtotal_amount": 100,
+                      "discount_amount": 100,
+                      "discount_description": "optional_text",
+                      "shipping_amount": 0,
+                      "shipping_description": "optional_text",
+                      "total_amount": 100,
+                      "tax_amount": 100,
+                      "tax_description": "optional_text"
+                    },
+                    "extra": "samplepayment"
+                  }
+                },
+                "Send Session Message - Session Payment gateway Razorpay": {
+                  "value": {
+                    "phone": "{mobile number}",
+                    "enable_acculync": false,
+                    "body": "payment gateway_ razor",
+                    "footer": "this is your text",
+                    "image": {
+                      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg"
+                    },
+                    "payment": {
+                      "reference_id": "q9*",
+                      "order_type": "order_details",
+                      "product_type": "digital-goods",
+                      "payment_gateway": {
+                        "type": "razorpay",
+                        "configuration_name": "Rca***",
+                        "notes": {
+                          "udf1": "TNXID:12213**",
+                          "udf2": "TNXID:1221WEE**",
+                          "udf3": "TNXID:12WE322***"
+                        }
+                      },
+                      "address": {
+                        "first_name": "first name of recipient",
+                        "address_line1": "address",
+                        "address_line2": "address",
+                        "city": "city",
+                        "state": "state",
+                        "country": "India",
+                        "postal_code": "560066"
+                      },
+                      "items": [
+                        {
+                          "retailer_id": "1**",
+                          "catalog_id": "6230562283637***",
+                          "product_name": "Product name, for example bread",
+                          "amount": 100,
+                          "quantity": "1",
+                          "expiration_timestamp": "1797885016",
+                          "expiration_description": "expiration-explanation"
+                        }
+                      ],
+                      "subtotal_amount": 100,
+                      "discount_amount": 100,
+                      "discount_description": "optional_text",
+                      "shipping_amount": 0,
+                      "shipping_description": "optional_text",
+                      "total_amount": 100,
+                      "tax_amount": 100,
+                      "tax_description": "optional_text"
+                    },
+                    "extra": "samplepayment"
+                  }
+                },
+                "Send Session Message - Session Payment UPI": {
+                  "value": {
+                    "phone": "{mobile number}",
+                    "enable_acculync": "true",
+                    "body": "from upi",
+                    "footer": "this is your text",
+                    "image": {
+                      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg"
+                    },
+                    "payment": {
+                      "reference_id": "qqqqq33fq***",
+                      "order_type": "order_details",
+                      "product_type": "digital-goods",
+                      "payment_configuration": "RMLUA***",
+                      "address": {
+                        "first_name": "first name of recipient",
+                        "address_line1": "address",
+                        "city": "city",
+                        "state": "state",
+                        "country": "India",
+                        "postal_code": "560066"
+                      },
+                      "items": [
+                        {
+                          "retailer_id": "1-1135-27*****",
+                          "product_name": "Cora*****",
+                          "amount": 10,
+                          "quantity": "1",
+                          "expiration_timestamp": "1799885016",
+                          "expiration_description": "expiration-explanation"
+                        }
+                      ],
+                      "subtotal_amount": 10,
+                      "discount_description": "optional_text",
+                      "shipping_amount": 0,
+                      "shipping_description": "optional_text",
+                      "total_amount": 10,
+                      "tax_amount": 0,
+                      "tax_description": "optional_text"
+                    },
+                    "extra": "samplepayment"
+                  }
+                },
+                "Send Session Message - Session Payment Link": {
+                  "value": {
+                    "phone": "{mobile number}",
+                    "enable_acculync": false,
+                    "body": "from link",
+                    "footer": "this is your text",
+                    "image": {
+                      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/JPEG_example_flower.jpg"
+                    },
+                    "payment": {
+                      "reference_id": "q**",
+                      "order_type": "order_details",
+                      "product_type": "digital-goods",
+                      "payment_link": {
+                        "uri": "https://***************888888"
+                      },
+                      "address": {
+                        "first_name": "first name of recipient",
+                        "address_line1": "address",
+                        "address_line2": "address",
+                        "city": "city",
+                        "state": "state",
+                        "country": "India",
+                        "postal_code": "560066*********",
+                        "product_name": "Product name, for example bread",
+                        "amount": 100,
+                        "quantity": "1",
+                        "expiration_timestamp": "1797885016",
+                        "expiration_description": "expiration-explanation"
+                      },
+                      "subtotal_amount": 100,
+                      "discount_amount": 100,
+                      "discount_description": "optional_text",
+                      "shipping_amount": 0,
+                      "shipping_description": "optional_text",
+                      "total_amount": 100,
+                      "tax_amount": 100,
+                      "tax_description": "optional_text"
+                    },
+                    "extra": "samplepayment"
+                  }
+                },
+                "Send Session Message - Session Payment Order status": {
+                  "value": {
+                    "phone": "{mobile number}",
+                    "enable_acculync": false,
+                    "body": "this is your text",
+                    "payment": {
+                      "product_type": "digital-goods",
+                      "order_type": "order_status",
+                      "reference_id": "kjhuhouyouyu*****",
+                      "order_status": "processing",
+                      "order_status_description": "optional-text"
+                    },
+                    "extra": "samplepayment"
                   }
                 }
               }
@@ -6773,7 +7281,7 @@
     "/wba/management/v1/wbp-account-details": {
       "get": {
         "tags": [
-          "WhatsApp Account Details"
+          "WhatsApp Management APIs"
         ],
         "summary": "WBP Account Details",
         "description": "The WBP Account Details endpoint fetches the account details for the WhatsApp business profile by entering the authorization token key.",
@@ -7236,6 +7744,226 @@
                       "status": "failure",
                       "message": "unable to process request",
                       "reason": "internal server error"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://apis.rmlconnect.net"
+          }
+        ]
+      }
+    },
+    "/wba/management/v1/settings/profile/photo": {
+      "post": {
+        "tags": [
+          "WhatsApp Management APIs"
+        ],
+        "summary": "Profile Photo API",
+        "description": "The Profile Photo API endpoint uploads the profile photo for account and updates  the account details for the WhatsApp business profile by entering the authorization token key.",
+        "operationId": "wbamanagement",
+        "parameters": [
+          {
+            "name": "source",
+            "in": "query",
+            "description": "The details of the source for uploading the file for a bulk campaign.",
+            "required": false,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "UI"
+            }
+          },
+          {
+            "name": "debug",
+            "in": "query",
+            "description": "The parameter that enables or disables the debug mode.   Set the default value of \"debug=True\" to enable the debug mode. The system generates additional information and logs to help resolving troubleshoot and debug issues with the bulk campaigns.",
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "enum": [
+                "True",
+                "False"
+              ],
+              "example": "True"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/settings_profile_photo"
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "file": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_4"
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "message": "File uploaded successfully",
+                      "campaign_id": "670b3fd4-d442-11ed-a821-xxxxxxxxxxxx",
+                      "file_type": "text/csv",
+                      "file_size": "19.0B",
+                      "total_records": 1,
+                      "valid_records": 1,
+                      "duplicate records": 0,
+                      "campaign_type": "generalized",
+                      "message_preview": {
+                        "phone": "91868841xxxx",
+                        "enable_acculync": true,
+                        "extra": "{'asd':'asd'}",
+                        "media": {
+                          "type": "media_template",
+                          "template_name": "boarding_pass_update",
+                          "lang_code": "en",
+                          "header": [
+                            {
+                              "image": {
+                                "link": "https://media.istockphoto.com/vectors/airplane-ticket-boarding-pass-ticket-template-vector-id878xxxxxx"
+                              }
+                            }
+                          ],
+                          "body": [
+                            {
+                              "text": "Here is your boarding pass"
+                            }
+                          ]
+                        }
+                      },
+                      "asynchronous": false,
+                      "country_code": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_5"
+                },
+                "examples": {
+                  "JWT Token Expired": {
+                    "value": {
+                      "message": "unable to process campaign request",
+                      "reason": "jwt token expired",
+                      "status": "failure"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Page Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_404"
+                },
+                "examples": {
+                  "Incorrect API URL": {
+                    "value": {
+                      "message": "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity (WebDAV)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/file_upload_422_unknown_campaigntype"
+                    },
+                    {
+                      "$ref": "#/components/schemas/file_upload_422_filemimetype"
+                    }
+                  ]
+                },
+                "examples": {
+                  "Unknown campaign type": {
+                    "value": {
+                      "message": "please check API docs for more info",
+                      "status": "failed",
+                      "reason": {
+                        "campaign_type": [
+                          "Must be one of: generalized, personalized."
+                        ]
+                      }
+                    }
+                  },
+                  "File Mimetype error": {
+                    "value": {
+                      "message": "please check API docs for more info",
+                      "status": "failed",
+                      "reason": {
+                        "file_mimetype": [
+                          "Must be one of: text/csv, text/plain, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.openxmlformats-officedocument.spreadsheetml.template, application/vnd.ms-excel.sheet.macroEnabled.12, application/vnd.ms-excel.template.macroEnabled.12, application/vnd.ms-excel.addin.macroEnabled.12, application/vnd.ms-excel.sheet.binary.macroEnabled.12."
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "The status of the message delivery."
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "The message response."
+                    }
+                  }
+                },
+                "examples": {
+                  "Internal server error": {
+                    "value": {
+                      "status": "failure",
+                      "message": "unable to process request"
                     }
                   }
                 }
@@ -7998,8 +8726,8 @@
       "description": "Login to WhatsApp Business account."
     },
     {
-      "name": "WhatsApp Account Details",
-      "description": "Account details for the WhatsApp business profile."
+      "name": "WhatsApp Management APIs",
+      "description": "Management APIS for the WhatsApp business profile."
     },
     {
       "name": "WhatsApp Bulk Upload",
@@ -11354,6 +12082,168 @@
           }
         }
       },
+      "payment_order_details_wbatemplatecreate": {
+        "type": "object",
+        "title": "Payment Order details",
+        "properties": {
+          "template_name": {
+            "type": "string",
+            "description": "Name of the template."
+          },
+          "language": {
+            "type": "array",
+            "description": "Language code of language in which message text is written, such as \"en\" for English.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "template_type": {
+            "type": "string",
+            "description": "The type of media template that WhatsApp allows."
+          },
+          "template_category": {
+            "type": "string",
+            "description": "The category of the template. Must be one of: MARKETING, UTILITY, AUTHENTICATION."
+          },
+          "components": {
+            "type": "object",
+            "description": "Object containing the components of the template.",
+            "properties": {
+              "header": {
+                "type": "object",
+                "description": "The header component of the template.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of media in the header, which can be image, video, or document.\r\n"
+                  },
+                  "text": {
+                    "type": "string",
+                    "description": "The text related to the header."
+                  }
+                }
+              },
+              "body": {
+                "type": "object",
+                "description": "The body component of the template.",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "The value for body text for multi_poroduct."
+                  }
+                }
+              },
+              "buttons": {
+                "type": "object",
+                "description": "The buttons component of the template.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of button, which should be \"mpm\"."
+                  },
+                  "elements": {
+                    "type": "string",
+                    "description": "The elements of a button to be added for button type \"multi_product\".",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "description": "The text that appears on the button. In this example, it is set to \"View Items\". or it could be set to \"static\" \r\n"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "flow_wbatemplatecreate": {
+        "type": "object",
+        "title": "Flow creation",
+        "properties": {
+          "template_name": {
+            "type": "string",
+            "description": "Name of the template."
+          },
+          "language": {
+            "type": "array",
+            "description": "Language code of language in which message text is written, such as \"en\" for English.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "template_type": {
+            "type": "string",
+            "description": "The type of media template that WhatsApp allows."
+          },
+          "template_category": {
+            "type": "string",
+            "description": "The category of the template. Must be one of: MARKETING, UTILITY, AUTHENTICATION."
+          },
+          "components": {
+            "type": "object",
+            "description": "Object containing the components of the template.",
+            "properties": {
+              "header": {
+                "type": "object",
+                "description": "The header component of the template.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of media in the header, which can be image, video, or document.\r\n"
+                  },
+                  "text": {
+                    "type": "string",
+                    "description": "The text related to the header."
+                  }
+                }
+              },
+              "body": {
+                "type": "object",
+                "description": "The body component of the template.",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "The value for body text for multi_poroduct."
+                  }
+                }
+              },
+              "buttons": {
+                "type": "object",
+                "description": "The buttons component of the template.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Type of button, which should be \"mpm\"."
+                  },
+                  "elements": {
+                    "type": "string",
+                    "description": "The elements of a button to be added for button type \"multi_product\".",
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "description": "The text that appears on the button. In this example, it is set to \"View Items\". or it could be set to \"static\" \r\n"
+                      },
+                      "flow_id": {
+                        "type": "string",
+                        "description": "Flow Id that has to be given wile creating the template flow"
+                      },
+                      "navigation_screen": {
+                        "type": "string",
+                        "description": "Flow Json screen name given while creating the template flow"
+                      },
+                      "flow_action": {
+                        "type": "string",
+                        "description": "specifies that flow action of the template"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "send_template_message_text": {
         "type": "object",
         "title": "Text",
@@ -12570,6 +13460,172 @@
           "media"
         ]
       },
+      "send_template_message_payment": {
+        "type": "object",
+        "title": "Payment template messages",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "description": "The phone number of the recipient.\r\n\r\n"
+          },
+          "enable_acculync": {
+            "type": "boolean",
+            "description": "A boolean indicating whether or not to enable Acculync.\r\n\r\n"
+          },
+          "extra": {
+            "type": "string",
+            "description": "Additional information to include in the message.\r\n\r\n"
+          },
+          "media": {
+            "type": "object",
+            "description": "An object containing the message template details.\r\n\r\n",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "The type of message template. For sending a media template message, set to \"media_template\".\r\n\r\n"
+              },
+              "lang_code": {
+                "type": "string",
+                "description": "Language code of language in which message text is written, such as \"en\" for English.\r\n\r\n"
+              },
+              "template_name": {
+                "type": "string",
+                "description": "The name of the template to use.\r\n\r\n"
+              },
+              "header": {
+                "type": "array",
+                "description": "The header section of the message template.\r\n\r\n",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "image": {
+                      "type": "object",
+                      "description": "An object representing the image to include in the header. This object includes 'link' and 'file_name'.\r\n\r\n",
+                      "properties": {
+                        "link": {
+                          "type": "string",
+                          "description": "The URL of the image file, hosted publicly and starting with \"https://\" and ending with the file extension, such as \".png\".\r\n\r\n"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "multi_product": {
+                "type": "array",
+                "description": "The multi product section of the message template, a list of products with image and text.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "product_thumbnail": {
+                      "type": "object",
+                      "description": "An object representing the product thumbnail  which is common for all listed products."
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "The title of list of products to be displayed "
+                    },
+                    "product_retailer_ids": {
+                      "type": "array",
+                      "description": "The array or list of product retailer ids for the products registered",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "phone",
+          "media"
+        ]
+      },
+      "send_template_message_flow": {
+        "type": "object",
+        "title": "Flow Template Messages",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "description": "The phone number of the recipient.\r\n\r\n"
+          },
+          "enable_acculync": {
+            "type": "boolean",
+            "description": "A boolean indicating whether or not to enable Acculync.\r\n\r\n"
+          },
+          "extra": {
+            "type": "string",
+            "description": "Additional information to include in the message.\r\n\r\n"
+          },
+          "media": {
+            "type": "object",
+            "description": "An object containing the message template details.\r\n\r\n",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "The type of message template. For sending a media template message, set to \"media_template\".\r\n\r\n"
+              },
+              "lang_code": {
+                "type": "string",
+                "description": "Language code of language in which message text is written, such as \"en\" for English.\r\n\r\n"
+              },
+              "template_name": {
+                "type": "string",
+                "description": "The name of the template to use.\r\n\r\n"
+              },
+              "header": {
+                "type": "array",
+                "description": "The header section of the message template.\r\n\r\n",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "image": {
+                      "type": "object",
+                      "description": "An object representing the image to include in the header. This object includes 'link' and 'file_name'.\r\n\r\n",
+                      "properties": {
+                        "link": {
+                          "type": "string",
+                          "description": "The URL of the image file, hosted publicly and starting with \"https://\" and ending with the file extension, such as \".png\".\r\n\r\n"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "multi_product": {
+                "type": "array",
+                "description": "The multi product section of the message template, a list of products with image and text.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "product_thumbnail": {
+                      "type": "object",
+                      "description": "An object representing the product thumbnail  which is common for all listed products."
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "The title of list of products to be displayed "
+                    },
+                    "product_retailer_ids": {
+                      "type": "array",
+                      "description": "The array or list of product retailer ids for the products registered",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "phone",
+          "media"
+        ]
+      },
       "send_session_text": {
         "type": "object",
         "title": "Session Text",
@@ -13353,6 +14409,1205 @@
           "catalog"
         ]
       },
+      "send_session_flow": {
+        "type": "object",
+        "title": "Flow Message",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "description": "The mobile number of the recipient in full international format includes a plus sign (+) followed by the country code."
+          },
+          "enable_acculync": {
+            "type": "boolean",
+            "description": "A boolean indicating whether or not to enable Acculync."
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of message, in this case \"flow\"."
+          },
+          "header": {
+            "type": "object",
+            "description": "The header information for the flow message.",
+            "properties": {
+              "image": {
+                "type": "string",
+                "description": "The URL of the image to display in the header."
+              }
+            }
+          },
+          "footer": {
+            "type": "string",
+            "description": "Text to display in the footer."
+          },
+          "body": {
+            "type": "string",
+            "description": "The URL of the image to display in the body."
+          },
+          "flow": {
+            "type": "object",
+            "description": "The flow object containing information about the flow message.",
+            "properties": {
+              "flow_mode": {
+                "type": "string",
+                "description": "The mode of the flow, e.g., \"draft\"."
+              },
+              "flow_token": {
+                "type": "string",
+                "description": "The token associated with the flow."
+              },
+              "flow_id": {
+                "type": "string",
+                "description": "The unique ID of the flow."
+              },
+              "flow_cta": {
+                "type": "string",
+                "description": "The call to action text for the flow."
+              },
+              "flow_action": {
+                "type": "string",
+                "description": "The action to perform for the flow, e.g., \"navigate\"."
+              },
+              "flow_action_payload": {
+                "type": "object",
+                "description": "The payload for the action to perform in the flow, containing screen and data information.",
+                "properties": {
+                  "screen": {
+                    "type": "string",
+                    "description": "The screen to navigate to."
+                  },
+                  "data": {
+                    "type": "object",
+                    "description": "Additional data to pass along with the action.",
+                    "properties": {
+                      "hi": {
+                        "type": "string",
+                        "description": "Example data field."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "phone",
+          "type",
+          "header",
+          "footer",
+          "body",
+          "flow"
+        ]
+      },
+      "send_session_send_message_with_catalog": {
+        "type": "object",
+        "title": "Payment Message with catalog ID",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "description": "The mobile number of the recipient in full international format includes a plus sign (+) followed by the country code."
+          },
+          "enable_acculync": {
+            "type": "boolean",
+            "description": "A boolean indicating whether or not to enable Acculync."
+          },
+          "body": {
+            "type": "string",
+            "description": "The body text of the message."
+          },
+          "footer": {
+            "type": "string",
+            "description": "The text to display in the footer."
+          },
+          "image": {
+            "type": "object",
+            "description": "The image object containing the URL of the image.",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "The URL of the image to display."
+              }
+            }
+          },
+          "payment": {
+            "type": "object",
+            "description": "The payment object containing information about the payment details.",
+            "properties": {
+              "reference_id": {
+                "type": "string",
+                "description": "The reference ID for the payment."
+              },
+              "order_type": {
+                "type": "string",
+                "description": "The type of order, e.g., \"order_details\"."
+              },
+              "product_type": {
+                "type": "string",
+                "description": "The type of product, e.g., \"digital-goods\"."
+              },
+              "payment_configuration": {
+                "type": "string",
+                "description": "The payment configuration ID."
+              },
+              "address": {
+                "type": "object",
+                "description": "The address object containing recipient's address details.",
+                "properties": {
+                  "first_name": {
+                    "type": "string",
+                    "description": "The first name of the recipient."
+                  },
+                  "address_line1": {
+                    "type": "string",
+                    "description": "The first line of the address."
+                  },
+                  "address_line2": {
+                    "type": "string",
+                    "description": "The second line of the address."
+                  },
+                  "city": {
+                    "type": "string",
+                    "description": "The city of the recipient."
+                  },
+                  "state": {
+                    "type": "string",
+                    "description": "The state of the recipient."
+                  },
+                  "country": {
+                    "type": "string",
+                    "description": "The country of the recipient."
+                  },
+                  "postal_code": {
+                    "type": "string",
+                    "description": "The postal code of the recipient."
+                  }
+                }
+              },
+              "items": {
+                "type": "array",
+                "description": "An array of item objects containing details about the items in the order.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "retailer_id": {
+                      "type": "string",
+                      "description": "The retailer ID for the item."
+                    },
+                    "catalog_id": {
+                      "type": "string",
+                      "description": "The catalog ID containing the product."
+                    },
+                    "product_name": {
+                      "type": "string",
+                      "description": "The name of the product."
+                    },
+                    "amount": {
+                      "type": "number",
+                      "description": "The amount for the product."
+                    },
+                    "quantity": {
+                      "type": "string",
+                      "description": "The quantity of the product."
+                    },
+                    "expiration_timestamp": {
+                      "type": "string",
+                      "description": "The expiration timestamp for the product."
+                    },
+                    "expiration_description": {
+                      "type": "string",
+                      "description": "The description of the product's expiration."
+                    }
+                  }
+                }
+              },
+              "subtotal_amount": {
+                "type": "number",
+                "description": "The subtotal amount for the order."
+              },
+              "discount_amount": {
+                "type": "number",
+                "description": "The discount amount for the order."
+              },
+              "discount_description": {
+                "type": "string",
+                "description": "The description of the discount."
+              },
+              "shipping_amount": {
+                "type": "number",
+                "description": "The shipping amount for the order."
+              },
+              "shipping_description": {
+                "type": "string",
+                "description": "The description of the shipping."
+              },
+              "total_amount": {
+                "type": "number",
+                "description": "The total amount for the order."
+              },
+              "tax_amount": {
+                "type": "number",
+                "description": "The tax amount for the order."
+              },
+              "tax_description": {
+                "type": "string",
+                "description": "The description of the tax."
+              }
+            }
+          },
+          "extra": {
+            "type": "string",
+            "description": "Additional information to include in the message."
+          }
+        },
+        "required": [
+          "phone",
+          "body",
+          "footer",
+          "image",
+          "payment",
+          "extra"
+        ]
+      },
+      "send_session_send_message_without_catalog": {
+        "type": "object",
+        "title": "Payment Message Without Catalog ID",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "description": "The mobile number of the recipient in full international format includes a plus sign (+) followed by the country code."
+          },
+          "enable_acculync": {
+            "type": "boolean",
+            "description": "A boolean indicating whether or not to enable Acculync."
+          },
+          "body": {
+            "type": "string",
+            "description": "The body text of the message."
+          },
+          "footer": {
+            "type": "string",
+            "description": "The text to display in the footer."
+          },
+          "payment": {
+            "type": "object",
+            "description": "The payment object containing information about the payment details.",
+            "properties": {
+              "reference_id": {
+                "type": "string",
+                "description": "The reference ID for the payment."
+              },
+              "order_type": {
+                "type": "string",
+                "description": "The type of order, e.g., \"order_details\"."
+              },
+              "product_type": {
+                "type": "string",
+                "description": "The type of product, e.g., \"digital-goods\"."
+              },
+              "payment_configuration": {
+                "type": "string",
+                "description": "The payment configuration ID."
+              },
+              "address": {
+                "type": "object",
+                "description": "The address object containing recipient's address details.",
+                "properties": {
+                  "first_name": {
+                    "type": "string",
+                    "description": "The first name of the recipient."
+                  },
+                  "address_line1": {
+                    "type": "string",
+                    "description": "The first line of the address."
+                  },
+                  "address_line2": {
+                    "type": "string",
+                    "description": "The second line of the address."
+                  },
+                  "city": {
+                    "type": "string",
+                    "description": "The city of the recipient."
+                  },
+                  "state": {
+                    "type": "string",
+                    "description": "The state of the recipient."
+                  },
+                  "country": {
+                    "type": "string",
+                    "description": "The country of the recipient."
+                  },
+                  "postal_code": {
+                    "type": "string",
+                    "description": "The postal code of the recipient."
+                  }
+                }
+              },
+              "items": {
+                "type": "array",
+                "description": "An array of item objects containing details about the items in the order.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "image": {
+                      "type": "object",
+                      "description": "The image object containing the URL of the image.",
+                      "properties": {
+                        "url": {
+                          "type": "string",
+                          "description": "The URL of the image to display."
+                        }
+                      }
+                    },
+                    "product_name": {
+                      "type": "string",
+                      "description": "The name of the product."
+                    },
+                    "amount": {
+                      "type": "number",
+                      "description": "The amount for the product."
+                    },
+                    "quantity": {
+                      "type": "string",
+                      "description": "The quantity of the product."
+                    },
+                    "expiration_timestamp": {
+                      "type": "string",
+                      "description": "The expiration timestamp for the product."
+                    },
+                    "expiration_description": {
+                      "type": "string",
+                      "description": "The description of the product's expiration."
+                    }
+                  }
+                }
+              },
+              "subtotal_amount": {
+                "type": "number",
+                "description": "The subtotal amount for the order."
+              },
+              "discount_amount": {
+                "type": "number",
+                "description": "The discount amount for the order."
+              },
+              "discount_description": {
+                "type": "string",
+                "description": "The description of the discount."
+              },
+              "shipping_amount": {
+                "type": "number",
+                "description": "The shipping amount for the order."
+              },
+              "shipping_description": {
+                "type": "string",
+                "description": "The description of the shipping."
+              },
+              "total_amount": {
+                "type": "number",
+                "description": "The total amount for the order."
+              },
+              "tax_amount": {
+                "type": "number",
+                "description": "The tax amount for the order."
+              },
+              "tax_description": {
+                "type": "string",
+                "description": "The description of the tax."
+              }
+            }
+          },
+          "extra": {
+            "type": "string",
+            "description": "Additional information to include in the message."
+          }
+        },
+        "required": [
+          "phone",
+          "body",
+          "footer",
+          "payment",
+          "extra"
+        ]
+      },
+      "send_session_payment_gateway_payu": {
+        "type": "object",
+        "title": "Payment Message with Payu Gateway",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "description": "The mobile number of the recipient in full international format includes a plus sign (+) followed by the country code."
+          },
+          "enable_acculync": {
+            "type": "boolean",
+            "description": "A boolean indicating whether or not to enable Acculync."
+          },
+          "body": {
+            "type": "string",
+            "description": "The body text of the message."
+          },
+          "footer": {
+            "type": "string",
+            "description": "The text to display in the footer."
+          },
+          "image": {
+            "type": "object",
+            "description": "The image object containing the URL of the image.",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "The URL of the image to display."
+              }
+            }
+          },
+          "payment": {
+            "type": "object",
+            "description": "The payment object containing information about the payment details.",
+            "properties": {
+              "reference_id": {
+                "type": "string",
+                "description": "The reference ID for the payment."
+              },
+              "order_type": {
+                "type": "string",
+                "description": "The type of order, e.g., \"order_details\"."
+              },
+              "product_type": {
+                "type": "string",
+                "description": "The type of product, e.g., \"digital-goods\"."
+              },
+              "payment_gateway": {
+                "type": "object",
+                "description": "The payment gateway details.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "The type of payment gateway, e.g., \"payu\"."
+                  },
+                  "configuration_name": {
+                    "type": "string",
+                    "description": "The configuration name for the payment gateway."
+                  },
+                  "notes": {
+                    "type": "object",
+                    "description": "Additional notes for the payment gateway.",
+                    "properties": {
+                      "udf1": {
+                        "type": "string",
+                        "description": "User-defined field 1."
+                      },
+                      "udf2": {
+                        "type": "string",
+                        "description": "User-defined field 2."
+                      },
+                      "udf3": {
+                        "type": "string",
+                        "description": "User-defined field 3."
+                      }
+                    }
+                  }
+                }
+              },
+              "address": {
+                "type": "object",
+                "description": "The address object containing recipient's address details.",
+                "properties": {
+                  "first_name": {
+                    "type": "string",
+                    "description": "The first name of the recipient."
+                  },
+                  "address_line1": {
+                    "type": "string",
+                    "description": "The first line of the address."
+                  },
+                  "address_line2": {
+                    "type": "string",
+                    "description": "The second line of the address."
+                  },
+                  "city": {
+                    "type": "string",
+                    "description": "The city of the recipient."
+                  },
+                  "state": {
+                    "type": "string",
+                    "description": "The state of the recipient."
+                  },
+                  "country": {
+                    "type": "string",
+                    "description": "The country of the recipient."
+                  },
+                  "postal_code": {
+                    "type": "string",
+                    "description": "The postal code of the recipient."
+                  }
+                }
+              },
+              "items": {
+                "type": "array",
+                "description": "An array of item objects containing details about the items in the order.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "retailer_id": {
+                      "type": "string",
+                      "description": "The retailer ID for the item."
+                    },
+                    "catalog_id": {
+                      "type": "string",
+                      "description": "The catalog ID containing the product."
+                    },
+                    "product_name": {
+                      "type": "string",
+                      "description": "The name of the product."
+                    },
+                    "amount": {
+                      "type": "number",
+                      "description": "The amount for the product."
+                    },
+                    "quantity": {
+                      "type": "string",
+                      "description": "The quantity of the product."
+                    },
+                    "expiration_timestamp": {
+                      "type": "string",
+                      "description": "The expiration timestamp for the product."
+                    },
+                    "expiration_description": {
+                      "type": "string",
+                      "description": "The description of the product's expiration."
+                    }
+                  }
+                }
+              },
+              "subtotal_amount": {
+                "type": "number",
+                "description": "The subtotal amount for the order."
+              },
+              "discount_amount": {
+                "type": "number",
+                "description": "The discount amount for the order."
+              },
+              "discount_description": {
+                "type": "string",
+                "description": "The description of the discount."
+              },
+              "shipping_amount": {
+                "type": "number",
+                "description": "The shipping amount for the order."
+              },
+              "shipping_description": {
+                "type": "string",
+                "description": "The description of the shipping."
+              },
+              "total_amount": {
+                "type": "number",
+                "description": "The total amount for the order."
+              },
+              "tax_amount": {
+                "type": "number",
+                "description": "The tax amount for the order."
+              },
+              "tax_description": {
+                "type": "string",
+                "description": "The description of the tax."
+              }
+            }
+          },
+          "extra": {
+            "type": "string",
+            "description": "Additional information to include in the message."
+          }
+        },
+        "required": [
+          "phone",
+          "body",
+          "footer",
+          "image",
+          "payment",
+          "extra"
+        ]
+      },
+      "send_session_payment_gateway_razorpay": {
+        "type": "object",
+        "title": "Payment Message with Razorpay Gateway",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "description": "The mobile number of the recipient in full international format includes a plus sign (+) followed by the country code."
+          },
+          "enable_acculync": {
+            "type": "boolean",
+            "description": "A boolean indicating whether or not to enable Acculync."
+          },
+          "body": {
+            "type": "string",
+            "description": "The body text of the message."
+          },
+          "footer": {
+            "type": "string",
+            "description": "The text to display in the footer."
+          },
+          "image": {
+            "type": "object",
+            "description": "The image object containing the URL of the image.",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "The URL of the image to display."
+              }
+            }
+          },
+          "payment": {
+            "type": "object",
+            "description": "The payment object containing information about the payment details.",
+            "properties": {
+              "reference_id": {
+                "type": "string",
+                "description": "The reference ID for the payment."
+              },
+              "order_type": {
+                "type": "string",
+                "description": "The type of order, e.g., \"order_details\"."
+              },
+              "product_type": {
+                "type": "string",
+                "description": "The type of product, e.g., \"digital-goods\"."
+              },
+              "payment_gateway": {
+                "type": "object",
+                "description": "The payment gateway details.",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "The type of payment gateway, e.g., \"razorpay\"."
+                  },
+                  "configuration_name": {
+                    "type": "string",
+                    "description": "The configuration name for the payment gateway."
+                  },
+                  "notes": {
+                    "type": "object",
+                    "description": "Additional notes for the payment gateway.",
+                    "properties": {
+                      "udf1": {
+                        "type": "string",
+                        "description": "User-defined field 1."
+                      },
+                      "udf2": {
+                        "type": "string",
+                        "description": "User-defined field 2."
+                      },
+                      "udf3": {
+                        "type": "string",
+                        "description": "User-defined field 3."
+                      }
+                    }
+                  }
+                }
+              },
+              "address": {
+                "type": "object",
+                "description": "The address object containing recipient's address details.",
+                "properties": {
+                  "first_name": {
+                    "type": "string",
+                    "description": "The first name of the recipient."
+                  },
+                  "address_line1": {
+                    "type": "string",
+                    "description": "The first line of the address."
+                  },
+                  "address_line2": {
+                    "type": "string",
+                    "description": "The second line of the address."
+                  },
+                  "city": {
+                    "type": "string",
+                    "description": "The city of the recipient."
+                  },
+                  "state": {
+                    "type": "string",
+                    "description": "The state of the recipient."
+                  },
+                  "country": {
+                    "type": "string",
+                    "description": "The country of the recipient."
+                  },
+                  "postal_code": {
+                    "type": "string",
+                    "description": "The postal code of the recipient."
+                  }
+                }
+              },
+              "items": {
+                "type": "array",
+                "description": "An array of item objects containing details about the items in the order.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "retailer_id": {
+                      "type": "string",
+                      "description": "The retailer ID for the item."
+                    },
+                    "catalog_id": {
+                      "type": "string",
+                      "description": "The catalog ID containing the product."
+                    },
+                    "product_name": {
+                      "type": "string",
+                      "description": "The name of the product."
+                    },
+                    "amount": {
+                      "type": "number",
+                      "description": "The amount for the product."
+                    },
+                    "quantity": {
+                      "type": "string",
+                      "description": "The quantity of the product."
+                    },
+                    "expiration_timestamp": {
+                      "type": "string",
+                      "description": "The expiration timestamp for the product."
+                    },
+                    "expiration_description": {
+                      "type": "string",
+                      "description": "The description of the product's expiration."
+                    }
+                  }
+                }
+              },
+              "subtotal_amount": {
+                "type": "number",
+                "description": "The subtotal amount for the order."
+              },
+              "discount_amount": {
+                "type": "number",
+                "description": "The discount amount for the order."
+              },
+              "discount_description": {
+                "type": "string",
+                "description": "The description of the discount."
+              },
+              "shipping_amount": {
+                "type": "number",
+                "description": "The shipping amount for the order."
+              },
+              "shipping_description": {
+                "type": "string",
+                "description": "The description of the shipping."
+              },
+              "total_amount": {
+                "type": "number",
+                "description": "The total amount for the order."
+              },
+              "tax_amount": {
+                "type": "number",
+                "description": "The tax amount for the order."
+              },
+              "tax_description": {
+                "type": "string",
+                "description": "The description of the tax."
+              }
+            }
+          },
+          "extra": {
+            "type": "string",
+            "description": "Additional information to include in the message."
+          }
+        },
+        "required": [
+          "phone",
+          "body",
+          "footer",
+          "image",
+          "payment",
+          "extra"
+        ]
+      },
+      "send_session_payment_upi": {
+        "type": "object",
+        "title": "Payment Message with UPI",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "description": "The mobile number of the recipient in full international format includes a plus sign (+) followed by the country code."
+          },
+          "enable_acculync": {
+            "type": "string",
+            "description": "A string indicating whether or not to enable Acculync. (Note- It is a string here, but it should ideally be a boolean.)"
+          },
+          "body": {
+            "type": "string",
+            "description": "The body text of the message."
+          },
+          "footer": {
+            "type": "string",
+            "description": "The text to display in the footer."
+          },
+          "image": {
+            "type": "object",
+            "description": "The image object containing the URL of the image.",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "The URL of the image to display."
+              }
+            }
+          },
+          "payment": {
+            "type": "object",
+            "description": "The payment object containing information about the payment details.",
+            "properties": {
+              "reference_id": {
+                "type": "string",
+                "description": "The reference ID for the payment."
+              },
+              "order_type": {
+                "type": "string",
+                "description": "The type of order, e.g., \"order_details\"."
+              },
+              "product_type": {
+                "type": "string",
+                "description": "The type of product, e.g., \"digital-goods\"."
+              },
+              "payment_configuration": {
+                "type": "string",
+                "description": "The payment configuration name."
+              },
+              "address": {
+                "type": "object",
+                "description": "The address object containing recipient's address details.",
+                "properties": {
+                  "first_name": {
+                    "type": "string",
+                    "description": "The first name of the recipient."
+                  },
+                  "address_line1": {
+                    "type": "string",
+                    "description": "The first line of the address."
+                  },
+                  "city": {
+                    "type": "string",
+                    "description": "The city of the recipient."
+                  },
+                  "state": {
+                    "type": "string",
+                    "description": "The state of the recipient."
+                  },
+                  "country": {
+                    "type": "string",
+                    "description": "The country of the recipient."
+                  },
+                  "postal_code": {
+                    "type": "string",
+                    "description": "The postal code of the recipient."
+                  }
+                }
+              },
+              "items": {
+                "type": "array",
+                "description": "An array of item objects containing details about the items in the order.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "retailer_id": {
+                      "type": "string",
+                      "description": "The retailer ID for the item."
+                    },
+                    "product_name": {
+                      "type": "string",
+                      "description": "The name of the product."
+                    },
+                    "amount": {
+                      "type": "number",
+                      "description": "The amount for the product."
+                    },
+                    "quantity": {
+                      "type": "string",
+                      "description": "The quantity of the product."
+                    },
+                    "expiration_timestamp": {
+                      "type": "string",
+                      "description": "The expiration timestamp for the product."
+                    },
+                    "expiration_description": {
+                      "type": "string",
+                      "description": "The description of the product's expiration."
+                    }
+                  }
+                }
+              },
+              "subtotal_amount": {
+                "type": "number",
+                "description": "The subtotal amount for the order."
+              },
+              "discount_description": {
+                "type": "string",
+                "description": "The description of the discount."
+              },
+              "shipping_amount": {
+                "type": "number",
+                "description": "The shipping amount for the order."
+              },
+              "shipping_description": {
+                "type": "string",
+                "description": "The description of the shipping."
+              },
+              "total_amount": {
+                "type": "number",
+                "description": "The total amount for the order."
+              },
+              "tax_amount": {
+                "type": "number",
+                "description": "The tax amount for the order."
+              },
+              "tax_description": {
+                "type": "string",
+                "description": "The description of the tax."
+              }
+            }
+          },
+          "extra": {
+            "type": "string",
+            "description": "Additional information to include in the message."
+          }
+        },
+        "required": [
+          "phone",
+          "body",
+          "footer",
+          "image",
+          "payment",
+          "extra"
+        ]
+      },
+      "send_session_payment_link": {
+        "type": "object",
+        "title": "Payment Message with Payment Link",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "description": "The mobile number of the recipient in full international format includes a plus sign (+) followed by the country code."
+          },
+          "enable_acculync": {
+            "type": "boolean",
+            "description": "A boolean indicating whether or not to enable Acculync."
+          },
+          "body": {
+            "type": "string",
+            "description": "The body text of the message."
+          },
+          "footer": {
+            "type": "string",
+            "description": "The text to display in the footer."
+          },
+          "image": {
+            "type": "object",
+            "description": "The image object containing the URL of the image.",
+            "properties": {
+              "url": {
+                "type": "string",
+                "description": "The URL of the image to display."
+              }
+            }
+          },
+          "payment": {
+            "type": "object",
+            "description": "The payment object containing information about the payment details.",
+            "properties": {
+              "reference_id": {
+                "type": "string",
+                "description": "The reference ID for the payment."
+              },
+              "order_type": {
+                "type": "string",
+                "description": "The type of order, e.g., \"order_details\"."
+              },
+              "product_type": {
+                "type": "string",
+                "description": "The type of product, e.g., \"digital-goods\"."
+              },
+              "payment_link": {
+                "type": "object",
+                "description": "The payment link object containing the URI of the payment link.",
+                "properties": {
+                  "uri": {
+                    "type": "string",
+                    "description": "The URI of the payment link."
+                  }
+                }
+              },
+              "address": {
+                "type": "object",
+                "description": "The address object containing recipient's address details.",
+                "properties": {
+                  "first_name": {
+                    "type": "string",
+                    "description": "The first name of the recipient."
+                  },
+                  "address_line1": {
+                    "type": "string",
+                    "description": "The first line of the address."
+                  },
+                  "address_line2": {
+                    "type": "string",
+                    "description": "The second line of the address."
+                  },
+                  "city": {
+                    "type": "string",
+                    "description": "The city of the recipient."
+                  },
+                  "state": {
+                    "type": "string",
+                    "description": "The state of the recipient."
+                  },
+                  "country": {
+                    "type": "string",
+                    "description": "The country of the recipient."
+                  },
+                  "postal_code": {
+                    "type": "string",
+                    "description": "The postal code of the recipient."
+                  }
+                }
+              },
+              "items": {
+                "type": "array",
+                "description": "An array of item objects containing details about the items in the order.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "retailer_id": {
+                      "type": "string",
+                      "description": "The retailer ID for the item."
+                    },
+                    "catalog_id": {
+                      "type": "string",
+                      "description": "The catalog ID containing the product."
+                    },
+                    "product_name": {
+                      "type": "string",
+                      "description": "The name of the product."
+                    },
+                    "amount": {
+                      "type": "number",
+                      "description": "The amount for the product."
+                    },
+                    "quantity": {
+                      "type": "string",
+                      "description": "The quantity of the product."
+                    },
+                    "expiration_timestamp": {
+                      "type": "string",
+                      "description": "The expiration timestamp for the product."
+                    },
+                    "expiration_description": {
+                      "type": "string",
+                      "description": "The description of the product's expiration."
+                    }
+                  }
+                }
+              },
+              "subtotal_amount": {
+                "type": "number",
+                "description": "The subtotal amount for the order."
+              },
+              "discount_amount": {
+                "type": "number",
+                "description": "The discount amount for the order."
+              },
+              "discount_description": {
+                "type": "string",
+                "description": "The description of the discount."
+              },
+              "shipping_amount": {
+                "type": "number",
+                "description": "The shipping amount for the order."
+              },
+              "shipping_description": {
+                "type": "string",
+                "description": "The description of the shipping."
+              },
+              "total_amount": {
+                "type": "number",
+                "description": "The total amount for the order."
+              },
+              "tax_amount": {
+                "type": "number",
+                "description": "The tax amount for the order."
+              },
+              "tax_description": {
+                "type": "string",
+                "description": "The description of the tax."
+              }
+            }
+          },
+          "extra": {
+            "type": "string",
+            "description": "Additional information to include in the message."
+          }
+        },
+        "required": [
+          "phone",
+          "body",
+          "footer",
+          "image",
+          "payment",
+          "extra"
+        ]
+      },
+      "send_session_order_status": {
+        "type": "object",
+        "title": "Payment Order Status",
+        "properties": {
+          "phone": {
+            "type": "string",
+            "description": "The mobile number of the recipient in full international format includes a plus sign (+) followed by the country code."
+          },
+          "enable_acculync": {
+            "type": "boolean",
+            "description": "A boolean indicating whether or not to enable Acculync."
+          },
+          "body": {
+            "type": "string",
+            "description": "The body text of the message."
+          },
+          "payment": {
+            "type": "object",
+            "description": "The payment object containing information about the order status.",
+            "properties": {
+              "product_type": {
+                "type": "string",
+                "description": "The type of product, e.g., \"digital-goods\"."
+              },
+              "order_type": {
+                "type": "string",
+                "description": "The type of order, e.g., \"order_status\"."
+              },
+              "reference_id": {
+                "type": "string",
+                "description": "The reference ID for the payment or order."
+              },
+              "order_status": {
+                "type": "string",
+                "description": "The status of the order, e.g., \"processing\"."
+              },
+              "order_status_description": {
+                "type": "string",
+                "description": "The description of the order status."
+              }
+            }
+          },
+          "extra": {
+            "type": "string",
+            "description": "Additional information to include in the message."
+          }
+        },
+        "required": [
+          "phone",
+          "body",
+          "payment",
+          "extra"
+        ]
+      },
       "inline_response_202_3": {
         "type": "object",
         "description": "Every SUCCESS request sends a JSON response with the key as status, message, and request_id.\n",
@@ -14086,6 +16341,19 @@
             }
           }
         }
+      },
+      "settings_profile_photo": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "string",
+            "description": "This Paramter contains Profile Photo which has image file which can be uploaded with the formats as mentioned in facebook documentation\n",
+            "example": "ABC.jpeg, ABC.jpg, ABC.png"
+          }
+        },
+        "required": [
+          "file"
+        ]
       }
     }
   }
