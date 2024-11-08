@@ -5337,6 +5337,123 @@ paths:
         - jwt: []
       servers:
         - url: https://apis.rmlconnect.net
+        
+  /wba/templates/media-id:
+    post:
+      tags:
+        - WhatsApp Messaging Template API
+      summary: Generate Media ID API
+      description: >-
+        The Generate Media ID endpoint is used to generate a unique ID for the
+        media file.
+      operationId: media-idapis
+      requestBody:
+        description: ''
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  description: The path of the media file.
+              required:
+                - file
+            examples:
+              Example 1:
+                value:
+                  file: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  media_id:
+                    type: string
+                    description: Unique ID for the media file.
+                  mimetype:
+                    type: string
+                    description: The MIME type of the file.
+                  size:
+                    type: string
+                    description: The size of the file in mega bytes.
+                  status:
+                    type: string
+                    description: The status of the request.
+              examples:
+                Example 1:
+                  value:
+                    h: 4::aW1hZ2UvanBlZw==:ARYAD9GGvpFX_RGLucP0eH7noPnVwMhpd1SdBSz_dkb_ysGy5yeEhSWHZdTPXzwuSVMD5LXvhiayCxDvubaluQ7yRes6-X_eiCl31Y-u2lLEbg:e:1731405563:2221860068064858:100067177466309:ARaJTSVvECKCQXZBF48
+                    
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: The status of the request.
+                  message:
+                    type: string
+                    description: The response message.
+                  reason:
+                    type: string
+                    description: The reason for not generating the media ID.
+              examples:
+                Example 1:
+                  value:
+                    message: unable to process campaign request
+                    reason: jwt token expired
+                    status: failure
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The response message.
+              examples:
+                Example 1:
+                  value:
+                    message: >-
+                      The requested URL was not found on the server. If you
+                      entered the URL manually please check your spelling and
+                      try again.
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: The status of the request.
+                  message:
+                    type: string
+                    description: The response message.
+                  reason:
+                    type: string
+                    description: The reason for not generating the media ID.
+              examples:
+                Example 1:
+                  value:
+                    status: failure
+                    message: unable to process request
+                    reason: internal server error
+      security:
+        - jwt: []
+      servers:
+        - url: https://apis.rmlconnect.net
+      
   /wba/media/v1/get-media-id:
     post:
       tags:
