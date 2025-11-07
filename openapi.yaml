@@ -5471,10 +5471,10 @@ paths:
             schema:
               type: object
               properties:
-                file:
+                file/media_url:
                   type: string
                   format: binary
-                  description: Upload the media file.
+                  description: Upload the media file or media url.
             examples:
               Example 1:
                 value:
