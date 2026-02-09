@@ -58,7 +58,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/template/create"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -87,7 +87,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/template/create"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -122,7 +122,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/template/create"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -151,7 +151,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/template/create"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -180,7 +180,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/template/create"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -209,7 +209,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/template/create"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -238,7 +238,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/template/create"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -341,7 +341,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -378,7 +378,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -415,7 +415,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -452,7 +452,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -489,7 +489,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -519,7 +519,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/v1/messages"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -549,7 +549,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/v1/messages"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -573,7 +573,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTcyNTAxMzcwNCwib3JpZ19pYXQiOjE3MjUwMTAxMDQsImN1c3RvbWVyX2lkIjoiOWlyNURnN2J2c0NBIiwic2VuZF9tZXNzYWdlIjpmYWxzZX0.qlJVGXVfKUF5oG53js6kMtrLhwatImn8QirgeOGL1yQ",
+								"value": "{{vault:json-web-token}}",
 								"type": "text"
 							}
 						],
@@ -616,7 +616,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -653,7 +653,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -690,7 +690,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -727,7 +727,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -764,7 +764,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -794,7 +794,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/v1/messages"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -824,7 +824,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/v1/messages"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -848,7 +848,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGVtbyIsInVzZXJuYW1lIjoiZGVtbyIsImV4cCI6MTcyNTAxMzcwNCwib3JpZ19pYXQiOjE3MjUwMTAxMDQsImN1c3RvbWVyX2lkIjoiOWlyNURnN2J2c0NBIiwic2VuZF9tZXNzYWdlIjpmYWxzZX0.qlJVGXVfKUF5oG53js6kMtrLhwatImn8QirgeOGL1yQ",
+								"value": "{{vault:json-web-token}}",
 								"type": "text"
 							}
 						],
@@ -891,7 +891,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -928,7 +928,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -965,7 +965,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1002,7 +1002,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1039,7 +1039,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1069,7 +1069,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/v1/messages"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1099,7 +1099,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/v1/messages"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1165,7 +1165,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/v1/messages"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1200,7 +1200,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/v1/messages"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1235,7 +1235,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/v1/messages"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1270,7 +1270,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/v1/messages"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1305,7 +1305,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/v1/messages"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1340,7 +1340,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/v1/messages"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1375,7 +1375,7 @@
 								},
 								"url": "https://apis.rmlconnect.net/wba/v1/messages"
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1412,7 +1412,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1449,7 +1449,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1486,7 +1486,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1523,7 +1523,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1560,7 +1560,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -1597,7 +1597,7 @@
 							},
 							"status": "Accepted",
 							"code": 202,
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"responseTime": null,
@@ -5113,7 +5113,6 @@
 									],
 									"variable": [
 										{
-											"id": "d4faa211-e887-4b64-a9e2-b5c7a00fa5e9",
 											"key": "product_feed_id",
 											"value": "incididunt adipisicing cupidatat"
 										}
@@ -5648,7 +5647,6 @@
 									],
 									"variable": [
 										{
-											"id": "50ce0ec6-23a1-4e0d-91ff-72b17f700398",
 											"key": "catalog_id",
 											"value": "incididunt adipisicing cupidatat"
 										}
@@ -6019,7 +6017,6 @@
 									],
 									"variable": [
 										{
-											"id": "cd469efe-cb8c-451e-b657-22f4fd72a1a0",
 											"key": "product_feed_id",
 											"value": "incididunt adipisicing cupidatat"
 										}
@@ -7140,7 +7137,6 @@
 									],
 									"variable": [
 										{
-											"id": "6b8a95e6-4007-457a-a5c2-655e18cc9a20",
 											"key": "report_id",
 											"value": "incididunt adipisicing cupidatat"
 										}
@@ -7790,12 +7786,10 @@
 									],
 									"variable": [
 										{
-											"id": "4f64730d-fef8-4f85-9ba1-31ea4e5aae75",
 											"key": "start_date",
 											"value": "incididunt adipisicing cupidatat"
 										},
 										{
-											"id": "bf62170c-fa40-4cfb-b722-3d8e5262a734",
 											"key": "end_date",
 											"value": "incididunt adipisicing cupidatat"
 										}
@@ -9520,7 +9514,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
@@ -9545,7 +9539,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
@@ -9570,7 +9564,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
@@ -9595,7 +9589,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
@@ -9620,7 +9614,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
@@ -9645,7 +9639,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
@@ -9670,7 +9664,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
@@ -9695,7 +9689,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
@@ -9720,7 +9714,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
@@ -9745,7 +9739,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
@@ -9770,7 +9764,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
@@ -9795,7 +9789,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
@@ -9820,7 +9814,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
@@ -9845,7 +9839,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
@@ -9870,7 +9864,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
@@ -9926,11 +9920,11 @@
 					},
 					"status": "Created",
 					"code": 201,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
-					"body": "{\r\n    \"JWTAUTH\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiUk1MQm90IiwidXNlcm5hbWUiOiJSTUxCb3QiLCJleHAiOjE2MzAzMTU2MzIsImVtYWlsIjoid2hhdHNhcHBAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2MzAzMTIwMzIsImN1c3RvbWVyX2lkIjoiOXBGOGpUZ0pqSDdXIn0.r6h1mF6ZsMxzbJzfIWk-90Ubn-R3SbvvBr2PqLG4F\",\r\n    \"user_data\": {\r\n        \"username\": \"RMLBottt\",\r\n        \"first_name\": \"Route\",\r\n        \"last_name\": \"Bot.\",\r\n        \"email\": \"whatsapp@routemobile.com\",\r\n        \"phone_number\": \"+919372748624\",\r\n        \"password_reset\": false,\r\n        \"is_active\": true,\r\n        \"is_staff\": false\r\n    }\r\n}"
+					"body": "{\r\n    \"JWTAUTH\": \"{{vault:json-web-token}}\",\r\n    \"user_data\": {\r\n        \"username\": \"RMLBottt\",\r\n        \"first_name\": \"Route\",\r\n        \"last_name\": \"Bot.\",\r\n        \"email\": \"whatsapp@routemobile.com\",\r\n        \"phone_number\": \"+919372748624\",\r\n        \"password_reset\": false,\r\n        \"is_active\": true,\r\n        \"is_staff\": false\r\n    }\r\n}"
 				}
 			]
 		},
@@ -9982,11 +9976,11 @@
 					},
 					"status": "Created",
 					"code": 201,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "Text",
 					"header": null,
 					"cookie": [],
 					"responseTime": null,
-					"body": "{\r\n    \"JWTAUTH\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiUk1MQm90IiwidXNlcm5hbWUiOiJSTUxCb3QiLCJleHAiOjE2MzAzMTU2MzIsImVtYWlsIjoid2hhdHNhcHBAcm91dGVtb2JpbGUuY29tIiwib3JpZ19pYXQiOjE2MzAzMTIwMzIsImN1c3RvbWVyX2lkIjoiOXBGOGpUZ0pqSDdXIn0.r6h1mF6ZsMxzbJzfIWk-90Ubn-R3SbvvBr2PqLG4F\",\r\n    \"user_data\": {\r\n        \"username\": \"RMLBottt\",\r\n        \"first_name\": \"Route\",\r\n        \"last_name\": \"Bot.\",\r\n        \"email\": \"whatsapp@routemobile.com\",\r\n        \"phone_number\": \"+919372748624\",\r\n        \"password_reset\": false,\r\n        \"is_active\": true,\r\n        \"is_staff\": false\r\n    }\r\n}"
+					"body": "{\r\n    \"JWTAUTH\": \"{{vault:json-web-token}}\",\r\n    \"user_data\": {\r\n        \"username\": \"RMLBottt\",\r\n        \"first_name\": \"Route\",\r\n        \"last_name\": \"Bot.\",\r\n        \"email\": \"whatsapp@routemobile.com\",\r\n        \"phone_number\": \"+919372748624\",\r\n        \"password_reset\": false,\r\n        \"is_active\": true,\r\n        \"is_staff\": false\r\n    }\r\n}"
 				}
 			]
 		}
