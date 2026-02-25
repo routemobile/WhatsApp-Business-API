@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   version: 1.8.0
-  title: Route Mobile WhatsApp API
+  title: Route Mobile WhatsApp API - China
   description: >-
     Welcome to the Route Mobile developer hub. You'll find comprehensive
     WhatsApp API documentation to help you start working with Route Mobile as
