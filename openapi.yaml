@@ -14,8 +14,24 @@ info:
   contact:
     url: https://developers.routemobile.com/
     name: Route Mobile Development
+    email: support@routemobile.com
+  license:
+    name: Proprietary
+    url: https://www.routemobile.com/terms-and-conditions/
+  x-logo:
+    url: https://www.routemobile.com/wp-content/uploads/2021/07/RM-Logo.png
+    altText: Route Mobile Logo
+  x-readme:
+    samples-languages:
+      - curl
+      - python
+      - node
+      - java
+      - php
 servers:
   - url: https://apis.rmlconnect.net
+security:
+  - jwt: []
 paths:
   /wba/v2/upload:
     post:
@@ -52,6 +68,7 @@ paths:
             example: 'True'
       requestBody:
         description: ''
+        required: true
         content:
           multipart/form-data:
             schema:
@@ -60,7 +77,7 @@ paths:
               Example:
                 value:
                   campaign_type: string
-                  file: string
+                  file: <binary file content>
                   file_mimetype: string
                   filename: string
                   message: string
@@ -154,6 +171,25 @@ paths:
                           application/vnd.ms-excel.template.macroEnabled.12,
                           application/vnd.ms-excel.addin.macroEnabled.12,
                           application/vnd.ms-excel.sheet.binary.macroEnabled.12.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -174,8 +210,6 @@ paths:
                     message: unable to process request
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wba/v2/manage_campaign:
     post:
       tags:
@@ -214,6 +248,7 @@ paths:
             example: UI
       requestBody:
         description: ''
+        required: true
         content:
           application/json:
             schema:
@@ -317,6 +352,25 @@ paths:
                     reason:
                       campaign_id:
                         - Not a Valid Campaign Id
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -341,8 +395,6 @@ paths:
                     reason: <internal server error reason>
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wba/catalog/manager/v1/upload:
     post:
       tags:
@@ -352,6 +404,7 @@ paths:
       operationId: uploadFile
       requestBody:
         description: ''
+        required: true
         content:
           multipart/form-data:
             schema:
@@ -427,6 +480,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -451,8 +523,6 @@ paths:
                     reason: reason
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wba/catalog/manager/v1/create_product_feed:
     post:
       tags:
@@ -462,6 +532,7 @@ paths:
       operationId: createProductFeed
       requestBody:
         description: ''
+        required: true
         content:
           multipart/form-data:
             schema:
@@ -535,6 +606,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -559,8 +649,6 @@ paths:
                     reason: reason
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wba/catalog/manager/v1/update_product_feed:
     post:
       tags:
@@ -570,6 +658,7 @@ paths:
       operationId: updateProductFeed
       requestBody:
         description: ''
+        required: true
         content:
           multipart/form-data:
             schema:
@@ -637,6 +726,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -661,8 +769,6 @@ paths:
                     reason: reason
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wba/catalog/manager/v1/delete_product_feed:
     post:
       tags:
@@ -672,6 +778,7 @@ paths:
       operationId: deleteProductFeed
       requestBody:
         description: ''
+        required: true
         content:
           application/json:
             schema:
@@ -740,6 +847,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -764,8 +890,6 @@ paths:
                     reason: reason
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wba/catalog/manager/v1/fetch_product_feed:
     get:
       tags:
@@ -960,6 +1084,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -984,8 +1127,6 @@ paths:
                     reason: reason
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wba/catalog/manager/v1/fetch_product_details:
     get:
       tags:
@@ -1081,6 +1222,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -1105,8 +1265,6 @@ paths:
                     reason: reason
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wba/catalog/manager/v1/fetch_catalog_details:
     get:
       tags:
@@ -1320,6 +1478,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -1344,8 +1521,6 @@ paths:
                     reason: reason
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wba/catalog/manager/v1/schedule_product_feed_details:
     get:
       tags:
@@ -1418,9 +1593,11 @@ paths:
                               description: ' The unique identifier for the latest upload.'
                             start_time:
                               type: string
+                              format: date-time
                               description: The start time of the latest upload.
                             end_time:
                               type: string
+                              format: date-time
                               description: The end time of the latest upload.
                   latest_upload:
                     type: object
@@ -1431,9 +1608,11 @@ paths:
                         description: ' The unique identifier for the latest upload.'
                       start_time:
                         type: string
+                        format: date-time
                         description: The start time of the latest upload.
                       end_time:
                         type: string
+                        format: date-time
                         description: The end time of the latest upload.
                   name:
                     type: string
@@ -1508,6 +1687,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -1532,8 +1730,6 @@ paths:
                     reason: reason
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wba/catalog/manager/v1/fetch_errors:
     get:
       tags:
@@ -1628,6 +1824,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -1652,8 +1867,6 @@ paths:
                     reason: reason
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /whatsapp/report/v1/create_report/myaccounts_panel:
     post:
       tags:
@@ -1700,6 +1913,7 @@ paths:
         - pricing_model: The pricing model for the message.
       operationId: createReport
       requestBody:
+        required: true
         content:
           application/json:
             schema:
@@ -1781,6 +1995,25 @@ paths:
                     message: Unable to process request
                     status: Failed
                     reason: Please check the integrity or validity of the token sent.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -1801,8 +2034,6 @@ paths:
                     errors: Contact administration for more info
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /whatsapp/report/v1/create_campaign_specific_report/myaccounts_panel:
     post:
       tags:
@@ -1852,6 +2083,7 @@ paths:
         scheduled message.
       operationId: createCampaignSpecificReport
       requestBody:
+        required: true
         content:
           application/json:
             schema:
@@ -1960,6 +2192,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -1980,8 +2231,6 @@ paths:
                     errors: Contact administration for more info
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /whatsapp/report/v1/fetch_campaign_specific_report/{report_id}:
     get:
       tags:
@@ -2062,6 +2311,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -2084,8 +2352,6 @@ paths:
                     reason: reason
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /whatsapp/report/v1/fetch_campaign_details:
     get:
       tags:
@@ -2224,6 +2490,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -2246,8 +2531,6 @@ paths:
                     reason: '''Request'' object has no attribute ''username'''
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /whatsapp/report/v1/fetch_reports:
     get:
       tags:
@@ -2409,8 +2692,6 @@ paths:
                       try again.
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wbo/v2/optin/store:
     post:
       tags:
@@ -2420,6 +2701,7 @@ paths:
       operationId: createOptin
       requestBody:
         description: ''
+        required: true
         content:
           application/json:
             schema:
@@ -2514,6 +2796,25 @@ paths:
                     error:
                       optin_channel:
                         - Unknown field.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -2538,8 +2839,6 @@ paths:
                     reason: reason
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
 
   /wbo/v2/optinout/store:
     post:
@@ -2550,6 +2849,7 @@ paths:
       operationId: createOptinOut
       requestBody:
         description: ''
+        required: true
         content:
           application/json:
             schema:
@@ -2649,6 +2949,25 @@ paths:
                     error:
                       optin_channel:
                         - Unknown field.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -2673,8 +2992,6 @@ paths:
                     reason: reason
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wbo/v2/optin/check:
     get:
       tags:
@@ -2755,6 +3072,25 @@ paths:
                     error:
                       msisdn:
                         - Field may not be null.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -2779,8 +3115,6 @@ paths:
                     reason: reason
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /callbacks:
     post:
       tags:
@@ -3062,6 +3396,7 @@ paths:
       operationId: whatsappClientCallback
       requestBody:
         description: ''
+        required: true
         content:
           application/json:
             schema:
@@ -3473,8 +3808,7 @@ paths:
       responses:
         '200':
           description: Success
-      servers:
-        - url: https://apis.rmlconnect.net
+      security: []
   /wba/templates:
     get:
       tags:
@@ -3536,9 +3870,11 @@ paths:
                             written, such as "en" for English.
                         created_date:
                           type: string
+                          format: date-time
                           description: The date and time when the item was created.
                         deleted_date:
                           type: string
+                          format: date-time
                           description: 'The date and time when the item was deleted. '
                         waba_id:
                           type: string
@@ -3620,6 +3956,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -3644,8 +3999,6 @@ paths:
                     reason: reason
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wba/template/create:
     post:
       tags:
@@ -3657,6 +4010,7 @@ paths:
       operationId: createTemplate
       requestBody:
         description: ''
+        required: true
         content:
           application/json:
             schema:
@@ -4070,6 +4424,25 @@ paths:
                   value:
                     template_category:
                       - 'Must be one of: MARKETING, UTILITY, AUTHENTICATION.'
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -4086,8 +4459,6 @@ paths:
                     message: Internal Server Error
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wba/v1/messages:
     post:
       tags:
@@ -4100,6 +4471,7 @@ paths:
         APIs](https://routemobile.github.io/WhatsApp-Business-API/WBS.html#tag/WhatsApp-Messaging-Template-API/operation/sendSessionMessageApi).
       operationId: sendSessionMessageApi
       requestBody:
+        required: true
         content:
           application/json:
             schema:
@@ -4998,6 +5370,25 @@ paths:
                       - >-
                         Must be one of: template, text_template, media_template,
                         interactive_template.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -5018,8 +5409,6 @@ paths:
                     status: failed
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /auth/v1/login/:
     post:
       tags:
@@ -5036,6 +5425,7 @@ paths:
         hour.**
       operationId: loginApi2
       requestBody:
+        required: true
         content:
           application/json:
             schema:
@@ -5083,6 +5473,25 @@ paths:
                 User is set inactive:
                   value:
                     status: invalid credentials or the account has been deactivated
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -5097,8 +5506,7 @@ paths:
                 Unhandled Exception:
                   value:
                     status: <exception>
-      servers:
-        - url: https://apis.rmlconnect.net
+      security: []
   /whatsapp/report/v1/optin-download:
     get:
       tags:
@@ -5183,6 +5591,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -5207,8 +5634,6 @@ paths:
                     reason: internal server error
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /whatsapp/report/v1/summary/download_optin_report:
     get:
       tags:
@@ -5309,6 +5734,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -5335,8 +5779,6 @@ paths:
                     reason: internal server error
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
         
   /wba/templates/media-id:
     post:
@@ -5349,6 +5791,7 @@ paths:
       operationId: media-idapis
       requestBody:
         description: ''
+        required: true
         content:
           multipart/form-data:
             schema:
@@ -5356,13 +5799,14 @@ paths:
               properties:
                 file:
                   type: string
-                  description: The path of the media file.
+                  format: binary
+                  description: The media file to upload (binary).
               required:
                 - file
             examples:
               Example 1:
                 value:
-                  file: string
+                  file: <binary file content>
       responses:
         '200':
           description: Success
@@ -5427,6 +5871,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -5451,8 +5914,6 @@ paths:
                     reason: internal server error
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
       
   /wba/media/v1/get-media-id:
     post:
@@ -5461,38 +5922,22 @@ paths:
       summary: Generate Media ID API
       description: >-
         The Generate Media ID endpoint is used to generate a unique ID for the
-        media file. It supports both file uploads and media file URLs.
+        media file by uploading a binary file.
       operationId: media-idapi
       requestBody:
-        description: Provide either a file upload or a media file URL to generate the media ID.
+        description: Upload a binary media file to generate the media ID.
         required: true
         content:
           multipart/form-data:
             schema:
               type: object
               properties:
-                file/media_url:
+                file:
                   type: string
                   format: binary
-                  description: Upload the media file or media url.
-            examples:
-              Example 1:
-                value:
-                  file: "binary file"
-          application/json:
-            schema:
-              type: object
-              properties:
-                file_url:
-                  type: string
-                  format: uri
-                  description: The public URL of the media file.
+                  description: The media file to upload (binary). Supported formats include image, video, audio, and document files.
               required:
-                - file_url
-            examples:
-              Example 1:
-                value:
-                  file_url: "https://example.com/sample-video.mp4"
+                - file
       responses:
         '200':
           description: Success
@@ -5555,6 +6000,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -5576,8 +6040,6 @@ paths:
                     reason: "internal server error"
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
 
   
   /wba/management/v1/wbp-account-details:
@@ -5906,6 +6368,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -5930,8 +6411,6 @@ paths:
                     reason: internal server error
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wba/management/v1/settings/profile/photo:
     post:
       tags:
@@ -5969,6 +6448,7 @@ paths:
             example: 'True'
       requestBody:
         description: ''
+        required: true
         content:
           multipart/form-data:
             schema:
@@ -5983,34 +6463,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_4'
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: The outcome of the profile photo upload.
+                  status:
+                    type: string
+                    description: The status of the upload operation.
               examples:
                 Example 1:
                   value:
-                    message: File uploaded successfully
-                    campaign_id: 670b3fd4-d442-11ed-a821-xxxxxxxxxxxx
-                    file_type: text/csv
-                    file_size: 19.0B
-                    total_records: 1
-                    valid_records: 1
-                    duplicate records: 0
-                    campaign_type: generalized
-                    message_preview:
-                      phone: 91868841xxxx
-                      enable_acculync: true
-                      extra: '{''asd'':''asd''}'
-                      media:
-                        type: media_template
-                        template_name: boarding_pass_update
-                        lang_code: en
-                        header:
-                          - image:
-                              link: >-
-                                https://media.istockphoto.com/vectors/airplane-ticket-boarding-pass-ticket-template-vector-id878xxxxxx
-                        body:
-                          - text: Here is your boarding pass
-                    asynchronous: false
-                    country_code: string
+                    message: Profile photo uploaded successfully
+                    status: success
         '401':
           description: Unauthorized
           content:
@@ -6036,37 +6501,24 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
-        '422':
-          description: Unprocessable Entity (WebDAV)
+        '429':
+          description: Too Many Requests
           content:
             application/json:
               schema:
-                oneOf:
-                  - $ref: '#/components/schemas/file_upload_422_unknown_campaigntype'
-                  - $ref: '#/components/schemas/file_upload_422_filemimetype'
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
               examples:
-                Unknown campaign type:
+                Rate Limit Exceeded:
                   value:
-                    message: please check API docs for more info
-                    status: failed
-                    reason:
-                      campaign_type:
-                        - 'Must be one of: generalized, personalized.'
-                File Mimetype error:
-                  value:
-                    message: please check API docs for more info
-                    status: failed
-                    reason:
-                      file_mimetype:
-                        - >-
-                          Must be one of: text/csv, text/plain,
-                          application/vnd.ms-excel,
-                          application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,
-                          application/vnd.openxmlformats-officedocument.spreadsheetml.template,
-                          application/vnd.ms-excel.sheet.macroEnabled.12,
-                          application/vnd.ms-excel.template.macroEnabled.12,
-                          application/vnd.ms-excel.addin.macroEnabled.12,
-                          application/vnd.ms-excel.sheet.binary.macroEnabled.12.
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
         '500':
           description: Internal Server Error
           content:
@@ -6087,8 +6539,6 @@ paths:
                     message: unable to process request
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
 
   /wba/template/update:
     patch:
@@ -6100,6 +6550,7 @@ paths:
         providing a new template name and updated components.
       operationId: patch-wba-template-update
       requestBody:
+        required: true
         content:
           application/json:
             schema:
@@ -6320,6 +6771,25 @@ paths:
                 Example 1:
                   value:
                     message: Unknown template
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -6344,8 +6814,6 @@ paths:
                     reason: internal server error
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /wba/template/:
     delete:
       tags:
@@ -6415,6 +6883,25 @@ paths:
                 Example 1:
                   value:
                     message: template not found
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -6439,8 +6926,6 @@ paths:
                     reason: internal server error
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
   /whatsapp/report/v1/template-count:
     get:
       tags:
@@ -6535,6 +7020,25 @@ paths:
                       The requested URL was not found on the server. If you
                       entered the URL manually please check your spelling and
                       try again.
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Rate limit exceeded message.
+                  retry_after:
+                    type: integer
+                    description: Number of seconds to wait before retrying.
+              examples:
+                Rate Limit Exceeded:
+                  value:
+                    message: Rate limit exceeded. Please retry after the specified time.
+                    retry_after: 60
+
         '500':
           description: Internal Server Error
           content:
@@ -6559,25 +7063,23 @@ paths:
                     reason: internal server error
       security:
         - jwt: []
-      servers:
-        - url: https://apis.rmlconnect.net
 tags:
   - name: WhatsApp Login
-    description: Login to WhatsApp Business account.
+    description: APIs for authenticating users and obtaining JWT tokens for WhatsApp Business account access.
   - name: WhatsApp Management APIs
-    description: Management APIS for the WhatsApp business profile.
+    description: APIs for managing WhatsApp Business Profile settings, account details, and configuration.
   - name: WhatsApp Bulk Upload
-    description: Types of WhatsApp bulk upload APIs.
+    description: APIs for uploading files and managing bulk messaging campaigns to multiple users simultaneously.
   - name: WhatsApp Catalog Manager
-    description: Types of WhatsApp catalog manager APIs.
+    description: APIs for managing product catalogs and feeds associated with your WhatsApp Business account.
   - name: WhatsApp Reports
-    description: WhatsApp Report APIs.
+    description: APIs for generating, downloading, and retrieving analytics reports for WhatsApp campaigns and messaging.
   - name: WhatsApp Optin API
-    description: WhatsApp Optin APIs.
+    description: APIs for managing user opt-ins and opt-outs for receiving WhatsApp Business messages.
   - name: WhatsApp Messaging Template API
-    description: WhatsApp messaging template and session message APIs.
+    description: APIs for creating, updating, deleting, and sending WhatsApp message templates and session messages.
   - name: WhatsApp Client Callback API
-    description: Different types of WhatsApp client callback APIs.
+    description: Webhook receiver endpoints for real-time notifications of WhatsApp message events and delivery statuses.
 components:
   securitySchemes:
     jwt:
@@ -6596,8 +7098,8 @@ components:
           example: Generalized
         file:
           type: string
+          format: binary
           description: >
-            The CSV or plain text file path on your local system or network that
             you want to upload as part of a bulk campaign. The file contains the
             list of phone numbers and messages. 
 
@@ -6827,6 +7329,7 @@ components:
           $ref: '#/components/schemas/wbav2manage_campaign_payload'
         scheduled_time:
           type: string
+          format: date-time
           description: >-
             The date and time at which the campaign should be scheduled to
             start, in UTC format. The format of the string should be "YYYY-MM-DD
@@ -6847,7 +7350,7 @@ components:
           type: string
           description: The action to be taken for the campaign. For sending a bulk
             campaign, the value should be set to "resume".
-          example: '"resum"'
+          example: '"resume"'
         campaign_id:
           type: string
           description: The unique identifier for the campaign. This ID is generated
@@ -7335,15 +7838,18 @@ components:
           description: The type of the message.
         process_end_timestamp:
           type: string
+          format: date-time
           description: The process end time.
         process_start_timestamp:
           type: string
+          format: date-time
           description: The process start time.
         read:
           type: integer
           description: Number of read messages.
         scheduled_time:
           type: string
+          format: date-time
           description: The campaign scheduled time.
         sent:
           type: integer
